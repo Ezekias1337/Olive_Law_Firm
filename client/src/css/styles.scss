@@ -1,0 +1,491 @@
+@import "variables/light-mode-variables";
+@import "variables/dark-mode-variables";
+@import "variables/common-variables";
+@import "partials/background-animations";
+@import "partials/toast";
+
+/* 
+  General Styling
+*/
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: $brown;
+}
+
+::selection {
+  background: $brown;
+  color: $white;
+}
+
+div#root,
+#element-to-animate {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container-for-scroll {
+  height: 85%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-bottom: 30px;
+}
+
+.page-title {
+  text-align: center;
+}
+
+button.full-width-button {
+  width: 100%;
+  height: 100%;
+}
+
+button.flex-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button.async-button {
+  width: 133px;
+  min-width: 133px;
+  height: 54px;
+}
+
+div.form-switch {
+  padding-left: 0px !important;
+  display: flex;
+}
+
+.form-switch .form-check-input {
+  margin-left: 1.5px !important;
+  margin-top: 0px !important;
+  align-self: flex-end;
+}
+
+.form-switch .form-check-input:checked {
+  background-color: $brown;
+}
+
+.display-flex {
+  display: flex !important;
+}
+
+.full-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.space-around-flex {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+button.animated-button {
+  -webkit-animation-name: animate-button;
+  animation-name: animate-button;
+  -webkit-animation-duration: 1.5s;
+  animation-duration: 1.5s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}
+
+button.animated-button:hover,
+button.animated-button:focus,
+button.animated-button:active {
+  box-shadow: 0px 0px 10px $blue;
+  border-color: $black !important;
+}
+
+@keyframes animate-button {
+  from {
+    box-shadow: 0px 0px 10px transparent;
+  }
+  to {
+    box-shadow: 0px 0px 10px $blue;
+    background-color: $blue;
+    color: $black;
+  }
+}
+
+@-webkit-keyframes animate-button {
+  from {
+    box-shadow: 0px 0px 10px transparent;
+  }
+  to {
+    box-shadow: 0px 0px 10px $blue;
+    background-color: $blue;
+    color: $black;
+  }
+}
+
+/* 
+  Theme Specific Styling
+*/
+
+[data-theme="Gradient"] {
+  background-image: url("../images/Gradient-Outline.jpg");
+  button.styled-button {
+    background-color: $brown;
+    color: $bg-dark;
+    border: 1.5px solid $bg-dark;
+  }
+
+  button.styled-button:hover,
+  button.styled-button:focus,
+  button.styled-button:active {
+    background-color: $bg-dark;
+    color: $brown;
+    border: 1.5px solid $brown;
+    box-shadow: 0px 0px 10px $brown;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    color: $bg-dark;
+  }
+
+  ::-webkit-input-placeholder {
+    color: $bg-secondary-dark;
+    opacity: 1; /* Firefox */
+  }
+
+  ::-moz-placeholder {
+    color: $bg-secondary-dark;
+    opacity: 1; /* Firefox */
+  }
+
+  :-ms-input-placeholder {
+    color: $bg-secondary-dark;
+    opacity: 1; /* Firefox */
+  }
+
+  ::-ms-input-placeholder {
+    color: $bg-secondary-dark;
+    opacity: 1; /* Firefox */
+  }
+
+  ::placeholder {
+    color: $bg-secondary-dark;
+    opacity: 1; /* Firefox */
+  }
+
+  :-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: $bg-secondary-dark;
+  }
+
+  ::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: $bg-secondary-dark;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    border-radius: 5px;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $bg-dark;
+    border-radius: 5px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: $bg-secondary-light;
+  }
+
+  .animated-alert {
+    -webkit-animation-name: animated-alert;
+    animation-name: animated-alert;
+    -webkit-animation-duration: 2.5s;
+    animation-duration: 2.5s;
+    -webkit-animation-iteration-count: 2;
+    animation-iteration-count: 2;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+    opacity: 0%;
+  }
+
+  @keyframes animated-alert {
+    from {
+      opacity: 0%;
+    }
+    to {
+      opacity: 100%;
+      box-shadow: 0px 0px 10px $white;
+    }
+  }
+
+  @-webkit-keyframes animated-alert {
+    from {
+      opacity: 0%;
+    }
+    to {
+      opacity: 100%;
+      box-shadow: 0px 0px 10px $white;
+    }
+  }
+}
+
+[data-theme="Light"] {
+  background-color: $bg-light;
+  button.styled-button {
+    background-color: $brown;
+    color: $white;
+    border: 1.5px solid $bg-secondary-light;
+  }
+
+  button.styled-button:hover,
+  button.styled-button:focus,
+  button.styled-button:active {
+    background-color: $white;
+    color: $brown;
+    border: 1.5px solid $brown;
+    box-shadow: 0px 0px 10px $brown;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    color: $bg-dark;
+  }
+
+  ::-webkit-input-placeholder {
+    color: $bg-secondary-light;
+    opacity: 1; /* Firefox */
+  }
+
+  ::-moz-placeholder {
+    color: $bg-secondary-light;
+    opacity: 1; /* Firefox */
+  }
+
+  :-ms-input-placeholder {
+    color: $bg-secondary-light;
+    opacity: 1; /* Firefox */
+  }
+
+  ::-ms-input-placeholder {
+    color: $bg-secondary-light;
+    opacity: 1; /* Firefox */
+  }
+
+  ::placeholder {
+    color: $bg-secondary-light;
+    opacity: 1; /* Firefox */
+  }
+
+  :-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: $bg-secondary-light;
+  }
+
+  ::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: $bg-secondary-light;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    border-radius: 5px;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $bg-light;
+    border-radius: 5px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: $bg-secondary-dark;
+  }
+
+  .animated-alert {
+    -webkit-animation-name: animated-alert-light;
+    animation-name: animated-alert-light;
+    -webkit-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+    -webkit-animation-iteration-count: 2;
+    animation-iteration-count: 2;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+    opacity: 0%;
+  }
+
+  @keyframes animated-alert-light {
+    from {
+      opacity: 0%;
+    }
+    to {
+      opacity: 100%;
+      box-shadow: 0px 0px 10px $black;
+    }
+  }
+
+  @-webkit-keyframes animated-alert-light {
+    from {
+      opacity: 0%;
+    }
+    to {
+      opacity: 100%;
+      box-shadow: 0px 0px 10px $black;
+    }
+  }
+}
+
+[data-theme="Dark"] {
+  background-color: $bg-dark;
+  button.styled-button {
+    background-color: $brown;
+    color: $bg-dark;
+    border: 1.5px solid $bg-secondary-dark;
+  }
+
+  button.styled-button:hover,
+  button.styled-button:focus,
+  button.styled-button:active {
+    background-color: $bg-dark;
+    color: $brown;
+    border: 1.5px solid $brown;
+    box-shadow: 0px 0px 10px $brown;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    color: $white;
+  }
+
+  .form-switch .form-check-input {
+    background-color: $brown;
+    border: 1.25px solid $bg-secondary-dark;
+    background-image: url("../images/White_Switch_BG.png") !important;
+  }
+
+  .form-switch .form-check-input:checked {
+    background-image: url("../images/Black_Switch_BG.png") !important;
+    border: 1.5px solid $bg-secondary-dark;
+  }
+
+  .form-switch .form-check-input:active,
+  .form-switch .form-check-input:hover,
+  .form-switch .form-check-input:focus {
+    background-image: url("../images/Brown_Switch_BG.png") !important;
+    box-shadow: 0px 0px 10px $brown;
+    border: 1.5px solid $brown;
+    background-color: $bg-dark;
+  }
+
+  .form-switch .form-check-input:checked:active,
+  .form-switch .form-check-input:checked:hover,
+  .form-switch .form-check-input:checked:focus {
+    background-image: url("../images/Brown_Switch_BG.png") !important;
+    box-shadow: 0px 0px 10px $brown;
+    border: 1.5px solid $brown;
+    background-color: $bg-dark;
+  }
+
+  ::-webkit-input-placeholder {
+    color: $bg-secondary-dark;
+    opacity: 1; /* Firefox */
+  }
+
+  ::-moz-placeholder {
+    color: $bg-secondary-dark;
+    opacity: 1; /* Firefox */
+  }
+
+  :-ms-input-placeholder {
+    color: $bg-secondary-dark;
+    opacity: 1; /* Firefox */
+  }
+
+  ::-ms-input-placeholder {
+    color: $bg-secondary-dark;
+    opacity: 1; /* Firefox */
+  }
+
+  ::placeholder {
+    color: $bg-secondary-dark;
+    opacity: 1; /* Firefox */
+  }
+
+  :-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: $bg-secondary-dark;
+  }
+
+  ::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: $bg-secondary-dark;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    border-radius: 5px;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: darken($bg-secondary-dark, 5);
+    border-radius: 5px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: $bg-secondary-light;
+  }
+}
+
+[data-theme="Gradient"],
+[data-theme="Dark"] {
+  .animated-alert {
+    -webkit-animation-name: animated-alert;
+    animation-name: animated-alert;
+    -webkit-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+    -webkit-animation-iteration-count: 2;
+    animation-iteration-count: 2;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+    opacity: 0%;
+  }
+
+  @keyframes animated-alert {
+    from {
+      opacity: 0%;
+    }
+    to {
+      opacity: 100%;
+      box-shadow: 0px 0px 10px $white;
+    }
+  }
+
+  @-webkit-keyframes animated-alert {
+    from {
+      opacity: 0%;
+    }
+    to {
+      opacity: 100%;
+      box-shadow: 0px 0px 10px $white;
+    }
+  }
+}
