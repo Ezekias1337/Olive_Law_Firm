@@ -12,7 +12,7 @@ export const FooterSocialIcon = ({
 }) => {
   return (
     <div className="footer-social-wrapper full-flex mx-2">
-      <Link to={url} target="_blank">
+      <Link to={url} target="_blank" className="full-flex">
         <FontAwesomeIcon icon={icon} />
       </Link>
     </div>

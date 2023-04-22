@@ -1,4 +1,4 @@
-@import "../../../css//variables";
+@import "../../../css/variables";
 
 .footer {
   background-color: $quarternary-color;
@@ -21,8 +21,7 @@
   border-radius: 50%;
   background-color: transparent;
   border: 1px $light-gray solid;
-  display: flex;
-  align-items: center;
+
 }
 
 .footer-social-wrapper svg {
@@ -64,12 +63,6 @@
 .footer-navigation-header {
   color: $neutral;
   font-size: 31.98px;
-}
-
-.footer-navigation-link-wrapper {
-}
-
-.footer-navigation-link {
 }
 
 .footer-navigation-underline {

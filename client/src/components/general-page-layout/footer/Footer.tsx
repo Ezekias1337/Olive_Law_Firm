@@ -40,7 +40,7 @@ export const Footer = () => {
         <div className="col col-6 col-lg-3 mt-5">
           <h5 className="footer-navigation-header full-flex">Contact</h5>
           <FooterLink
-            linkText="Charlotte, NC"
+            linkText="Get Directions"
             url="https://goo.gl/maps/GdLK2JYiZnwMtetr5"
             openInNewTab={true}
           />

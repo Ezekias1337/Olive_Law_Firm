@@ -4,24 +4,26 @@
   General Styling
 */
 
+body {
+  font-family: 'Times New Roman', Times, serif !important;
+}
+
 ::-webkit-scrollbar {
   width: 10px;
 }
 
 ::-webkit-scrollbar-track {
   background: $neutral;
-  border-radius: 2px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: $primary-color;
-  border-radius: 2px;
+  background: $tertiary-color;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: $quinternary-color;
+  background: $sexternary-color;
 }
 
 ::-moz-selection {

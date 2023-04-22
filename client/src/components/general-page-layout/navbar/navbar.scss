@@ -1,0 +1,64 @@
+@import "../../../css/variables";
+
+.nav-call-to-action {
+  height: 100px;
+  background-color: $primary-color;
+  color: $light-gray;
+}
+
+.navbar-brand img {
+  width: 250px;
+}
+
+.nav-link {
+  font-size: 18px !important;
+}
+
+.nav-link-underline {
+  height: 2.5px;
+  width: 0%;
+  transition: 0.3s;
+}
+
+.nav-link-wrapper:hover {
+  .nav-link-underline {
+    width: 100%;
+    transition: 0.3s;
+  }
+}
+
+/* 
+    Variant-Specific Styling
+*/
+
+.light-variant {
+  .nav-link {
+    color: $light-gray;
+  }
+
+  .nav-link-wrapper:hover {
+    .nav-link {
+      color: $neutral;
+    }
+  }
+
+  .nav-link-underline {
+    background-color: $neutral;
+  }
+}
+
+.dark-variant {
+  .nav-link {
+    color: $primary-color;
+  }
+
+  .nav-link-wrapper:hover {
+    .nav-link {
+      color: $quarternary-color;
+    }
+  }
+
+  .nav-link-underline {
+    background-color: $gray;
+  }
+}
