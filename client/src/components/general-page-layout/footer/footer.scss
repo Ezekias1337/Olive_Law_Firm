@@ -1,0 +1,89 @@
+@import "../../../css//variables";
+
+.footer {
+  background-color: $quarternary-color;
+  width: 100vw;
+}
+
+.footer-logo {
+  width: 105px;
+  height: 150px;
+}
+
+.social-col {
+  display: flex;
+  align-items: center;
+}
+
+.footer-social-wrapper {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px $light-gray solid;
+  display: flex;
+  align-items: center;
+}
+
+.footer-social-wrapper svg {
+  width: 36px;
+  height: 36px;
+  color: $light-gray;
+}
+
+.footer-social-wrapper:hover {
+  border: 1px $neutral solid;
+  box-shadow: 0px 4px 3px $neutral;
+
+  svg {
+    color: $neutral;
+  }
+}
+
+.footer-navigation {
+  background-color: $primary-color;
+}
+
+.footer-navigation a,
+.footer-copywrite-disclaimer-wrapper a {
+  color: $light-gray;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+.footer-navigation a:hover,
+.footer-copywrite-disclaimer-wrapper a:hover {
+  color: $neutral;
+
+  .footer-navigation-underline {
+    width: 100%;
+    transition: 0.3s;
+  }
+}
+
+.footer-navigation-header {
+  color: $neutral;
+  font-size: 31.98px;
+}
+
+.footer-navigation-link-wrapper {
+}
+
+.footer-navigation-link {
+}
+
+.footer-navigation-underline {
+  background-color: $neutral;
+  height: 2.5px;
+  width: 0%;
+  transition: 0.3s;
+}
+
+.copywrite-disclaimer {
+  color: $neutral;
+  font-size: 24px;
+}
+
+.copywrite-link {
+  justify-content: right !important;
+}
