@@ -7,41 +7,38 @@ import {
   UpdateLanguageAction,
 } from "../../action-creators/languageCreators";
 
-interface LanguageState {
+export interface LanguageState {
   contents: Record<string, string>;
 }
 
-const buildAutomationState = (): LanguageState => {
+const buildInitialState = (): LanguageState => {
   const INITIAL_STATE: LanguageState = {
-    contents: {},
+    contents: {
+      languageChoice: "English",
+    },
   };
 
   return INITIAL_STATE;
 };
 
-const INITIAL_STATE: LanguageState = buildAutomationState();
+const INITIAL_STATE: LanguageState = buildInitialState();
 
 const reducer: Reducer<LanguageState, Action> = (
   state = INITIAL_STATE,
   action
 ) => {
-  let newStateObject: LanguageState;
-
   switch (action.type) {
     case UPDATE_LANGUAGE:
-      newStateObject = {
+      return {
         ...state,
+        contents: {
+          ...state.contents,
+          languageChoice: (action as UpdateLanguageAction).payload,
+        },
       };
 
-      newStateObject.contents[UPDATE_LANGUAGE] = (
-        action as UpdateLanguageAction
-      ).payload;
-      return newStateObject;
-
     case UPDATE_LANGUAGE_RESET:
-      newStateObject = buildAutomationState();
-
-      return newStateObject;
+      return buildInitialState();
 
     default:
       return state;

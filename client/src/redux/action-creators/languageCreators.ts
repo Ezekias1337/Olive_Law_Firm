@@ -11,7 +11,7 @@ export interface UpdateLanguageAction {
 export const UPDATE_LANGUAGE = `${typeBase}UPDATE_LANGUAGE`;
 export const UPDATE_LANGUAGE_RESET = `${typeBase}UPDATE_LANGUAGE_RESET`;
 
-export const recieveAutomationConfig = (languageChoice: string) => {
+export const updateLanguageAction = (languageChoice: string) => {
   return (dispatch: Dispatch<Action>) => {
     dispatch({
       type: UPDATE_LANGUAGE,

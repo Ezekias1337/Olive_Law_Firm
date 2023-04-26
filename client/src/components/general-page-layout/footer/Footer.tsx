@@ -4,8 +4,8 @@ import {
   faFacebook,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
-// Functions, Helpers, Utils and Hooks
 // Constants
+import { footerStrings } from "../../../constants/language-strings/footerStrings";
 // Components
 import { FooterSocialIcon } from "./dependents/FooterSocialIcon";
 import { FooterLink } from "./dependents/FooterLink";
@@ -14,7 +14,33 @@ import "./footer.scss";
 // Assets and Images
 import logo from "../../../assets/images/logo/Logo_No_Text.png";
 
-export const Footer = () => {
+export const Footer = ({ language }: { language: string }) => {
+  const {
+    contactColumn,
+    infoColumn,
+    attorneyColumn,
+    otherColumn,
+    copywrite,
+    termsOfService,
+    privacyPolicy,
+  } = footerStrings;
+
+  const { header: contactHeader, getDirections } = contactColumn;
+  const {
+    header: infoHeader,
+    priorSettlements,
+    ourPracticeAreas,
+    clientTestimonials,
+    faqs,
+  } = infoColumn;
+  const { header: attorneyHeader } = attorneyColumn;
+  const {
+    header: otherHeader,
+    submitClaim,
+    checkClaimStatus,
+    communityInteraction,
+  } = otherColumn;
+
   return (
     <footer className="container-fluid footer">
       <div className="row mx-5 pt-5">
@@ -38,9 +64,17 @@ export const Footer = () => {
       </div>
       <div className="row footer-navigation mx-5 mt-5 pb-5">
         <div className="col col-6 col-lg-3 mt-5">
-          <h5 className="footer-navigation-header full-flex">Contact</h5>
+          <h5 className="footer-navigation-header full-flex">
+            {language === "English"
+              ? contactHeader.english
+              : contactHeader.spanish}
+          </h5>
           <FooterLink
-            linkText="Get Directions"
+            linkText={
+              language === "English"
+                ? getDirections.english
+                : getDirections.spanish
+            }
             url="https://goo.gl/maps/GdLK2JYiZnwMtetr5"
             openInNewTab={true}
           />
@@ -56,30 +90,48 @@ export const Footer = () => {
           />
         </div>
         <div className="col col-6 col-lg-3 mt-5">
-          <h5 className="footer-navigation-header full-flex">Info</h5>
+          <h5 className="footer-navigation-header full-flex">
+            {language === "English" ? infoHeader.english : infoHeader.spanish}
+          </h5>
           <FooterLink
-            linkText="Prior Settlements"
+            linkText={
+              language === "English"
+                ? priorSettlements.english
+                : priorSettlements.spanish
+            }
             url="/prior-settlements"
             openInNewTab={false}
           />
           <FooterLink
-            linkText="Our Practice Areas"
+            linkText={
+              language === "English"
+                ? ourPracticeAreas.english
+                : ourPracticeAreas.spanish
+            }
             url="/our-practice-areas"
             openInNewTab={false}
           />
           <FooterLink
-            linkText="Client Testimonials"
-            url="/faqs"
+            linkText={
+              language === "English"
+                ? clientTestimonials.english
+                : clientTestimonials.spanish
+            }
+            url="/client-testimonials"
             openInNewTab={false}
           />
           <FooterLink
-            linkText="FAQs"
-            url="/prior-settlements"
+            linkText={language === "English" ? faqs.english : faqs.spanish}
+            url="/faqs"
             openInNewTab={false}
           />
         </div>
         <div className="col col-6 col-lg-3 mt-5">
-          <h5 className="footer-navigation-header full-flex">Attorneys</h5>
+          <h5 className="footer-navigation-header full-flex">
+            {language === "English"
+              ? attorneyHeader.english
+              : attorneyHeader.spanish}
+          </h5>
           <FooterLink
             linkText="Juan Sanchez"
             url="/attorneys/juan-sanchez"
@@ -97,19 +149,31 @@ export const Footer = () => {
           />
         </div>
         <div className="col col-6 col-lg-3 mt-5">
-          <h5 className="footer-navigation-header full-flex">Other</h5>
+          <h5 className="footer-navigation-header full-flex">
+            {language === "English" ? otherHeader.english : otherHeader.spanish}
+          </h5>
           <FooterLink
-            linkText="Submit a Claim"
+            linkText={
+              language === "English" ? submitClaim.english : submitClaim.spanish
+            }
             url="/submit-a-claim"
             openInNewTab={false}
           />
           <FooterLink
-            linkText="Check Claim Status"
+            linkText={
+              language === "English"
+                ? checkClaimStatus.english
+                : checkClaimStatus.spanish
+            }
             url="/check-claim-status"
             openInNewTab={false}
           />
           <FooterLink
-            linkText="Community Interaction"
+            linkText={
+              language === "English"
+                ? communityInteraction.english
+                : communityInteraction.spanish
+            }
             url="/community-interaction"
             openInNewTab={false}
           />
@@ -118,19 +182,27 @@ export const Footer = () => {
       <div className="footer-copywrite-disclaimer-wrapper row pb-5 pt-3 mx-5">
         <div className="col col-12 col-lg-8 ps-0">
           <small className="copywrite-disclaimer">
-            © 2023 by Olive Sanchez & Associates PLLC | Created by Code Decoded
+            {language === "English" ? copywrite.english : copywrite.spanish}
           </small>
         </div>
         <div className="col col-6 col-lg-2">
           <FooterLink
-            linkText="Terms of Service"
+            linkText={
+              language === "English"
+                ? termsOfService.english
+                : termsOfService.spanish
+            }
             url="/terms-of-service"
             openInNewTab={false}
           />
         </div>
         <div className="col col-6 col-lg-2">
           <FooterLink
-            linkText="Privacy Policy"
+            linkText={
+              language === "English"
+                ? privacyPolicy.english
+                : privacyPolicy.spanish
+            }
             url="/privacy-policy"
             openInNewTab={false}
           />

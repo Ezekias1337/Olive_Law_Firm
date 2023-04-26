@@ -5,7 +5,7 @@ import {
   handleFormChange,
   FormUpdateEvent,
   SwitchUpdateEvent,
-  handleSwitchChange
+  handleSwitchChange,
 } from "../../functions/forms/handleFormChange";
 import { camelCasifyString } from "../../../../shared/utils/strings/camelCasifyString";
 import { kebabCasifyString } from "../../../../shared/utils/strings/kebabCasifyString";
@@ -19,11 +19,9 @@ export const SwitchInput: FC<InputFieldProps> = ({
   additionalClassNames = "",
   theme,
   columns = "6",
-  inputMode = "text",
   setStateHook,
 }) => {
   const handleInputChange = (e: SwitchUpdateEvent) => {
-    console.log(e)
     handleSwitchChange(e, setStateHook);
     setIsChecked(!isChecked);
   };
@@ -45,7 +43,7 @@ export const SwitchInput: FC<InputFieldProps> = ({
         name={camelCasifyString(name)}
         aria-label={camelCasifyString(name)}
         id={kebabCasifyString(name)}
-        inputMode={inputMode}
+        inputMode="text"
         type="checkbox"
         role="switch"
         checked={isChecked}

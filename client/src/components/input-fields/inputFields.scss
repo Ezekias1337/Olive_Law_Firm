@@ -1,4 +1,6 @@
 @import "../../css/variables";
+@import "../../css/partials/switch-input";
+@import "../../css/partials/input-themes";
 
 /* 
   ! Need to take a look at responsiveness of the
@@ -53,88 +55,6 @@
 
 .form-label {
   font-size: 24px;
-}
-
-.light-label,
-.light-input {
-  color: $primary-color;
-}
-
-.dark-label,
-.dark-input {
-  color: $neutral;
-}
-
-.light-input {
-  background-color: $neutral;
-  border: 1.5px solid $primary-color;
-
-  &:hover,
-  &:focus,
-  &:active {
-    box-shadow: 0px 4px 4px $secondary-color;
-  }
-}
-
-.light-input::placeholder {
-  color: $quarternary-color;
-  opacity: 1;
-}
-
-.light-input:-webkit-autofill,
-.light-input:-webkit-autofill:hover,
-.light-input:-webkit-autofill:focus,
-.light-input:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0 30px $neutral inset !important;
-  border: 1.5px solid $primary-color !important;
-  -webkit-text-fill-color: $primary-color !important;
-}
-
-.light-input:-webkit-autofill:hover,
-.light-input:-webkit-autofill:focus,
-.light-input:-webkit-autofill:active {
-  box-shadow: 0px 4px 4px $secondary-color;
-}
-
-.dark-input {
-  background-color: $primary-color;
-  border: 1.5px solid $neutral;
-
-  &:hover,
-  &:focus,
-  &:active {
-    box-shadow: 0px 4px 4px $neutral;
-  }
-}
-
-.dark-input::placeholder {
-  color: $gray;
-  opacity: 1;
-}
-
-.dark-input:-webkit-autofill,
-.dark-input:-webkit-autofill:hover,
-.dark-input:-webkit-autofill:focus,
-.dark-input:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0 30px $primary-color inset !important;
-  border: 1.5px solid $neutral !important;
-  -webkit-text-fill-color: $neutral !important;
-}
-
-.dark-input:-webkit-autofill:hover,
-.dark-input:-webkit-autofill:focus,
-.dark-input:-webkit-autofill:active {
-  box-shadow: 0px 4px 4px $neutral;
-}
-
-.input-error {
-  border: 1.5px solid $error !important;
-
-  &:hover,
-  &:focus,
-  &:active {
-    box-shadow: 0px 4px 4px $error !important;
-  }
 }
 
 /* 
@@ -300,71 +220,5 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     .country-code-label {
       color: $primary-color;
     }
-  }
-}
-
-/* 
-  Switch Input
-*/
-
-div.form-switch {
-  padding-left: calc(var(--bs-gutter-x) * 0.5);
-  display: flex;
-}
-
-.form-switch .form-check-input {
-  margin-left: 1.5px !important;
-  margin-top: 0px !important;
-  width: 3.5em !important;
-  height: 1.5em !important;
-}
-
-.light-input.form-check-input {
-  background-color: $light-gray;
-  background-image: url("../../assets/icons/Form_Switch_Dark_Blue.svg") !important;
-  border-color: $primary-color;
-
-  &:hover {
-    background-image: url("../../assets/icons/Form_Switch_Light_Blue.svg") !important;
-    background-color: $light-gray;
-    border-color: $secondary-color;
-  }
-
-  /* 
-    Cancel out bootstrap styling
-  */
-  &:focus {
-    border-color: $secondary-color !important;
-    box-shadow: 0px 4px 4px $secondary-color !important;
-  }
-
-  &:checked {
-    background-image: url("../../assets/icons/Form_Switch_Light_Blue.svg") !important;
-    background-color: $neutral;
-    border-color: $secondary-color;
-  }
-}
-
-.dark-input.form-check-input {
-  background-color: $primary-color;
-  background-image: url("../../assets/icons/Form_Switch_Gray.svg") !important;
-  border-color: $neutral;
-
-  &:hover {
-    background-color: $secondary-color;
-  }
-
-  /* 
-    Cancel out bootstrap styling
-  */
-  &:focus {
-    border-color: $neutral !important;
-    box-shadow: 0px 4px 4px $neutral !important;
-  }
-
-  &:checked {
-    background-image: url("../../assets/icons/Form_Switch_White.svg") !important;
-    background-color: $tertiary-color;
-    border-color: $neutral;
   }
 }

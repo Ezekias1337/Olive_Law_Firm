@@ -62,3 +62,18 @@
     background-color: $gray;
   }
 }
+
+/* 
+  Language Toggler
+*/
+
+nav .nav-call-to-action {
+  .toggler-align {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+  }
+  .form-label {
+    font-size: 18px;
+  }
+}

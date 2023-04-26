@@ -1,0 +1,83 @@
+@import "../variables";
+
+.light-label,
+.light-input {
+  color: $primary-color;
+}
+
+.dark-label,
+.dark-input {
+  color: $neutral;
+}
+
+.light-input {
+  background-color: $neutral;
+  border: 1.5px solid $primary-color;
+
+  &:hover,
+  &:focus,
+  &:active {
+    box-shadow: 0px 4px 4px $secondary-color;
+  }
+}
+
+.light-input::placeholder {
+  color: $quarternary-color;
+  opacity: 1;
+}
+
+.light-input:-webkit-autofill,
+.light-input:-webkit-autofill:hover,
+.light-input:-webkit-autofill:focus,
+.light-input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px $neutral inset !important;
+  border: 1.5px solid $primary-color !important;
+  -webkit-text-fill-color: $primary-color !important;
+}
+
+.light-input:-webkit-autofill:hover,
+.light-input:-webkit-autofill:focus,
+.light-input:-webkit-autofill:active {
+  box-shadow: 0px 4px 4px $secondary-color;
+}
+
+.dark-input {
+  background-color: $primary-color;
+  border: 1.5px solid $neutral;
+
+  &:hover,
+  &:focus,
+  &:active {
+    box-shadow: 0px 4px 4px $neutral;
+  }
+}
+
+.dark-input::placeholder {
+  color: $gray;
+  opacity: 1;
+}
+
+.dark-input:-webkit-autofill,
+.dark-input:-webkit-autofill:hover,
+.dark-input:-webkit-autofill:focus,
+.dark-input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px $primary-color inset !important;
+  border: 1.5px solid $neutral !important;
+  -webkit-text-fill-color: $neutral !important;
+}
+
+.dark-input:-webkit-autofill:hover,
+.dark-input:-webkit-autofill:focus,
+.dark-input:-webkit-autofill:active {
+  box-shadow: 0px 4px 4px $neutral;
+}
+
+.input-error {
+  border: 1.5px solid $error !important;
+
+  &:hover,
+  &:focus,
+  &:active {
+    box-shadow: 0px 4px 4px $error !important;
+  }
+}
