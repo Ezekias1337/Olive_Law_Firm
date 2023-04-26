@@ -1,7 +1,5 @@
 // Library Imports
 import { Action, Reducer } from "redux";
-// Utils
-import { buildInitialState } from "../../buildInitialState";
 // Action Types
 import {
   UPDATE_LANGUAGE,
@@ -10,17 +8,13 @@ import {
 } from "../../action-creators/languageCreators";
 
 interface LanguageState {
-  messages: Record<string, string[]>;
-  errors: Record<string, string[]>;
-  loading: Record<string, boolean>;
   contents: Record<string, string>;
 }
 
 const buildAutomationState = (): LanguageState => {
-  const INITIAL_STATE: LanguageState = buildInitialState([
-    UPDATE_LANGUAGE,
-    UPDATE_LANGUAGE_RESET,
-  ]);
+  const INITIAL_STATE: LanguageState = {
+    contents: {},
+  };
 
   return INITIAL_STATE;
 };

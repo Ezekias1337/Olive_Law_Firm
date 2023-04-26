@@ -1,11 +1,6 @@
 // Library Imports
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
-// Functions, Helpers, Utils and Hooks
-// Constants
-// Components
-// CSS
-// Assets and Images
 
 export const NavCallToAction = () => {
   return (

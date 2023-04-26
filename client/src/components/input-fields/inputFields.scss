@@ -1,0 +1,370 @@
+@import "../../css/variables";
+
+/* 
+  ! Need to take a look at responsiveness of the
+  ! fields and their icons
+*/
+
+/* 
+  Base Styling
+*/
+
+.icon-input-left {
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+  width: 25px !important;
+  height: 25px !important;
+}
+
+.icon-input-right {
+  position: absolute;
+  bottom: 10%;
+  right: 5%;
+  width: 25px !important;
+  height: 25px !important;
+}
+
+.light-icon {
+  color: $primary-color;
+}
+
+.dark-icon {
+  color: $neutral;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.input-field {
+  font-size: 18px;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 55px;
+  transition: 0.2s ease-in-out;
+}
+
+.input-field:focus-visible {
+  outline: none;
+}
+
+.form-label {
+  font-size: 24px;
+}
+
+.light-label,
+.light-input {
+  color: $primary-color;
+}
+
+.dark-label,
+.dark-input {
+  color: $neutral;
+}
+
+.light-input {
+  background-color: $neutral;
+  border: 1.5px solid $primary-color;
+
+  &:hover,
+  &:focus,
+  &:active {
+    box-shadow: 0px 4px 4px $secondary-color;
+  }
+}
+
+.light-input::placeholder {
+  color: $quarternary-color;
+  opacity: 1;
+}
+
+.light-input:-webkit-autofill,
+.light-input:-webkit-autofill:hover,
+.light-input:-webkit-autofill:focus,
+.light-input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px $neutral inset !important;
+  border: 1.5px solid $primary-color !important;
+  -webkit-text-fill-color: $primary-color !important;
+}
+
+.light-input:-webkit-autofill:hover,
+.light-input:-webkit-autofill:focus,
+.light-input:-webkit-autofill:active {
+  box-shadow: 0px 4px 4px $secondary-color;
+}
+
+.dark-input {
+  background-color: $primary-color;
+  border: 1.5px solid $neutral;
+
+  &:hover,
+  &:focus,
+  &:active {
+    box-shadow: 0px 4px 4px $neutral;
+  }
+}
+
+.dark-input::placeholder {
+  color: $gray;
+  opacity: 1;
+}
+
+.dark-input:-webkit-autofill,
+.dark-input:-webkit-autofill:hover,
+.dark-input:-webkit-autofill:focus,
+.dark-input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px $primary-color inset !important;
+  border: 1.5px solid $neutral !important;
+  -webkit-text-fill-color: $neutral !important;
+}
+
+.dark-input:-webkit-autofill:hover,
+.dark-input:-webkit-autofill:focus,
+.dark-input:-webkit-autofill:active {
+  box-shadow: 0px 4px 4px $neutral;
+}
+
+.input-error {
+  border: 1.5px solid $error !important;
+
+  &:hover,
+  &:focus,
+  &:active {
+    box-shadow: 0px 4px 4px $error !important;
+  }
+}
+
+/* 
+  Select Input
+*/
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-repeat: no-repeat;
+  background-position-y: 67%;
+  background-position-x: 97%;
+  background-size: 3%;
+}
+
+select.light-input {
+  background-image: url("../../assets/icons/Dropdown_Arrow_Blue.svg");
+}
+
+select.dark-input {
+  background-image: url("../../assets/icons/Dropdown_Arrow_White.svg");
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+/* 
+  Date Input
+*/
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+}
+
+.toggle-password-visibility-button {
+  position: absolute;
+  width: 5% !important;
+  height: 30% !important;
+  top: 62%;
+  right: 3%;
+  opacity: 0%;
+  z-index: 1;
+}
+
+/* 
+  Country Code and Phone Number Input
+*/
+
+.phone-number-input {
+  padding-left: 13.5%;
+}
+
+.country-code-input-wrapper {
+  position: absolute;
+  top: 59%;
+  left: 3%;
+}
+
+.country-code-input-wrapper,
+.country-code-icon {
+  width: 40px !important;
+  height: 30px !important;
+}
+
+.country-code-menu-wrapper {
+  max-height: 800px;
+  min-height: 400px;
+  max-width: 800px;
+  min-width: 400px;
+  padding-left: 0px;
+  overflow-y: scroll;
+  list-style-type: none;
+}
+
+.country-code-arrow {
+  position: absolute;
+  top: 68%;
+  left: 9.25%;
+  z-index: 5;
+}
+
+.country-arrow-light {
+  color: $primary-color;
+}
+
+.country-arrow-dark {
+  color: $neutral;
+}
+
+.flag-separator {
+  width: 1.5px;
+  height: 49px;
+  position: absolute;
+  top: 48%;
+  left: 12%;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.light-separator {
+  background-color: $primary-color;
+}
+
+.dark-separator {
+  background-color: $neutral;
+}
+
+.toggle-country-code-menu {
+  width: 100%;
+  height: 100%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  border: none;
+}
+
+.country-code-label {
+  font-size: 18px;
+}
+
+.country-code-option {
+  border-bottom: 1.5px solid;
+  display: flex;
+  align-items: center;
+}
+
+.light-country-code-input {
+  .country-code-menu-wrapper {
+    background-color: $light-gray;
+    border: 1.5px solid $primary-color;
+  }
+  .country-code-label {
+    color: $primary-color;
+  }
+  .country-code-option {
+    border-color: $primary-color;
+  }
+  .country-code-option:hover {
+    background-color: $quarternary-color;
+
+    .country-code-label {
+      color: $neutral;
+    }
+  }
+}
+
+.dark-country-code-input {
+  .country-code-menu-wrapper {
+    background-color: $primary-color;
+    border: 1.5px solid $neutral;
+  }
+  .country-code-label {
+    color: $light-gray;
+  }
+  .country-code-option {
+    border-color: $neutral;
+  }
+  .country-code-option:hover {
+    background-color: $neutral;
+    .country-code-label {
+      color: $primary-color;
+    }
+  }
+}
+
+/* 
+  Switch Input
+*/
+
+div.form-switch {
+  padding-left: calc(var(--bs-gutter-x) * 0.5);
+  display: flex;
+}
+
+.form-switch .form-check-input {
+  margin-left: 1.5px !important;
+  margin-top: 0px !important;
+  width: 3.5em !important;
+  height: 1.5em !important;
+}
+
+.light-input.form-check-input {
+  background-color: $light-gray;
+  background-image: url("../../assets/icons/Form_Switch_Dark_Blue.svg") !important;
+  border-color: $primary-color;
+
+  &:hover {
+    background-image: url("../../assets/icons/Form_Switch_Light_Blue.svg") !important;
+    background-color: $light-gray;
+    border-color: $secondary-color;
+  }
+
+  /* 
+    Cancel out bootstrap styling
+  */
+  &:focus {
+    border-color: $secondary-color !important;
+    box-shadow: 0px 4px 4px $secondary-color !important;
+  }
+
+  &:checked {
+    background-image: url("../../assets/icons/Form_Switch_Light_Blue.svg") !important;
+    background-color: $neutral;
+    border-color: $secondary-color;
+  }
+}
+
+.dark-input.form-check-input {
+  background-color: $primary-color;
+  background-image: url("../../assets/icons/Form_Switch_Gray.svg") !important;
+  border-color: $neutral;
+
+  &:hover {
+    background-color: $secondary-color;
+  }
+
+  /* 
+    Cancel out bootstrap styling
+  */
+  &:focus {
+    border-color: $neutral !important;
+    box-shadow: 0px 4px 4px $neutral !important;
+  }
+
+  &:checked {
+    background-image: url("../../assets/icons/Form_Switch_White.svg") !important;
+    background-color: $tertiary-color;
+    border-color: $neutral;
+  }
+}

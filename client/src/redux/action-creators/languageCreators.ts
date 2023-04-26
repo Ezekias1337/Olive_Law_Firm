@@ -2,7 +2,7 @@
 import { Dispatch, Action } from "@reduxjs/toolkit";
 // Constants
 const typeBase = "language/";
-// Interfaces
+// Interfaces and Types
 export interface UpdateLanguageAction {
   type: typeof UPDATE_LANGUAGE;
   payload: string;
