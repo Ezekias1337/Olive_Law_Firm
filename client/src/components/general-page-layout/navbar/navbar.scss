@@ -27,11 +27,22 @@
   }
 }
 
+.navbar {
+  position: relative;
+}
+
+.navbar-background-image {
+  position: absolute;
+  width: 100%;
+}
+
 /* 
     Variant-Specific Styling
 */
 
 .light-variant {
+  background-color: $transparent-black;
+  
   .nav-link {
     color: $light-gray;
   }
@@ -43,7 +54,7 @@
   }
 
   .nav-link-underline {
-    background-color: $neutral;
+    background-color: $quinternary-color;
   }
 }
 

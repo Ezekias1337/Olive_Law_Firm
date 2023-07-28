@@ -39,8 +39,8 @@ export const navbarStrings: NavbarStrings = {
     spanish: "Contáctanos",
   },
   about: {
-    english: "Home",
-    spanish: "Sobre",
+    english: "About Us",
+    spanish: "Sobre Nosotros",
   },
   testimonials: {
     english: "Testimonials",

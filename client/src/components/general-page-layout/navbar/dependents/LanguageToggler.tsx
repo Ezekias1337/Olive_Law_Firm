@@ -38,22 +38,23 @@ export const LanguageToggler: FC<TogglerProps> = ({ theme }) => {
   const updateLanguage = bindActionCreators(updateLanguageAction, dispatch);
 
   const [isChecked, setIsChecked] = useState(false);
+  const componentDomName = "Language Toggler";
 
   return (
     <div className={`input-wrapper form-check form-switch toggler-align`}>
       <label
-        htmlFor={camelCasifyString("Language Toggler")}
-        className={`form-label ${theme}-label ms-3 mb-0${
+        htmlFor={camelCasifyString(componentDomName)}
+        className={`form-label dark-label ms-3 mb-0${
           isChecked === false ? "" : " bold-text"
         }`}
       >
         Español
       </label>
       <input
-        className={`${theme}-input form-check-input`}
-        name={camelCasifyString("Language Toggler")}
-        aria-label={camelCasifyString("Language Toggler")}
-        id={kebabCasifyString("Language Toggler")}
+        className={`dark-input form-check-input`}
+        name={camelCasifyString(componentDomName)}
+        aria-label={camelCasifyString(componentDomName)}
+        id={kebabCasifyString(componentDomName)}
         inputMode="text"
         type="checkbox"
         role="switch"
@@ -61,8 +62,8 @@ export const LanguageToggler: FC<TogglerProps> = ({ theme }) => {
         onChange={handleInputChange}
       ></input>
       <label
-        htmlFor={camelCasifyString("Language Toggler")}
-        className={`form-label ${theme}-label me-3 mb-0${
+        htmlFor={camelCasifyString(componentDomName)}
+        className={`form-label dark-label me-3 mb-0${
           isChecked === true ? "" : " bold-text"
         }`}
       >

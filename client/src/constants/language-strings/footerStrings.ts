@@ -27,7 +27,7 @@ interface FooterStrings {
       english: string;
       spanish: string;
     };
-    faqs: {
+    googleReviews: {
       english: string;
       spanish: string;
     };
@@ -89,9 +89,9 @@ export const footerStrings: FooterStrings = {
       english: "Information",
       spanish: "Información",
     },
-    priorSettlements: {
-      english: "Prior Settlements",
-      spanish: "Acuerdos Previos",
+    googleReviews: {
+      english: "Google Reviews",
+      spanish: "Reseñas de Google",
     },
     ourPracticeAreas: {
       english: "Our Practice Areas",
@@ -101,9 +101,9 @@ export const footerStrings: FooterStrings = {
       english: "Client Testimonials",
       spanish: "Testimonios de clientes",
     },
-    faqs: {
-      english: "FAQs",
-      spanish: "Preguntas Frecuentes",
+    priorSettlements: {
+      english: "Prior Settlements",
+      spanish: "Acuerdos Previos",
     },
   },
   attorneyColumn: {

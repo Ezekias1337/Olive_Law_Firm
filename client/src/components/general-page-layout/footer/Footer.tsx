@@ -31,7 +31,7 @@ export const Footer = ({ language }: { language: string }) => {
     priorSettlements,
     ourPracticeAreas,
     clientTestimonials,
-    faqs,
+    googleReviews,
   } = infoColumn;
   const { header: attorneyHeader } = attorneyColumn;
   const {
@@ -44,10 +44,10 @@ export const Footer = ({ language }: { language: string }) => {
   return (
     <footer className="container-fluid footer">
       <div className="row mx-5 pt-5">
-        <div className="col col-2 col-lg-1 px-0">
+        <div className="col col-2 px-0 footer-logo-col">
           <img src={logo} className="footer-logo" />
         </div>
-        <div className="col col-6 col-lg-6 social-col">
+        <div className="col col-8 col-lg-6 social-col">
           <FooterSocialIcon
             icon={faInstagram}
             url="https://www.instagram.com/theolivelawfirm_1957/"
@@ -70,13 +70,9 @@ export const Footer = ({ language }: { language: string }) => {
               : contactHeader.spanish}
           </h5>
           <FooterLink
-            linkText={
-              language === "English"
-                ? getDirections.english
-                : getDirections.spanish
-            }
-            url="https://goo.gl/maps/GdLK2JYiZnwMtetr5"
-            openInNewTab={true}
+            linkText="704-377-9222"
+            url="tel:+17043779222"
+            openInNewTab={false}
           />
           <FooterLink
             linkText="corellana@olivelawfirm.com"
@@ -84,9 +80,13 @@ export const Footer = ({ language }: { language: string }) => {
             openInNewTab={false}
           />
           <FooterLink
-            linkText="+1 (704) 377-9222"
-            url="tel:7043779222"
-            openInNewTab={false}
+            linkText={
+              language === "English"
+                ? getDirections.english
+                : getDirections.spanish
+            }
+            url="https://goo.gl/maps/GdLK2JYiZnwMtetr5"
+            openInNewTab={true}
           />
         </div>
         <div className="col col-6 col-lg-3 mt-5">
@@ -96,10 +96,10 @@ export const Footer = ({ language }: { language: string }) => {
           <FooterLink
             linkText={
               language === "English"
-                ? priorSettlements.english
-                : priorSettlements.spanish
+                ? googleReviews.english
+                : googleReviews.spanish
             }
-            url="/prior-settlements"
+            url="/google-reviews"
             openInNewTab={false}
           />
           <FooterLink
@@ -121,8 +121,12 @@ export const Footer = ({ language }: { language: string }) => {
             openInNewTab={false}
           />
           <FooterLink
-            linkText={language === "English" ? faqs.english : faqs.spanish}
-            url="/faqs"
+            linkText={
+              language === "English"
+                ? priorSettlements.english
+                : priorSettlements.spanish
+            }
+            url="/prior-settlements"
             openInNewTab={false}
           />
         </div>

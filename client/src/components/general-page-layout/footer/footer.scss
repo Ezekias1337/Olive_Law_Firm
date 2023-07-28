@@ -5,9 +5,14 @@
   width: 100vw;
 }
 
-.footer-logo {
+.footer-logo-col {
   width: 105px;
-  height: 150px;
+  
+}
+
+.footer-logo {
+  width: 100%;
+  
 }
 
 .social-col {
@@ -47,7 +52,7 @@
 .footer-copywrite-disclaimer-wrapper a {
   color: $light-gray;
   text-decoration: none;
-  font-size: 24px;
+  font-size: 18px;
 }
 
 .footer-navigation a:hover,
@@ -74,7 +79,7 @@
 
 .copywrite-disclaimer {
   color: $neutral;
-  font-size: 24px;
+  font-size: 18px;
 }
 
 .copywrite-link {
