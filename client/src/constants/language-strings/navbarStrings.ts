@@ -27,6 +27,10 @@ interface NavbarStrings {
     english: string;
     spanish: string;
   };
+  afterHours: {
+    english: string;
+    spanish: string;
+  };
 }
 
 export const navbarStrings: NavbarStrings = {
@@ -57,5 +61,9 @@ export const navbarStrings: NavbarStrings = {
   callUs: {
     english: "CALL US",
     spanish: "LLAMANOS",
+  },
+  afterHours: {
+    english: "AFTER HOURS",
+    spanish: "FUERA HORAS",
   },
 };

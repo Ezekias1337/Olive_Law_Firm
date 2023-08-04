@@ -15,7 +15,7 @@ export const NavCallToAction = ({
   theme: string;
   language: string;
 }) => {
-  const { callUs } = navbarStrings;
+  const { callUs, afterHours } = navbarStrings;
 
   return (
     <div className="nav-call-to-action container-fluid">
@@ -25,7 +25,9 @@ export const NavCallToAction = ({
           <h2>{language === "English" ? callUs.english : callUs.spanish}</h2>
         </div>
         <div className="col col-4 full-flex">
-          <h2>{language === "English" ? callUs.english : callUs.spanish}</h2>
+          <h2>
+            {language === "English" ? afterHours.english : afterHours.spanish}
+          </h2>
         </div>
       </div>
       <div className="row">
@@ -38,7 +40,7 @@ export const NavCallToAction = ({
         </div>
         <div className="col col-4 full-flex">
           <FontAwesomeIcon icon={faPhone} size="xl" />
-          <h3 className="ms-2">+1 (704) 377-9222</h3>
+          <h3 className="ms-2">+1 (704) 999-6967</h3>
         </div>
       </div>
     </div>

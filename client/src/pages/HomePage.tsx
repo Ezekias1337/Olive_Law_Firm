@@ -12,7 +12,14 @@ import { FormState } from "../constants/interfaces/InputFieldProps";
 // Components
 import { Footer } from "../components/general-page-layout/footer/Footer";
 import { NavBar } from "../components/general-page-layout/navbar/Navbar";
-import { Button } from "../components/button/button";
+import { PrimaryCallToAction } from "../components/home-page/primary-call-to-action/primaryCallToAction";
+import { NoPapeles } from "../components/home-page/no-papeles/noPapeles";
+import { OurPhilosophy } from "../components/home-page/our-philosophy/ourPhilosophy";
+import { PracticeAreas } from "../components/home-page/practice-areas/practiceAreas";
+import { OurAttorneys } from "../components/home-page/our-attorneys/ourPhilosophy";
+import { WhatCustomersSay } from "../components/home-page/what-customers-say/whatCustomersSay";
+import { OurResults } from "../components/home-page/our-results/ourResults";
+import { LeeOliveQuote } from "../components/home-page/lee-olive-quote/LeeOliveQuote";
 
 // CSS
 import "../css/page-specific/home.scss";
@@ -20,7 +27,6 @@ import "../css/page-specific/home.scss";
 import northCarolinaCourthouse from "../assets/images/backgrounds/North_Carolina_Courthouse.png";
 /* 
   TODO: Add Cookies disclaimer
-  TODO: Investigate why button import is not capitalized for filename
 */
 
 export const HomePage = () => {
@@ -41,15 +47,14 @@ export const HomePage = () => {
         backgroundImage={northCarolinaCourthouse}
         backgroundImageSize="933px"
       />
-      <div className="primary-call-to-action z-index-1 position-relative">
-        <h1 className="juan-sanchez-quote">
-          “Your Dedicated Personal Injury and Workers’ Compensation Attorneys,
-          You Pay Nothing Unless We Recover”
-          <br></br>
-          <br></br>- Juan Sanchez
-        </h1>
-      </div>
-
+      <PrimaryCallToAction />
+      <NoPapeles language={language} />
+      <OurPhilosophy language={language} />
+      {/* <PracticeAreas /> */}
+      {/* <OurAttorneys />
+      <WhatCustomersSay />
+      <OurResults />
+      <LeeOliveQuote /> */}
       <Footer language={language} />
     </div>
   );

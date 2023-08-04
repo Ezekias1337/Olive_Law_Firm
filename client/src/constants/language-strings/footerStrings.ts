@@ -99,7 +99,7 @@ export const footerStrings: FooterStrings = {
     },
     clientTestimonials: {
       english: "Client Testimonials",
-      spanish: "Testimonios de clientes",
+      spanish: "Testimonios de Clientes",
     },
     priorSettlements: {
       english: "Prior Settlements",

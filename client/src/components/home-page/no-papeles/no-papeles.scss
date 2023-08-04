@@ -1,0 +1,15 @@
+@import "../../../css/variables";
+
+.no-papeles {
+  position: relative;
+  background-color: $primary-color;
+  color: $neutral;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  margin-top: 80px;
+  
+  .no-papeles-quote {
+    margin-top: 40px;
+    display: block;
+  }
+}
