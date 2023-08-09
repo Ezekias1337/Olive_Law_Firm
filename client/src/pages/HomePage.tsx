@@ -47,10 +47,10 @@ export const HomePage = () => {
         backgroundImage={northCarolinaCourthouse}
         backgroundImageSize="933px"
       />
-      <PrimaryCallToAction />
+      <PrimaryCallToAction language={language} />
       <NoPapeles language={language} />
       <OurPhilosophy language={language} />
-      {/* <PracticeAreas /> */}
+      <PracticeAreas language={language} />
       {/* <OurAttorneys />
       <WhatCustomersSay />
       <OurResults />

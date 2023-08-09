@@ -1,30 +1,18 @@
 // Library Imports
-import { FC, useState, useEffect } from "react";
+import { FC, useState } from "react";
 import { useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
 // Redux
 import { updateLanguageAction } from "../../../../redux/action-creators/languageCreators";
 // Functions, Helpers, and Utils
-import {
-  handleFormChange,
-  FormUpdateEvent,
-  SwitchUpdateEvent,
-  handleSwitchChange,
-} from "../../../../functions/forms/handleFormChange";
+import { SwitchUpdateEvent } from "../../../../functions/forms/handleFormChange";
 import { camelCasifyString } from "../../../../../../shared/utils/strings/camelCasifyString";
 import { kebabCasifyString } from "../../../../../../shared/utils/strings/kebabCasifyString";
-// Interfaces and Types
-import { InputFieldProps } from "../../../../constants/interfaces/InputFieldProps";
 // CSS
 import "../../../../css/partials/_input-themes.scss";
 import "../../../../css/partials/_switch-input.scss";
 
-export interface TogglerProps {
-  theme: string;
-  language?: string;
-}
-
-export const LanguageToggler: FC<TogglerProps> = ({ theme }) => {
+export const LanguageToggler = () => {
   const handleInputChange = (e: SwitchUpdateEvent) => {
     if (isChecked === true) {
       updateLanguage("English");

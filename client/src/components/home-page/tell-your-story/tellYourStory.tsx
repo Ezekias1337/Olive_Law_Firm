@@ -1,7 +1,12 @@
+// Constants
+import { homePageStrings } from "../../../constants/language-strings/homepageStrings";
 // CSS
 import "./tell-your-story.scss";
 
-export const TellYourStory = () => {
+export const TellYourStory = ({ language }: { language: string }) => {
+  const { tellUsYourStory } = homePageStrings;
+  const { quote, tellUsYourStory: buttonText } = tellUsYourStory;
+
   return (
     <section className="our-philosophy padding-left-and-right z-index-1">
       <h1>Our Philosophy</h1>

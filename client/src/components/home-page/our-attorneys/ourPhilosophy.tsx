@@ -1,7 +1,12 @@
+// Constants
+import { homePageStrings } from "../../../constants/language-strings/homepageStrings";
 // CSS
 import "./our-attorneys.scss";
 
-export const OurAttorneys = () => {
+export const OurAttorneys = ({ language }: { language: string }) => {
+  const { ourAttorneys } = homePageStrings;
+  const { title, moreInfo } = ourAttorneys;
+
   return (
     <section className="our-philosophy padding-left-and-right z-index-1">
       <h1>Our Philosophy</h1>

@@ -1,17 +1,17 @@
 // Library Imports
 import { FC, useEffect, useState } from "react";
+// Constants
+import { homePageStrings } from "../../../constants/language-strings/homepageStrings";
 // CSS
 import "./our-philosophy.scss";
 
-interface OurPhilosophyProps {
-  language: string;
-}
-
-export const OurPhilosophy: FC<OurPhilosophyProps> = ({ language }) => {
+export const OurPhilosophy = ({ language }: { language: string }) => {
   /* 
     This component needs extra padding on top when the "No Papeles" section
     is not showing
   */
+  const { ourPhilosophy } = homePageStrings;
+  const { title, body1, body2 } = ourPhilosophy;
 
   const [needsPadding, setNeedsPadding] = useState(true);
 
@@ -29,15 +29,14 @@ export const OurPhilosophy: FC<OurPhilosophyProps> = ({ language }) => {
         needsPadding === true ? `extra-top-padding` : ``
       }`}
     >
-      <h1>Our Philosophy</h1>
+      <h1 className="page-title">
+        {language === "English" ? title.english : title.spanish}
+      </h1>
       <span>
-        When you have been injured due to another person’s negligence, you need
-        someone who cares about your recovery, both physical and financial.
+        {language === "English" ? body1.english : body1.spanish}
         <br></br>
         <br></br>
-        You can rely on the personal injury attorneys at The Olive Law Firm to
-        walk you through the legal system and make sure your best interests are
-        represented.
+        {language === "English" ? body2.english : body2.spanish}
       </span>
     </section>
   );

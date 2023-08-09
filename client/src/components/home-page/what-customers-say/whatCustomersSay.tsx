@@ -1,7 +1,13 @@
+// Constants
+import { homePageStrings } from "../../../constants/language-strings/homepageStrings";
 // CSS
 import "./what-customers-say.scss";
 
-export const WhatCustomersSay = () => {
+export const WhatCustomersSay = ({ language }: { language: string }) => {
+  const { whatOurCustomersSayAboutUs } = homePageStrings;
+  const { title, review1, review2, review3, review4, review5, review6 } =
+    whatOurCustomersSayAboutUs;
+
   return (
     <section className="our-philosophy padding-left-and-right z-index-1">
       <h1>Our Philosophy</h1>

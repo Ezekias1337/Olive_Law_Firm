@@ -1,7 +1,11 @@
+// Constants
+import { homePageStrings } from "../../../constants/language-strings/homepageStrings";
 // CSS
 import "./lee-olive-quote.scss";
 
-export const LeeOliveQuote = () => {
+export const LeeOliveQuote = ({ language }: { language: string }) => {
+  const { leeOliveQuote } = homePageStrings;
+
   return (
     <section className="our-philosophy padding-left-and-right z-index-1">
       <h1>Our Philosophy</h1>

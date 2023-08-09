@@ -5,8 +5,6 @@ import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { LanguageToggler } from "./LanguageToggler";
 // Constants
 import { navbarStrings } from "../../../../constants/language-strings/navbarStrings";
-// Interfaces
-import { TogglerProps } from "./LanguageToggler";
 
 export const NavCallToAction = ({
   theme,
@@ -32,7 +30,7 @@ export const NavCallToAction = ({
       </div>
       <div className="row">
         <div className="col col-4 toggler-align">
-          <LanguageToggler theme={theme} />
+          <LanguageToggler />
         </div>
         <div className="col col-4 full-flex">
           <FontAwesomeIcon icon={faPhone} size="xl" />
