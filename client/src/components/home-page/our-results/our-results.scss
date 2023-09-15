@@ -1,12 +1,23 @@
 @import "../../../css/variables";
 
-.our-philosophy {
-    color: $primary-color;
-    margin-top: 80px;
-    margin-bottom: 80px;
+.our-results {
+   background-color: $tertiary-color;
+   
+    h2 {
+        text-align: center;
+        color: $neutral;
+        padding-top: 80px;
+        padding-bottom: 40px;
+    }
     
-    span {
-        display: block;
-        margin-top: 40px;
+    table {
+        padding-bottom: 40px
+    };
+    
+    .view-more-results-container {
+        display: flex;
+        justify-content: center;
+        padding-top: 40px;
+        padding-bottom: 80px;
     }
 }

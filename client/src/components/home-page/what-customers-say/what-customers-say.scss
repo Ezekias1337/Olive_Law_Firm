@@ -1,12 +1,27 @@
 @import "../../../css/variables";
 
-.our-philosophy {
-    color: $primary-color;
-    margin-top: 80px;
-    margin-bottom: 80px;
-    
-    span {
-        display: block;
-        margin-top: 40px;
+.what-customers-say {
+  background-color: $primary-color;
+  padding-top: 80px;
+  padding-bottom: 80px;
+
+  h2 {
+    text-align: center;
+    color: $neutral;
+  }
+
+  .customer-review-container {
+    margin-top: 40px;
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 44px;
+  }
+
+  .view-more-reviews-button-container {
+    display: flex;
+    justify-content: center;
+    button {
+      margin-top: 80px;
     }
+  }
 }

@@ -7,17 +7,13 @@ export const LeeOliveQuote = ({ language }: { language: string }) => {
   const { leeOliveQuote } = homePageStrings;
 
   return (
-    <section className="our-philosophy padding-left-and-right z-index-1">
-      <h1>Our Philosophy</h1>
-      <span>
-        When you have been injured due to another person’s negligence, you need
-        someone who cares about your recovery, both physical and financial.
+    <section className="lee-olive-quote padding-left-and-right z-index-1">
+      <h1 className="quote">
+      {language === "English" ? leeOliveQuote.english : leeOliveQuote.spanish}
         <br></br>
         <br></br>
-        You can rely on the personal injury attorneys at The Olive Law Firm to
-        walk you through the legal system and make sure your best interests are
-        represented.
-      </span>
+        - Lee Olive
+      </h1>
     </section>
   );
 };

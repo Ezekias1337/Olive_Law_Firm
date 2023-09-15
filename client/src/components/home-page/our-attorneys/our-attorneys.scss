@@ -1,1 +1,30 @@
 @import "../../../css/variables";
+
+.attorney-showcase {
+  position: relative;
+  margin-bottom: 80px;
+  &:hover {
+    .button-container {
+      opacity: 100%;
+    }
+  }
+
+  img {
+    max-width: 333px;
+    margin-bottom: 40px;
+  }
+
+  h2 {
+    color: $primary-color;
+    text-align: center;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 50%;
+    left: 30%;
+    opacity: 0%;
+  }
+}

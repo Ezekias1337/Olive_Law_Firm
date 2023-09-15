@@ -1,12 +1,23 @@
 @import "../../../css/variables";
 
-.our-philosophy {
-    color: $primary-color;
-    margin-top: 80px;
-    margin-bottom: 80px;
+.tell-your-story {
+    background-image: url("../../../assets/images/backgrounds/Judge_Gavel.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: $transparent-black;
+    background-blend-mode: multiply;
+    padding-top: 80px;
+    padding-bottom: 80px;
     
-    span {
-        display: block;
+    .tell-us-your-story-button-container {
         margin-top: 40px;
+        display: flex;
+        justify-content: center;
+        
+    }
+    
+    h2 {
+        color: $neutral;
     }
 }

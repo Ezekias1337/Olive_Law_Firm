@@ -1,25 +1,72 @@
 // Constants
 import { homePageStrings } from "../../../constants/language-strings/homepageStrings";
+// Components
+import { CustomerReview } from "../../customer-review/customerReview";
+import { Button } from "../../button/Button";
 // CSS
 import "./what-customers-say.scss";
+// Assets and Images
+import customerReviewImage1 from "../../../assets/images/customer-reviews/google_review_1.png";
 
 export const WhatCustomersSay = ({ language }: { language: string }) => {
   const { whatOurCustomersSayAboutUs } = homePageStrings;
-  const { title, review1, review2, review3, review4, review5, review6 } =
-    whatOurCustomersSayAboutUs;
+  const { title } = whatOurCustomersSayAboutUs;
 
   return (
-    <section className="our-philosophy padding-left-and-right z-index-1">
-      <h1>Our Philosophy</h1>
-      <span>
-        When you have been injured due to another person’s negligence, you need
-        someone who cares about your recovery, both physical and financial.
-        <br></br>
-        <br></br>
-        You can rely on the personal injury attorneys at The Olive Law Firm to
-        walk you through the legal system and make sure your best interests are
-        represented.
-      </span>
+    <section className="what-customers-say padding-left-and-right z-index-1">
+      <h2>{language === "English" ? title.english : title.spanish}</h2>
+      <div className="customer-review-container">
+        <CustomerReview
+          language={language}
+          authorImage={customerReviewImage1}
+          authorName="GG"
+          rating={4.5}
+          reviewBody="My overall experience with the Olive Law firm has been great! We were referred and I must say it has been top notch. Jessica is amazing, she always kept me informed and was available whenever I had a question or a concern. Lee Olive was also exceptional! He is knowledgable and showed great patience with me and all of my questions and decision making. Thank you for your dedication and hard work!"
+        />
+        <CustomerReview
+          language={language}
+          authorImage={customerReviewImage1}
+          authorName="GG"
+          rating={4.5}
+          reviewBody="My overall experience with the Olive Law firm has been great! We were referred and I must say it has been top notch. Jessica is amazing, she always kept me informed and was available whenever I had a question or a concern. Lee Olive was also exceptional! He is knowledgable and showed great patience with me and all of my questions and decision making. Thank you for your dedication and hard work!"
+        />
+      </div>
+      <div className="customer-review-container">
+        <CustomerReview
+          language={language}
+          authorImage={customerReviewImage1}
+          authorName="GG"
+          rating={4.5}
+          reviewBody="My overall experience with the Olive Law firm has been great! We were referred and I must say it has been top notch. Jessica is amazing, she always kept me informed and was available whenever I had a question or a concern. Lee Olive was also exceptional! He is knowledgable and showed great patience with me and all of my questions and decision making. Thank you for your dedication and hard work!"
+        />
+        <CustomerReview
+          language={language}
+          authorImage={customerReviewImage1}
+          authorName="GG"
+          rating={4.5}
+          reviewBody="My overall experience with the Olive Law firm has been great! We were referred and I must say it has been top notch. Jessica is amazing, she always kept me informed and was available whenever I had a question or a concern. Lee Olive was also exceptional! He is knowledgable and showed great patience with me and all of my questions and decision making. Thank you for your dedication and hard work!"
+        />
+      </div>
+      <div className="customer-review-container">
+        <CustomerReview
+          language={language}
+          authorImage={customerReviewImage1}
+          authorName="GG"
+          rating={4.5}
+          reviewBody="My overall experience with the Olive Law firm has been great! We were referred and I must say it has been top notch. Jessica is amazing, she always kept me informed and was available whenever I had a question or a concern. Lee Olive was also exceptional! He is knowledgable and showed great patience with me and all of my questions and decision making. Thank you for your dedication and hard work!"
+        />
+        <CustomerReview
+          language={language}
+          authorImage={customerReviewImage1}
+          authorName="GG"
+          rating={4.5}
+          reviewBody="My overall experience with the Olive Law firm has been great! We were referred and I must say it has been top notch. Jessica is amazing, she always kept me informed and was available whenever I had a question or a concern. Lee Olive was also exceptional! He is knowledgable and showed great patience with me and all of my questions and decision making. Thank you for your dedication and hard work!"
+        />
+      </div>
+      <div className="view-more-reviews-button-container">
+        <Button text="View More Reviews" variant="primary"/>
+      </div>
+      
     </section>
   );
 };

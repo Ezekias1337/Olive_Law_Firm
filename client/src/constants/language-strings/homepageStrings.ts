@@ -185,8 +185,8 @@ export const homePageStrings: HomePageStrings = {
   },
 
   scheduleConsulation: {
-    english: "Schedule Consultation",
-    spanish: "Programar Consulta",
+    english: "Schedule a FREE Consultation",
+    spanish: "Programar una Consulta GRATIS",
   },
 
   seeGoogleReviews: {

@@ -25,7 +25,7 @@ export const Footer = ({ language }: { language: string }) => {
     privacyPolicy,
   } = footerStrings;
 
-  const { header: contactHeader, getDirections } = contactColumn;
+  const { header: contactHeader, getDirections, email } = contactColumn;
   const {
     header: infoHeader,
     priorSettlements,
@@ -75,7 +75,11 @@ export const Footer = ({ language }: { language: string }) => {
             openInNewTab={false}
           />
           <FooterLink
-            linkText="corellana@olivelawfirm.com"
+            linkText={
+              language === "English"
+                ? email.english
+                : email.spanish
+            }
             url="mailto: corellana@olivelawfirm.com"
             openInNewTab={false}
           />

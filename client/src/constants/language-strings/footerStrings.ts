@@ -4,6 +4,10 @@ interface FooterStrings {
       english: string;
       spanish: string;
     };
+    email: {
+      english: string;
+      spanish: string;
+    };
     getDirections: {
       english: string;
       spanish: string;
@@ -78,6 +82,10 @@ export const footerStrings: FooterStrings = {
     header: {
       english: "Contact",
       spanish: "Contactar",
+    },
+    email: {
+      english: "Email",
+      spanish: "Correo",
     },
     getDirections: {
       english: "Get Directions",
