@@ -3,23 +3,23 @@ interface NavbarStrings {
     english: string;
     spanish: string;
   };
+  practiceAreas: {
+    english: string;
+    spanish: string;
+  };
+  attorneys: {
+    english: string;
+    spanish: string;
+  };
+  clientReviews: {
+    english: string;
+    spanish: string;
+  };
+  ourResults: {
+    english: string;
+    spanish: string;
+  };
   contactUs: {
-    english: string;
-    spanish: string;
-  };
-  about: {
-    english: string;
-    spanish: string;
-  };
-  testimonials: {
-    english: string;
-    spanish: string;
-  };
-  settlements: {
-    english: string;
-    spanish: string;
-  };
-  admin: {
     english: string;
     spanish: string;
   };
@@ -38,25 +38,25 @@ export const navbarStrings: NavbarStrings = {
     english: "Home",
     spanish: "Casa",
   },
+  practiceAreas: {
+    english: "Practice Areas",
+    spanish: "Áreas de Práctica",
+  },
+  attorneys: {
+    english: "Attorneys",
+    spanish: "Abogados",
+  },
+  clientReviews: {
+    english: "Client Reviews",
+    spanish: "Comentarios de Clientes",
+  },
+  ourResults: {
+    english: "Our Results",
+    spanish: "Nuestros Resultados",
+  },
   contactUs: {
     english: "Contact Us",
     spanish: "Contáctanos",
-  },
-  about: {
-    english: "About Us",
-    spanish: "Sobre Nosotros",
-  },
-  testimonials: {
-    english: "Testimonials",
-    spanish: "Testimoniales",
-  },
-  settlements: {
-    english: "Settlements",
-    spanish: "Acuerdos",
-  },
-  admin: {
-    english: "Admin",
-    spanish: "Administrativo",
   },
   callUs: {
     english: "CALL US",

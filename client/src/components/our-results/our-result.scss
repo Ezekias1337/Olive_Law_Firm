@@ -1,42 +1,24 @@
 @import "../../css/variables";
 
-.customer-review {
-  border: 1.5px solid var(--neutral-white, #fff);
-  background: var(--Tertiary-Color, #4e698e);
-  max-width: 50%;
-  flex-shrink: 0;
-  position: relative;
-
-  img {
-    width: 44px;
+.individual-result-container {
+  min-width: 200px;
+  width: 30%;
+  border: 1px solid $neutral;
+  padding: 40px;
+  background-color: $sexternary-color;
+  
+  margin-top: 30px;
+  
+  h3, h4, p {
+    color: $primary-color;
   }
-
-  .review-details-container {
-    margin-top: 20px;
-    margin-left: 20px;
-    display: flex;
-    align-items: center;
-
-    span {
-      font-size: $general;
-      color: $neutral;
-      margin-left: 10px;
-    }
+  
+  h3 {
+    font-weight: bold;
+    margin-top: 10px;
   }
-
-  .rating-number-and-star-container {
-    display: flex;
-    margin-left: 10px;
-    color: $neutral;
-
-    text {
-      margin-bottom: 12px;
-    }
-  }
-
-  .review-body-container {
-    padding-left: 70px;
-    padding-right: 70px;
-    color: $neutral;
+  
+  p {
+    margin-top: 10px;
   }
 }

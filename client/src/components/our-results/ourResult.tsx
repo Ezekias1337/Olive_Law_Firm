@@ -1,26 +1,40 @@
 // Library Imports
 import { FC } from "react";
-// Components
-import { StarRating } from "./dependents/starRating";
 // CSS
 import "./our-result.scss";
 
-interface OurResultProps {
+interface OurResultObject {
   practiceArea: string;
-  amountAwarded: number;
   description: string;
 }
 
+interface OurResultProps {
+  language: string;
+
+  ourResultObject: {
+    amountAwarded: string;
+    english: OurResultObject;
+    spanish: OurResultObject;
+  };
+}
+
 export const OurResult: FC<OurResultProps> = ({
-  practiceArea,
-  amountAwarded,
-  description
+  language,
+  ourResultObject,
 }) => {
+  const { english, spanish, amountAwarded } = ourResultObject;
+  const { practiceArea: practiceAreaEnglish, description: descriptionEnglish } =
+    english;
+  const { practiceArea: practiceAreaSpanish, description: descriptionSpanish } =
+    spanish;
+
   return (
-    <div className="our-result-container">
-      <h3>
-        
-      </h3>
+    <div className="individual-result-container">
+      <h4 className="full-flex">
+        {language === "English" ? practiceAreaEnglish : practiceAreaSpanish}
+      </h4>
+      <h3 className="full-flex">${amountAwarded}</h3>
+      <p>{language === "English" ? descriptionEnglish : descriptionSpanish}</p>
     </div>
   );
 };

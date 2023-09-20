@@ -7,11 +7,11 @@ import "./tell-your-story.scss";
 
 export const TellYourStory = ({ language }: { language: string }) => {
   const { tellUsYourStory, scheduleConsulation } = homePageStrings;
-  const { quote, tellUsYourStory: buttonText } = tellUsYourStory;
+  const { quote } = tellUsYourStory;
 
   return (
     <section className="tell-your-story padding-left-and-right z-index-1">
-      <h2>{language === "English" ? quote.english : quote.spanish}</h2>
+      <h2 className="bold-text">{language === "English" ? quote.english : quote.spanish}</h2>
       <div className="tell-us-your-story-button-container">
         <Button
           text={

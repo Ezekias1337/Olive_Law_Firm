@@ -16,7 +16,7 @@ export const NavBar = ({
   adminVariant,
   language,
   backgroundImage = "",
-  backgroundImageSize = "100%"
+  backgroundImageSize = "100%",
 }: {
   theme: string;
   adminVariant: boolean;
@@ -27,8 +27,14 @@ export const NavBar = ({
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
 
-  const { home, contactUs, about, testimonials, settlements, admin } =
-    navbarStrings;
+  const {
+    home,
+    practiceAreas,
+    attorneys,
+    clientReviews,
+    ourResults,
+    contactUs,
+  } = navbarStrings;
 
   if (adminVariant === true) {
     return <></>;
@@ -37,7 +43,15 @@ export const NavBar = ({
   return (
     <nav>
       <NavCallToAction theme={theme} language={language} />
-      {backgroundImage !== "" ? <img src={backgroundImage} className="navbar-background-image z-index-0" style={{height: backgroundImageSize}} /> : <></>}
+      {backgroundImage !== "" ? (
+        <img
+          src={backgroundImage}
+          className="navbar-background-image z-index-0"
+          style={{ height: backgroundImageSize }}
+        />
+      ) : (
+        <></>
+      )}
       <Navbar expand="md" className={`navbar ${theme}-variant`}>
         <NavbarBrand href="/" className="ms-3">
           <img className="ms-4" src={logo} />
@@ -50,8 +64,32 @@ export const NavBar = ({
               url="/"
             />
             <AnimatedNavLink
-              linkText={language === "English" ? about.english : about.spanish}
-              url="/about"
+              linkText={
+                language === "English"
+                  ? practiceAreas.english
+                  : practiceAreas.spanish
+              }
+              url="/practice-areas"
+            />
+            <AnimatedNavLink
+              linkText={
+                language === "English" ? attorneys.english : attorneys.spanish
+              }
+              url="/attorneys"
+            />
+            <AnimatedNavLink
+              linkText={
+                language === "English"
+                  ? clientReviews.english
+                  : clientReviews.spanish
+              }
+              url="/client-reviews"
+            />
+            <AnimatedNavLink
+              linkText={
+                language === "English" ? ourResults.english : ourResults.spanish
+              }
+              url="/our-results"
             />
             <AnimatedNavLink
               linkText={
@@ -59,37 +97,6 @@ export const NavBar = ({
               }
               url="/contact-us"
             />
-            <AnimatedNavLink
-              linkText={
-                language === "English"
-                  ? testimonials.english
-                  : testimonials.spanish
-              }
-              url="/testimonials"
-            />
-            <AnimatedNavLink
-              linkText={
-                language === "English"
-                  ? settlements.english
-                  : settlements.spanish
-              }
-              url="/previous-settlements"
-            />
-            <AnimatedNavLink
-              linkText={language === "English" ? admin.english : admin.spanish}
-              url="/admin-login"
-            />
-            {/* <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle nav caret>
-                Options
-              </DropdownToggle>
-              <DropdownMenu right>
-                <DropdownItem>Option 1</DropdownItem>
-                <DropdownItem>Option 2</DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem>Reset</DropdownItem>
-              </DropdownMenu>
-            </UncontrolledDropdown> */}
           </Nav>
         </Collapse>
       </Navbar>

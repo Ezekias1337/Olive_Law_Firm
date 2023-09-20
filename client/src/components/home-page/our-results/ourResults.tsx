@@ -8,73 +8,70 @@ import { Button } from "../../button/Button";
 import "./our-results.scss";
 
 const ourResultStrings = [
-  {}
-]
+  {
+    amountAwarded: "45,000",
+    english: {
+      practiceArea: "Worker's Compensation",
+      description:
+        "Worker's Compensation (Spinal Cord Injury): Recovered on behalf of a construction worker from Texas who was paralyzed following a fall from a roof on a construction site in Mecklenburg County, North Carolina. Despite being unable to care for himself, the work comp carrier refused to compensate plaintiff's wife for the daycare she had to provide. After a trial before the industrial commission, the company settled.",
+    },
+    spanish: {
+      practiceArea: "Compensación del Trabajador",
+      description:
+        "Compensación al Trabajador (Lesión de la Médula Espinal): Se recuperó en nombre de un trabajador de la construcción de Texas que quedó paralizado después de una caída de un techo en un sitio de construcción en el condado de Mecklenburg, Carolina del Norte. A pesar de ser incapaz de cuidar de sí mismo, la compañía de compensación de trabajo se negó a compensar a la esposa del demandante por la guardería que tenía que proporcionar. Después de un juicio ante la comisión industrial, la empresa se estableció.",
+    },
+  },
+];
 
 export const OurResults = ({ language }: { language: string }) => {
-  const { practiceAreas } = homePageStrings;
-  const { personalInjury, workersComp, autoAccidents, wrongfulDeath } =
-    practiceAreas;
+  const { ourResults } = homePageStrings;
+  const { title, viewMoreResults } = ourResults;
 
   return (
     <section className="our-results padding-left-and-right z-index-1">
-      <h2>Our Results</h2>
+      <h2 className="page-title">
+        {language === "English" ? title.english : title.spanish}
+      </h2>
       <div className="our-results-container container">
-        <div className="row">
-          {/* <OurResult /> */}
+        <div className="row space-around-flex">
+          <OurResult
+            language={language}
+            ourResultObject={ourResultStrings[0]}
+          />
+          <OurResult
+            language={language}
+            ourResultObject={ourResultStrings[0]}
+          />
+          <OurResult
+            language={language}
+            ourResultObject={ourResultStrings[0]}
+          />
+        </div>
+        <div className="row space-around-flex">
+          <OurResult
+            language={language}
+            ourResultObject={ourResultStrings[0]}
+          />
+          <OurResult
+            language={language}
+            ourResultObject={ourResultStrings[0]}
+          />
+          <OurResult
+            language={language}
+            ourResultObject={ourResultStrings[0]}
+          />
         </div>
       </div>
 
-      {/* <Table>
-        <thead>
-          <tr>
-            <th>Result</th>
-            <th>Verdict/Settlement</th>
-            <th>Attorney</th>
-            <th>Practice Area</th>
-            <th>Year</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">$45,000</th>
-            <td>Verdict</td>
-            <td>Juan Sanchez</td>
-            <td>Auto Accidents</td>
-            <td>2012</td>
-          </tr>
-          <tr>
-            <th scope="row">$1,250,000</th>
-            <td>Settlement</td>
-            <td>Valerie Kilgore</td>
-            <td>Wrongful Death</td>
-            <td>2015</td>
-          </tr>
-          <tr>
-            <th scope="row">$575,200</th>
-            <td>Verdict</td>
-            <td>Whitney Brooks</td>
-            <td>Personal Injury</td>
-            <td>2018</td>
-          </tr>
-          <tr>
-            <th scope="row">$680,900</th>
-            <td>Settlement</td>
-            <td>Juan Sanchez</td>
-            <td>Worker's Comp</td>
-            <td>2022</td>
-          </tr>
-          <tr>
-            <th scope="row">$425,000</th>
-            <td>Settlement</td>
-            <td>Whitney Brooks</td>
-            <td>Wrongful Death</td>
-            <td>2023</td>
-          </tr>
-        </tbody>
-      </Table> */}
       <div className="view-more-results-container">
-        <Button text="View More Results" variant="primary" />
+        <Button
+          text={
+            language === "English"
+              ? viewMoreResults.english
+              : viewMoreResults.spanish
+          }
+          variant="primary"
+        />
       </div>
     </section>
   );

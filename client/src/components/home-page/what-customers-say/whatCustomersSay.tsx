@@ -10,11 +10,13 @@ import customerReviewImage1 from "../../../assets/images/customer-reviews/google
 
 export const WhatCustomersSay = ({ language }: { language: string }) => {
   const { whatOurCustomersSayAboutUs } = homePageStrings;
-  const { title } = whatOurCustomersSayAboutUs;
+  const { title, viewMoreResults } = whatOurCustomersSayAboutUs;
 
   return (
     <section className="what-customers-say padding-left-and-right z-index-1">
-      <h2>{language === "English" ? title.english : title.spanish}</h2>
+      <h2 className="page-title">
+        {language === "English" ? title.english : title.spanish}
+      </h2>
       <div className="customer-review-container">
         <CustomerReview
           language={language}
@@ -64,9 +66,15 @@ export const WhatCustomersSay = ({ language }: { language: string }) => {
         />
       </div>
       <div className="view-more-reviews-button-container">
-        <Button text="View More Reviews" variant="primary"/>
+        <Button
+          text={
+            language === "English"
+              ? viewMoreResults.english
+              : viewMoreResults.spanish
+          }
+          variant="primary"
+        />
       </div>
-      
     </section>
   );
 };

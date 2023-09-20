@@ -24,7 +24,7 @@ export const AttorneyShowcase: FC<AttorneyShowcaseProps> = ({
   return (
     <div className="attorney-showcase">
       <img src={image} />
-      <h2>{name}</h2>
+      <h3>{name}</h3>
       <div className="button-container">
         <Button
           variant="primary"

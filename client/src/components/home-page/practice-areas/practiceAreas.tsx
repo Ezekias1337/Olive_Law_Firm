@@ -49,9 +49,9 @@ export const PracticeAreas = ({ language }: { language: string }) => {
 
   return (
     <section className="practice-areas padding-left-and-right z-index-1">
-      <h1 className="page-title">
+      <h2 className="page-title">
         {language === "English" ? title.english : title.spanish}
-      </h1>
+      </h2>
       <div id="practice-area-card-wrapper" className="space-around-flex">
         {arrayOfPracticeAreas.map((card) => {
           return (

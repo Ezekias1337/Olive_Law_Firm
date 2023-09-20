@@ -1,7 +1,13 @@
 interface HomePageStrings {
   juanSanchezQuote: {
-    english: string;
-    spanish: string;
+    part1: {
+      english: string;
+      spanish: string;
+    };
+    part2: {
+      english: string;
+      spanish: string;
+    };
   };
 
   scheduleConsulation: {
@@ -25,12 +31,7 @@ interface HomePageStrings {
       spanish: string;
     };
 
-    body1: {
-      english: string;
-      spanish: string;
-    };
-
-    body2: {
+    body: {
       english: string;
       spanish: string;
     };
@@ -133,31 +134,6 @@ interface HomePageStrings {
       spanish: string;
     };
 
-    result: {
-      english: string;
-      spanish: string;
-    };
-
-    verdict: {
-      english: string;
-      spanish: string;
-    };
-
-    attorney: {
-      english: string;
-      spanish: string;
-    };
-
-    practiceArea: {
-      english: string;
-      spanish: string;
-    };
-
-    year: {
-      english: string;
-      spanish: string;
-    };
-
     viewMoreResults: {
       english: string;
       spanish: string;
@@ -169,19 +145,22 @@ interface HomePageStrings {
       english: string;
       spanish: string;
     };
-    tellUsYourStory: {
-      english: string;
-      spanish: string;
-    };
   };
 }
 
 export const homePageStrings: HomePageStrings = {
   juanSanchezQuote: {
-    english:
-      "“Your Dedicated Personal Injury and Workers’ Compensation Attorneys, You Pay Nothing Unless We Recover”",
-    spanish:
-      "“Sus dedicados abogados de lesiones personales y compensación laboral, no paga nada a menos que nos recuperemos”",
+    part1: {
+      english:
+        "Your dedicated personal injury and workers’ compensation attorneys",
+      spanish:
+        "Sus dedicados abogados de lesiones personales y compensación laboral",
+    },
+
+    part2: {
+      english: "You pay nothing unless we recover",
+      spanish: "No paga nada a menos que nos recuperemos",
+    },
   },
 
   scheduleConsulation: {
@@ -205,18 +184,11 @@ export const homePageStrings: HomePageStrings = {
       spanish: "Nuestra Filosofia",
     },
 
-    body1: {
+    body: {
       english:
-        "When you have been injured due to another person’s negligence, you need someone who cares about your recovery, both physical and financial.",
+        "When you have been injured due to another person’s negligence, you need someone who cares about your recovery, both physical and financial. You can rely on the personal injury and worker’s compensation attorneys at Olive Sanchez & Associates to walk you through the legal system and make sure your best interests are represented.",
       spanish:
-        "Cuando ha sido lesionado debido a la negligencia de otra persona, necesita a alguien que se preocupe por su recuperación, tanto física como financiera.",
-    },
-
-    body2: {
-      english:
-        "You can rely on the personal injury attorneys at The Olive Law Firm to walk you through the legal system and make sure your best interests are represented.",
-      spanish:
-        "Puede confiar en los abogados de lesiones personales de The Olive Law Firm para guiarlo a través del sistema legal y asegurarse de que sus mejores intereses estén representados.",
+        "Cuando ha sido lesionado debido a la negligencia de otra persona, necesita a alguien que se preocupe por su recuperación, tanto física como financiera. Puede confiar en los abogados de lesiones personales y compensación laboral de Olive Sanchez & Associates para guiarlo a través del sistema legal y asegurarse de que sus mejores intereses estén representados.",
     },
   },
 
@@ -273,48 +245,48 @@ export const homePageStrings: HomePageStrings = {
 
   whatOurCustomersSayAboutUs: {
     title: {
-      english: "What Our Customers Say About Us",
+      english: "What Our Clients Say About Us",
       spanish: "Lo Que Nuestros Clientes Dicen Sobre Nosotros",
     },
 
     review1: {
       english:
-        "My overall experience with the Olive Law firm has been great! We were referred and I must say it has been top notch. Jessica is amazing, she always kept me informed and was available whenever I had a question or a concern. Lee Olive was also exceptional! He is knowledgable and showed great patience with me and all of my questions and decision making. Thank you for your dedication and hard work!",
+        "My overall experience with Olive Sanchez & Associates has been great! We were referred and I must say it has been top notch. Jessica is amazing, she always kept me informed and was available whenever I had a question or a concern. Lee Olive was also exceptional! He is knowledgable and showed great patience with me and all of my questions and decision making. Thank you for your dedication and hard work!",
       spanish:
         "Mi experiencia general con Olive Law Firm ha sido genial! Nos recomendaron y tengo que decir que ha sido de primera categoría. Jessica es increíble, ella siempre me mantuvo informado y estaba disponible cada vez que tenía una pregunta o una preocupación. Lee Olive también era excepcional! Él es conocedor y mostró gran paciencia conmigo y todas mis preguntas y toma de decisiones. ¡Gracias por su dedicación y trabajo duro!",
     },
 
     review2: {
       english:
-        "My overall experience with the Olive Law firm has been great! We were referred and I must say it has been top notch. Jessica is amazing, she always kept me informed and was available whenever I had a question or a concern. Lee Olive was also exceptional! He is knowledgable and showed great patience with me and all of my questions and decision making. Thank you for your dedication and hard work!",
+        "My overall experience with Olive Sanchez & Associates has been great! We were referred and I must say it has been top notch. Jessica is amazing, she always kept me informed and was available whenever I had a question or a concern. Lee Olive was also exceptional! He is knowledgable and showed great patience with me and all of my questions and decision making. Thank you for your dedication and hard work!",
       spanish:
         "Mi experiencia general con Olive Law Firm ha sido genial! Nos recomendaron y tengo que decir que ha sido de primera categoría. Jessica es increíble, ella siempre me mantuvo informado y estaba disponible cada vez que tenía una pregunta o una preocupación. Lee Olive también era excepcional! Él es conocedor y mostró gran paciencia conmigo y todas mis preguntas y toma de decisiones. ¡Gracias por su dedicación y trabajo duro!",
     },
 
     review3: {
       english:
-        "My overall experience with the Olive Law firm has been great! We were referred and I must say it has been top notch. Jessica is amazing, she always kept me informed and was available whenever I had a question or a concern. Lee Olive was also exceptional! He is knowledgable and showed great patience with me and all of my questions and decision making. Thank you for your dedication and hard work!",
+        "My overall experience with Olive Sanchez & Associates has been great! We were referred and I must say it has been top notch. Jessica is amazing, she always kept me informed and was available whenever I had a question or a concern. Lee Olive was also exceptional! He is knowledgable and showed great patience with me and all of my questions and decision making. Thank you for your dedication and hard work!",
       spanish:
         "Mi experiencia general con Olive Law Firm ha sido genial! Nos recomendaron y tengo que decir que ha sido de primera categoría. Jessica es increíble, ella siempre me mantuvo informado y estaba disponible cada vez que tenía una pregunta o una preocupación. Lee Olive también era excepcional! Él es conocedor y mostró gran paciencia conmigo y todas mis preguntas y toma de decisiones. ¡Gracias por su dedicación y trabajo duro!",
     },
 
     review4: {
       english:
-        "My overall experience with the Olive Law firm has been great! We were referred and I must say it has been top notch. Jessica is amazing, she always kept me informed and was available whenever I had a question or a concern. Lee Olive was also exceptional! He is knowledgable and showed great patience with me and all of my questions and decision making. Thank you for your dedication and hard work!",
+        "My overall experience with Olive Sanchez & Associates has been great! We were referred and I must say it has been top notch. Jessica is amazing, she always kept me informed and was available whenever I had a question or a concern. Lee Olive was also exceptional! He is knowledgable and showed great patience with me and all of my questions and decision making. Thank you for your dedication and hard work!",
       spanish:
         "Mi experiencia general con Olive Law Firm ha sido genial! Nos recomendaron y tengo que decir que ha sido de primera categoría. Jessica es increíble, ella siempre me mantuvo informado y estaba disponible cada vez que tenía una pregunta o una preocupación. Lee Olive también era excepcional! Él es conocedor y mostró gran paciencia conmigo y todas mis preguntas y toma de decisiones. ¡Gracias por su dedicación y trabajo duro!",
     },
 
     review5: {
       english:
-        "My overall experience with the Olive Law firm has been great! We were referred and I must say it has been top notch. Jessica is amazing, she always kept me informed and was available whenever I had a question or a concern. Lee Olive was also exceptional! He is knowledgable and showed great patience with me and all of my questions and decision making. Thank you for your dedication and hard work!",
+        "My overall experience with Olive Sanchez & Associates has been great! We were referred and I must say it has been top notch. Jessica is amazing, she always kept me informed and was available whenever I had a question or a concern. Lee Olive was also exceptional! He is knowledgable and showed great patience with me and all of my questions and decision making. Thank you for your dedication and hard work!",
       spanish:
         "Mi experiencia general con Olive Law Firm ha sido genial! Nos recomendaron y tengo que decir que ha sido de primera categoría. Jessica es increíble, ella siempre me mantuvo informado y estaba disponible cada vez que tenía una pregunta o una preocupación. Lee Olive también era excepcional! Él es conocedor y mostró gran paciencia conmigo y todas mis preguntas y toma de decisiones. ¡Gracias por su dedicación y trabajo duro!",
     },
 
     review6: {
       english:
-        "My overall experience with the Olive Law firm has been great! We were referred and I must say it has been top notch. Jessica is amazing, she always kept me informed and was available whenever I had a question or a concern. Lee Olive was also exceptional! He is knowledgable and showed great patience with me and all of my questions and decision making. Thank you for your dedication and hard work!",
+        "My overall experience with Olive Sanchez & Associates has been great! We were referred and I must say it has been top notch. Jessica is amazing, she always kept me informed and was available whenever I had a question or a concern. Lee Olive was also exceptional! He is knowledgable and showed great patience with me and all of my questions and decision making. Thank you for your dedication and hard work!",
       spanish:
         "Mi experiencia general con Olive Law Firm ha sido genial! Nos recomendaron y tengo que decir que ha sido de primera categoría. Jessica es increíble, ella siempre me mantuvo informado y estaba disponible cada vez que tenía una pregunta o una preocupación. Lee Olive también era excepcional! Él es conocedor y mostró gran paciencia conmigo y todas mis preguntas y toma de decisiones. ¡Gracias por su dedicación y trabajo duro!",
     },
@@ -331,31 +303,6 @@ export const homePageStrings: HomePageStrings = {
       spanish: "Nuestros Resultados",
     },
 
-    result: {
-      english: "Result",
-      spanish: "Resultado",
-    },
-
-    verdict: {
-      english: "Verdict",
-      spanish: "Veredicto",
-    },
-
-    attorney: {
-      english: "Attorney",
-      spanish: "Abogado",
-    },
-
-    practiceArea: {
-      english: "Practice Area",
-      spanish: "Área de Práctica",
-    },
-
-    year: {
-      english: "Year",
-      spanish: "Año",
-    },
-
     viewMoreResults: {
       english: "View More Results",
       spanish: "Ver Más Resultados",
@@ -365,13 +312,9 @@ export const homePageStrings: HomePageStrings = {
   tellUsYourStory: {
     quote: {
       english:
-        "If you’ve been hurt contact a professional personal injury attorney at Olive Sanchez and Associates today.",
+        "If you’ve been hurt contact a professional personal injury attorney at Olive Sanchez & Associates today.",
       spanish:
-        "Si ha resultado herido, comuníquese con un abogado profesional de lesiones personales en Olive Sanchez y Associates hoy.",
-    },
-    tellUsYourStory: {
-      english: "Tell Us Your Story",
-      spanish: "Cuéntanos Tu Historia",
+        "Si ha resultado herido, comuníquese con un abogado profesional de lesiones personales en Olive Sanchez & Associates hoy.",
     },
   },
 };

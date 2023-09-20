@@ -10,8 +10,8 @@ export const OurPhilosophy = ({ language }: { language: string }) => {
     This component needs extra padding on top when the "No Papeles" section
     is not showing
   */
-  const { ourPhilosophy } = homePageStrings;
-  const { title, body1, body2 } = ourPhilosophy;
+  const { ourPhilosophy, leeOliveQuote } = homePageStrings;
+  const { title, body } = ourPhilosophy;
 
   const [needsPadding, setNeedsPadding] = useState(true);
 
@@ -29,15 +29,15 @@ export const OurPhilosophy = ({ language }: { language: string }) => {
         needsPadding === true ? `extra-top-padding` : ``
       }`}
     >
-      <h1 className="page-title">
+      <h2 className="page-title">
         {language === "English" ? title.english : title.spanish}
-      </h1>
-      <span>
-        {language === "English" ? body1.english : body1.spanish}
-        <br></br>
-        <br></br>
-        {language === "English" ? body2.english : body2.spanish}
-      </span>
+      </h2>
+      <br></br>
+      <br></br>
+      <h3>
+        {language === "English" ? leeOliveQuote.english : leeOliveQuote.spanish}
+      </h3>
+      <span>{language === "English" ? body.english : body.spanish}</span>
     </section>
   );
 };

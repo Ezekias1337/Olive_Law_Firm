@@ -13,14 +13,15 @@ export const PrimaryCallToAction = ({ language }: { language: string }) => {
     seeOurResults,
   } = homePageStrings;
 
+  const { part1, part2 } = juanSanchezQuote;
+
   return (
     <div className="primary-call-to-action margin-left-and-right z-index-1 position-relative">
-      <h1 className="juan-sanchez-quote">
-        {language === "English"
-          ? juanSanchezQuote.english
-          : juanSanchezQuote.spanish}
+      <h1 className="juan-sanchez-quote bold-text">
+        {language === "English" ? part1.english : part1.spanish}
         <br></br>
-        <br></br>- Juan Sanchez
+        <br></br>
+        {language === "English" ? part2.english : part2.spanish}
       </h1>
       <div className="primary-call-to-action-button-wrapper space-around-flex">
         <Button

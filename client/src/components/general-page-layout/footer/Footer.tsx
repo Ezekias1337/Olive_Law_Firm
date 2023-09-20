@@ -18,7 +18,6 @@ export const Footer = ({ language }: { language: string }) => {
   const {
     contactColumn,
     infoColumn,
-    attorneyColumn,
     otherColumn,
     copywrite,
     termsOfService,
@@ -28,17 +27,15 @@ export const Footer = ({ language }: { language: string }) => {
   const { header: contactHeader, getDirections, email } = contactColumn;
   const {
     header: infoHeader,
-    priorSettlements,
-    ourPracticeAreas,
-    clientTestimonials,
+    aboutUs,
+    practiceAreas,
     googleReviews,
   } = infoColumn;
-  const { header: attorneyHeader } = attorneyColumn;
   const {
     header: otherHeader,
-    submitClaim,
-    checkClaimStatus,
-    communityInteraction,
+    communityInvolvement,
+    faqs,
+    admin,
   } = otherColumn;
 
   return (
@@ -63,23 +60,19 @@ export const Footer = ({ language }: { language: string }) => {
         </div>
       </div>
       <div className="row footer-navigation mx-5 mt-5 pb-5">
-        <div className="col col-6 col-lg-3 mt-5">
+        <div className="col col-6 col-lg-4 mt-5">
           <h5 className="footer-navigation-header full-flex">
             {language === "English"
               ? contactHeader.english
               : contactHeader.spanish}
           </h5>
           <FooterLink
-            linkText="704-377-9222"
+            linkText="(704) 377-9222"
             url="tel:+17043779222"
             openInNewTab={false}
           />
           <FooterLink
-            linkText={
-              language === "English"
-                ? email.english
-                : email.spanish
-            }
+            linkText={language === "English" ? email.english : email.spanish}
             url="mailto: corellana@olivelawfirm.com"
             openInNewTab={false}
           />
@@ -93,10 +86,26 @@ export const Footer = ({ language }: { language: string }) => {
             openInNewTab={true}
           />
         </div>
-        <div className="col col-6 col-lg-3 mt-5">
+        <div className="col col-6 col-lg-4 mt-5">
           <h5 className="footer-navigation-header full-flex">
             {language === "English" ? infoHeader.english : infoHeader.spanish}
           </h5>
+          <FooterLink
+            linkText={
+              language === "English" ? aboutUs.english : aboutUs.spanish
+            }
+            url="/about-us"
+            openInNewTab={false}
+          />
+          <FooterLink
+            linkText={
+              language === "English"
+                ? practiceAreas.english
+                : practiceAreas.spanish
+            }
+            url="/practice-areas"
+            openInNewTab={false}
+          />
           <FooterLink
             linkText={
               language === "English"
@@ -106,83 +115,28 @@ export const Footer = ({ language }: { language: string }) => {
             url="/google-reviews"
             openInNewTab={false}
           />
-          <FooterLink
-            linkText={
-              language === "English"
-                ? ourPracticeAreas.english
-                : ourPracticeAreas.spanish
-            }
-            url="/our-practice-areas"
-            openInNewTab={false}
-          />
-          <FooterLink
-            linkText={
-              language === "English"
-                ? clientTestimonials.english
-                : clientTestimonials.spanish
-            }
-            url="/client-testimonials"
-            openInNewTab={false}
-          />
-          <FooterLink
-            linkText={
-              language === "English"
-                ? priorSettlements.english
-                : priorSettlements.spanish
-            }
-            url="/prior-settlements"
-            openInNewTab={false}
-          />
         </div>
-        <div className="col col-6 col-lg-3 mt-5">
-          <h5 className="footer-navigation-header full-flex">
-            {language === "English"
-              ? attorneyHeader.english
-              : attorneyHeader.spanish}
-          </h5>
-          <FooterLink
-            linkText="Juan Sanchez"
-            url="/attorneys/juan-sanchez"
-            openInNewTab={false}
-          />
-          <FooterLink
-            linkText="Whitney Brooks"
-            url="/attorneys/whitney-brooks"
-            openInNewTab={false}
-          />
-          <FooterLink
-            linkText="Valerie Kilgore"
-            url="/attorneys/valerie-kilgore"
-            openInNewTab={false}
-          />
-        </div>
-        <div className="col col-6 col-lg-3 mt-5">
+        <div className="col col-6 col-lg-4 mt-5">
           <h5 className="footer-navigation-header full-flex">
             {language === "English" ? otherHeader.english : otherHeader.spanish}
           </h5>
           <FooterLink
             linkText={
-              language === "English" ? submitClaim.english : submitClaim.spanish
+              language === "English"
+                ? communityInvolvement.english
+                : communityInvolvement.spanish
             }
-            url="/submit-a-claim"
+            url="/community-involvement"
             openInNewTab={false}
           />
           <FooterLink
-            linkText={
-              language === "English"
-                ? checkClaimStatus.english
-                : checkClaimStatus.spanish
-            }
-            url="/check-claim-status"
+            linkText={language === "English" ? faqs.english : faqs.spanish}
+            url="/faqs"
             openInNewTab={false}
           />
           <FooterLink
-            linkText={
-              language === "English"
-                ? communityInteraction.english
-                : communityInteraction.spanish
-            }
-            url="/community-interaction"
+            linkText={language === "English" ? admin.english : admin.spanish}
+            url="/admin"
             openInNewTab={false}
           />
         </div>

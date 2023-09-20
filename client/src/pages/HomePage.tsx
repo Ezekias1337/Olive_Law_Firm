@@ -19,7 +19,6 @@ import { PracticeAreas } from "../components/home-page/practice-areas/practiceAr
 import { OurAttorneys } from "../components/home-page/our-attorneys/ourAttorneys";
 import { WhatCustomersSay } from "../components/home-page/what-customers-say/whatCustomersSay";
 import { OurResults } from "../components/home-page/our-results/ourResults";
-import { LeeOliveQuote } from "../components/home-page/lee-olive-quote/LeeOliveQuote";
 import { TellYourStory } from "../components/home-page/tell-your-story/tellYourStory";
 
 // CSS
@@ -52,7 +51,6 @@ export const HomePage = () => {
       <NoPapeles language={language} />
       <OurPhilosophy language={language} />
       <PracticeAreas language={language} />
-      <LeeOliveQuote language={language} />
       <OurAttorneys language={language} />
       <WhatCustomersSay language={language} />
       <OurResults language={language} />

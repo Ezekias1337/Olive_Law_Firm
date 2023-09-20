@@ -119,7 +119,8 @@ h6 {
 }
 
 .page-title {
-  inherits: full-flex;
+  @extend .full-flex;
+  @extend .bold-text;
 }
 
 .z-index-0 {
