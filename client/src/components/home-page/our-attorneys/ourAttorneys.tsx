@@ -22,12 +22,15 @@ export const OurAttorneys = ({ language }: { language: string }) => {
   return (
     <section className="our-attorneys padding-left-and-right z-index-1">
       <div className="our-attorneys-title-container full-flex">
-        <h2 className="page-title">{language === "English" ? title.english : title.spanish}</h2>
+        <h2 className="page-title">
+          {language === "English" ? title.english : title.spanish}
+        </h2>
       </div>
 
       <div className="attorney-showcase-container full-flex">
-        {arrayOfAttorneyInfo.map((attorney) => (
+        {arrayOfAttorneyInfo.map((attorney, index) => (
           <AttorneyShowcase
+            key={index}
             language={language}
             name={attorney.name}
             image={attorney.image}

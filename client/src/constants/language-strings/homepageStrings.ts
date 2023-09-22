@@ -226,9 +226,9 @@ export const homePageStrings: HomePageStrings = {
 
   leeOliveQuote: {
     english:
-      "“Fighting for the rights of injured victims is what we do. It's who we are.”",
+      "Fighting for the rights of injured victims is what we do. It's who we are.",
     spanish:
-      "“Luchar por los derechos de las víctimas heridas es lo que hacemos. Es lo que somos.”",
+      "Luchar por los derechos de las víctimas heridas es lo que hacemos. Es lo que somos.",
   },
 
   ourAttorneys: {
@@ -292,8 +292,8 @@ export const homePageStrings: HomePageStrings = {
     },
 
     viewMoreResults: {
-      english: "View More Results",
-      spanish: "Ver Más Resultados",
+      english: "View More Reviews",
+      spanish: "Ver Más Reseñas",
     },
   },
 

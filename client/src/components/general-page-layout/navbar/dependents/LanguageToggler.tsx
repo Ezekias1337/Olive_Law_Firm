@@ -31,7 +31,7 @@ export const LanguageToggler = () => {
   return (
     <div className={`input-wrapper form-check form-switch toggler-align`}>
       <label
-        htmlFor={camelCasifyString(componentDomName)}
+        htmlFor={kebabCasifyString(componentDomName)}
         className={`form-label dark-label ms-3 mb-0${
           isChecked === false ? "" : " bold-text"
         }`}
@@ -50,7 +50,7 @@ export const LanguageToggler = () => {
         onChange={handleInputChange}
       ></input>
       <label
-        htmlFor={camelCasifyString(componentDomName)}
+        htmlFor={kebabCasifyString(componentDomName)}
         className={`form-label dark-label me-3 mb-0${
           isChecked === true ? "" : " bold-text"
         }`}

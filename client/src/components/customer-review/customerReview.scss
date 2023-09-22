@@ -3,7 +3,7 @@
 .customer-review {
   border: 1.5px solid var(--neutral-white, #fff);
   background: var(--Tertiary-Color, #4e698e);
-  max-width: 50%;
+  max-width: 523px;
   flex-shrink: 0;
   position: relative;
 
@@ -26,7 +26,7 @@
 
   .rating-number-and-star-container {
     display: flex;
-    margin-left: 10px;
+    margin-left: 6px;
     color: $neutral;
 
     text {

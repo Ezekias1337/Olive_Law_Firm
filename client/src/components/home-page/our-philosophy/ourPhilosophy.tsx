@@ -1,5 +1,5 @@
 // Library Imports
-import { FC, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 // Constants
 import { homePageStrings } from "../../../constants/language-strings/homepageStrings";
 // CSS
@@ -34,7 +34,7 @@ export const OurPhilosophy = ({ language }: { language: string }) => {
       </h2>
       <br></br>
       <br></br>
-      <h3>
+      <h3 className="bold-text">
         {language === "English" ? leeOliveQuote.english : leeOliveQuote.spanish}
       </h3>
       <span>{language === "English" ? body.english : body.spanish}</span>

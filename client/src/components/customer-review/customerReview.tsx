@@ -27,7 +27,7 @@ export const CustomerReview: FC<CustomerReviewProps> = ({
         <div className="author-name-and-rating-info-container">
           <span>{authorName}</span>
           <div className="rating-number-and-star-container">
-            <text>{rating}</text>
+            <b>{rating}</b>
             <StarRating rating={rating} totalStars={5} />
           </div>
         </div>

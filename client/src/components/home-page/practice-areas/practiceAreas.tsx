@@ -53,9 +53,10 @@ export const PracticeAreas = ({ language }: { language: string }) => {
         {language === "English" ? title.english : title.spanish}
       </h2>
       <div id="practice-area-card-wrapper" className="space-around-flex">
-        {arrayOfPracticeAreas.map((card) => {
+        {arrayOfPracticeAreas.map((card, index) => {
           return (
             <PracticeAreasCard
+              key={index}
               title={card.title}
               icon={card.icon}
               language={language}

@@ -3,6 +3,10 @@
 .our-results {
   background-color: $tertiary-color;
 
+  .our-results-container {
+    gap: 50px;
+  }
+  
   h2 {
     color: $neutral;
     padding-top: 80px;

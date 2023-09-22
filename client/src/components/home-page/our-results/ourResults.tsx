@@ -32,8 +32,8 @@ export const OurResults = ({ language }: { language: string }) => {
       <h2 className="page-title">
         {language === "English" ? title.english : title.spanish}
       </h2>
-      <div className="our-results-container container">
-        <div className="row space-around-flex">
+      <div className="our-results-container container space-around-flex">
+        <div className="row">
           <OurResult
             language={language}
             ourResultObject={ourResultStrings[0]}
@@ -47,7 +47,7 @@ export const OurResults = ({ language }: { language: string }) => {
             ourResultObject={ourResultStrings[0]}
           />
         </div>
-        <div className="row space-around-flex">
+        <div className="row">
           <OurResult
             language={language}
             ourResultObject={ourResultStrings[0]}

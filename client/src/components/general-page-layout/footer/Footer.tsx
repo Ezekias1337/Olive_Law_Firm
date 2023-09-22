@@ -61,7 +61,7 @@ export const Footer = ({ language }: { language: string }) => {
       </div>
       <div className="row footer-navigation mx-5 mt-5 pb-5">
         <div className="col col-6 col-lg-4 mt-5">
-          <h5 className="footer-navigation-header full-flex">
+          <h5 className="footer-navigation-header bold-text full-flex">
             {language === "English"
               ? contactHeader.english
               : contactHeader.spanish}
@@ -87,7 +87,7 @@ export const Footer = ({ language }: { language: string }) => {
           />
         </div>
         <div className="col col-6 col-lg-4 mt-5">
-          <h5 className="footer-navigation-header full-flex">
+          <h5 className="footer-navigation-header bold-text full-flex">
             {language === "English" ? infoHeader.english : infoHeader.spanish}
           </h5>
           <FooterLink
@@ -117,7 +117,7 @@ export const Footer = ({ language }: { language: string }) => {
           />
         </div>
         <div className="col col-6 col-lg-4 mt-5">
-          <h5 className="footer-navigation-header full-flex">
+          <h5 className="footer-navigation-header bold-text full-flex">
             {language === "English" ? otherHeader.english : otherHeader.spanish}
           </h5>
           <FooterLink

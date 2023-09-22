@@ -1,6 +1,8 @@
 // Library Imports
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav } from "reactstrap";
+// Functions, Helpers, Utils, and Hooks
+import useWindowWidth from "../../../hooks/useWindowWidth";
 // Constants
 import { navbarStrings } from "../../../constants/language-strings/navbarStrings";
 // Components
@@ -9,7 +11,8 @@ import { AnimatedNavLink } from "./dependents/AnimatedNavLink";
 // CSS
 import "./navbar.scss";
 // Assets and Images
-import logo from "../../../assets/images/logo/Full_Logo.png";
+import logoWithText from "../../../assets/images/logo/Full_Logo.png";
+import logoNoText from "../../../assets/images/logo/Logo_No_Text.png";
 
 export const NavBar = ({
   theme,
@@ -27,6 +30,9 @@ export const NavBar = ({
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
 
+  const windowWidth = useWindowWidth();
+  const [navLogo, setNavLogo] = useState(logoWithText);
+
   const {
     home,
     practiceAreas,
@@ -35,7 +41,15 @@ export const NavBar = ({
     ourResults,
     contactUs,
   } = navbarStrings;
-
+  
+  useEffect(() => {
+    if(windowWidth >= 950) {
+      setNavLogo(logoWithText)
+    } else {
+      setNavLogo(logoNoText)
+    }
+  }, [windowWidth])
+  
   if (adminVariant === true) {
     return <></>;
   }
@@ -54,7 +68,7 @@ export const NavBar = ({
       )}
       <Navbar expand="md" className={`navbar ${theme}-variant`}>
         <NavbarBrand href="/" className="ms-3">
-          <img className="ms-4" src={logo} />
+          <img className="ms-4" src={navLogo} />
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
