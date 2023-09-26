@@ -30,7 +30,7 @@ export const NavCallToAction = ({
       </div>
       <div className="row">
         <div className="col col-4 toggler-align">
-          <LanguageToggler />
+          <LanguageToggler language={language} />
         </div>
         <div className="col col-4 full-flex">
           <FontAwesomeIcon icon={faPhone} size="xl" />

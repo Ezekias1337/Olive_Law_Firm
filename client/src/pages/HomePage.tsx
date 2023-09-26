@@ -5,6 +5,7 @@ import { useState } from "react";
 import { UPDATE_LANGUAGE } from "../redux/action-creators/languageCreators";
 // Functions, Helpers, Utils and Hooks
 import useDeviceInfo from "../hooks/useDeviceInfo";
+import useLanguage from "../hooks/useLanguage";
 // Constants
 // Interfaces and Types
 import { ReduxStoreState } from "../constants/interfaces/ReduxStoreState";
@@ -30,9 +31,7 @@ import northCarolinaCourthouse from "../assets/images/backgrounds/North_Carolina
 */
 
 export const HomePage = () => {
-  const language = useSelector(
-    (state: ReduxStoreState) => state.language.contents.languageChoice
-  );
+  const language = useLanguage();
 
   const deviceInformation = useDeviceInfo();
 
