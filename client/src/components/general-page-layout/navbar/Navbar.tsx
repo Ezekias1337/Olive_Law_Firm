@@ -41,15 +41,15 @@ export const NavBar = ({
     ourResults,
     contactUs,
   } = navbarStrings;
-  
+
   useEffect(() => {
-    if(windowWidth >= 950) {
-      setNavLogo(logoWithText)
+    if (windowWidth >= 950) {
+      setNavLogo(logoWithText);
     } else {
-      setNavLogo(logoNoText)
+      setNavLogo(logoNoText);
     }
-  }, [windowWidth])
-  
+  }, [windowWidth]);
+
   if (adminVariant === true) {
     return <></>;
   }
@@ -76,6 +76,7 @@ export const NavBar = ({
             <AnimatedNavLink
               linkText={language === "English" ? home.english : home.spanish}
               url="/"
+              preserveState={[["language", language]]}
             />
             <AnimatedNavLink
               linkText={
@@ -84,12 +85,14 @@ export const NavBar = ({
                   : practiceAreas.spanish
               }
               url="/practice-areas"
+              preserveState={[["language", language]]}
             />
             <AnimatedNavLink
               linkText={
                 language === "English" ? attorneys.english : attorneys.spanish
               }
               url="/attorneys"
+              preserveState={[["language", language]]}
             />
             <AnimatedNavLink
               linkText={
@@ -98,18 +101,21 @@ export const NavBar = ({
                   : clientReviews.spanish
               }
               url="/client-reviews"
+              preserveState={[["language", language]]}
             />
             <AnimatedNavLink
               linkText={
                 language === "English" ? ourResults.english : ourResults.spanish
               }
               url="/our-results"
+              preserveState={[["language", language]]}
             />
             <AnimatedNavLink
               linkText={
                 language === "English" ? contactUs.english : contactUs.spanish
               }
               url="/contact-us"
+              preserveState={[["language", language]]}
             />
           </Nav>
         </Collapse>

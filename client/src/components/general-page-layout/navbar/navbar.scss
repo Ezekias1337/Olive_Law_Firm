@@ -33,6 +33,7 @@
 }
 
 /* 
+  Resize the logo depending on screen size
   ! 768 breakpoint for when nav becomes mobile 
 */
 
@@ -80,25 +81,25 @@
   background-color: $transparent-black;
 
   .nav-link {
-    color: $light-gray;
+    color: $light-gray !important;
   }
 
   .nav-link-wrapper:hover {
     .nav-link {
-      color: $neutral;
+      color: $neutral !important;
     }
   }
 
   .nav-link-underline {
     background-color: $quinternary-color;
   }
-  
+
   .navbar-toggler {
     border: 1px solid $primary-color !important;
     background-image: url("../../../assets/icons/navbar-hamburger-menu.svg");
     background-repeat: no-repeat;
     background-position: 50%;
-    
+
     &:hover {
       box-shadow: 0 0 0 2px $primary-color;
     }
@@ -107,20 +108,18 @@
 
 .dark-variant {
   .nav-link {
-    color: $primary-color;
+    color: $primary-color !important;
   }
 
   .nav-link-wrapper:hover {
     .nav-link {
-      color: $quarternary-color;
+      color: $quarternary-color !important;
     }
   }
 
   .nav-link-underline {
     background-color: $gray;
   }
-  
-  
 }
 
 /* 

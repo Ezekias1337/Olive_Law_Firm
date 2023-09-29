@@ -1,12 +1,8 @@
 // Library Imports
 import { useSelector } from "react-redux/es/exports";
 import { useState } from "react";
-// Redux
-import { UPDATE_LANGUAGE } from "../redux/action-creators/languageCreators";
 // Functions, Helpers, Utils and Hooks
 import useDeviceInfo from "../hooks/useDeviceInfo";
-import useLanguage from "../hooks/useLanguage";
-// Constants
 // Interfaces and Types
 import { ReduxStoreState } from "../constants/interfaces/ReduxStoreState";
 import { FormState } from "../constants/interfaces/InputFieldProps";
@@ -21,7 +17,6 @@ import { OurAttorneys } from "../components/home-page/our-attorneys/ourAttorneys
 import { WhatCustomersSay } from "../components/home-page/what-customers-say/whatCustomersSay";
 import { OurResults } from "../components/home-page/our-results/ourResults";
 import { TellYourStory } from "../components/home-page/tell-your-story/tellYourStory";
-
 // CSS
 import "../css/page-specific/home.scss";
 // Assets and Images
@@ -31,10 +26,11 @@ import northCarolinaCourthouse from "../assets/images/backgrounds/North_Carolina
 */
 
 export const HomePage = () => {
-  const language = useLanguage();
+  const reduxLanguage = useSelector(
+    (state: ReduxStoreState) => state.language.contents.languageChoice
+  );
 
   const deviceInformation = useDeviceInfo();
-
   const [formInputData, setFormInputData] = useState<FormState>({});
 
   return (
@@ -42,19 +38,19 @@ export const HomePage = () => {
       <NavBar
         theme="light"
         adminVariant={false}
-        language={language}
+        language={reduxLanguage}
         backgroundImage={northCarolinaCourthouse}
         backgroundImageSize="933px"
       />
-      <PrimaryCallToAction language={language} />
-      <NoPapeles language={language} />
-      <OurPhilosophy language={language} />
-      <PracticeAreas language={language} />
-      <OurAttorneys language={language} />
-      <WhatCustomersSay language={language} />
-      <OurResults language={language} />
-      <TellYourStory language={language} />
-      <Footer language={language} />
+      <PrimaryCallToAction language={reduxLanguage} />
+      <NoPapeles language={reduxLanguage} />
+      <OurPhilosophy language={reduxLanguage} />
+      <PracticeAreas language={reduxLanguage} />
+      <OurAttorneys language={reduxLanguage} />
+      <WhatCustomersSay language={reduxLanguage} />
+      <OurResults language={reduxLanguage} />
+      <TellYourStory language={reduxLanguage} />
+      <Footer language={reduxLanguage} />
     </div>
   );
 };

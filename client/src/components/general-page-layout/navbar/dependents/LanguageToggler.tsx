@@ -1,20 +1,27 @@
 // Library Imports
 import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { bindActionCreators } from "redux";
 import { useSearchParams } from "react-router-dom";
+// Redux
+import { updateLanguageAction } from "../../../../redux/action-creators/languageCreators";
 // Functions, Helpers, and Utils
 import { SwitchUpdateEvent } from "../../../../functions/forms/handleFormChange";
 import { camelCasifyString } from "../../../../../../shared/utils/strings/camelCasifyString";
 import { kebabCasifyString } from "../../../../../../shared/utils/strings/kebabCasifyString";
+// Interfaces and Types
+import { ReduxStoreState } from "../../../../constants/interfaces/ReduxStoreState";
 // CSS
 import "../../../../css/partials/_input-themes.scss";
 import "../../../../css/partials/_switch-input.scss";
 
-export const LanguageToggler = ({ language }: { language: string }) => {
+export const LanguageToggler = () => {
   const setEnglish = () => {
     setLanguageParams((prev) => {
       prev.set("language", "English");
       return prev;
     });
+    updateLanguage("English");
     setIsChecked(false);
   };
 
@@ -23,6 +30,7 @@ export const LanguageToggler = ({ language }: { language: string }) => {
       prev.set("language", "Spanish");
       return prev;
     });
+    updateLanguage("Spanish");
     setIsChecked(true);
   };
 
@@ -34,22 +42,31 @@ export const LanguageToggler = ({ language }: { language: string }) => {
     }
   };
 
+  const dispatch = useDispatch();
+  const updateLanguage = bindActionCreators(updateLanguageAction, dispatch);
+  const reduxLanguage = useSelector(
+    (state: ReduxStoreState) => state.language.contents.languageChoice
+  );
+
   const [languageParams, setLanguageParams] = useSearchParams({
     language: "English",
   });
+  const paramsLanguage = languageParams.get("language");
+
   const [isChecked, setIsChecked] = useState(false);
 
-  // When component mounts determine the selected language
+  /* 
+    Handles changing the language preference and url params when
+    navigating around the site, using redux as the source of truth
+  */
 
   useEffect(() => {
-    const currentLanguage = languageParams.get("language");
-
-    if (currentLanguage === "English") {
+    if (reduxLanguage === "English") {
       setEnglish();
     } else {
       setSpanish();
     }
-  }, []);
+  }, [reduxLanguage, paramsLanguage]);
 
   const componentDomName = "Language Toggler";
 
