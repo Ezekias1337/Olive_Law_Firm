@@ -1,8 +1,6 @@
 @import "../../../css/variables";
 
 .our-attorneys {
-  margin-top: 80px;
-
   h2,
   h3 {
     color: $primary-color;
@@ -12,6 +10,10 @@
     text-align: center;
   }
 
+  .attorney-showcase-container {
+    margin-top: 40px;
+  }
+  
   .attorney-showcase {
     position: relative;
     margin-top: 40px;

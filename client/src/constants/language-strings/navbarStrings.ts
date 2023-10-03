@@ -36,7 +36,7 @@ interface NavbarStrings {
 export const navbarStrings: NavbarStrings = {
   home: {
     english: "Home",
-    spanish: "Casa",
+    spanish: "Principal",
   },
   practiceAreas: {
     english: "Practice Areas",

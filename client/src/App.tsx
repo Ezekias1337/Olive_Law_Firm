@@ -2,6 +2,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 // Pages
 import { HomePage } from "./pages/HomePage";
+import { ContactUs } from "./pages/ContactUs";
 // CSS
 import "./css/styles.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -12,7 +13,7 @@ const App = () => {
       <Routes>
         {/* Client Facing */}
         <Route path="/" element={<HomePage />}></Route>
-        <Route path="/contact-us" element={<HomePage />}></Route>
+        <Route path="/contact-us" element={<ContactUs />}></Route>
         <Route path="/about-us" element={<HomePage />}></Route>
         <Route path="/lawyer-profile" element={<HomePage />}></Route>
         <Route path="/practice-areas" element={<HomePage />}></Route>

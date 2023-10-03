@@ -10,4 +10,6 @@ export interface ButtonProps {
   loading?: boolean;
   disabled?: boolean;
   onClickHandler?: Function;
+  type?: "button" | "submit" | "reset";
+  url?: string;
 }

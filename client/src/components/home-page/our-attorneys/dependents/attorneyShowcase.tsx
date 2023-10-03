@@ -29,6 +29,7 @@ export const AttorneyShowcase: FC<AttorneyShowcaseProps> = ({
         <Button
           variant="primary"
           text={language === "English" ? moreInfo.english : moreInfo.spanish}
+          url={link}
         />
       </div>
     </div>

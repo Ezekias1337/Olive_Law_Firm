@@ -31,6 +31,7 @@ export const PrimaryCallToAction = ({ language }: { language: string }) => {
               ? scheduleConsulation.english
               : scheduleConsulation.spanish
           }
+          url="/contact-us"
         />
         <Button
           variant="primary"
@@ -39,6 +40,7 @@ export const PrimaryCallToAction = ({ language }: { language: string }) => {
               ? seeGoogleReviews.english
               : seeGoogleReviews.spanish
           }
+          url="/client-reviews"
         />
         <Button
           variant="primary"
@@ -47,6 +49,7 @@ export const PrimaryCallToAction = ({ language }: { language: string }) => {
               ? seeOurResults.english
               : seeOurResults.spanish
           }
+          url="/our-results"
         />
       </div>
     </div>

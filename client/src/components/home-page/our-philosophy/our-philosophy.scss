@@ -1,19 +1,14 @@
 @import "../../../css/variables";
 
 .our-philosophy {
-    color: $primary-color;
-    margin-top: 80px;
-    margin-bottom: 80px;
-    position: relative;
-    background-color: $neutral;
-    
-    &.extra-top-padding {
-        padding-top: 40px;
-    }
-    
-    span {
-        display: block;
-        margin-top: 40px;
-        text-align: left;
-    }
+  color: $primary-color;
+  margin-bottom: 80px;
+  position: relative;
+  background-color: $neutral;
+
+  span {
+    display: block;
+    margin-top: 40px;
+    text-align: left;
+  }
 }

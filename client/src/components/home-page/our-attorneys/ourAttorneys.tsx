@@ -10,14 +10,26 @@ import whitneyBrooksImage from "../../../assets/images/staff/whitney-brooks.png"
 import valerieKilgoreImage from "../../../assets/images/staff/valerie-kilgore.png";
 
 const arrayOfAttorneyInfo = [
-  { name: "Juan Sanchez", image: juanSanchezImage, link: "" },
-  { name: "Whitney Brooks", image: whitneyBrooksImage, link: "" },
-  { name: "Valerie Kilgore", image: valerieKilgoreImage, link: "" },
+  {
+    name: "Juan Sanchez",
+    image: juanSanchezImage,
+    link: "attorney-profile/juan-sanchez",
+  },
+  {
+    name: "Whitney Brooks",
+    image: whitneyBrooksImage,
+    link: "attorney-profile/whitney-brooks",
+  },
+  {
+    name: "Valerie Kilgore",
+    image: valerieKilgoreImage,
+    link: "attorney-profile/valerie-kilgore",
+  },
 ];
 
 export const OurAttorneys = ({ language }: { language: string }) => {
   const { ourAttorneys } = homePageStrings;
-  const { title, moreInfo } = ourAttorneys;
+  const { title } = ourAttorneys;
 
   return (
     <section className="our-attorneys padding-left-and-right z-index-1">

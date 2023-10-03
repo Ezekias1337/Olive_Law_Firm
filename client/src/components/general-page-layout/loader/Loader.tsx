@@ -1,6 +1,5 @@
 // Library Imports
 import { FC } from "react";
-import { faAt } from "@fortawesome/free-solid-svg-icons";
 // Interfaces and Types
 import { LoaderProps } from "../../../constants/interfaces/LoaderProps";
 // CSS

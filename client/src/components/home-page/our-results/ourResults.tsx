@@ -71,6 +71,7 @@ export const OurResults = ({ language }: { language: string }) => {
               : viewMoreResults.spanish
           }
           variant="primary"
+          url="/our-results"
         />
       </div>
     </section>

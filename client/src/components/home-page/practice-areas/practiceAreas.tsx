@@ -68,6 +68,7 @@ export const PracticeAreas = ({ language }: { language: string }) => {
         <Button
           text={language === "English" ? allAreas.english : allAreas.spanish}
           variant="primary"
+          url="/practice-areas"
         />
       </div>
     </section>

@@ -2,7 +2,6 @@
 
 .what-customers-say {
   background-color: $primary-color;
-  padding-top: 80px;
   padding-bottom: 80px;
 
   h2 {
@@ -19,8 +18,9 @@
   .view-more-reviews-button-container {
     display: flex;
     justify-content: center;
-    button {
-      margin-top: 80px;
+    
+    a {
+      margin-top: 40px;
     }
   }
 }

@@ -11,7 +11,9 @@ export const TellYourStory = ({ language }: { language: string }) => {
 
   return (
     <section className="tell-your-story padding-left-and-right z-index-1">
-      <h2 className="bold-text">{language === "English" ? quote.english : quote.spanish}</h2>
+      <h2 className="bold-text">
+        {language === "English" ? quote.english : quote.spanish}
+      </h2>
       <div className="tell-us-your-story-button-container">
         <Button
           text={
@@ -20,6 +22,7 @@ export const TellYourStory = ({ language }: { language: string }) => {
               : scheduleConsulation.spanish
           }
           variant="neutral"
+          url="/contact-us"
         />
       </div>
     </section>
