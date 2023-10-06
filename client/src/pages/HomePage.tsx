@@ -7,8 +7,8 @@ import useDeviceInfo from "../hooks/useDeviceInfo";
 import { ReduxStoreState } from "../constants/interfaces/ReduxStoreState";
 import { FormState } from "../constants/interfaces/InputFieldProps";
 // Components
-import { Footer } from "../components/general-page-layout/footer/Footer";
 import { NavBar } from "../components/general-page-layout/navbar/Navbar";
+import { Footer } from "../components/general-page-layout/footer/Footer";
 import { PrimaryCallToAction } from "../components/home-page/primary-call-to-action/primaryCallToAction";
 import { NoPapeles } from "../components/home-page/no-papeles/noPapeles";
 import { OurPhilosophy } from "../components/home-page/our-philosophy/ourPhilosophy";

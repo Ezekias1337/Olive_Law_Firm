@@ -29,9 +29,10 @@ export const TextInput: FC<InputFieldProps> = ({
   childrenToRender,
   icon,
   setStateHook,
+  setErrorHook
 }) => {
   const handleInputChange = (e: FormUpdateEvent) => {
-    handleFormChange(e, setStateHook);
+    handleFormChange(e, setStateHook, setErrorHook);
   };
 
   return (

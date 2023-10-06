@@ -35,6 +35,7 @@ export interface InputFieldProps {
   childrenToRender?: ReactNode[] | undefined;
   icon?: IconProp;
   setStateHook: SetStateHookForm;
+  setErrorHook: SetStateHookForm;
 }
 
 export interface DropdownFieldProps extends InputFieldProps {
