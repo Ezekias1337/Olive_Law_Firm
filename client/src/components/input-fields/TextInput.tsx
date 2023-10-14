@@ -8,6 +8,8 @@ import {
 } from "../../functions/forms/handleFormChange";
 import { camelCasifyString } from "../../../../shared/utils/strings/camelCasifyString";
 import { kebabCasifyString } from "../../../../shared/utils/strings/kebabCasifyString";
+// Constants
+import { textOnlyPattern } from "../../../../shared/constants/regexPatterns";
 // Interfaces and Types
 import { InputFieldProps } from "../../constants/interfaces/InputFieldProps";
 // CSS
@@ -20,16 +22,15 @@ export const TextInput: FC<InputFieldProps> = ({
   theme,
   columns = "6",
   defaultValue = "",
-  value,
   inputType = "text",
   inputMode = "text",
-  pattern = "[A-Za-z0-9_]",
+  pattern = textOnlyPattern,
   autoComplete = "",
   maxLength = 100,
   childrenToRender,
   icon,
   setStateHook,
-  setErrorHook
+  setErrorHook,
 }) => {
   const handleInputChange = (e: FormUpdateEvent) => {
     handleFormChange(e, setStateHook, setErrorHook);
@@ -38,7 +39,7 @@ export const TextInput: FC<InputFieldProps> = ({
   return (
     <div className={`col col-${columns} mt-2 input-wrapper`}>
       <label
-        htmlFor={camelCasifyString(name)}
+        htmlFor={kebabCasifyString(name)}
         className={`form-label ${theme}-label`}
       >
         {name}

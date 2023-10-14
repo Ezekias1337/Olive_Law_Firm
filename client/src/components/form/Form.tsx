@@ -8,7 +8,13 @@ import {
   handleSwitchChange,
 } from "../../functions/forms/handleFormChange";
 // Interfaces and Types
+import {
+  InputFieldProps,
+  DropdownFieldProps,
+  CreditCardFieldProps,
+} from "../../constants/interfaces/InputFieldProps";
 import { SetStateHookForm } from "../../constants/interfaces/InputFieldProps";
+import { FormState } from "../../constants/interfaces/InputFieldProps";
 // Components
 import { CreditCardInput } from "../input-fields/CreditCardInput";
 import { DateInput } from "../input-fields/DateInput";
@@ -26,37 +32,69 @@ import { Button } from "../button/Button";
 TODO move inputfield scss to form component
 */
 
-export interface InputField {
-  name: string;
-  type: string;
-  theme: string;
-  additionalClassNames: string;
-  placeholder: string;
-  validation?: Function;
-  setStateHook: SetStateHookForm;
-  setErrorHook: SetStateHookForm;
+/* 
+  This is a type guard to help the typescript compiler since
+  I'm using a union type in renderInputFields
+*/
+type Field = InputField | DropdownField | CreditCardField;
+
+/* 
+  this type is used for the switch statement just to determine the type
+  of field to return
+*/
+type FieldType =
+  | "creditCard"
+  | "date"
+  | "dropdown"
+  | "email"
+  | "password"
+  | "phoneNumber"
+  | "quantity"
+  | "switch"
+  | "text"
+  | "textArea";
+
+interface InputField extends InputFieldProps {
+  type: FieldType;
+}
+
+interface DropdownField extends DropdownFieldProps {
+  type: FieldType;
+}
+
+interface CreditCardField extends CreditCardFieldProps {
+  type: FieldType;
 }
 
 interface FormProps {
-  inputFields: InputField[];
+  formTheme: "dark" | "light";
+  inputFields: (InputField | DropdownField | CreditCardField)[];
   apiEndpoint?: string;
+  formId: string;
+  setStateHook: SetStateHookForm;
+  setErrorHook: SetStateHookForm;
+  formState: FormState;
+  formErrors: FormState;
 }
 
-export const Form: FC<FormProps> = ({ inputFields, apiEndpoint }) => {
+
+
+export const Form: FC<FormProps> = ({
+  formTheme,
+  inputFields,
+  apiEndpoint,
+  formId,
+  setStateHook,
+  setErrorHook,
+  formState,
+  formErrors,
+}) => {
   const initialFormData: Record<string, string> = {};
 
   // Initialize form data for each input field
   inputFields.forEach((field) => {
-    initialFormData[field.name] = "";
+    initialFormData[camelCasifyString(field.name)] = "";
   });
-
-  const [formData, setFormData] = useState(initialFormData);
-  const [formErrors, setFormErrors] = useState<Record<string, string>>({});
-
-  const handleFieldChange = (fieldName: string, value: string): void => {
-    setFormData({ ...formData, [fieldName]: value });
-    setFormErrors({ ...formErrors, [fieldName]: "" });
-  };
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -65,68 +103,246 @@ export const Form: FC<FormProps> = ({ inputFields, apiEndpoint }) => {
     const errors: Record<string, string> = {};
 
     inputFields.forEach((field) => {
-      if (!formData[field.name]) {
-        errors[field.name] = `${field.placeholder} is required`;
-      } else if (field.validation && !field.validation(formData[field.name])) {
-        errors[field.name] = `Invalid ${field.placeholder}`;
-      }
+      if (!formState[camelCasifyString(field.name)]) {
+        errors[
+          camelCasifyString(field.name)
+        ] = `${field.placeholder} is required`;
+      } /* else if (
+        field.validation &&
+        !field.validation(formState[camelCasifyString(field.name)])
+      ) {
+        errors[camelCasifyString(field.name)] = `Invalid ${field.placeholder}`;
+      } */
     });
 
-    setFormErrors(errors);
+    setErrorHook(errors);
 
     if (Object.keys(errors).length === 0) {
       // Handle form submission (e.g., send data to the server)
-      console.log("Form data submitted:", formData);
+      console.log("Form data submitted:", formState);
     }
   };
 
-  const renderInputFields = (inputFields: InputField[]): ReactNode[] => {
+  const isDropdownField = (field: Field): field is DropdownField =>
+    (field as DropdownField).dropdownOptions !== undefined;
+
+  const renderInputFields = (inputFields: Field[]): ReactNode[] => {
+    
+    
     const arrayOfInputFields: ReactNode[] = [];
 
     for (const inputField of inputFields) {
       let inputFieldToBePushed: ReactNode;
 
       switch (inputField.type) {
-        /* case "CreditCard":
-          inputFieldToBePushed = <CreditCardInput />
-          break;
-        case "Date":
-          break;
-        case "Dropdown":
-          break;
-        case "Email":
-          break;
-        case "Password":
-          break;
-        case "PhoneNumber":
-          break;
-        case "Quantity":
-          break;
-        case "Switch":
-          break;
-        case "TextArea":
-          break; */
-        case "Text":
+        case "creditCard":
           inputFieldToBePushed = (
             <div key={inputField.name}>
-              <TextInput
+              <CreditCardInput
                 name={inputField.name}
-                theme={inputField.theme}
+                additionalClassNames={`${inputField.additionalClassNames} ${
+                  formErrors[inputField.name] ? "form-error" : ""
+                }`}
                 placeholder={inputField.placeholder}
-                value={formData[inputField.name]}
-                setStateHook={inputField.setStateHook}
-                setErrorHook={inputField.setErrorHook}
-                additionalClassNames={
-                  formErrors[inputField.name] ? "is-invalid" : ""
+                theme={formTheme}
+                columns={inputField.columns}
+                defaultValue={
+                  inputField.defaultValue !== undefined
+                    ? inputField.defaultValue
+                    : ""
                 }
+                inputType={inputField.inputType}
+                inputMode={inputField.inputMode}
+                pattern={inputField.pattern}
+                autoComplete={
+                  inputField.autoComplete !== undefined
+                    ? inputField.autoComplete
+                    : ""
+                }
+                maxLength={
+                  inputField.maxLength !== undefined
+                    ? inputField.maxLength
+                    : 200
+                }
+                childrenToRender={
+                  inputField.childrenToRender !== undefined
+                    ? inputField.childrenToRender
+                    : undefined
+                }
+                icon={
+                  inputField.icon !== undefined ? inputField.icon : undefined
+                }
+                setStateHook={setStateHook}
+                setErrorHook={setErrorHook}
               />
-              {formErrors[inputField.name] && (
-                <div className="text-danger">{formErrors[inputField.name]}</div>
+              {formErrors[camelCasifyString(inputField.name)] && (
+                <div className="form-error-message">
+                  {formErrors[camelCasifyString(inputField.name)]}
+                </div>
               )}
             </div>
           );
           break;
+        /* case "date":
+          break; */
+        case "dropdown":
+          if (isDropdownField(inputField)) {
+            inputFieldToBePushed = (
+              <div key={inputField.name}>
+                <DropdownInput
+                  name={inputField.name}
+                  additionalClassNames={`${inputField.additionalClassNames} ${
+                    formErrors[inputField.name] ? "form-error" : ""
+                  }`}
+                  placeholder={inputField.placeholder}
+                  theme={formTheme}
+                  columns={inputField.columns}
+                  defaultValue={
+                    inputField.defaultValue !== undefined
+                      ? inputField.defaultValue
+                      : ""
+                  }
+                  inputType={inputField.inputType}
+                  inputMode={inputField.inputMode}
+                  pattern={inputField.pattern}
+                  autoComplete={
+                    inputField.autoComplete !== undefined
+                      ? inputField.autoComplete
+                      : ""
+                  }
+                  maxLength={
+                    inputField.maxLength !== undefined
+                      ? inputField.maxLength
+                      : 200
+                  }
+                  childrenToRender={
+                    inputField.childrenToRender !== undefined
+                      ? inputField.childrenToRender
+                      : undefined
+                  }
+                  icon={
+                    inputField.icon !== undefined ? inputField.icon : undefined
+                  }
+                  setStateHook={setStateHook}
+                  setErrorHook={setErrorHook}
+                  dropdownOptions={inputField.dropdownOptions}
+                />
+                {formErrors[camelCasifyString(inputField.name)] && (
+                  <div className="form-error-message">
+                    {formErrors[camelCasifyString(inputField.name)]}
+                  </div>
+                )}
+              </div>
+            );
+          }
 
+          break;
+        /* case "email":
+          break;
+        case "password":
+          break;
+        case "phoneNumber":
+          break;
+        case "quantity":
+          break;
+        case "switch":
+          break;*/
+        case "text":
+          inputFieldToBePushed = (
+            <div key={inputField.name}>
+              <TextInput
+                name={inputField.name}
+                additionalClassNames={`${inputField.additionalClassNames} ${
+                  formErrors[inputField.name] ? "form-error" : ""
+                }`}
+                placeholder={inputField.placeholder}
+                theme={formTheme}
+                columns={inputField.columns}
+                defaultValue={
+                  inputField.defaultValue !== undefined
+                    ? inputField.defaultValue
+                    : ""
+                }
+                inputType={inputField.inputType}
+                inputMode={inputField.inputMode}
+                pattern={inputField.pattern}
+                autoComplete={
+                  inputField.autoComplete !== undefined
+                    ? inputField.autoComplete
+                    : ""
+                }
+                maxLength={
+                  inputField.maxLength !== undefined
+                    ? inputField.maxLength
+                    : 200
+                }
+                childrenToRender={
+                  inputField.childrenToRender !== undefined
+                    ? inputField.childrenToRender
+                    : undefined
+                }
+                icon={
+                  inputField.icon !== undefined ? inputField.icon : undefined
+                }
+                setStateHook={setStateHook}
+                setErrorHook={setErrorHook}
+              />
+              {formErrors[camelCasifyString(inputField.name)] && (
+                <div className="form-error-message">
+                  {formErrors[camelCasifyString(inputField.name)]}
+                </div>
+              )}
+            </div>
+          );
+          break;
+        case "textArea":
+          inputFieldToBePushed = (
+            <div key={inputField.name}>
+              <TextAreaInput
+                name={inputField.name}
+                additionalClassNames={`${inputField.additionalClassNames} ${
+                  formErrors[inputField.name] ? "form-error" : ""
+                }`}
+                placeholder={inputField.placeholder}
+                theme={formTheme}
+                columns={inputField.columns}
+                defaultValue={
+                  inputField.defaultValue !== undefined
+                    ? inputField.defaultValue
+                    : ""
+                }
+                inputType={inputField.inputType}
+                inputMode={inputField.inputMode}
+                pattern={inputField.pattern}
+                autoComplete={
+                  inputField.autoComplete !== undefined
+                    ? inputField.autoComplete
+                    : ""
+                }
+                maxLength={
+                  inputField.maxLength !== undefined
+                    ? inputField.maxLength
+                    : 2000
+                }
+                childrenToRender={
+                  inputField.childrenToRender !== undefined
+                    ? inputField.childrenToRender
+                    : undefined
+                }
+                icon={
+                  inputField.icon !== undefined ? inputField.icon : undefined
+                }
+                setStateHook={setStateHook}
+                setErrorHook={setErrorHook}
+              />
+              {formErrors[camelCasifyString(inputField.name)] && (
+                <div className="form-error-message">
+                  {formErrors[camelCasifyString(inputField.name)]}
+                </div>
+              )}
+            </div>
+          );
+          break;
         default:
           console.log(
             `inputField.type of: ${inputField.type} does not match any of the options in the switch statement, returning warning in DOM`
@@ -145,16 +361,14 @@ export const Form: FC<FormProps> = ({ inputFields, apiEndpoint }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} id={formId}>
       {renderInputFields(inputFields)}
-
-      {/* 
-        TODO: add prop to control form and button theme
-      */}
       <Button
-        variant={`primary`}
+        variant={formTheme === "dark" ? "primary" : "secondary"}
+        type="submit"
         /* text={language === "English" ? "Submit" : "Entregar"} */
         text="Submit"
+        buttonId={formId}
       />
     </form>
   );

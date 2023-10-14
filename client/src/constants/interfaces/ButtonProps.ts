@@ -12,4 +12,5 @@ export interface ButtonProps {
   onClickHandler?: Function;
   type?: "button" | "submit" | "reset";
   url?: string;
+  buttonId?: string | undefined;
 }

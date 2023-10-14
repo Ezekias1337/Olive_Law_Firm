@@ -17,7 +17,30 @@ export interface InputFieldProps {
   columns?: string;
   defaultValue?: string;
   value?: string;
-  inputType?: string;
+  inputType?:
+    | "button"
+    | "checkbox"
+    | "color"
+    | "date"
+    | "datetime-local"
+    | "email"
+    | "file"
+    | "hidden"
+    | "image"
+    | "month"
+    | "number"
+    | "password"
+    | "radio"
+    | "range"
+    | "reset"
+    | "search"
+    | "submit"
+    | "tel"
+    | "text"
+    | "time"
+    | "url"
+    | "week"
+    | undefined;
   inputMode?:
     | "none"
     | "text"
@@ -43,7 +66,7 @@ export interface DropdownFieldProps extends InputFieldProps {
 }
 
 export interface CreditCardFieldProps extends InputFieldProps {
-  creditCardNumber: string;
+  //creditCardNumber?: string;
 }
 
 export interface PhoneNumberCountryCode {

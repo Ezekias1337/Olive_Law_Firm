@@ -20,6 +20,7 @@ export const Button: FC<ButtonProps> = ({
   onClickHandler = null,
   type = "button",
   url,
+  buttonId = null
 }) => {
   const renderButtonContent = () => {
     return (
@@ -47,6 +48,7 @@ export const Button: FC<ButtonProps> = ({
       disabled={disabled || loading}
       onClick={() => (onClickHandler !== null ? onClickHandler() : null)}
       type={type}
+      id={buttonId !== null ? buttonId : undefined}
     >
       {renderButtonContent()}
     </button>

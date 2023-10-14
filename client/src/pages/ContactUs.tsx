@@ -40,6 +40,9 @@ export const ContactUs = () => {
     TODO: move form css into form component instead of import into every input type
     TODO: look into autocomplete attributes
     TODO: Look into incorrect use of label element for DOM error
+    TODO: Look into making required one of the form attributes
+    TODO: Fix regex for input field
+    TODO: Make form have theme prop and apply to input fields and button
   */
 
   const arrayOfInputFields = [
@@ -49,8 +52,6 @@ export const ContactUs = () => {
       theme: "Dark",
       additionalClassNames: "",
       placeholder: "First Name",
-      setStateHook: setFormInputData,
-      setErrorHook: setFormErrorData,
     },
     {
       name: "Last Name",
@@ -58,8 +59,6 @@ export const ContactUs = () => {
       theme: "Dark",
       additionalClassNames: "",
       placeholder: "Last Name",
-      setStateHook: setFormInputData,
-      setErrorHook: setFormErrorData,
     },
   ];
 
@@ -68,8 +67,13 @@ export const ContactUs = () => {
       <NavBar theme="dark" adminVariant={false} language={reduxLanguage} />
       <PageHeader language={reduxLanguage} title={pageTitle} />
       <Form
+        formId="contact-us-form"
         inputFields={arrayOfInputFields}
         apiEndpoint="/placeholder-endpoint"
+        setStateHook={setFormInputData}
+        setErrorHook={setFormErrorData}
+        formState={formInputData}
+        formErrors={formErrorData}
       />
       <Footer language={reduxLanguage} />
     </div>
