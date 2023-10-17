@@ -1,13 +1,13 @@
 // Constants
-import { homePageStrings } from "../../../constants/language-strings/homepageStrings";
+import { homePageStrings } from "../../../../constants/language-strings/homepageStrings";
 // Components
 import { AttorneyShowcase } from "./dependents/attorneyShowcase";
 // CSS
 import "./our-attorneys.scss";
 // Assets and Images
-import juanSanchezImage from "../../../assets/images/staff/juan-sanchez.png";
-import whitneyBrooksImage from "../../../assets/images/staff/whitney-brooks.png";
-import valerieKilgoreImage from "../../../assets/images/staff/valerie-kilgore.png";
+import juanSanchezImage from "../../../../assets/images/staff/juan-sanchez.png";
+import whitneyBrooksImage from "../../../../assets/images/staff/whitney-brooks.png";
+import valerieKilgoreImage from "../../../../assets/images/staff/valerie-kilgore.png";
 
 const arrayOfAttorneyInfo = [
   {

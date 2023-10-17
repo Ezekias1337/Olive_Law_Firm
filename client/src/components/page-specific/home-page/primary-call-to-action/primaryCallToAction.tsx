@@ -1,7 +1,7 @@
 // Constants
-import { homePageStrings } from "../../../constants/language-strings/homepageStrings";
+import { homePageStrings } from "../../../../constants/language-strings/homepageStrings";
 // Components
-import { Button } from "../../button/Button";
+import { Button } from "../../../button/Button";
 // CSS
 import "./primary-call-to-action.scss";
 

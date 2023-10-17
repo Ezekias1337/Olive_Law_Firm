@@ -1,12 +1,12 @@
 // Constants
-import { homePageStrings } from "../../../constants/language-strings/homepageStrings";
+import { homePageStrings } from "../../../../constants/language-strings/homepageStrings";
 // Components
-import { CustomerReview } from "../../customer-review/customerReview";
-import { Button } from "../../button/Button";
+import { CustomerReview } from "../../../customer-review/customerReview";
+import { Button } from "../../../button/Button";
 // CSS
 import "./what-customers-say.scss";
 // Assets and Images
-import customerReviewImage1 from "../../../assets/images/customer-reviews/google_review_1.png";
+import customerReviewImage1 from "../../../../assets/images/customer-reviews/google_review_1.png";
 
 export const WhatCustomersSay = ({ language }: { language: string }) => {
   const { whatOurCustomersSayAboutUs } = homePageStrings;

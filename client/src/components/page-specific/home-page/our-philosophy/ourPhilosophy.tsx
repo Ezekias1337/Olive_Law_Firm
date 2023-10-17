@@ -1,5 +1,5 @@
 // Constants
-import { homePageStrings } from "../../../constants/language-strings/homepageStrings";
+import { homePageStrings } from "../../../../constants/language-strings/homepageStrings";
 // CSS
 import "./our-philosophy.scss";
 

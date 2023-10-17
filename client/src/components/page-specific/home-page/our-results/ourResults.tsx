@@ -1,9 +1,8 @@
 // Constants
-import { homePageStrings } from "../../../constants/language-strings/homepageStrings";
+import { homePageStrings } from "../../../../constants/language-strings/homepageStrings";
 // Components
-import { Table } from "reactstrap";
-import { OurResult } from "../../our-results/ourResult";
-import { Button } from "../../button/Button";
+import { OurResult } from "../../../our-results/ourResult";
+import { Button } from "../../../button/Button";
 // CSS
 import "./our-results.scss";
 

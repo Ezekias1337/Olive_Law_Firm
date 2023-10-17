@@ -7,8 +7,6 @@ import { camelCasifyString } from "../../../../shared/utils/strings/camelCasifyS
 import { kebabCasifyString } from "../../../../shared/utils/strings/kebabCasifyString";
 // Interfaces and Types
 import { DropdownFieldProps } from "../../constants/interfaces/InputFieldProps";
-// CSS
-import "./inputFields.scss";
 
 export const DropdownInput: FC<DropdownFieldProps> = ({
   name,

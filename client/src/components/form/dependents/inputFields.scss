@@ -1,6 +1,6 @@
-@import "../../css/variables";
-@import "../../css/partials/switch-input";
-@import "../../css/partials/input-themes";
+@import "../../../css/variables";
+@import "../../../css/partials/switch-input";
+@import "../../../css/partials/input-themes";
 
 /* 
   ! Need to take a look at responsiveness of the
@@ -72,11 +72,11 @@ select {
 }
 
 select.light-input {
-  background-image: url("../../assets/icons/Dropdown_Arrow_Blue.svg");
+  background-image: url("../../../assets/icons/Dropdown_Arrow_Blue.svg");
 }
 
 select.dark-input {
-  background-image: url("../../assets/icons/Dropdown_Arrow_White.svg");
+  background-image: url("../../../assets/icons/Dropdown_Arrow_White.svg");
 }
 
 select::-ms-expand {

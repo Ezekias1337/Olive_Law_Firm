@@ -8,8 +8,6 @@ import { updateCountryCodeImage } from "../../functions/forms/updateCountryCodeI
 import { phoneNumberCountryCodes } from "../../constants/phoneNumberCountryCodes";
 // Interfaces and Types
 import { CountryCodeInputFieldProps } from "../../constants/interfaces/InputFieldProps";
-// CSS
-import "./inputFields.scss";
 
 /* 
     ! THIS COMPONENT IS NOT COMPLETED

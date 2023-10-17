@@ -5,64 +5,63 @@
 */
 
 div.form-switch {
-    padding-left: calc(var(--bs-gutter-x) * 0.5);
-    display: flex;
-  }
-  
-  .form-switch .form-check-input {
-    margin-left: 1.5px !important;
-    margin-top: 0px !important;
-    width: 3.5em !important;
-    height: 1.5em !important;
-  }
-  
-  .light-input.form-check-input {
+  padding-left: calc(var(--bs-gutter-x) * 0.5);
+  display: flex;
+}
+
+.form-switch .form-check-input {
+  margin-left: 1.5px !important;
+  margin-top: 0px !important;
+  width: 3.5em !important;
+  height: 1.5em !important;
+}
+
+.light-input.form-check-input {
+  background-color: $light-gray;
+  background-image: url("../../../assets/icons/Form_Switch_Dark_Blue.svg") !important;
+  border-color: $primary-color;
+
+  &:hover {
+    background-image: url("../../../assets/icons/Form_Switch_Light_Blue.svg") !important;
     background-color: $light-gray;
-    background-image: url("../../assets/icons/Form_Switch_Dark_Blue.svg") !important;
-    border-color: $primary-color;
-  
-    &:hover {
-      background-image: url("../../assets/icons/Form_Switch_Light_Blue.svg") !important;
-      background-color: $light-gray;
-      border-color: $secondary-color;
-    }
-  
-    /* 
+    border-color: $secondary-color;
+  }
+
+  /* 
       Cancel out bootstrap styling
     */
-    &:focus {
-      border-color: $secondary-color !important;
-      box-shadow: 0px 4px 4px $secondary-color !important;
-    }
-  
-    &:checked {
-      background-image: url("../../assets/icons/Form_Switch_Light_Blue.svg") !important;
-      background-color: $neutral;
-      border-color: $secondary-color;
-    }
+  &:focus {
+    border-color: $secondary-color !important;
+    box-shadow: 0px 4px 4px $secondary-color !important;
   }
-  
-  .dark-input.form-check-input {
-    background-color: $primary-color;
-    background-image: url("../../assets/icons/Form_Switch_Gray.svg") !important;
+
+  &:checked {
+    background-image: url("../../../assets/icons/Form_Switch_Light_Blue.svg") !important;
+    background-color: $neutral;
+    border-color: $secondary-color;
+  }
+}
+
+.dark-input.form-check-input {
+  background-color: $primary-color;
+  background-image: url("../../../assets/icons/Form_Switch_Gray.svg") !important;
+  border-color: $neutral;
+
+  &:hover {
+    background-color: $secondary-color;
+  }
+
+  /* 
+      Cancel out bootstrap styling
+    */
+  &:focus {
+    border-color: $neutral !important;
+    box-shadow: 0px 4px 4px $neutral !important;
+  }
+
+  &:checked {
+    background-image: url("../../../assets/icons/Form_Switch_White.svg") !important;
+    background-color: $tertiary-color;
     border-color: $neutral;
-  
-    &:hover {
-      background-color: $secondary-color;
-    }
-  
-    /* 
-      Cancel out bootstrap styling
-    */
-    &:focus {
-      border-color: $neutral !important;
-      box-shadow: 0px 4px 4px $neutral !important;
-    }
-  
-    &:checked {
-      background-image: url("../../assets/icons/Form_Switch_White.svg") !important;
-      background-color: $tertiary-color;
-      border-color: $neutral;
-    }
   }
-  
+}

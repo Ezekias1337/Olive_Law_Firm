@@ -7,10 +7,10 @@ import {
   faHeartPulse,
 } from "@fortawesome/free-solid-svg-icons";
 // Constants
-import { homePageStrings } from "../../../constants/language-strings/homepageStrings";
+import { homePageStrings } from "../../../../constants/language-strings/homepageStrings";
 // Components
 import { PracticeAreasCard } from "./practiceAreaCard";
-import { Button } from "../../button/Button";
+import { Button } from "../../../button/Button";
 // CSS
 import "./practice-areas.scss";
 // Assets and Images

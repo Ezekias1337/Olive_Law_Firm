@@ -11,8 +11,6 @@ import { camelCasifyString } from "../../../../shared/utils/strings/camelCasifyS
 import { kebabCasifyString } from "../../../../shared/utils/strings/kebabCasifyString";
 // Interfaces and Types
 import { InputFieldProps } from "../../constants/interfaces/InputFieldProps";
-// CSS
-import "./inputFields.scss";
 
 export const SwitchInput: FC<InputFieldProps> = ({
   name,

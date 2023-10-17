@@ -1,9 +1,9 @@
 // Library Imports
 import { FC } from "react";
 // Constants
-import { homePageStrings } from "../../../../constants/language-strings/homepageStrings";
+import { homePageStrings } from "../../../../../constants/language-strings/homepageStrings";
 // Components
-import { Button } from "../../../button/Button";
+import { Button } from "../../../../button/Button";
 
 interface AttorneyShowcaseProps {
   language: string;

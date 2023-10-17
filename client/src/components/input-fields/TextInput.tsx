@@ -12,8 +12,6 @@ import { kebabCasifyString } from "../../../../shared/utils/strings/kebabCasifyS
 import { textOnlyPattern } from "../../../../shared/constants/regexPatterns";
 // Interfaces and Types
 import { InputFieldProps } from "../../constants/interfaces/InputFieldProps";
-// CSS
-import "./inputFields.scss";
 
 export const TextInput: FC<InputFieldProps> = ({
   name,
