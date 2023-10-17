@@ -33,6 +33,7 @@ export const Form: FC<FormProps> = ({
         handleSubmit(e, inputFields, formState, setErrorHook, apiEndpoint)
       }
       id={formId}
+      className="padding-left-and-right"
     >
       {renderInputFields(
         inputFields,
@@ -42,7 +43,7 @@ export const Form: FC<FormProps> = ({
         setErrorHook
       )}
       <Button
-        variant={formTheme === "dark" ? "primary" : "secondary"}
+        variant={formTheme === "dark" ? "primary" : "neutral"}
         type="submit"
         /* text={language === "English" ? "Submit" : "Entregar"} */
         text="Submit"

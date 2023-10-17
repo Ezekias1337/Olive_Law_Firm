@@ -43,7 +43,7 @@ export interface CreditCardField extends CreditCardFieldProps {
 
 export interface FormProps {
   formTheme: "dark" | "light";
-  inputFields: (InputField | DropdownField | CreditCardField)[];
+  inputFields: Field[];
   apiEndpoint: string;
   formId: string;
   setStateHook: SetStateHookForm;
