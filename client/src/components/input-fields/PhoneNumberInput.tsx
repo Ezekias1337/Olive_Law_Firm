@@ -6,6 +6,8 @@ import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 // Interfaces and Types
 import { InputFieldProps } from "../../constants/interfaces/InputFieldProps";
+import { phoneNumberPattern } from "../../../../shared/constants/regexPatterns";
+import { phoneNumberAutocomplete } from "../../constants/formAutocompleteStrings";
 // Components
 import { TextInput } from "./TextInput";
 import { CountryCodeInput } from "./CountryCodeInput";
@@ -17,6 +19,7 @@ import { CountryCodeInput } from "./CountryCodeInput";
     ! need to fix re-renders from other inputs updating
     ! need selecting country to add the country code
     ! need to make user input formatted to (555) 555-5555
+    ! need to make arrow direction change when dropdown opens
 */
 
 export const PhoneNumberInput: FC<InputFieldProps> = ({
@@ -38,8 +41,8 @@ export const PhoneNumberInput: FC<InputFieldProps> = ({
         defaultValue={defaultValue}
         inputType="tel"
         inputMode="tel"
-        autoComplete="tel"
-        pattern="/^(\+\d{1,3}\s)?\(\d{3}\)\s\d{3}-\d{4}$/"
+        autoComplete={phoneNumberAutocomplete}
+        pattern={phoneNumberPattern}
         childrenToRender={[
           <CountryCodeInput theme={theme} key={nanoid()} />,
           <div

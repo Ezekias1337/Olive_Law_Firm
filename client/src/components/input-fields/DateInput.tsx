@@ -3,6 +3,7 @@ import { FC } from "react";
 import { faCalendar } from "@fortawesome/free-regular-svg-icons";
 // Interfaces and Types
 import { InputFieldProps } from "../../constants/interfaces/InputFieldProps";
+import { americanDatePattern } from "../../../../shared/constants/regexPatterns";
 // Components
 import { TextInput } from "./TextInput";
 
@@ -11,6 +12,7 @@ export const DateInput: FC<InputFieldProps> = ({
   theme,
   columns = "6",
   defaultValue = "",
+  required,
   inputType = "text",
   setStateHook,
 }) => {
@@ -21,7 +23,9 @@ export const DateInput: FC<InputFieldProps> = ({
       placeholder="mm/dd/yyyy"
       theme={theme}
       columns={columns}
+      pattern={americanDatePattern}
       defaultValue={defaultValue}
+      required={required}
       inputType={inputType}
       icon={faCalendar}
       setStateHook={setStateHook}

@@ -3,6 +3,8 @@ import { FC } from "react";
 import { faAt } from "@fortawesome/free-solid-svg-icons";
 // Interfaces and Types
 import { InputFieldProps } from "../../constants/interfaces/InputFieldProps";
+import { emailPattern } from "../../../../shared/constants/regexPatterns";
+import { emailAutocomplete } from "../../constants/formAutocompleteStrings";
 // Components
 import { TextInput } from "./TextInput";
 
@@ -11,6 +13,7 @@ export const EmailInput: FC<InputFieldProps> = ({
   theme,
   columns = "6",
   defaultValue = "",
+  required,
   setStateHook,
 }) => {
   return (
@@ -21,10 +24,11 @@ export const EmailInput: FC<InputFieldProps> = ({
       theme={theme}
       columns={columns}
       defaultValue={defaultValue}
+      required={required}
       inputType="email"
       inputMode="email"
-      autoComplete="email"
-      pattern="/^[^\s@]+@[^\s@]+\.[^\s@]+$/"
+      autoComplete={emailAutocomplete}
+      pattern={emailPattern}
       icon={faAt}
       setStateHook={setStateHook}
     />

@@ -15,6 +15,7 @@ import { InputFieldProps } from "../../constants/interfaces/InputFieldProps";
 
 export const TextInput: FC<InputFieldProps> = ({
   name,
+  label,
   additionalClassNames = "",
   placeholder,
   theme,
@@ -35,12 +36,12 @@ export const TextInput: FC<InputFieldProps> = ({
   };
 
   return (
-    <div className={`col col-${columns} mt-2 input-wrapper`}>
+    <div className={`mt-2 input-wrapper`}>
       <label
         htmlFor={kebabCasifyString(name)}
         className={`form-label ${theme}-label`}
       >
-        {name}
+        {label}
       </label>
       <input
         className={`input-field ${theme}-input ${additionalClassNames}`}

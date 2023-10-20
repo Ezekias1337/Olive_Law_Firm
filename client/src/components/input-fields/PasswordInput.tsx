@@ -3,6 +3,7 @@ import { FC, useState } from "react";
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
 // Interfaces and Types
 import { InputFieldProps } from "../../constants/interfaces/InputFieldProps";
+import { textAndNumbersNoSpacesPattern } from "../../../../shared/constants/regexPatterns";
 // Components
 import { TextInput } from "./TextInput";
 
@@ -11,6 +12,7 @@ export const PasswordInput: FC<InputFieldProps> = ({
   theme,
   columns = "6",
   defaultValue = "",
+  autoComplete,
   setStateHook,
 }) => {
   const [isPasswordHidden, setIsPasswordHidden] = useState(true);
@@ -33,7 +35,8 @@ export const PasswordInput: FC<InputFieldProps> = ({
         columns={columns}
         defaultValue={defaultValue}
         inputType={isPasswordHidden === true ? "password" : "text"}
-        autoComplete="current-password"
+        autoComplete={autoComplete}
+        pattern={textAndNumbersNoSpacesPattern}
         maxLength={30}
         setStateHook={setStateHook}
         childrenToRender={[

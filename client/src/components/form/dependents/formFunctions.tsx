@@ -55,6 +55,7 @@ const generateSharedInputProps = (
 ): InputField => {
   const sharedInputProps: InputField = {
     name: inputField.name,
+    label: inputField.label,
     additionalClassNames: `${inputField.additionalClassNames} ${
       formErrors[inputField.name] ? "form-error" : ""
     }`,
@@ -64,6 +65,7 @@ const generateSharedInputProps = (
     defaultValue: `${
       inputField.defaultValue !== undefined ? inputField.defaultValue : ""
     }`,
+    required: inputField.required === true ? true : false,
     inputType: inputField.inputType,
     inputMode: inputField.inputMode,
     pattern: inputField.pattern,
@@ -140,7 +142,7 @@ export const renderInputFields = (
     switch (inputField.type) {
       /* case "creditCard":
               inputFieldToBePushed = (
-                <div key={inputField.name}>
+                <div key={inputField.name} className={`col col-${inputField.columns}`}>
                   <CreditCardInput
                     {...generalInputProps}
                   />
@@ -153,7 +155,10 @@ export const renderInputFields = (
       case "dropdown":
         if (isDropdownField(inputField)) {
           inputFieldToBePushed = (
-            <div key={inputField.name}>
+            <div
+              key={inputField.name}
+              className={`col col-${inputField.columns}`}
+            >
               <DropdownInput
                 {...generalInputProps}
                 dropdownOptions={inputField.dropdownOptions}
@@ -165,18 +170,25 @@ export const renderInputFields = (
 
         break;
       /* case "email":
-              break;
+            already has pattern for regex inside component     
+            break;
             case "password":
-              break;
+            already has pattern for regex inside component  
+            break;
             case "phoneNumber":
-              break;
+            already has pattern for regex inside component  
+            break;
             case "quantity":
-              break;
+            already has pattern for regex inside component  
+            break;
             case "switch":
               break;*/
       case "text":
         inputFieldToBePushed = (
-          <div key={inputField.name}>
+          <div
+            key={inputField.name}
+            className={`col col-${inputField.columns}`}
+          >
             <TextInput {...generalInputProps} />
             <FormError formErrors={formErrors} inputField={inputField} />
           </div>
@@ -184,7 +196,10 @@ export const renderInputFields = (
         break;
       case "textArea":
         inputFieldToBePushed = (
-          <div key={inputField.name}>
+          <div
+            key={inputField.name}
+            className={`col col-${inputField.columns}`}
+          >
             <TextAreaInput {...generalInputProps} />
             <FormError formErrors={formErrors} inputField={inputField} />
           </div>
@@ -195,7 +210,10 @@ export const renderInputFields = (
           `inputField.type of: ${inputField.type} does not match any of the options in the switch statement, returning warning in DOM`
         );
         inputFieldToBePushed = (
-          <div>"{inputField.type}" does not match any input type available, check your spelling. 🗿</div>
+          <div>
+            "{inputField.type}" does not match any input type available, check
+            your spelling. 🗿
+          </div>
         );
     }
 

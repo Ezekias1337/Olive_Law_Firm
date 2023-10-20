@@ -8,6 +8,7 @@ import {
 } from "../../functions/forms/handleFormChange";
 // Interfaces and Types
 import { CreditCardFieldProps } from "../../constants/interfaces/InputFieldProps";
+import { creditCardNumberPattern } from "../../../../shared/constants/regexPatterns";
 // Components
 import { TextInput } from "./TextInput";
 
@@ -16,12 +17,11 @@ export const CreditCardInput: FC<CreditCardFieldProps> = ({
   theme,
   columns = "6",
   defaultValue = "",
+  required,
   inputType = "tel",
   inputMode = "numeric",
-  pattern = "[0-9s]{13,19}",
   autoComplete = "cc-number",
   maxLength = 19,
-  creditCardNumber,
   setStateHook,
 }) => {
   const handleInputChange = (e: FormUpdateEvent) => {
@@ -53,9 +53,10 @@ export const CreditCardInput: FC<CreditCardFieldProps> = ({
       theme={theme}
       columns={columns}
       defaultValue={defaultValue}
+      required={required}
       inputType={inputType}
       inputMode={inputMode}
-      pattern={pattern}
+      pattern={creditCardNumberPattern}
       autoComplete={autoComplete}
       maxLength={maxLength}
       setStateHook={setStateHook}

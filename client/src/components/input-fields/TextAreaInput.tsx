@@ -11,11 +11,12 @@ import { kebabCasifyString } from "../../../../shared/utils/strings/kebabCasifyS
 import { InputFieldProps } from "../../constants/interfaces/InputFieldProps";
 
 /* 
-  ! Later on need to change styling of resize handle
+  TODO: Need to change styling of resize handle
 */
 
 export const TextAreaInput: FC<InputFieldProps> = ({
   name,
+  label,
   additionalClassNames = "",
   placeholder,
   theme,
@@ -25,18 +26,19 @@ export const TextAreaInput: FC<InputFieldProps> = ({
   autoComplete = "",
   maxLength = 100,
   setStateHook,
+  setErrorHook,
 }) => {
   const handleInputChange = (e: FormUpdateEvent) => {
-    handleFormChange(e, setStateHook);
+    handleFormChange(e, setStateHook, setErrorHook);
   };
 
   return (
-    <div className={`col col-${columns} mt-2 input-wrapper`}>
+    <div className={`mt-2 input-wrapper`}>
       <label
         htmlFor={camelCasifyString(name)}
         className={`form-label ${theme}-label`}
       >
-        {name}
+        {label}
       </label>
       <textarea
         className={`input-field ${theme}-input ${additionalClassNames}`}

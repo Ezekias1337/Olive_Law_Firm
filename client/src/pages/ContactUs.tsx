@@ -9,6 +9,18 @@ import { FormState } from "../constants/interfaces/InputFieldProps";
 import { Field } from "../components/form/dependents/formTypes";
 // Constants
 import { contactUsStrings } from "../constants/language-strings/contactUsStrings";
+import {
+  fullNameAutocomplete,
+  phoneNumberAutocomplete,
+  emailAutocomplete,
+} from "../constants/formAutocompleteStrings";
+import {
+  textOnlyPattern,
+  americanDatePattern,
+  phoneNumberPattern,
+  emailPattern,
+  textAndNumbersPattern,
+} from "../../../shared/constants/regexPatterns";
 // Components
 import { NavBar } from "../components/general-page-layout/navbar/Navbar";
 import { Footer } from "../components/general-page-layout/footer/Footer";
@@ -34,44 +46,230 @@ export const ContactUs = () => {
     businessAddress,
   } = contactUsStrings;
 
+  const {
+    fullName,
+    dateOfIncident,
+    phoneNumber,
+    treatmentStatus,
+    preferredLanguage,
+    practiceArea,
+    emailAddress,
+    opposition,
+    describeIncident,
+  } = formFields;
+
   /* 
-    TODO: use formfields from contactUsStrings
-    TODO: revise form component to translate to spanish when needed
-    TODO: Look into incorrect use of label element for DOM error
+    TODO: form error should be in spanish when page is spanish
     TODO: Look into making required one of the form attributes
-    TODO: Fix regex for input field
-    TODO: Make form have theme prop and apply to input fields and button
+    TODO: Make sure correct css is applied to errored out fields
+    TODO: Make setStateHook and setErrorHook only be passed to form so it doesn't 
+    TODO: Make dropdown options also translate
+    TODO: Remove theme from input field props, keep only in form
+    TODO: Look into datalist element for dropdown field
+    TODO: Add multiple attribute prop to dropdown component to allow multiple selections
+    TODO: Make function to supply repeated props to fields
+    need to be duplicated
+    TODO: Make select arrow flip when menu is open
+    TODO: MAKE SURE ALL INPUT FIELD COMPONENTS USE REGEX FROM SHARED FOLDER
   */
 
   const arrayOfInputFields: Field[] = [
     {
-      name: "First Name",
+      name: fullName.english,
+      label: reduxLanguage === "English" ? fullName.english : fullName.spanish,
       additionalClassNames: "",
-      placeholder: "First Name",
+      placeholder:
+        reduxLanguage === "English" ? fullName.english : fullName.spanish,
       theme: "light",
       columns: "6",
       type: "text",
       inputType: "text",
       inputMode: "text",
-      pattern: "",
-      autoComplete: "",
+      pattern: textOnlyPattern,
+      autoComplete: fullNameAutocomplete,
       maxLength: 30,
       parentFormState: formInputData,
       setStateHook: setFormInputData,
       setErrorHook: setFormErrorData,
     },
     {
-      name: "Last Name",
+      name: dateOfIncident.english,
+      label:
+        reduxLanguage === "English"
+          ? dateOfIncident.english
+          : dateOfIncident.spanish,
       additionalClassNames: "",
-      placeholder: "Last Name",
+      placeholder:
+        reduxLanguage === "English"
+          ? dateOfIncident.english
+          : dateOfIncident.spanish,
+      theme: "light",
+      columns: "6",
+      type: "date",
+      inputType: "date",
+      inputMode: "text",
+      pattern: americanDatePattern,
+      maxLength: 30,
+      parentFormState: formInputData,
+      setStateHook: setFormInputData,
+      setErrorHook: setFormErrorData,
+    },
+    {
+      name: phoneNumber.english,
+      label:
+        reduxLanguage === "English" ? phoneNumber.english : phoneNumber.spanish,
+      additionalClassNames: "",
+      placeholder:
+        reduxLanguage === "English" ? phoneNumber.english : phoneNumber.spanish,
+      theme: "light",
+      columns: "6",
+      type: "phoneNumber",
+      inputType: "tel",
+      inputMode: "tel",
+      pattern: phoneNumberPattern,
+      autoComplete: phoneNumberAutocomplete,
+      maxLength: 30,
+      parentFormState: formInputData,
+      setStateHook: setFormInputData,
+      setErrorHook: setFormErrorData,
+    },
+    {
+      name: treatmentStatus.english,
+      label:
+        reduxLanguage === "English"
+          ? treatmentStatus.english
+          : treatmentStatus.spanish,
+      additionalClassNames: "",
+      placeholder:
+        reduxLanguage === "English"
+          ? treatmentStatus.english
+          : treatmentStatus.spanish,
+      theme: "light",
+      columns: "6",
+      type: "dropdown",
+      inputType: "text",
+      inputMode: "text",
+      maxLength: 30,
+      parentFormState: formInputData,
+      setStateHook: setFormInputData,
+      setErrorHook: setFormErrorData,
+      dropdownOptions: ["Not Started", "In Progress"],
+    },
+    {
+      name: preferredLanguage.english,
+      label:
+        reduxLanguage === "English"
+          ? preferredLanguage.english
+          : preferredLanguage.spanish,
+      additionalClassNames: "",
+      placeholder:
+        reduxLanguage === "English"
+          ? preferredLanguage.english
+          : preferredLanguage.spanish,
+      theme: "light",
+      columns: "6",
+      type: "dropdown",
+      inputType: "text",
+      inputMode: "text",
+      maxLength: 30,
+      parentFormState: formInputData,
+      setStateHook: setFormInputData,
+      setErrorHook: setFormErrorData,
+      dropdownOptions: ["English", "Español"],
+    },
+    {
+      name: practiceArea.english,
+      label:
+        reduxLanguage === "English"
+          ? practiceArea.english
+          : practiceArea.spanish,
+      additionalClassNames: "",
+      placeholder:
+        reduxLanguage === "English"
+          ? practiceArea.english
+          : practiceArea.spanish,
+      theme: "light",
+      columns: "6",
+      type: "dropdown",
+      inputType: "text",
+      inputMode: "text",
+      maxLength: 30,
+      parentFormState: formInputData,
+      setStateHook: setFormInputData,
+      setErrorHook: setFormErrorData,
+      dropdownOptions: [
+        "Personal Injury",
+        "Workers' Comp",
+        "Auto Accidents",
+        "Truck Accidents",
+        "Bicycle Accidents",
+        "Wrongful Death",
+        "Spinal & Brain Injuries",
+        "Slip & Fall",
+        "Dog Bites",
+        "Product Liability",
+        "Police Misconduct",
+      ],
+    },
+    {
+      name: emailAddress.english,
+      label:
+        reduxLanguage === "English"
+          ? emailAddress.english
+          : emailAddress.spanish,
+      additionalClassNames: "",
+      placeholder:
+        reduxLanguage === "English"
+          ? emailAddress.english
+          : emailAddress.spanish,
+      theme: "light",
+      columns: "6",
+      type: "email",
+      inputType: "email",
+      inputMode: "email",
+      pattern: emailPattern,
+      autoComplete: emailAutocomplete,
+      maxLength: 30,
+      parentFormState: formInputData,
+      setStateHook: setFormInputData,
+      setErrorHook: setFormErrorData,
+    },
+    {
+      name: opposition.english,
+      label:
+        reduxLanguage === "English" ? opposition.english : opposition.spanish,
+      additionalClassNames: "",
+      placeholder:
+        reduxLanguage === "English" ? opposition.english : opposition.spanish,
       theme: "light",
       columns: "6",
       type: "text",
       inputType: "text",
       inputMode: "text",
-      pattern: "",
-      autoComplete: "",
-      maxLength: 30,
+      pattern: textAndNumbersPattern,
+      maxLength: 60,
+      parentFormState: formInputData,
+      setStateHook: setFormInputData,
+      setErrorHook: setFormErrorData,
+    },
+    {
+      name: describeIncident.english,
+      label:
+        reduxLanguage === "English"
+          ? describeIncident.english
+          : describeIncident.spanish,
+      additionalClassNames: "",
+      placeholder:
+        reduxLanguage === "English"
+          ? describeIncident.english
+          : describeIncident.spanish,
+      theme: "light",
+      columns: "6",
+      type: "textArea",
+      inputType: "text",
+      inputMode: "text",
+      pattern: textAndNumbersPattern,
+      maxLength: 3000,
       parentFormState: formInputData,
       setStateHook: setFormInputData,
       setErrorHook: setFormErrorData,
@@ -83,6 +281,7 @@ export const ContactUs = () => {
       <NavBar theme="dark" adminVariant={false} language={reduxLanguage} />
       <PageHeader language={reduxLanguage} title={pageTitle} />
       <Form
+        language={reduxLanguage}
         formTheme="light"
         inputFields={arrayOfInputFields}
         apiEndpoint="/placeholder-endpoint"

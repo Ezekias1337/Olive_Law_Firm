@@ -28,7 +28,7 @@ export const SwitchInput: FC<InputFieldProps> = ({
 
   return (
     <div
-      className={`col col-${columns} mt-2 input-wrapper form-check form-switch`}
+      className={`mt-2 input-wrapper form-check form-switch`}
     >
       <label
         htmlFor={camelCasifyString(name)}

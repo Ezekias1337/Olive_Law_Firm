@@ -49,11 +49,6 @@ interface ContactUsStrings {
       english: string;
       spanish: string;
     };
-
-    submit: {
-      english: string;
-      spanish: string;
-    };
   };
 
   businessPhone: {
@@ -127,11 +122,6 @@ export const contactUsStrings: ContactUsStrings = {
     describeIncident: {
       english: "Describe Incident",
       spanish: "Describir el Incidente",
-    },
-
-    submit: {
-      english: "Submit",
-      spanish: "Entregar",
     },
   },
 

@@ -11,6 +11,7 @@ import { Button } from "../button/Button";
 import "./dependents/inputFields.scss";
 
 export const Form: FC<FormProps> = ({
+  language,
   formTheme,
   inputFields,
   apiEndpoint,
@@ -20,9 +21,8 @@ export const Form: FC<FormProps> = ({
   formState,
   formErrors,
 }) => {
-  const initialFormData: Record<string, string> = {};
-
   // ! Initialize form data for each input field
+  const initialFormData: Record<string, string> = {};
   inputFields.forEach((field) => {
     initialFormData[camelCasifyString(field.name)] = "";
   });
@@ -33,20 +33,21 @@ export const Form: FC<FormProps> = ({
         handleSubmit(e, inputFields, formState, setErrorHook, apiEndpoint)
       }
       id={formId}
-      className="padding-left-and-right"
+      className="padding-left-and-right container form"
     >
-      {renderInputFields(
-        inputFields,
-        formErrors,
-        formTheme,
-        setStateHook,
-        setErrorHook
-      )}
+      <div className="row">
+        {renderInputFields(
+          inputFields,
+          formErrors,
+          formTheme,
+          setStateHook,
+          setErrorHook
+        )}
+      </div>
       <Button
         variant={formTheme === "dark" ? "primary" : "neutral"}
         type="submit"
-        /* text={language === "English" ? "Submit" : "Entregar"} */
-        text="Submit"
+        text={language === "English" ? "Submit" : "Entregar"}
         buttonId={formId}
       />
     </form>

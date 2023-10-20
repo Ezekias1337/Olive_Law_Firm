@@ -42,6 +42,7 @@ export interface CreditCardField extends CreditCardFieldProps {
 }
 
 export interface FormProps {
+  language: string;
   formTheme: "dark" | "light";
   inputFields: Field[];
   apiEndpoint: string;

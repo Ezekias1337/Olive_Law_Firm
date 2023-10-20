@@ -11,12 +11,14 @@ export type SetStateHookString = Dispatch<SetStateAction<string>>;
 
 export interface InputFieldProps {
   name: string;
+  label: string;
   additionalClassNames?: string;
   placeholder?: string;
   theme: string;
   columns?: string;
   defaultValue?: string;
   value?: string;
+  required: boolean;
   inputType?:
     | "button"
     | "checkbox"

@@ -15,6 +15,7 @@ export const DropdownInput: FC<DropdownFieldProps> = ({
   columns = "6",
   defaultValue = "",
   dropdownOptions,
+  required,
   setStateHook,
 }) => {
   const arrayOfOptions = useMemo(
@@ -23,7 +24,7 @@ export const DropdownInput: FC<DropdownFieldProps> = ({
   );
 
   return (
-    <div className={`col col-${columns} mt-2 input-wrapper`}>
+    <div className={`mt-2 input-wrapper`}>
       <label
         htmlFor={camelCasifyString(name)}
         className={`form-label ${theme}-label`}
@@ -36,6 +37,7 @@ export const DropdownInput: FC<DropdownFieldProps> = ({
         aria-label={camelCasifyString(name)}
         id={kebabCasifyString(name)}
         defaultValue={defaultValue !== "" ? defaultValue : ""}
+        required={required}
         onChange={(e) => {
           handleFormChange(e, setStateHook);
         }}
