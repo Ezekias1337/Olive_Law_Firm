@@ -71,6 +71,9 @@ export const ContactUs = () => {
     need to be duplicated
     TODO: Make select arrow flip when menu is open
     TODO: MAKE SURE ALL INPUT FIELD COMPONENTS USE REGEX FROM SHARED FOLDER
+    TODO: Remove columns attribute from input field components since it's handled by the form component
+    TODO: Make an example component with props for each input field, so I can easily use
+      each input field without having to check which props are required for each type
   */
 
   const arrayOfInputFields: Field[] = [
@@ -91,8 +94,9 @@ export const ContactUs = () => {
       parentFormState: formInputData,
       setStateHook: setFormInputData,
       setErrorHook: setFormErrorData,
+      required: true
     },
-    {
+    /* {
       name: dateOfIncident.english,
       label:
         reduxLanguage === "English"
@@ -113,8 +117,9 @@ export const ContactUs = () => {
       parentFormState: formInputData,
       setStateHook: setFormInputData,
       setErrorHook: setFormErrorData,
-    },
-    {
+      required: true
+    }, */
+    /* {
       name: phoneNumber.english,
       label:
         reduxLanguage === "English" ? phoneNumber.english : phoneNumber.spanish,
@@ -132,7 +137,8 @@ export const ContactUs = () => {
       parentFormState: formInputData,
       setStateHook: setFormInputData,
       setErrorHook: setFormErrorData,
-    },
+      required: true
+    }, */
     {
       name: treatmentStatus.english,
       label:
@@ -154,6 +160,7 @@ export const ContactUs = () => {
       setStateHook: setFormInputData,
       setErrorHook: setFormErrorData,
       dropdownOptions: ["Not Started", "In Progress"],
+      required: true
     },
     {
       name: preferredLanguage.english,
@@ -176,6 +183,7 @@ export const ContactUs = () => {
       setStateHook: setFormInputData,
       setErrorHook: setFormErrorData,
       dropdownOptions: ["English", "Español"],
+      required: true
     },
     {
       name: practiceArea.english,
@@ -210,8 +218,9 @@ export const ContactUs = () => {
         "Product Liability",
         "Police Misconduct",
       ],
+      required: true
     },
-    {
+    /* {
       name: emailAddress.english,
       label:
         reduxLanguage === "English"
@@ -233,7 +242,8 @@ export const ContactUs = () => {
       parentFormState: formInputData,
       setStateHook: setFormInputData,
       setErrorHook: setFormErrorData,
-    },
+      required: true
+    }, */
     {
       name: opposition.english,
       label:
@@ -251,6 +261,7 @@ export const ContactUs = () => {
       parentFormState: formInputData,
       setStateHook: setFormInputData,
       setErrorHook: setFormErrorData,
+      required: true
     },
     {
       name: describeIncident.english,
@@ -273,6 +284,25 @@ export const ContactUs = () => {
       parentFormState: formInputData,
       setStateHook: setFormInputData,
       setErrorHook: setFormErrorData,
+      required: true
+    },
+    {
+      name: "Credit Card",
+      label: "Credit Card",
+      additionalClassNames: "",
+      placeholder:
+        reduxLanguage === "English"
+          ? describeIncident.english
+          : describeIncident.spanish,
+      theme: "light",
+      columns: "6",
+      type: "creditCard",
+      inputType: "text",
+      inputMode: "text",
+      parentFormState: formInputData,
+      setStateHook: setFormInputData,
+      setErrorHook: setFormErrorData,
+      required: true
     },
   ];
 

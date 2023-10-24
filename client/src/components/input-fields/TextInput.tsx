@@ -1,5 +1,5 @@
 // Library Imports
-import { FC } from "react";
+import { FC, ChangeEventHandler, ChangeEvent } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // Functions, Helpers, and Utils
 import {
@@ -11,7 +11,10 @@ import { kebabCasifyString } from "../../../../shared/utils/strings/kebabCasifyS
 // Constants
 import { textOnlyPattern } from "../../../../shared/constants/regexPatterns";
 // Interfaces and Types
-import { InputFieldProps } from "../../constants/interfaces/InputFieldProps";
+import {
+  InputFieldProps,
+  SetStateHookForm,
+} from "../../constants/interfaces/InputFieldProps";
 
 export const TextInput: FC<InputFieldProps> = ({
   name,
@@ -30,11 +33,10 @@ export const TextInput: FC<InputFieldProps> = ({
   icon,
   setStateHook,
   setErrorHook,
-}) => {
-  const handleInputChange = (e: FormUpdateEvent) => {
+  handleInputChange = (e: FormUpdateEvent) => {
     handleFormChange(e, setStateHook, setErrorHook);
-  };
-
+  },
+}) => {
   return (
     <div className={`mt-2 input-wrapper`}>
       <label

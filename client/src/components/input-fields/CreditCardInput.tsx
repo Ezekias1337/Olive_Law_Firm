@@ -1,54 +1,130 @@
 // Library Imports
-import { FC } from "react";
-import { faCcVisa } from "@fortawesome/free-brands-svg-icons";
+import { FC, useEffect, useState, ChangeEvent } from "react";
+import {
+  faCcAmex,
+  faCcVisa,
+  faCcMastercard,
+  faCcDiscover,
+} from "@fortawesome/free-brands-svg-icons";
+import { faCreditCard } from "@fortawesome/free-solid-svg-icons";
 // Functions, Helpers and Utils
 import {
   handleFormChange,
   FormUpdateEvent,
+  CreditCardUpdateEvent,
 } from "../../functions/forms/handleFormChange";
 // Interfaces and Types
 import { CreditCardFieldProps } from "../../constants/interfaces/InputFieldProps";
 import { creditCardNumberPattern } from "../../../../shared/constants/regexPatterns";
+import { creditCardNumberAutocomplete } from "../../constants/formAutocompleteStrings";
 // Components
 import { TextInput } from "./TextInput";
 
 export const CreditCardInput: FC<CreditCardFieldProps> = ({
   name,
+  label,
+  additionalClassNames = "",
   theme,
   columns = "6",
   defaultValue = "",
   required,
   inputType = "tel",
   inputMode = "numeric",
-  autoComplete = "cc-number",
-  maxLength = 19,
+  childrenToRender,
   setStateHook,
+  setErrorHook,
 }) => {
+  /* 
+    Need to check if the input value has decreased from the previous length before applying the
+    logic of removing a space
+  */
+
+  /* 
+      TODO: Look into useMemo for these functions
+    */
+
+  /* 
+    There is strange behavior in html input fields regarding trailing whitespace, This function
+    is used so that I can apply proper formatting to the input for ease of use
+  */
+  const doesHaveTrailingSpace = (): boolean => {
+    return false;
+  };
+
   const handleInputChange = (e: FormUpdateEvent) => {
     const formattedE = e;
-    const creditCardNumberInputLength = creditCardNumber?.length;
+    let creditCardNumInput = formattedE.target.value;
+    const creditCardNumberInputLength = creditCardNumInput.length;
 
+    /*  console.log(e.target.value);
+    console.log(e.target.value.charAt(-1) === " ");
+    console.log(e.target.value.length); */
+    console.log(creditCardNumberInputLength);
     if (
-      creditCardNumberInputLength === 4 ||
-      creditCardNumberInputLength === 8 ||
-      creditCardNumberInputLength === 12
+      creditCardNumberInputLength < previousInputLength /*  &&
+      addedSpaceLastInput === true */ &&
+      creditCardNumberInputLength === 5
     ) {
-      formattedE.target.value = formattedE.target.value += " ";
+      console.log("DESIRED CONDITION MET");
+      e.target.value = e.target.value.slice(0, -1);
+      console.log(creditCardNumberInputLength);
+      setAddedSpaceLastInput(false);
     } else if (
-      creditCardNumberInputLength === 3 ||
-      creditCardNumberInputLength === 7 ||
-      creditCardNumberInputLength === 11
+      creditCardNumberInputLength === 4 ||
+      creditCardNumberInputLength === 5 ||
+      creditCardNumberInputLength === 9 ||
+      creditCardNumberInputLength === 14
     ) {
-      formattedE.target.value = formattedE.target.value.slice(0, -1);
+      e.target.value = e.target.value += " ";
+      creditCardNumInput = e.target.value;
+      setAddedSpaceLastInput(true);
+    } else {
+      setAddedSpaceLastInput(false);
     }
 
-    handleFormChange(formattedE, setStateHook);
+    setCreditCardNumber(creditCardNumInput);
+    setPreviousInputLength(creditCardNumberInputLength); // Update previous length
+    handleFormChange(e, setStateHook, setErrorHook);
   };
+
+  /* 
+    Select the credit card icon to use based on the first digit entered
+  */
+
+  const [selectedIcon, setSelectedIcon] = useState(faCreditCard);
+  const [creditCardNumber, setCreditCardNumber] = useState("");
+  const [creditCardFirstDigit, setCreditCardFirstDigit] = useState(
+    creditCardNumber[0]
+  );
+  const [previousInputLength, setPreviousInputLength] = useState(
+    creditCardNumber.length
+  );
+  const [addedSpaceLastInput, setAddedSpaceLastInput] = useState(false);
+
+  useEffect(() => {
+    setCreditCardFirstDigit(creditCardNumber[0]);
+    setPreviousInputLength(creditCardNumber.length);
+  }, [creditCardNumber]);
+
+  useEffect(() => {
+    if (creditCardFirstDigit === "3") {
+      setSelectedIcon(faCcAmex);
+    } else if (creditCardFirstDigit === "4") {
+      setSelectedIcon(faCcVisa);
+    } else if (creditCardFirstDigit === "5") {
+      setSelectedIcon(faCcMastercard);
+    } else if (creditCardFirstDigit === "6") {
+      setSelectedIcon(faCcDiscover);
+    } else {
+      setSelectedIcon(faCreditCard);
+    }
+  }, [creditCardFirstDigit]);
 
   return (
     <TextInput
       name={name}
-      additionalClassNames="credit-card-input"
+      label={label}
+      additionalClassNames={`credit-card-input ${additionalClassNames}`}
       placeholder="•••• •••• •••• ••••"
       theme={theme}
       columns={columns}
@@ -57,10 +133,12 @@ export const CreditCardInput: FC<CreditCardFieldProps> = ({
       inputType={inputType}
       inputMode={inputMode}
       pattern={creditCardNumberPattern}
-      autoComplete={autoComplete}
-      maxLength={maxLength}
+      autoComplete={creditCardNumberAutocomplete}
+      maxLength={19}
+      icon={selectedIcon}
       setStateHook={setStateHook}
-      icon={faCcVisa}
+      setErrorHook={setErrorHook}
+      handleInputChange={handleInputChange}
     />
   );
 };

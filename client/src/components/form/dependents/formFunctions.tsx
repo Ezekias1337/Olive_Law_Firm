@@ -140,16 +140,17 @@ export const renderInputFields = (
     );
 
     switch (inputField.type) {
-      /* case "creditCard":
-              inputFieldToBePushed = (
-                <div key={inputField.name} className={`col col-${inputField.columns}`}>
-                  <CreditCardInput
-                    {...generalInputProps}
-                  />
-                  <FormError formErrors={formErrors} inputField={inputField} />
-                </div>
-              );
-              break; */
+      case "creditCard":
+        inputFieldToBePushed = (
+          <div
+            key={inputField.name}
+            className={`col col-${inputField.columns}`}
+          >
+            <CreditCardInput {...generalInputProps} />
+            <FormError formErrors={formErrors} inputField={inputField} />
+          </div>
+        );
+        break;
       /* case "date":
               break; */
       case "dropdown":

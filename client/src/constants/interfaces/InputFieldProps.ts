@@ -1,6 +1,11 @@
 // Library Imports
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
-import { Dispatch, ReactNode, SetStateAction } from "react";
+import { ChangeEventHandler, Dispatch, ReactNode, SetStateAction } from "react";
+// Interfaces and Types
+import {
+  FormUpdateEvent,
+} from "../../functions/forms/handleFormChange";
+
 
 export interface FormState {
   [key: string]: string | boolean;
@@ -61,6 +66,7 @@ export interface InputFieldProps {
   icon?: IconProp;
   setStateHook: SetStateHookForm;
   setErrorHook: SetStateHookForm;
+  handleInputChange?: ChangeEventHandler<HTMLInputElement>;
 }
 
 export interface DropdownFieldProps extends InputFieldProps {

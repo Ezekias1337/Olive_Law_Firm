@@ -17,6 +17,10 @@ export interface SwitchUpdateEvent {
   };
 }
 
+export interface CreditCardUpdateEvent extends FormUpdateEvent {
+  key: string;
+}
+
 export const handleFormChange = (
   e: FormUpdateEvent,
   setStateHook: Dispatch<SetStateAction<FormState>>,
