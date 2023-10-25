@@ -11,7 +11,6 @@ import { faCreditCard } from "@fortawesome/free-solid-svg-icons";
 import {
   handleFormChange,
   FormUpdateEvent,
-  CreditCardUpdateEvent,
 } from "../../functions/forms/handleFormChange";
 // Interfaces and Types
 import { CreditCardFieldProps } from "../../constants/interfaces/InputFieldProps";
@@ -30,56 +29,67 @@ export const CreditCardInput: FC<CreditCardFieldProps> = ({
   required,
   inputType = "tel",
   inputMode = "numeric",
-  childrenToRender,
   setStateHook,
   setErrorHook,
 }) => {
   /* 
-    Need to check if the input value has decreased from the previous length before applying the
-    logic of removing a space
-  */
-
-  /* 
       TODO: Look into useMemo for these functions
+      TODO: Listen for autocomplete or copy paste for formatting
     */
 
   /* 
     There is strange behavior in html input fields regarding trailing whitespace, This function
     is used so that I can apply proper formatting to the input for ease of use
   */
-  const doesHaveTrailingSpace = (): boolean => {
-    return false;
+  const isTrailingSpacePresent = (inputFieldValue: string): boolean => {
+    const strLength = inputFieldValue.length;
+    const lastChar = inputFieldValue[strLength - 1];
+
+    if (lastChar === " ") {
+      console.log("trailing space detected");
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  const addGapWhenNeeded = (
+    inputFieldValue: string,
+    inputLength: number
+  ): string => {
+    const trailingSpacePresent = isTrailingSpacePresent(inputFieldValue);
+    let stringtoReturn = "";
+
+    if (
+      inputLength === 4 ||
+      inputLength === 9 ||
+      (inputLength === 14 && trailingSpacePresent === false)
+    ) {
+      stringtoReturn = inputFieldValue += " ";
+    } else {
+      stringtoReturn = inputFieldValue;
+    }
+
+    return stringtoReturn;
   };
 
   const handleInputChange = (e: FormUpdateEvent) => {
     const formattedE = e;
     let creditCardNumInput = formattedE.target.value;
     const creditCardNumberInputLength = creditCardNumInput.length;
+    const doesInputHaveTrailingSpace = isTrailingSpacePresent(creditCardNumber);
 
-    /*  console.log(e.target.value);
-    console.log(e.target.value.charAt(-1) === " ");
-    console.log(e.target.value.length); */
-    console.log(creditCardNumberInputLength);
     if (
-      creditCardNumberInputLength < previousInputLength /*  &&
-      addedSpaceLastInput === true */ &&
-      creditCardNumberInputLength === 5
+      creditCardNumberInputLength < previousInputLength &&
+      doesInputHaveTrailingSpace
     ) {
-      console.log("DESIRED CONDITION MET");
-      e.target.value = e.target.value.slice(0, -1);
-      console.log(creditCardNumberInputLength);
-      setAddedSpaceLastInput(false);
-    } else if (
-      creditCardNumberInputLength === 4 ||
-      creditCardNumberInputLength === 5 ||
-      creditCardNumberInputLength === 9 ||
-      creditCardNumberInputLength === 14
-    ) {
-      e.target.value = e.target.value += " ";
-      creditCardNumInput = e.target.value;
-      setAddedSpaceLastInput(true);
+      e.target.value = creditCardNumInput.slice(0, -1);
     } else {
-      setAddedSpaceLastInput(false);
+      e.target.value = addGapWhenNeeded(
+        creditCardNumInput,
+        creditCardNumberInputLength
+      );
+      creditCardNumInput = e.target.value;
     }
 
     setCreditCardNumber(creditCardNumInput);
@@ -99,7 +109,6 @@ export const CreditCardInput: FC<CreditCardFieldProps> = ({
   const [previousInputLength, setPreviousInputLength] = useState(
     creditCardNumber.length
   );
-  const [addedSpaceLastInput, setAddedSpaceLastInput] = useState(false);
 
   useEffect(() => {
     setCreditCardFirstDigit(creditCardNumber[0]);
