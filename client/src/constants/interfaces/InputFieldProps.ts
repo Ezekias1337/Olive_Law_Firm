@@ -1,11 +1,6 @@
 // Library Imports
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { ChangeEventHandler, Dispatch, ReactNode, SetStateAction } from "react";
-// Interfaces and Types
-import {
-  FormUpdateEvent,
-} from "../../functions/forms/handleFormChange";
-
 
 export interface FormState {
   [key: string]: string | boolean;
@@ -13,6 +8,8 @@ export interface FormState {
 
 export type SetStateHookForm = Dispatch<SetStateAction<FormState>>;
 export type SetStateHookString = Dispatch<SetStateAction<string>>;
+export type SetStateHookBoolean = Dispatch<SetStateAction<boolean>>;
+export type SetStateHookNumber = Dispatch<SetStateAction<number>>;
 
 export interface InputFieldProps {
   name: string;
@@ -90,5 +87,10 @@ export interface PhoneNumberFlag {
 
 export interface CountryCodeInputFieldProps {
   theme: string;
-  /* setStateHook: SetStateHookString; */
+  showMenu: boolean;
+  setShowMenu: SetStateHookBoolean;
+  countryImage: string;
+  setCountryImage: SetStateHookString;
+  countryCode: string;
+  setCountryCode: SetStateHookString;
 }

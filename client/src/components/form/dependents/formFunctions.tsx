@@ -32,7 +32,6 @@ import { TextInput } from "../../input-fields/TextInput";
 import { Button } from "../../button/Button";
 import { FormError } from "./FormError";
 
-
 /* 
     ? These is type of field x functions would be basically useless in vanillaJS,
     ? These are simply used to please the compiler for accessing attributes of types that aren't present
@@ -176,15 +175,23 @@ export const renderInputFields = (
             break;
             case "password":
             already has pattern for regex inside component  
-            break;
-            case "phoneNumber":
+            break;break;*/
+      case "phoneNumber":
+        inputFieldToBePushed = (
+          <div
+            key={inputField.name}
+            className={`col col-${inputField.columns}`}
+          >
+            <PhoneNumberInput {...generalInputProps} />
+            <FormError formErrors={formErrors} inputField={inputField} />
+          </div>
+        );
+        break;
+      /* case "quantity":
             already has pattern for regex inside component  
             break;
-            case "quantity":
-            already has pattern for regex inside component  
-            break;
-            case "switch":
-              break;*/
+            case "switch": */
+
       case "text":
         inputFieldToBePushed = (
           <div

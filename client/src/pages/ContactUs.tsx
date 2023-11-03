@@ -119,7 +119,7 @@ export const ContactUs = () => {
       setErrorHook: setFormErrorData,
       required: true
     }, */
-    /* {
+    {
       name: phoneNumber.english,
       label:
         reduxLanguage === "English" ? phoneNumber.english : phoneNumber.spanish,
@@ -138,7 +138,7 @@ export const ContactUs = () => {
       setStateHook: setFormInputData,
       setErrorHook: setFormErrorData,
       required: true
-    }, */
+    },
     {
       name: treatmentStatus.english,
       label:

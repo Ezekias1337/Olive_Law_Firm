@@ -32,8 +32,7 @@ export const CreditCardInput: FC<CreditCardFieldProps> = ({
   setStateHook,
   setErrorHook,
 }) => {
-  /* 
-      TODO: Look into useMemo for these functions
+    /* 
       TODO: Listen for autocomplete or copy paste for formatting
     */
 
@@ -46,7 +45,6 @@ export const CreditCardInput: FC<CreditCardFieldProps> = ({
     const lastChar = inputFieldValue[strLength - 1];
 
     if (lastChar === " ") {
-      console.log("trailing space detected");
       return true;
     } else {
       return false;

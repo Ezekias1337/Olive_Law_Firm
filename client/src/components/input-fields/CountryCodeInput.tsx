@@ -9,18 +9,24 @@ import { phoneNumberCountryCodes } from "../../constants/phoneNumberCountryCodes
 // Interfaces and Types
 import { CountryCodeInputFieldProps } from "../../constants/interfaces/InputFieldProps";
 
-/* 
-    ! THIS COMPONENT IS NOT COMPLETED
-*/
-
-export const CountryCodeInput: FC<CountryCodeInputFieldProps> = ({ theme }) => {
+export const CountryCodeInput: FC<CountryCodeInputFieldProps> = ({
+  theme,
+  showMenu,
+  setShowMenu,
+  countryImage,
+  setCountryImage,
+  setCountryCode,
+}) => {
   const arrayOfOptions = useMemo(
-    () => renderCountryCodeOptions(phoneNumberCountryCodes),
+    () =>
+      renderCountryCodeOptions(
+        phoneNumberCountryCodes,
+        setCountryCode,
+        setShowMenu,
+        setCountryImage
+      ),
     [phoneNumberCountryCodes]
   );
-
-  const [showMenu, setShowMenu] = useState(false);
-  const [countryImage, setCountryImage] = useState("");
 
   /* 
     Update Flag Icon on load to USA

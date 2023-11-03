@@ -6,7 +6,7 @@ import {
   FormUpdateEvent,
 } from "../../functions/forms/handleFormChange";
 import { camelCasifyString } from "../../../../shared/utils/strings/camelCasifyString";
-import { kebabCasifyString } from "../../../../shared/utils/strings/kebabCasifyString"
+import { kebabCasifyString } from "../../../../shared/utils/strings/kebabCasifyString";
 // Interfaces and Types
 import { InputFieldProps } from "../../constants/interfaces/InputFieldProps";
 
@@ -20,10 +20,8 @@ export const TextAreaInput: FC<InputFieldProps> = ({
   additionalClassNames = "",
   placeholder,
   theme,
-  columns = "6",
   defaultValue = "",
   inputMode = "text",
-  autoComplete = "",
   maxLength = 100,
   setStateHook,
   setErrorHook,
@@ -35,7 +33,7 @@ export const TextAreaInput: FC<InputFieldProps> = ({
   return (
     <div className={`mt-2 input-wrapper`}>
       <label
-        htmlFor={camelCasifyString(name)}
+        htmlFor={kebabCasifyString(name)}
         className={`form-label ${theme}-label`}
       >
         {label}
@@ -47,7 +45,6 @@ export const TextAreaInput: FC<InputFieldProps> = ({
         placeholder={placeholder}
         defaultValue={defaultValue}
         inputMode={inputMode}
-        autoComplete={autoComplete}
         maxLength={maxLength}
         onChange={handleInputChange}
       />

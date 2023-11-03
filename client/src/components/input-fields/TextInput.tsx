@@ -1,7 +1,7 @@
 // Library Imports
-import { FC, ChangeEventHandler, ChangeEvent } from "react";
+import { FC, useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// Functions, Helpers, and Utils
+// Functions, Helpers, Utils and Hooks
 import {
   handleFormChange,
   FormUpdateEvent,
@@ -11,10 +11,7 @@ import { kebabCasifyString } from "../../../../shared/utils/strings/kebabCasifyS
 // Constants
 import { textOnlyPattern } from "../../../../shared/constants/regexPatterns";
 // Interfaces and Types
-import {
-  InputFieldProps,
-  SetStateHookForm,
-} from "../../constants/interfaces/InputFieldProps";
+import { InputFieldProps } from "../../constants/interfaces/InputFieldProps";
 
 export const TextInput: FC<InputFieldProps> = ({
   name,
@@ -22,7 +19,6 @@ export const TextInput: FC<InputFieldProps> = ({
   additionalClassNames = "",
   placeholder,
   theme,
-  columns = "6",
   defaultValue = "",
   inputType = "text",
   inputMode = "text",
@@ -37,27 +33,44 @@ export const TextInput: FC<InputFieldProps> = ({
     handleFormChange(e, setStateHook, setErrorHook);
   },
 }) => {
+  /* 
+    ? Because the autocomplete attribute is sometimes not used, in order
+    ? to avoid an empty attribute which causes SEO damage and console errors,
+    ? this ensures the attribute is only applied when the prop is provided
+  */
+
+  const [inputElementProps, setInputElementProps] = useState({
+    className: `input-field ${theme}-input ${additionalClassNames}`,
+    name: camelCasifyString(name),
+    id: kebabCasifyString(name),
+    placeholder: placeholder,
+    defaultValue: defaultValue,
+    type: inputType,
+    inputMode: inputMode,
+    pattern: pattern,
+    maxLength: maxLength,
+    onChange: handleInputChange,
+  });
+
+  useEffect(() => {
+    if (autoComplete !== "") {
+      const newElementProps = {
+        ...inputElementProps,
+        autoComplete: autoComplete,
+      };
+      setInputElementProps(newElementProps);
+    }
+  }, [autoComplete]);
+
   return (
-    <div className={`mt-2 input-wrapper`}>
+    <div className={`mt-2 input-wrapper`} key={name}>
       <label
         htmlFor={kebabCasifyString(name)}
         className={`form-label ${theme}-label`}
       >
         {label}
       </label>
-      <input
-        className={`input-field ${theme}-input ${additionalClassNames}`}
-        name={camelCasifyString(name)}
-        id={kebabCasifyString(name)}
-        placeholder={placeholder}
-        defaultValue={defaultValue}
-        type={inputType}
-        inputMode={inputMode}
-        pattern={pattern}
-        autoComplete={autoComplete}
-        maxLength={maxLength}
-        onChange={handleInputChange}
-      />
+      <input {...inputElementProps} />
       {icon !== undefined ? (
         <FontAwesomeIcon
           icon={icon}
@@ -67,7 +80,6 @@ export const TextInput: FC<InputFieldProps> = ({
       ) : (
         <></>
       )}
-
       {childrenToRender === undefined ? <></> : childrenToRender}
     </div>
   );

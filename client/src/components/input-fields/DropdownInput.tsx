@@ -26,7 +26,7 @@ export const DropdownInput: FC<DropdownFieldProps> = ({
   return (
     <div className={`mt-2 input-wrapper`}>
       <label
-        htmlFor={camelCasifyString(name)}
+        htmlFor={kebabCasifyString(name)}
         className={`form-label ${theme}-label`}
       >
         {name}
