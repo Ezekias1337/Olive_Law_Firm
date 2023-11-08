@@ -1,11 +1,9 @@
 // Library Imports
 import { useSelector } from "react-redux/es/exports";
-import { useState } from "react";
 // Functions, Helpers, Utils and Hooks
 import useDeviceInfo from "../hooks/useDeviceInfo";
 // Interfaces and Types
 import { ReduxStoreState } from "../constants/interfaces/ReduxStoreState";
-import { FormState } from "../constants/interfaces/InputFieldProps";
 // Constants
 import { privacyPolicyStrings } from "../constants/language-strings/privacyPolicyStrings";
 // Components
