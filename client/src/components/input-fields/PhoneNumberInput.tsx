@@ -14,6 +14,7 @@ import { CountryCodeInput } from "./CountryCodeInput";
 
 /* 
     ! THIS COMPONENT IS NOT COMPLETED
+    ! FOR NOW JUST BASIC INPUT FIELD, WILL REVISE
     ! need selecting country to add the country code
     ! need to make user input formatted to (555) 555-5555
     ! Need to make auto complete select the correct country
@@ -43,96 +44,6 @@ export const PhoneNumberInput: FC<InputFieldProps> = ({
   const [showMenu, setShowMenu] = useState(false);
   const [countryImage, setCountryImage] = useState("");
   const [countryCode, setCountryCode] = useState("+1");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const previousInputLength = useRef<number>(phoneNumber.length);
-
-  const isDecorativeSpacePresent = (
-    inputFieldValue: string
-  ): BackspacePresentObject => {
-    const strLength = inputFieldValue.length;
-    const lastChar = inputFieldValue[strLength - 1];
-    const listOfDecorativeChars: string[] = ["(", ")", "-", " "];
-    /* console.log("inputFieldValue", inputFieldValue);
-    console.log("lastChar", lastChar); */
-
-    if (listOfDecorativeChars.includes(lastChar)) {
-      let spacesToDelete = 1;
-      if (lastChar === listOfDecorativeChars[2]) {
-        spacesToDelete = 1;
-      } else if (lastChar === listOfDecorativeChars[3]) {
-        spacesToDelete = 3;
-      } else if (lastChar === listOfDecorativeChars[0]) {
-        spacesToDelete = 1;
-      }
-      const objToReturn = {
-        isPresent: true,
-        spacesToDelete: spacesToDelete,
-      };
-      return objToReturn;
-    } else {
-      return {
-        isPresent: false,
-        spacesToDelete: 0,
-      };
-    }
-  };
-
-  const handleInputChange = (e: FormUpdateEvent) => {
-    const currentInputValue = e.target.value;
-    const currentInputLength = currentInputValue.length;
-    const doesInputHaveDecorativeSpace =
-      isDecorativeSpacePresent(currentInputValue);
-
-    let formattedInput = currentInputValue;
-
-    if (
-      currentInputLength < previousInputLength.current &&
-      doesInputHaveDecorativeSpace.isPresent === true
-    ) {
-      /* 
-        ? Here need to check if last char is in listOfDecorativeChars,
-        ? and if so, check if second to last char is also in 
-        ? Then remove them from the string
-      */
-      if (doesInputHaveDecorativeSpace.spacesToDelete !== 0) {
-        formattedInput = currentInputValue.slice(
-          0,
-          -doesInputHaveDecorativeSpace.spacesToDelete
-        );
-      }
-    } else {
-      /* 
-      ! The following three if statements are used to add formatting
-      ! to the user input, but it's for US phone numbers, these
-      ! will need to be revised to handle other countries formats in the future
-    */
-
-      /* Add First Parenthese */
-      if (currentInputValue[0] !== "(") {
-        formattedInput = `(${currentInputValue}`;
-      }
-
-      /* Add Second Parenthese and Gap*/
-      if (currentInputValue[4] !== ")" && currentInputLength >= 4) {
-        formattedInput = `${formattedInput}) `;
-      }
-      console.log("currentInputValue: ", currentInputValue)
-      console.log("previousInputLength.current: ", previousInputLength.current)
-      
-      /* Add Dash */
-      if (currentInputValue[9] !== "-" && currentInputLength >= 9) {
-        formattedInput = `${formattedInput}-`;
-      }
-    }
-    //console.log("formattedInput: ", formattedInput);
-
-    setPhoneNumber(formattedInput);
-    e.target.value = formattedInput;
-  };
-
-  useEffect(() => {
-    previousInputLength.current = phoneNumber.length;
-  }, [phoneNumber]);
 
   return (
     <>
@@ -140,7 +51,7 @@ export const PhoneNumberInput: FC<InputFieldProps> = ({
         name={name}
         label={label}
         additionalClassNames={`phone-number-input z-index-1 ${additionalClassNames}`}
-        placeholder="(555) 555-5555"
+        placeholder="5555555555"
         theme={theme}
         columns={columns}
         defaultValue={defaultValue}
@@ -149,10 +60,9 @@ export const PhoneNumberInput: FC<InputFieldProps> = ({
         inputMode="tel"
         pattern={phoneNumberPattern}
         autoComplete={phoneNumberAutocomplete}
-        maxLength={19}
+        maxLength={15}
         setStateHook={setStateHook}
         setErrorHook={setErrorHook}
-        handleInputChange={handleInputChange}
         childrenToRender={[
           <CountryCodeInput
             theme={theme}

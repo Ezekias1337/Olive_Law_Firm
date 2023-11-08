@@ -94,3 +94,9 @@ export interface CountryCodeInputFieldProps {
   countryCode: string;
   setCountryCode: SetStateHookString;
 }
+
+export interface CountryCodeFilterProps {
+  country: string;
+  code: string;
+  abbreviation: string;
+}

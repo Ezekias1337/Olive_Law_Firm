@@ -1,8 +1,9 @@
 // Library Imports
 import { useSelector } from "react-redux/es/exports";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 // Functions, Helpers, Utils and Hooks
 import useDeviceInfo from "../hooks/useDeviceInfo";
+import useWindowWidth from "../hooks/useWindowWidth";
 // Interfaces and Types
 import { ReduxStoreState } from "../constants/interfaces/ReduxStoreState";
 import { FormState } from "../constants/interfaces/InputFieldProps";
@@ -33,10 +34,12 @@ export const ContactUs = () => {
   const reduxLanguage = useSelector(
     (state: ReduxStoreState) => state.language.contents.languageChoice
   );
-
   const deviceInformation = useDeviceInfo();
+  const windowWidth = useWindowWidth();
+
   const [formInputData, setFormInputData] = useState<FormState>({});
   const [formErrorData, setFormErrorData] = useState<FormState>({});
+  const [inputFieldColumns, setInputFieldColumns] = useState("6");
 
   const {
     pageTitle,
@@ -57,6 +60,14 @@ export const ContactUs = () => {
     opposition,
     describeIncident,
   } = formFields;
+
+  useEffect(() => {
+    if (windowWidth <= 700) {
+      setInputFieldColumns("12");
+    } else {
+      setInputFieldColumns("6");
+    }
+  }, [windowWidth]);
 
   /* 
     TODO: form error should be in spanish when page is spanish
@@ -84,7 +95,7 @@ export const ContactUs = () => {
       placeholder:
         reduxLanguage === "English" ? fullName.english : fullName.spanish,
       theme: "light",
-      columns: "6",
+      columns: inputFieldColumns,
       type: "text",
       inputType: "text",
       inputMode: "text",
@@ -94,7 +105,7 @@ export const ContactUs = () => {
       parentFormState: formInputData,
       setStateHook: setFormInputData,
       setErrorHook: setFormErrorData,
-      required: true
+      required: true,
     },
     /* {
       name: dateOfIncident.english,
@@ -108,7 +119,7 @@ export const ContactUs = () => {
           ? dateOfIncident.english
           : dateOfIncident.spanish,
       theme: "light",
-      columns: "6",
+      columns: inputFieldColumns,
       type: "date",
       inputType: "date",
       inputMode: "text",
@@ -127,7 +138,7 @@ export const ContactUs = () => {
       placeholder:
         reduxLanguage === "English" ? phoneNumber.english : phoneNumber.spanish,
       theme: "light",
-      columns: "6",
+      columns: inputFieldColumns,
       type: "phoneNumber",
       inputType: "tel",
       inputMode: "tel",
@@ -137,7 +148,7 @@ export const ContactUs = () => {
       parentFormState: formInputData,
       setStateHook: setFormInputData,
       setErrorHook: setFormErrorData,
-      required: true
+      required: true,
     },
     {
       name: treatmentStatus.english,
@@ -151,7 +162,7 @@ export const ContactUs = () => {
           ? treatmentStatus.english
           : treatmentStatus.spanish,
       theme: "light",
-      columns: "6",
+      columns: inputFieldColumns,
       type: "dropdown",
       inputType: "text",
       inputMode: "text",
@@ -160,7 +171,7 @@ export const ContactUs = () => {
       setStateHook: setFormInputData,
       setErrorHook: setFormErrorData,
       dropdownOptions: ["Not Started", "In Progress"],
-      required: true
+      required: true,
     },
     {
       name: preferredLanguage.english,
@@ -174,7 +185,7 @@ export const ContactUs = () => {
           ? preferredLanguage.english
           : preferredLanguage.spanish,
       theme: "light",
-      columns: "6",
+      columns: inputFieldColumns,
       type: "dropdown",
       inputType: "text",
       inputMode: "text",
@@ -183,7 +194,7 @@ export const ContactUs = () => {
       setStateHook: setFormInputData,
       setErrorHook: setFormErrorData,
       dropdownOptions: ["English", "Español"],
-      required: true
+      required: true,
     },
     {
       name: practiceArea.english,
@@ -197,7 +208,7 @@ export const ContactUs = () => {
           ? practiceArea.english
           : practiceArea.spanish,
       theme: "light",
-      columns: "6",
+      columns: inputFieldColumns,
       type: "dropdown",
       inputType: "text",
       inputMode: "text",
@@ -218,7 +229,7 @@ export const ContactUs = () => {
         "Product Liability",
         "Police Misconduct",
       ],
-      required: true
+      required: true,
     },
     /* {
       name: emailAddress.english,
@@ -232,7 +243,7 @@ export const ContactUs = () => {
           ? emailAddress.english
           : emailAddress.spanish,
       theme: "light",
-      columns: "6",
+      columns: inputFieldColumns,
       type: "email",
       inputType: "email",
       inputMode: "email",
@@ -252,7 +263,7 @@ export const ContactUs = () => {
       placeholder:
         reduxLanguage === "English" ? opposition.english : opposition.spanish,
       theme: "light",
-      columns: "6",
+      columns: inputFieldColumns,
       type: "text",
       inputType: "text",
       inputMode: "text",
@@ -261,7 +272,7 @@ export const ContactUs = () => {
       parentFormState: formInputData,
       setStateHook: setFormInputData,
       setErrorHook: setFormErrorData,
-      required: true
+      required: true,
     },
     {
       name: describeIncident.english,
@@ -275,7 +286,7 @@ export const ContactUs = () => {
           ? describeIncident.english
           : describeIncident.spanish,
       theme: "light",
-      columns: "6",
+      columns: inputFieldColumns,
       type: "textArea",
       inputType: "text",
       inputMode: "text",
@@ -284,7 +295,7 @@ export const ContactUs = () => {
       parentFormState: formInputData,
       setStateHook: setFormInputData,
       setErrorHook: setFormErrorData,
-      required: true
+      required: true,
     },
     {
       name: "Credit Card",
@@ -295,14 +306,14 @@ export const ContactUs = () => {
           ? describeIncident.english
           : describeIncident.spanish,
       theme: "light",
-      columns: "6",
+      columns: inputFieldColumns,
       type: "creditCard",
       inputType: "text",
       inputMode: "text",
       parentFormState: formInputData,
       setStateHook: setFormInputData,
       setErrorHook: setFormErrorData,
-      required: true
+      required: true,
     },
   ];
 
