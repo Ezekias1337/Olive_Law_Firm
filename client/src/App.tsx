@@ -1,8 +1,10 @@
 // Library Imports
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 // Pages
-import { HomePage } from "./pages/HomePage";
-import { ContactUs } from "./pages/ContactUs";
+import HomePage from "./pages/HomePage";
+import ContactUs from "./pages/ContactUs";
+
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 // CSS
 import "./css/styles.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -21,7 +23,7 @@ const App = () => {
         <Route path="/faqs" element={<HomePage />}></Route>
         <Route path="/community-interaction" element={<HomePage />}></Route>
         <Route path="/our-results" element={<HomePage />}></Route>
-        <Route path="/privacy-policy" element={<HomePage />}></Route>
+        <Route path="/privacy-policy" element={<PrivacyPolicy />}></Route>
         <Route path="/terms-of-service" element={<HomePage />}></Route>
         {/* Admin Only */}
         <Route path="/login" element={<HomePage />}></Route>

@@ -17,15 +17,14 @@ import { OurAttorneys } from "../components/page-specific/home-page/our-attorney
 import { WhatCustomersSay } from "../components/page-specific/home-page/what-customers-say/whatCustomersSay";
 import { OurResults } from "../components/page-specific/home-page/our-results/ourResults";
 import { TellYourStory } from "../components/page-specific/home-page/tell-your-story/tellYourStory";
-// CSS
-import "../css/page-specific/home.scss";
 // Assets and Images
 import northCarolinaCourthouse from "../assets/images/backgrounds/North_Carolina_Courthouse.png";
 /* 
   TODO: Add Cookies disclaimer
+  TODO: Check all references to company name and website url
 */
 
-export const HomePage = () => {
+const HomePage = () => {
   const reduxLanguage = useSelector(
     (state: ReduxStoreState) => state.language.contents.languageChoice
   );
@@ -54,3 +53,5 @@ export const HomePage = () => {
     </div>
   );
 };
+
+export default HomePage;

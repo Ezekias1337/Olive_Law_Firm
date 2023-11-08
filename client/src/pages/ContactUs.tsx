@@ -28,9 +28,9 @@ import { Footer } from "../components/general-page-layout/footer/Footer";
 import { PageHeader } from "../components/general-page-layout/page-header/PageHeader";
 import { Form } from "../components/form/Form";
 // CSS
-import "../css/page-specific/home.scss";
+//import "../css/page-specific/home.scss";
 
-export const ContactUs = () => {
+const ContactUs = () => {
   const reduxLanguage = useSelector(
     (state: ReduxStoreState) => state.language.contents.languageChoice
   );
@@ -70,6 +70,7 @@ export const ContactUs = () => {
   }, [windowWidth]);
 
   /* 
+    TODO: Dropdown menus and credit card field labels aren't translating
     TODO: form error should be in spanish when page is spanish
     TODO: Look into making required one of the form attributes
     TODO: Make sure correct css is applied to errored out fields
@@ -336,3 +337,5 @@ export const ContactUs = () => {
     </div>
   );
 };
+
+export default ContactUs;
