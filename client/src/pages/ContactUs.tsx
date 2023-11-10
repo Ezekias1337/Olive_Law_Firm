@@ -332,6 +332,8 @@ const ContactUs = () => {
         setErrorHook={setFormErrorData}
         formState={formInputData}
         formErrors={formErrorData}
+        button1Text={reduxLanguage === "English" ? "Submit" : "Entregar"}
+        button1Variant="primary"
       />
       <Footer language={reduxLanguage} />
     </div>

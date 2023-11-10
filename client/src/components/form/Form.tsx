@@ -20,6 +20,11 @@ export const Form: FC<FormProps> = ({
   setErrorHook,
   formState,
   formErrors,
+  button1Text,
+  button1Variant,
+  button2Text = undefined,
+  button2Type = undefined,
+  button2Variant = undefined,
 }) => {
   // ! Initialize form data for each input field
   const initialFormData: Record<string, string> = {};
@@ -44,12 +49,26 @@ export const Form: FC<FormProps> = ({
           setErrorHook
         )}
       </div>
-      <Button
-        variant={formTheme === "dark" ? "primary" : "neutral"}
-        type="submit"
-        text={language === "English" ? "Submit" : "Entregar"}
-        buttonId={formId}
-      />
+      <div className="form-button-container">
+        <Button
+          variant={button1Variant}
+          type="submit"
+          text={button1Text}
+          buttonId={`${formId}-button-1`}
+        />
+        {button2Text !== undefined &&
+        button2Type !== undefined &&
+        button2Variant !== undefined ? (
+          <Button
+            variant={button2Variant}
+            type={button2Type}
+            text={button2Text}
+            buttonId={`${formId}-button-2`}
+          />
+        ) : (
+          <></>
+        )}
+      </div>
     </form>
   );
 };

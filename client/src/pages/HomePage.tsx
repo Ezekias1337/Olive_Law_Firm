@@ -23,6 +23,7 @@ import northCarolinaCourthouse from "../assets/images/backgrounds/North_Carolina
   TODO: Add Cookies disclaimer
   TODO: Check all references to company name and website url
   TODO: NEED A 404 PAGE
+  TODO: Remove un-used images and assets
 */
 
 const HomePage = () => {

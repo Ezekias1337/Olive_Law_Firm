@@ -51,4 +51,23 @@ export interface FormProps {
   setErrorHook: SetStateHookForm;
   formState: FormState;
   formErrors: FormState;
+  button1Text: string;
+  button1Variant:
+    | "primary"
+    | "secondary"
+    | "tertiary"
+    | "quinternary"
+    | "neutral"
+    | "success"
+    | "error";
+  button2Text?: string;
+  button2Type?: "button" | "reset";
+  button2Variant?:
+    | "primary"
+    | "secondary"
+    | "tertiary"
+    | "quinternary"
+    | "neutral"
+    | "success"
+    | "error";
 }

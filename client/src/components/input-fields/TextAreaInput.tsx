@@ -12,6 +12,8 @@ import { InputFieldProps } from "../../constants/interfaces/InputFieldProps";
 
 /* 
   TODO: Need to change styling of resize handle
+  TODO: Need to make it so Form component doesn't re-render when the
+  field is resized
 */
 
 export const TextAreaInput: FC<InputFieldProps> = ({

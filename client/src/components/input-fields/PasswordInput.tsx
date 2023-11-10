@@ -3,17 +3,27 @@ import { FC, useState } from "react";
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
 // Interfaces and Types
 import { InputFieldProps } from "../../constants/interfaces/InputFieldProps";
-import { textAndNumbersNoSpacesPattern } from "../../../../shared/constants/regexPatterns";
+import { textAndNumbersAndSpecialCharsNoSpacesPattern } from "../../../../shared/constants/regexPatterns";
+// Constants
+import { currentPasswordAutocomplete } from "../../constants/formAutocompleteStrings";
 // Components
 import { TextInput } from "./TextInput";
 
+/* 
+  TODO: Need to ensure that this regex pattern allows for symbols like !@#$
+*/
+
 export const PasswordInput: FC<InputFieldProps> = ({
   name,
+  label,
+  additionalClassNames,
+  placeholder = "Password",
   theme,
   columns = "6",
   defaultValue = "",
-  autoComplete,
+  autoComplete = currentPasswordAutocomplete,
   setStateHook,
+  setErrorHook,
 }) => {
   const [isPasswordHidden, setIsPasswordHidden] = useState(true);
 
@@ -25,20 +35,25 @@ export const PasswordInput: FC<InputFieldProps> = ({
     <>
       <TextInput
         name={name}
+        label={label}
         additionalClassNames={`password-input ${
           isPasswordHidden === true
             ? "password-input-obscured"
             : "password-input-revealed"
-        }`}
-        placeholder="Password"
+        } ${additionalClassNames}`}
+        placeholder={placeholder}
         theme={theme}
         columns={columns}
         defaultValue={defaultValue}
+        required={true}
         inputType={isPasswordHidden === true ? "password" : "text"}
+        inputMode="text"
         autoComplete={autoComplete}
-        pattern={textAndNumbersNoSpacesPattern}
+        pattern={textAndNumbersAndSpecialCharsNoSpacesPattern}
         maxLength={30}
+        icon={isPasswordHidden === true ? faEye : faEyeSlash}
         setStateHook={setStateHook}
+        setErrorHook={setErrorHook}
         childrenToRender={[
           <button
             key="toggle-password-visibility-button"
@@ -48,7 +63,6 @@ export const PasswordInput: FC<InputFieldProps> = ({
             onClick={() => togglePasswordVisibility()}
           ></button>,
         ]}
-        icon={isPasswordHidden === true ? faEye : faEyeSlash}
       />
     </>
   );

@@ -1,11 +1,15 @@
 // Library Imports
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-// Pages
+// User Pages
 import HomePage from "./pages/HomePage";
 import ContactUs from "./pages/ContactUs";
 
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfUse from "./pages/TermsOfUse";
+
+// Admin Pages
+import Login from "./pages/Login";
+
 // CSS
 import "./css/styles.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -27,7 +31,7 @@ const App = () => {
         <Route path="/privacy-policy" element={<PrivacyPolicy />}></Route>
         <Route path="/terms-of-service" element={<TermsOfUse />}></Route>
         {/* Admin Only */}
-        <Route path="/login" element={<HomePage />}></Route>
+        <Route path="/login" element={<Login />}></Route>
         <Route path="/credential-management" element={<HomePage />}></Route>
         <Route path="/new-cases" element={<HomePage />}></Route>
         <Route path="/analytics-dashboard" element={<HomePage />}></Route>

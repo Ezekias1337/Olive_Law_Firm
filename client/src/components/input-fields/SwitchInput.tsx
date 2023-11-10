@@ -18,9 +18,10 @@ export const SwitchInput: FC<InputFieldProps> = ({
   theme,
   columns = "6",
   setStateHook,
+  setErrorHook
 }) => {
   const handleInputChange = (e: SwitchUpdateEvent) => {
-    handleSwitchChange(e, setStateHook);
+    handleSwitchChange(e, setStateHook, setErrorHook);
     setIsChecked(!isChecked);
   };
 

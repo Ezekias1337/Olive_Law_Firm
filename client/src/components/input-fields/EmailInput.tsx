@@ -10,17 +10,22 @@ import { TextInput } from "./TextInput";
 
 export const EmailInput: FC<InputFieldProps> = ({
   name,
+  label,
+  additionalClassNames,
+  placeholder = "user@gmail.com",
   theme,
   columns = "6",
   defaultValue = "",
   required,
   setStateHook,
+  setErrorHook,
 }) => {
   return (
     <TextInput
       name={name}
-      additionalClassNames="email-input"
-      placeholder="user@gmail.com"
+      label={label}
+      additionalClassNames={`date-input ${additionalClassNames}`}
+      placeholder={placeholder}
       theme={theme}
       columns={columns}
       defaultValue={defaultValue}
@@ -29,8 +34,10 @@ export const EmailInput: FC<InputFieldProps> = ({
       inputMode="email"
       autoComplete={emailAutocomplete}
       pattern={emailPattern}
+      maxLength={50}
       icon={faAt}
       setStateHook={setStateHook}
+      setErrorHook={setErrorHook}
     />
   );
 };

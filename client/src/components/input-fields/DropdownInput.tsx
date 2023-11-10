@@ -10,6 +10,7 @@ import { DropdownFieldProps } from "../../constants/interfaces/InputFieldProps";
 
 export const DropdownInput: FC<DropdownFieldProps> = ({
   name,
+  label,
   additionalClassNames = "",
   theme,
   columns = "6",
@@ -17,6 +18,7 @@ export const DropdownInput: FC<DropdownFieldProps> = ({
   dropdownOptions,
   required,
   setStateHook,
+  setErrorHook,
 }) => {
   const arrayOfOptions = useMemo(
     () => renderSelectOptions(dropdownOptions),
@@ -29,7 +31,7 @@ export const DropdownInput: FC<DropdownFieldProps> = ({
         htmlFor={kebabCasifyString(name)}
         className={`form-label ${theme}-label`}
       >
-        {name}
+        {label}
       </label>
       <select
         className={`input-field ${theme}-input ${additionalClassNames}`}
@@ -39,7 +41,7 @@ export const DropdownInput: FC<DropdownFieldProps> = ({
         defaultValue={defaultValue !== "" ? defaultValue : ""}
         required={required}
         onChange={(e) => {
-          handleFormChange(e, setStateHook);
+          handleFormChange(e, setStateHook, setErrorHook);
         }}
       >
         {arrayOfOptions}
