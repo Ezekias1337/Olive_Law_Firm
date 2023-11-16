@@ -1,0 +1,29 @@
+@import "../../css/variables";
+
+.page-not-found-container {
+  margin: 0 auto;
+  padding-top: 200px;
+  padding-bottom: 150px;
+
+  h1.full-flex {
+    color: $neutral;
+    font-weight: bold;
+  }
+
+  h3.full-flex {
+    color: $light-gray;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .button {
+    max-width: 300px;
+    display: block;
+    margin: auto;
+    margin-top: 40px;
+  }
+
+  .footer {
+    margin-top: 61px;
+  }
+}

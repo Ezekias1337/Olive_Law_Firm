@@ -20,14 +20,24 @@ export const Button: FC<ButtonProps> = ({
   onClickHandler = null,
   type = "button",
   url,
-  buttonId = null
+  buttonId = null,
+  additionalClassNames,
+  buttonSize = "small",
 }) => {
   const renderButtonContent = () => {
     return (
       <>
-        {leftIcon && icon && <FontAwesomeIcon icon={icon} />}
-        {loading === true ? <Loader variant={variant} /> : text}
-        {rightIcon && icon && <FontAwesomeIcon icon={icon} />}
+        {leftIcon && icon && (
+          <FontAwesomeIcon icon={icon} className="left-icon" />
+        )}
+        {loading === true ? (
+          <Loader variant={variant} />
+        ) : (
+          <b className="button-text">{text}</b>
+        )}
+        {rightIcon && icon && (
+          <FontAwesomeIcon icon={icon} className="right-icon" />
+        )}
       </>
     );
   };
@@ -35,7 +45,16 @@ export const Button: FC<ButtonProps> = ({
   // If 'url' prop is provided, wrap the button in a Link
   if (url) {
     return (
-      <Link to={url} className={`button ${variant}-button no-underline`}>
+      <Link
+        to={url}
+        className={`button ${leftIcon === true ? "icon-left" : ""} 
+        ${rightIcon === true ? "icon-right" : ""}
+        ${variant}-button no-underline ${
+          additionalClassNames !== undefined ? additionalClassNames : ""
+        }
+        ${buttonSize}-button
+        `}
+      >
         {renderButtonContent()}
       </Link>
     );
@@ -44,7 +63,10 @@ export const Button: FC<ButtonProps> = ({
   // Otherwise, render the button as-is
   return (
     <button
-      className={`button ${variant}-button`}
+      className={`button ${leftIcon === true ? "icon-left" : ""} 
+      ${rightIcon === true ? "icon-right" : ""} ${variant}-button  ${
+        additionalClassNames !== undefined ? additionalClassNames : ""
+      } ${buttonSize}-button`}
       disabled={disabled || loading}
       onClick={() => (onClickHandler !== null ? onClickHandler() : null)}
       type={type}

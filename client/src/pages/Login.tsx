@@ -86,7 +86,7 @@ const Login = () => {
         adminVariant={false}
         language={reduxLanguage}
         backgroundImage={northCarolinaCourthouse}
-        backgroundImageSize="880px"
+        backgroundImageSize="899px"
       />
       <PageHeader
         language={reduxLanguage}
@@ -112,6 +112,7 @@ const Login = () => {
           }
           button1Variant="neutral"
           formBackgroundIsImage={true}
+          buttonSize="large"
         />
 
         <div className="forgot-password-wrapper container">

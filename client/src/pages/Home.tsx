@@ -26,9 +26,14 @@ import northCarolinaCourthouse from "../assets/images/backgrounds/North_Carolina
   TODO: Remove un-used images and assets
   TODO: Look into back arrow functionality when changing language to make it go back to the
   last different page
+  TODO: Browser history not working correctly on button links
+  TODO: Fix Phone number component padding
+  TODO: Box shadow doesn't work on input fields that were autocompleted
+  TODO: Make checklist to check responsiveness of each page before release
+  TODO: Footer logo doesn't link to homepage
 */
 
-const HomePage = () => {
+const Home = () => {
   const reduxLanguage = useSelector(
     (state: ReduxStoreState) => state.language.contents.languageChoice
   );
@@ -58,4 +63,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default Home;

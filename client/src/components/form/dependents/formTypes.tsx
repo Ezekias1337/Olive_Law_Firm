@@ -70,5 +70,6 @@ export interface FormProps {
     | "neutral"
     | "success"
     | "error";
+  buttonSize?: "small" | "medium" | "large";
   formBackgroundIsImage?: boolean;
 }

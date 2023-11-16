@@ -9,7 +9,29 @@
   padding-bottom: 8px;
   padding-left: 16px;
   padding-right: 16px;
-  font-size: $body;
+  text-align: center;
+
+  /* Select icon when it is on the left of the text */
+  > svg.left-icon:first-child {
+    padding-right: 16px;
+  }
+
+  /* Select icon when it is on the right of the text */
+  > svg.right-icon:last-child {
+    padding-left: 16px;
+  }
+
+  &.small-button {
+    font-size: $body;
+  }
+
+  &.medium-button {
+    font-size: $general;
+  }
+
+  &.large-button {
+    font-size: $header-3;
+  }
 
   &.primary-button {
     background-color: $primary-color;

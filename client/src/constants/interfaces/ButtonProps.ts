@@ -13,4 +13,6 @@ export interface ButtonProps {
   type?: "button" | "submit" | "reset";
   url?: string;
   buttonId?: string | undefined;
+  additionalClassNames?: string | undefined;
+  buttonSize?: "small" | "medium" | "large";
 }

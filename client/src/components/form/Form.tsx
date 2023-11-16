@@ -26,6 +26,7 @@ export const Form: FC<FormProps> = ({
   button2Type = undefined,
   button2Variant = undefined,
   formBackgroundIsImage,
+  buttonSize = "small",
 }) => {
   // ! Initialize form data for each input field
   const initialFormData: Record<string, string> = {};
@@ -60,6 +61,7 @@ export const Form: FC<FormProps> = ({
           type="submit"
           text={button1Text}
           buttonId={`${formId}-button-1`}
+          buttonSize={buttonSize}
         />
         {button2Text !== undefined &&
         button2Type !== undefined &&
@@ -69,6 +71,7 @@ export const Form: FC<FormProps> = ({
             type={button2Type}
             text={button2Text}
             buttonId={`${formId}-button-2`}
+            buttonSize={buttonSize}
           />
         ) : (
           <></>
