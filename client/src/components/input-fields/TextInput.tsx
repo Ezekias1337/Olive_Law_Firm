@@ -11,7 +11,10 @@ import { kebabCasifyString } from "../../../../shared/utils/strings/kebabCasifyS
 // Constants
 import { textOnlyPattern } from "../../../../shared/constants/regexPatterns";
 // Interfaces and Types
-import { InputFieldProps } from "../../constants/interfaces/InputFieldProps";
+import {
+  InputFieldProps,
+  InputFieldPropsState,
+} from "../../constants/interfaces/InputFieldProps";
 
 export const TextInput: FC<InputFieldProps> = ({
   name,
@@ -39,28 +42,42 @@ export const TextInput: FC<InputFieldProps> = ({
     ? this ensures the attribute is only applied when the prop is provided
   */
 
-  const [inputElementProps, setInputElementProps] = useState({
-    className: `input-field ${theme}-input ${additionalClassNames}`,
-    name: camelCasifyString(name),
-    id: kebabCasifyString(name),
-    placeholder: placeholder,
-    defaultValue: defaultValue,
-    type: inputType,
-    inputMode: inputMode,
-    pattern: pattern,
-    maxLength: maxLength,
-    onChange: handleInputChange,
-  });
+  const [inputElementProps, setInputElementProps] =
+    useState<InputFieldPropsState>({
+      className: `input-field ${theme}-input ${additionalClassNames}`,
+      name: camelCasifyString(name),
+      id: kebabCasifyString(name),
+      placeholder: placeholder,
+      defaultValue: defaultValue,
+      type: inputType,
+      inputMode: inputMode,
+      pattern: pattern,
+      maxLength: maxLength,
+      onChange: handleInputChange,
+    });
 
+  /* 
+    ? Because of the way that this component is used in others such as the
+    ? PasswordInput and updates based off errors, it was required to make
+    ? These attributes cause re-renders of the component, this is all handled
+    ? in the useEffect
+  */  
+    
   useEffect(() => {
+    let newElementProps = {
+      ...inputElementProps,
+    };
+
+    newElementProps.className = `input-field ${theme}-input ${additionalClassNames}`;
+    newElementProps.placeholder = placeholder;
+    newElementProps.type = inputType;
+
     if (autoComplete !== "") {
-      const newElementProps = {
-        ...inputElementProps,
-        autoComplete: autoComplete,
-      };
-      setInputElementProps(newElementProps);
+      newElementProps.autoComplete = autoComplete;
     }
-  }, [autoComplete]);
+
+    setInputElementProps(newElementProps);
+  }, [additionalClassNames, placeholder, inputType, autoComplete]);
 
   return (
     <div className={`mt-2 input-wrapper`} key={name}>

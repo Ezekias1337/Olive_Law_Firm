@@ -25,6 +25,7 @@ export const Form: FC<FormProps> = ({
   button2Text = undefined,
   button2Type = undefined,
   button2Variant = undefined,
+  formBackgroundIsImage,
 }) => {
   // ! Initialize form data for each input field
   const initialFormData: Record<string, string> = {};
@@ -49,7 +50,11 @@ export const Form: FC<FormProps> = ({
           setErrorHook
         )}
       </div>
-      <div className="form-button-container">
+      <div
+        className={`form-button-container ${
+          formBackgroundIsImage === true ? "position-relative" : ""
+        }`}
+      >
         <Button
           variant={button1Variant}
           type="submit"

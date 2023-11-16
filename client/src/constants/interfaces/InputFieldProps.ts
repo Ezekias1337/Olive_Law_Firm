@@ -66,6 +66,52 @@ export interface InputFieldProps {
   handleInputChange?: ChangeEventHandler<HTMLInputElement>;
 }
 
+export interface InputFieldPropsState {
+  className: string;
+  name: string;
+  id: string;
+  placeholder: string | undefined;
+  defaultValue: string;
+  type:
+    | "button"
+    | "checkbox"
+    | "color"
+    | "date"
+    | "datetime-local"
+    | "email"
+    | "file"
+    | "hidden"
+    | "image"
+    | "month"
+    | "number"
+    | "password"
+    | "radio"
+    | "range"
+    | "reset"
+    | "search"
+    | "submit"
+    | "tel"
+    | "text"
+    | "time"
+    | "url"
+    | "week"
+    | undefined;
+  inputMode:
+    | "none"
+    | "text"
+    | "tel"
+    | "url"
+    | "email"
+    | "numeric"
+    | "decimal"
+    | "search"
+    | undefined;
+  pattern: string;
+  maxLength: number;
+  onChange: ChangeEventHandler<HTMLInputElement>;
+  autoComplete?: string;
+}
+
 export interface DropdownFieldProps extends InputFieldProps {
   dropdownOptions: string[];
 }

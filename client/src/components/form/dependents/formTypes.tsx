@@ -70,4 +70,5 @@ export interface FormProps {
     | "neutral"
     | "success"
     | "error";
+  formBackgroundIsImage?: boolean;
 }

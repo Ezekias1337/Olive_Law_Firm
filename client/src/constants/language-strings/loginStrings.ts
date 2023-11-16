@@ -4,7 +4,7 @@ interface LoginStrings {
     spanish: string;
   };
 
-  username: {
+  email: {
     english: string;
     spanish: string;
   };
@@ -18,6 +18,11 @@ interface LoginStrings {
     english: string;
     spanish: string;
   };
+  
+  forgotPassword: {
+    english: string;
+    spanish: string;
+  }
 }
 
 export const loginStrings: LoginStrings = {
@@ -26,9 +31,9 @@ export const loginStrings: LoginStrings = {
     spanish: "Iniciar Sesión",
   },
 
-  username: {
-    english: "Username",
-    spanish: "Nombre de Usuario",
+  email: {
+    english: "Email",
+    spanish: "Correo Electrónico",
   },
 
   password: {
@@ -39,5 +44,10 @@ export const loginStrings: LoginStrings = {
   buttonText: {
     english: "Login",
     spanish: "Iniciar Sesión",
+  },
+  
+  forgotPassword: {
+    english: "Forgot Password?",
+    spanish: "¿Contraseña Olvidado?",
   },
 };

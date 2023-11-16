@@ -57,7 +57,7 @@
   font-size: 24px;
 }
 
-.form button {
+.form button:not(.toggle-password-visibility-button) {
   margin-top: 40px;
   margin-bottom: 40px;
 }
@@ -129,7 +129,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .toggle-password-visibility-button {
   position: absolute;
-  width: 5% !important;
+  width: 8% !important;
   height: 30% !important;
   top: 62%;
   right: 3%;

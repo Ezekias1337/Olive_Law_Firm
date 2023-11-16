@@ -170,12 +170,28 @@ export const renderInputFields = (
         }
 
         break;
-      /* case "email":
-            already has pattern for regex inside component     
-            break;
-            case "password":
-            already has pattern for regex inside component  
-            break;break;*/
+      case "email":
+        inputFieldToBePushed = (
+          <div
+            key={inputField.name}
+            className={`col col-${inputField.columns}`}
+          >
+            <EmailInput {...generalInputProps} />
+            <FormError formErrors={formErrors} inputField={inputField} />
+          </div>
+        );
+        break;
+      case "password":
+        inputFieldToBePushed = (
+          <div
+            key={inputField.name}
+            className={`col col-${inputField.columns}`}
+          >
+            <PasswordInput {...generalInputProps} />
+            <FormError formErrors={formErrors} inputField={inputField} />
+          </div>
+        );
+        break;
       case "phoneNumber":
         inputFieldToBePushed = (
           <div

@@ -9,12 +9,23 @@ interface PageHeaderProps {
     english: string;
     spanish: string;
   };
+  additionalClassNames?: string;
 }
 
-export const PageHeader: FC<PageHeaderProps> = ({ language, title }) => {
+export const PageHeader: FC<PageHeaderProps> = ({
+  language,
+  title,
+  additionalClassNames,
+}) => {
   const { english, spanish } = title;
 
   return (
-    <h1 className="page-title">{language === "English" ? english : spanish}</h1>
+    <h1
+      className={`page-title ${
+        additionalClassNames !== undefined ? additionalClassNames : ""
+      }`}
+    >
+      {language === "English" ? english : spanish}
+    </h1>
   );
 };

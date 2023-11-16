@@ -11,6 +11,10 @@ import { TextInput } from "./TextInput";
 
 /* 
   TODO: Need to ensure that this regex pattern allows for symbols like !@#$
+  
+  
+  BUG: Not re-rendering
+    solutions: 1.) Move state of visibility to Form, pass it as prop to force-re-render
 */
 
 export const PasswordInput: FC<InputFieldProps> = ({
@@ -60,6 +64,7 @@ export const PasswordInput: FC<InputFieldProps> = ({
             className="toggle-password-visibility-button"
             name="toggle-password-visibility-button"
             role="button"
+            type="button"
             onClick={() => togglePasswordVisibility()}
           ></button>,
         ]}

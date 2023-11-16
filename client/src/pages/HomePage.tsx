@@ -24,6 +24,8 @@ import northCarolinaCourthouse from "../assets/images/backgrounds/North_Carolina
   TODO: Check all references to company name and website url
   TODO: NEED A 404 PAGE
   TODO: Remove un-used images and assets
+  TODO: Look into back arrow functionality when changing language to make it go back to the
+  last different page
 */
 
 const HomePage = () => {
