@@ -27,8 +27,8 @@ interface LoginStrings {
 
 export const loginStrings: LoginStrings = {
   pageTitle: {
-    english: "Login",
-    spanish: "Iniciar Sesión",
+    english: "Administrator Login",
+    spanish: "Iniciar Sesión de Administrador",
   },
 
   email: {

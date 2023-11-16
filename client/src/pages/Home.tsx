@@ -31,6 +31,9 @@ import northCarolinaCourthouse from "../assets/images/backgrounds/North_Carolina
   TODO: Box shadow doesn't work on input fields that were autocompleted
   TODO: Make checklist to check responsiveness of each page before release
   TODO: Footer logo doesn't link to homepage
+  TODO: Find solution for footer spacing from rest of page content on pages
+  with navbar background, also need to account for English and Spanish differences
+  in the spacing
 */
 
 const Home = () => {

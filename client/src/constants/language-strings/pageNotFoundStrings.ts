@@ -25,11 +25,11 @@ export const pageNotFoundStrings: PageNotFoundStrings = {
     english:
       "Check the page address or click the below button to return to the home page.",
     spanish:
-      "Verifique la dirección de la página o haga clic en el botón a continuación para regresar a la página principal.",
+      "Verifique la dirección de la página o haga clic en el botón para regresar a la página principal.",
   },
 
   returnHomeButtonText: {
     english: "Return Home",
-    spanish: "Volver a Casa",
+    spanish: "Principal",
   },
 };
