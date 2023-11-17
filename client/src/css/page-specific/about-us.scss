@@ -1,0 +1,58 @@
+@import "../../css/variables";
+
+.about-us-container {
+  .page-title {
+    color: $primary-color;
+    padding-bottom: 80px;
+  }
+
+  p.about-us-paragraph {
+    color: $neutral;
+    font-size: $header-3 !important;
+  }
+
+  .certification-badge {
+    max-width: 150px;
+  }
+
+  .about-us-intro,
+  .about-us-certifications,
+  .about-us-our-philosophy {
+    position: relative;
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .about-us-intro,
+  .about-us-our-philosophy {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 80px;
+  }
+
+  .about-us-intro {
+    background-image: url("../../assets/images/backgrounds/Courthouse.png");
+  }
+
+  .about-us-certifications {
+    background-color: $gray;
+    display: flex;
+    align-items: flex-end;
+    gap: 40px 200px;
+    height: 800px;
+  }
+
+  .about-us-our-philosophy {
+    background-image: url("../../assets/images/backgrounds/Inside_Court_Room_1.png");
+    height: 900px;
+
+    h2 {
+      color: $neutral;
+      font-weight: bold;
+      padding-bottom: 40px;
+    }
+  }
+}

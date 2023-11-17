@@ -6,6 +6,7 @@ import ContactUs from "./pages/ContactUs";
 
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfUse from "./pages/TermsOfUse";
+import AboutUs from "./pages/AboutUs";
 
 // Admin Pages
 import Login from "./pages/Login";
@@ -23,7 +24,7 @@ const App = () => {
         {/* Client Facing */}
         <Route path="/" element={<Home />}></Route>
         <Route path="/contact-us" element={<ContactUs />}></Route>
-        <Route path="/about-us" element={<Home />}></Route>
+        <Route path="/about-us" element={<AboutUs />}></Route>
         <Route path="/lawyer-profile" element={<Home />}></Route>
         <Route path="/practice-areas" element={<Home />}></Route>
         <Route path="/client-testimonials" element={<Home />}></Route>

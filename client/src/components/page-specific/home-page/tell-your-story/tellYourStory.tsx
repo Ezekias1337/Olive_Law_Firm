@@ -10,7 +10,7 @@ export const TellYourStory = ({ language }: { language: string }) => {
   const { quote } = tellUsYourStory;
 
   return (
-    <section className="tell-your-story padding-left-and-right z-index-1">
+    <section className="tell-your-story dark-image-overlay padding-left-and-right z-index-1">
       <h2 className="bold-text">
         {language === "English" ? quote.english : quote.spanish}
       </h2>

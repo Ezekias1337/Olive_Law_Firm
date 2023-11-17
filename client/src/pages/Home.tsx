@@ -34,6 +34,7 @@ import northCarolinaCourthouse from "../assets/images/backgrounds/North_Carolina
   TODO: Find solution for footer spacing from rest of page content on pages
   with navbar background, also need to account for English and Spanish differences
   in the spacing
+  TODO: Fix centering of "What our clients say about us"
 */
 
 const Home = () => {

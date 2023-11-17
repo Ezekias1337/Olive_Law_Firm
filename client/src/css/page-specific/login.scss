@@ -1,21 +1,23 @@
 @import "../../css/variables";
 
-.page-title {
-  color: $neutral;
-}
+.login-container {
+  .page-title {
+    color: $neutral;
+  }
 
-.login-form-wrapper {
-  margin: 0 auto;
-  margin-top: 40px;
-  width: 100%;
-}
+  .login-form-wrapper {
+    margin: 0 auto;
+    margin-top: 40px;
+    width: 100%;
+  }
 
-#admin-login-button-1 {
-  width: 100%;
-}
+  #admin-login-button-1 {
+    width: 100%;
+  }
 
-.forgot-password-wrapper {
-  margin-bottom: 80px;
+  .forgot-password-wrapper {
+    margin-bottom: 80px;
+  }
 }
 
 @media (max-width: 576px) {
