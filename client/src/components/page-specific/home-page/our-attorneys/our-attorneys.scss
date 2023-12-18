@@ -12,8 +12,22 @@
 
   .attorney-showcase-container {
     margin-top: 40px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 80px;
+
+    .image-only-card {
+      background-position: center;
+      background-size: 200%;
+      transition: background-size 1s;
+
+      &:hover {
+        background-size: 220%;
+      }
+    }
   }
-  
+
   .attorney-showcase {
     position: relative;
     margin-top: 40px;

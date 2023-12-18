@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // Interfaces and Types
 import { ButtonProps } from "../../constants/interfaces/ButtonProps";
 // Components
-//import { Loader } from "../general-page-layout/loader/Loader";
 // CSS
 import "./card.scss";
 
@@ -14,8 +13,8 @@ type CardProps = {
   headerText: string;
   bodyText?: string;
   buttonCount: 0 | 1 | 2;
-  button1Text: string;
-  button1Variant:
+  button1Text?: string;
+  button1Variant?:
     | "primary"
     | "secondary"
     | "tertiary"
@@ -35,7 +34,7 @@ type CardProps = {
     | "success"
     | "error";
   button2OnClick?: Function;
-  buttonSize: "small" | "medium" | "large";
+  buttonSize?: "small" | "medium" | "large";
   imageSource: string;
 };
 

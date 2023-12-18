@@ -9,6 +9,7 @@ import TermsOfUse from "./pages/TermsOfUse";
 import AboutUs from "./pages/AboutUs";
 import PracticeAreas from "./pages/PracticeAreas";
 import ClientReviews from "./pages/ClientReviews";
+import OurResults from "./pages/OurResults";
 
 // Admin Pages
 import Login from "./pages/Login";
@@ -32,7 +33,7 @@ const App = () => {
         <Route path="/client-reviews" element={<ClientReviews />}></Route>
         <Route path="/faqs" element={<Home />}></Route>
         <Route path="/community-interaction" element={<Home />}></Route>
-        <Route path="/our-results" element={<Home />}></Route>
+        <Route path="/our-results" element={<OurResults />}></Route>
         <Route path="/privacy-policy" element={<PrivacyPolicy />}></Route>
         <Route path="/terms-of-service" element={<TermsOfUse />}></Route>
         {/* Admin Only */}

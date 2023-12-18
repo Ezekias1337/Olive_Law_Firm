@@ -3,6 +3,7 @@ import { FC } from "react";
 // Constants
 import { homePageStrings } from "../../../../../constants/language-strings/homepageStrings";
 // Components
+import { Card } from "../../../../card/Card";
 import { Button } from "../../../../button/Button";
 
 interface AttorneyShowcaseProps {
@@ -22,16 +23,11 @@ export const AttorneyShowcase: FC<AttorneyShowcaseProps> = ({
   const { moreInfo } = ourAttorneys;
 
   return (
-    <div className="attorney-showcase">
-      <img src={image} />
-      <h3>{name}</h3>
-      <div className="button-container">
-        <Button
-          variant="primary"
-          text={language === "English" ? moreInfo.english : moreInfo.spanish}
-          url={link}
-        />
-      </div>
-    </div>
+    <Card
+      cardVariant="imageOnly"
+      headerText={name}
+      imageSource={image}
+      buttonCount={0}
+    />
   );
 };

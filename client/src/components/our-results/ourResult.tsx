@@ -8,7 +8,7 @@ interface OurResultObject {
   description: string;
 }
 
-interface OurResultProps {
+export interface OurResultProps {
   language: string;
 
   ourResultObject: {

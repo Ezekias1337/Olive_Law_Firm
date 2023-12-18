@@ -30,7 +30,7 @@ import google_review_11 from "../assets/images/customer-reviews/google_review_11
 import google_review_12 from "../assets/images/customer-reviews/google_review_12.png";
 
 /* 
-    TODO: Ensure to check reference to "The Olive Law Firm.com" in this
+    TODO: Add disclaimer about rebranding
 */
 
 type TestimonialInfo = {
