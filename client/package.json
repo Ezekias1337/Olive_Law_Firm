@@ -6,8 +6,11 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "build:gh-pages": "vite build --base=/Olive_Law_Firm/",
+    "deploy": "npm run build:gh-pages && gh-pages -d dist",
     "preview": "vite preview"
   },
+  "base": "/Olive_Law_Firm/",
   "dependencies": {
     "@formkit/auto-animate": "^1.0.0-beta.6",
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
@@ -33,6 +36,7 @@
     "@types/react-redux": "^7.1.25",
     "@types/redux": "^3.6.0",
     "@vitejs/plugin-react": "^3.0.0",
+    "gh-pages": "^6.1.0",
     "typescript": "^4.9.3",
     "vite": "^4.0.0"
   }
