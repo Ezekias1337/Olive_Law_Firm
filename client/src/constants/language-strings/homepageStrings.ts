@@ -204,7 +204,7 @@ export const homePageStrings: HomePageStrings = {
     },
 
     workersComp: {
-      english: "Worker's Compensation",
+      english: "Workers' Compensation",
       spanish: "Compensación del Trabajador",
     },
 

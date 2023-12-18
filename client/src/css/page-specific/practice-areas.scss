@@ -1,0 +1,25 @@
+@import "../../css/variables";
+
+.practice-areas-container {
+  .page-title {
+    color: $primary-color;
+    padding-bottom: 80px;
+  }
+
+  .practice-areas-cards-wrapper {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 80px;
+  }
+
+  .card.image-only-card {
+    background-position: center;
+    background-size: 100%;
+    transition: background-size 1s;
+
+    &:hover {
+      background-size: 120%;
+    }
+  }
+}

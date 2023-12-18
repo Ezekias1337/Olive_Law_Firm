@@ -1,0 +1,25 @@
+@import "../../css/variables";
+
+.card {
+  &.image-only-card {
+    width: 25vw;
+    height: 30vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 20px;
+    
+    &:hover {
+        
+    }
+
+    img {
+      height: 100%;
+    }
+
+    h2 {
+      color: $neutral;
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+}

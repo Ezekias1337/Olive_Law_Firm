@@ -1,0 +1,26 @@
+@import "../../css/variables";
+
+.client-reviews-container {
+  .client-reviews-wrapper,
+  .google-reviews-wrapper {
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-top: 40px;
+  }
+  
+  .client-reviews-wrapper {
+    padding-bottom: 40px;
+    background-color: $quinternary-color;
+  }
+  
+  .google-reviews-wrapper {
+    background-color: $primary-color;
+    padding-bottom: 80px;
+  }
+  
+  .page-title {
+    padding-bottom: 40px;
+  }
+}

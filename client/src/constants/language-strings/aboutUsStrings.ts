@@ -21,6 +21,13 @@ interface AboutUsStrings {
     };
   };
 
+  ourCerifications: {
+    title: {
+      english: string;
+      spanish: string;
+    };
+  };
+
   ourPhilosophy: {
     title: {
       english: string;
@@ -83,6 +90,13 @@ export const aboutUsStrings: AboutUsStrings = {
     },
   },
 
+  ourCerifications: {
+    title: {
+      english: "Our Certifications",
+      spanish: "Nuestros Certificaciones",
+    }
+  },
+  
   ourPhilosophy: {
     title: {
       english: "Our Philosophy",

@@ -5,12 +5,15 @@ import { StarRating } from "./dependents/starRating";
 // CSS
 import "./customerReview.scss";
 
-interface CustomerReviewProps {
+export interface CustomerReviewProps {
   language: string;
   authorImage: string;
   authorName: string;
   rating: number;
-  reviewBody: string;
+  reviewBody: {
+    english: string;
+    spanish: string;
+  };
 }
 
 export const CustomerReview: FC<CustomerReviewProps> = ({
@@ -33,7 +36,9 @@ export const CustomerReview: FC<CustomerReviewProps> = ({
         </div>
       </div>
       <div className="review-body-container">
-        <p>{reviewBody}</p>
+        <p>
+          {language === "English" ? reviewBody.english : reviewBody.spanish}
+        </p>
       </div>
     </div>
   );

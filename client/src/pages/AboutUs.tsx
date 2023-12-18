@@ -26,7 +26,7 @@ import NorthCarolinaBarAssociation from "../assets/images/certifications/North_C
 import SuperLawyers from "../assets/images/certifications/Super_Lawyers.webp";
 import AmericanBoardOfTrialAdvocates from "../assets/images/certifications/American_Board_of_Trial_Advocates.webp";
 import AmericanAssociationForJustice from "../assets/images/certifications/American_Association_For_Justice.webp";
-import NorthCarolinaAdvocatesForJustice from "../assets/images/certifications/North_Carolina_Advocates_For_Justice.webp";
+import NorthCarolinaAdvocatesForJustice from "../assets/images/certifications/North_Carolina_Advocates_For_Justice.png";
 
 /* 
     TODO: Ensure to check reference to "The Olive Law Firm.com" in this
@@ -37,13 +37,14 @@ const AboutUs = () => {
     (state: ReduxStoreState) => state.language.contents.languageChoice
   );
 
-  const { pageTitle, intro, ourPhilosophy } = aboutUsStrings;
+  const { pageTitle, intro, ourCerifications, ourPhilosophy } = aboutUsStrings;
 
   const {
     paragraph1: introParagraph1,
     paragraph2: introParagraph2,
     paragraph3: introParagraph3,
   } = intro;
+  const { title: ourCerificationsTitle } = ourCerifications;
   const {
     title: philosophyTitle,
     paragraph1: philosophyParagraph1,
@@ -78,6 +79,12 @@ const AboutUs = () => {
       </div>
 
       <div className="about-us-certifications padding-left-and-right row">
+        <h2 className="full-flex">
+          {reduxLanguage === "English"
+            ? ourCerificationsTitle.english
+            : ourCerificationsTitle.spanish}
+        </h2>
+
         <img
           src={MillionDollarAdvocates}
           className="certification-badge col-3"

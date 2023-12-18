@@ -3,5 +3,10 @@
 .page-title {
   color: $primary-color;
   padding-top: 80px;
+  
+  &.banner-title {
+    background-color: $primary-color;
+    color: $neutral;
+  }
 }
 

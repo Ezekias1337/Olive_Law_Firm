@@ -35,6 +35,10 @@ import northCarolinaCourthouse from "../assets/images/backgrounds/North_Carolina
   with navbar background, also need to account for English and Spanish differences
   in the spacing
   TODO: Fix centering of "What our clients say about us"
+  TODO: Add animation to practice area card hover and lawyer hover
+  TODO: Replace Lawyer images with card component
+  TODO: Add animation for button hover
+  TODO: Change "Google reviews" in footer to client reviews link
 */
 
 const Home = () => {

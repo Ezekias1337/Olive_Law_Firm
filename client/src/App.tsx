@@ -7,6 +7,8 @@ import ContactUs from "./pages/ContactUs";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfUse from "./pages/TermsOfUse";
 import AboutUs from "./pages/AboutUs";
+import PracticeAreas from "./pages/PracticeAreas";
+import ClientReviews from "./pages/ClientReviews";
 
 // Admin Pages
 import Login from "./pages/Login";
@@ -26,8 +28,8 @@ const App = () => {
         <Route path="/contact-us" element={<ContactUs />}></Route>
         <Route path="/about-us" element={<AboutUs />}></Route>
         <Route path="/lawyer-profile" element={<Home />}></Route>
-        <Route path="/practice-areas" element={<Home />}></Route>
-        <Route path="/client-testimonials" element={<Home />}></Route>
+        <Route path="/practice-areas" element={<PracticeAreas />}></Route>
+        <Route path="/client-reviews" element={<ClientReviews />}></Route>
         <Route path="/faqs" element={<Home />}></Route>
         <Route path="/community-interaction" element={<Home />}></Route>
         <Route path="/our-results" element={<Home />}></Route>

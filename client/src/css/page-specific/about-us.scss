@@ -37,12 +37,27 @@
     background-image: url("../../assets/images/backgrounds/Courthouse.png");
   }
 
+  .about-us-certifications,
+  .about-us-our-philosophy {
+    h2 {
+      font-weight: bold;
+      padding-bottom: 40px;
+    }
+  }
+
   .about-us-certifications {
     background-color: $gray;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
+    justify-content: center;
     gap: 40px 200px;
-    height: 800px;
+    height: 1000px;
+    width: 100%;
+    padding-bottom: 80px;
+
+    h2 {
+      color: $primary-color;
+    }
   }
 
   .about-us-our-philosophy {
@@ -51,8 +66,6 @@
 
     h2 {
       color: $neutral;
-      font-weight: bold;
-      padding-bottom: 40px;
     }
   }
 }

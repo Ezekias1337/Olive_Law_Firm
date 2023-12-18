@@ -10,9 +10,11 @@
 
   .customer-review-container {
     margin-top: 40px;
-    display: inline-flex;
-    align-items: flex-start;
-    gap: 40px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 80px;
   }
 
   .view-more-reviews-button-container {

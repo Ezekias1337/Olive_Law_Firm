@@ -140,6 +140,6 @@ h6 {
 }
 
 .dark-image-overlay {
-  background-color: $transparent-black;
+  background-color: $transparent-black !important;
   background-blend-mode: multiply;
 }

@@ -10,9 +10,9 @@ const ourResultStrings = [
   {
     amountAwarded: "45,000",
     english: {
-      practiceArea: "Worker's Compensation",
+      practiceArea: "Workers' Compensation",
       description:
-        "Worker's Compensation (Spinal Cord Injury): Recovered on behalf of a construction worker from Texas who was paralyzed following a fall from a roof on a construction site in Mecklenburg County, North Carolina. Despite being unable to care for himself, the work comp carrier refused to compensate plaintiff's wife for the daycare she had to provide. After a trial before the industrial commission, the company settled.",
+        "Workers' Compensation (Spinal Cord Injury): Recovered on behalf of a construction worker from Texas who was paralyzed following a fall from a roof on a construction site in Mecklenburg County, North Carolina. Despite being unable to care for himself, the work comp carrier refused to compensate plaintiff's wife for the daycare she had to provide. After a trial before the industrial commission, the company settled.",
     },
     spanish: {
       practiceArea: "Compensación del Trabajador",
