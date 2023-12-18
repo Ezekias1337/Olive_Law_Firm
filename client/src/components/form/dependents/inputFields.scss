@@ -141,6 +141,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   Country Code and Phone Number Input
 */
 
+div.country-code-input-wrapper {
+  button.toggle-country-code-menu {
+    margin: 0;
+  }
+}
+
 @media (max-width: 576px) {
   .phone-number-input {
     padding-left: 30%;

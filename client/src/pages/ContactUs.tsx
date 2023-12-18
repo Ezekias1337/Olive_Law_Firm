@@ -26,9 +26,12 @@ import {
 import { NavBar } from "../components/general-page-layout/navbar/Navbar";
 import { Footer } from "../components/general-page-layout/footer/Footer";
 import { PageHeader } from "../components/general-page-layout/page-header/PageHeader";
+import { GeneralLink } from "../components/general-page-layout/link/GeneralLink";
 import { Form } from "../components/form/Form";
 // CSS
-//import "../css/page-specific/home.scss";
+import "../css/page-specific/contact-us.scss";
+// Assets and Images
+import googleMapsLocation from "../assets/images/google-maps-location.png";
 
 const ContactUs = () => {
   const reduxLanguage = useSelector(
@@ -319,7 +322,7 @@ const ContactUs = () => {
   ];
 
   return (
-    <div className="container-fluid home-page p-0">
+    <div className="container-fluid contact-us-container home-page p-0">
       <NavBar theme="dark" adminVariant={false} language={reduxLanguage} />
       <PageHeader language={reduxLanguage} title={pageTitle} />
       <Form
@@ -335,6 +338,30 @@ const ContactUs = () => {
         button1Text={reduxLanguage === "English" ? "Submit" : "Entregar"}
         button1Variant="primary"
       />
+
+      <div className="contact-info-wrapper padding-left-and-right">
+        <img
+          src={googleMapsLocation}
+          className="google-maps-image"
+          alt="Google Maps Location of Law Firm"
+        />
+
+        <div className="text-wrapper">
+          <h3>Phone</h3>
+          <h4>(704) 377-9222</h4>
+
+          <h3>Email</h3>
+          <h4>corellana@olivelawfirm.com</h4>
+
+          <h3>Address</h3>
+          <h4>200 Queens Rd Suite #200</h4>
+          <h4>Charlotte, NC 28204</h4>
+
+          <a href="https://maps.app.goo.gl/y4c2grr8xZhsGh4L9" target="_blank">
+            <h3>Get Directions</h3>
+          </a>
+        </div>
+      </div>
       <Footer language={reduxLanguage} />
     </div>
   );

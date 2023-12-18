@@ -1,0 +1,31 @@
+@import "../../css/variables";
+
+.contact-us-container {
+  .contact-info-wrapper {
+    background-color: $primary-color;
+    display: flex;
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    img {
+      max-width: 46%;
+    }
+
+    .text-wrapper {
+      padding-left: 10%;
+
+      h3 {
+        color: $neutral;
+        font-weight: bold;
+      }
+
+      h4 {
+        color: $gray;
+      }
+
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+}
