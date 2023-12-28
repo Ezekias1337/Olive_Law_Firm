@@ -1,0 +1,45 @@
+@import "../../css/variables";
+
+.faq-container {
+  .page-title {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .faq-disclaimer-text {
+    background-image: url(../../assets/images/backgrounds/Judge_Gavel.png);
+    background-size: cover;
+    background-position-y: center;
+    padding: 80px;
+    color: $neutral;
+
+    h3:last-of-type {
+      margin-top: 40px;
+    }
+  }
+
+  .faq-accordion-wrapper {
+    padding-top: 40px;
+    padding-bottom: 80px;
+    background-color: $primary-color;
+
+    button.accordion-button {
+      background-color: $sexternary-color;
+      color: $anti-neutral;
+    }
+
+    div.accordion-body {
+      background-color: $primary-color;
+      color: $neutral;
+    }
+
+    button.accordion-button.collapsed {
+      background-color: $quarternary-color;
+      color: $neutral;
+
+      &::after {
+        filter: invert(1);
+      }
+    }
+  }
+}

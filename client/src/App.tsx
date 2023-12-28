@@ -9,6 +9,7 @@ import AboutUs from "./pages/AboutUs";
 import PracticeAreas from "./pages/PracticeAreas";
 import ClientReviews from "./pages/ClientReviews";
 import OurResults from "./pages/OurResults";
+import FAQ from "./pages/FAQ";
 
 // Admin Pages
 import Login from "./pages/Login";
@@ -34,7 +35,7 @@ const App = () => {
         <Route path="/lawyer-profile" element={<Home />}></Route>
         <Route path="/practice-areas" element={<PracticeAreas />}></Route>
         <Route path="/client-reviews" element={<ClientReviews />}></Route>
-        <Route path="/faqs" element={<Home />}></Route>
+        <Route path="/faqs" element={<FAQ />}></Route>
         <Route path="/community-interaction" element={<Home />}></Route>
         <Route path="/our-results" element={<OurResults />}></Route>
         <Route path="/privacy-policy" element={<PrivacyPolicy />}></Route>
