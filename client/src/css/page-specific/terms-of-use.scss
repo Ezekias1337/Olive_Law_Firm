@@ -1,7 +1,14 @@
 @import "../../css/variables";
 
 .terms-of-use-container {
-  h1.page-title, h3, p {
+  .page-title {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .page-title,
+  h3,
+  p {
     margin-bottom: 40px !important;
   }
 

@@ -56,7 +56,7 @@ const AboutUs = () => {
   return (
     <div className="container-fluid about-us-container p-0">
       <NavBar theme="dark" adminVariant={false} language={reduxLanguage} />
-      <PageHeader language={reduxLanguage} title={pageTitle} />
+      <PageHeader language={reduxLanguage} title={pageTitle} includeBanner/>
 
       <div className="about-us-intro dark-image-overlay padding-left-and-right">
         <p className="about-us-paragraph">

@@ -1,6 +1,12 @@
 @import "../../css/variables";
 
 .contact-us-container {
+  .page-title {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-bottom: 40px !important;
+  }
+
   .contact-info-wrapper {
     background-color: $primary-color;
     display: flex;

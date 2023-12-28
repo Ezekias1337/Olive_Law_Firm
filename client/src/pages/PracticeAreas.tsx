@@ -140,7 +140,7 @@ const PracticeAreas = () => {
   return (
     <div className="container-fluid practice-areas-container p-0">
       <NavBar theme="dark" adminVariant={false} language={reduxLanguage} />
-      <PageHeader language={reduxLanguage} title={pageTitle} />
+      <PageHeader language={reduxLanguage} title={pageTitle} includeBanner />
 
       <div className="practice-areas-cards-wrapper display-flex padding-left-and-right">
         {arrayOfPracticeAreas.map((practiceArea) => (

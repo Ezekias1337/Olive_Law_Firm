@@ -252,7 +252,7 @@ const ContactUs = () => {
   return (
     <div className="container-fluid contact-us-container home-page p-0">
       <NavBar theme="dark" adminVariant={false} language={reduxLanguage} />
-      <PageHeader language={reduxLanguage} title={pageTitle} />
+      <PageHeader language={reduxLanguage} title={pageTitle} includeBanner/>
       <Form
         language={reduxLanguage}
         formTheme="light"

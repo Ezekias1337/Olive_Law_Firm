@@ -41,7 +41,7 @@ const PrivacyPolicy = () => {
   return (
     <div className="container-fluid privacy-policy-container p-0">
       <NavBar theme="dark" adminVariant={false} language={reduxLanguage} />
-      <PageHeader language={reduxLanguage} title={pageTitle} />
+      <PageHeader language={reduxLanguage} title={pageTitle} includeBanner/>
 
       <div className="privacy-policy-text padding-left-and-right">
         <p>{reduxLanguage === "English" ? intro.english : intro.spanish}</p>

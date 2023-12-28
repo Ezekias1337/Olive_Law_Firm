@@ -39,7 +39,7 @@ const TermsOfUse = () => {
   return (
     <div className="container-fluid terms-of-use-container p-0">
       <NavBar theme="dark" adminVariant={false} language={reduxLanguage} />
-      <PageHeader language={reduxLanguage} title={pageTitle} />
+      <PageHeader language={reduxLanguage} title={pageTitle} includeBanner/>
 
       <div className="terms-of-use-text padding-left-and-right">
         <h3>{reduxLanguage === "English" ? intro.english : intro.spanish}</h3>
