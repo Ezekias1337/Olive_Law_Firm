@@ -1,51 +1,50 @@
-// Library Imports
-import { useState, useEffect } from "react";
-import {
-  faUserInjured,
-  faPersonDigging,
-  faCarBurst,
-  faHeartPulse,
-} from "@fortawesome/free-solid-svg-icons";
 // Constants
 import { homePageStrings } from "../../../../constants/language-strings/homepageStrings";
+import { practiceAreasStrings } from "../../../../constants/language-strings/practiceAreasStrings";
 // Components
-import { PracticeAreasCard } from "./practiceAreaCard";
+import { Card } from "../../../card/Card";
 import { Button } from "../../../button/Button";
 // CSS
 import "./practice-areas.scss";
 // Assets and Images
+import workersCompImg from "../../../../assets/images/practice-areas/workers-comp.png";
+import autoAccidentsImg from "../../../../assets/images/practice-areas/auto-accidents.png";
+import spinalAndBrainInjuriesImg from "../../../../assets/images/practice-areas/spinal-and-brain-injuries.png";
+
+type PracticeArea = {
+  title: string;
+  image: string;
+};
 
 export const PracticeAreas = ({ language }: { language: string }) => {
-  const { practiceAreas, allAreas } = homePageStrings;
-  const { title, personalInjury, workersComp, autoAccidents, wrongfulDeath } =
-    practiceAreas;
+  const { practiceAreas: practiceAreaTitleExport, allAreas } = homePageStrings;
+  const { practiceAreas, buttonText } = practiceAreasStrings;
 
-  const [arrayOfPracticeAreas, setArrayOfPracticeAreas] = useState([
-    { title: personalInjury.english, icon: faUserInjured },
-    { title: workersComp.english, icon: faPersonDigging },
-    { title: autoAccidents.english, icon: faCarBurst },
-    { title: wrongfulDeath.english, icon: faHeartPulse },
-  ]);
+  const { title } = practiceAreaTitleExport;
+  const { workersComp, autoAccidents, spinalAndBrainInjuries } = practiceAreas;
 
-  useEffect(() => {
-    if (language === "English") {
-      const tempArrayOfAreas = [
-        { title: personalInjury.english, icon: faUserInjured },
-        { title: workersComp.english, icon: faPersonDigging },
-        { title: autoAccidents.english, icon: faCarBurst },
-        { title: wrongfulDeath.english, icon: faHeartPulse },
-      ];
-      setArrayOfPracticeAreas(tempArrayOfAreas);
-    } else {
-      const tempArrayOfAreas = [
-        { title: personalInjury.spanish, icon: faUserInjured },
-        { title: workersComp.spanish, icon: faPersonDigging },
-        { title: autoAccidents.spanish, icon: faCarBurst },
-        { title: wrongfulDeath.spanish, icon: faHeartPulse },
-      ];
-      setArrayOfPracticeAreas(tempArrayOfAreas);
-    }
-  }, [language]);
+  const arrayOfPracticeAreas: PracticeArea[] = [
+    {
+      title: `${
+        language === "English" ? workersComp.english : workersComp.spanish
+      }`,
+      image: workersCompImg,
+    },
+    {
+      title: `${
+        language === "English" ? autoAccidents.english : autoAccidents.spanish
+      }`,
+      image: autoAccidentsImg,
+    },
+    {
+      title: `${
+        language === "English"
+          ? spinalAndBrainInjuries.english
+          : spinalAndBrainInjuries.spanish
+      }`,
+      image: spinalAndBrainInjuriesImg,
+    },
+  ];
 
   return (
     <section className="practice-areas padding-left-and-right z-index-1">
@@ -53,16 +52,20 @@ export const PracticeAreas = ({ language }: { language: string }) => {
         {language === "English" ? title.english : title.spanish}
       </h2>
       <div id="practice-area-card-wrapper" className="space-around-flex">
-        {arrayOfPracticeAreas.map((card, index) => {
-          return (
-            <PracticeAreasCard
-              key={index}
-              title={card.title}
-              icon={card.icon}
-              language={language}
-            />
-          );
-        })}
+        {arrayOfPracticeAreas.map((practiceArea) => (
+          <Card
+            key={practiceArea.title}
+            cardVariant="imageOnly"
+            headerText={practiceArea.title}
+            buttonCount={1}
+            button1Text={
+              language === "English" ? buttonText.english : buttonText.spanish
+            }
+            button1Variant="neutral"
+            buttonSize="medium"
+            imageSource={practiceArea.image}
+          />
+        ))}
       </div>
       <div id="practice-area-button-wrapper" className="full-flex">
         <Button

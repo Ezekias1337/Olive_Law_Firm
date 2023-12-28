@@ -111,7 +111,74 @@ const ContactUs = () => {
       setErrorHook: setFormErrorData,
       required: true,
     },
-    /* {
+    {
+      name: phoneNumber.english,
+      label:
+        reduxLanguage === "English" ? phoneNumber.english : phoneNumber.spanish,
+      additionalClassNames: "",
+      placeholder:
+        reduxLanguage === "English" ? phoneNumber.english : phoneNumber.spanish,
+      theme: "light",
+      columns: inputFieldColumns,
+      type: "phoneNumber",
+      inputType: "tel",
+      inputMode: "tel",
+      pattern: phoneNumberPattern,
+      autoComplete: phoneNumberAutocomplete,
+      maxLength: 30,
+      parentFormState: formInputData,
+      setStateHook: setFormInputData,
+      setErrorHook: setFormErrorData,
+      required: true,
+    },
+    {
+      name: emailAddress.english,
+      label:
+        reduxLanguage === "English"
+          ? emailAddress.english
+          : emailAddress.spanish,
+      additionalClassNames: "",
+      placeholder:
+        reduxLanguage === "English"
+          ? emailAddress.english
+          : emailAddress.spanish,
+      theme: "light",
+      columns: inputFieldColumns,
+      type: "email",
+      inputType: "email",
+      inputMode: "email",
+      pattern: emailPattern,
+      autoComplete: emailAutocomplete,
+      maxLength: 30,
+      parentFormState: formInputData,
+      setStateHook: setFormInputData,
+      setErrorHook: setFormErrorData,
+      required: true,
+    },
+    {
+      name: preferredLanguage.english,
+      label:
+        reduxLanguage === "English"
+          ? preferredLanguage.english
+          : preferredLanguage.spanish,
+      additionalClassNames: "",
+      placeholder:
+        reduxLanguage === "English"
+          ? preferredLanguage.english
+          : preferredLanguage.spanish,
+      theme: "light",
+      columns: inputFieldColumns,
+      type: "dropdown",
+      inputType: "text",
+      inputMode: "text",
+      maxLength: 30,
+      parentFormState: formInputData,
+      setStateHook: setFormInputData,
+      setErrorHook: setFormErrorData,
+      dropdownOptions: ["English", "Español"],
+      required: true,
+    },
+    {
       name: dateOfIncident.english,
       label:
         reduxLanguage === "English"
@@ -128,26 +195,6 @@ const ContactUs = () => {
       inputType: "date",
       inputMode: "text",
       pattern: americanDatePattern,
-      maxLength: 30,
-      parentFormState: formInputData,
-      setStateHook: setFormInputData,
-      setErrorHook: setFormErrorData,
-      required: true
-    }, */
-    {
-      name: phoneNumber.english,
-      label:
-        reduxLanguage === "English" ? phoneNumber.english : phoneNumber.spanish,
-      additionalClassNames: "",
-      placeholder:
-        reduxLanguage === "English" ? phoneNumber.english : phoneNumber.spanish,
-      theme: "light",
-      columns: inputFieldColumns,
-      type: "phoneNumber",
-      inputType: "tel",
-      inputMode: "tel",
-      pattern: phoneNumberPattern,
-      autoComplete: phoneNumberAutocomplete,
       maxLength: 30,
       parentFormState: formInputData,
       setStateHook: setFormInputData,
@@ -178,107 +225,6 @@ const ContactUs = () => {
       required: true,
     },
     {
-      name: preferredLanguage.english,
-      label:
-        reduxLanguage === "English"
-          ? preferredLanguage.english
-          : preferredLanguage.spanish,
-      additionalClassNames: "",
-      placeholder:
-        reduxLanguage === "English"
-          ? preferredLanguage.english
-          : preferredLanguage.spanish,
-      theme: "light",
-      columns: inputFieldColumns,
-      type: "dropdown",
-      inputType: "text",
-      inputMode: "text",
-      maxLength: 30,
-      parentFormState: formInputData,
-      setStateHook: setFormInputData,
-      setErrorHook: setFormErrorData,
-      dropdownOptions: ["English", "Español"],
-      required: true,
-    },
-    {
-      name: practiceArea.english,
-      label:
-        reduxLanguage === "English"
-          ? practiceArea.english
-          : practiceArea.spanish,
-      additionalClassNames: "",
-      placeholder:
-        reduxLanguage === "English"
-          ? practiceArea.english
-          : practiceArea.spanish,
-      theme: "light",
-      columns: inputFieldColumns,
-      type: "dropdown",
-      inputType: "text",
-      inputMode: "text",
-      maxLength: 30,
-      parentFormState: formInputData,
-      setStateHook: setFormInputData,
-      setErrorHook: setFormErrorData,
-      dropdownOptions: [
-        "Personal Injury",
-        "Workers' Comp",
-        "Auto Accidents",
-        "Truck Accidents",
-        "Bicycle Accidents",
-        "Wrongful Death",
-        "Spinal & Brain Injuries",
-        "Slip & Fall",
-        "Dog Bites",
-        "Product Liability",
-        "Police Misconduct",
-      ],
-      required: true,
-    },
-    /* {
-      name: emailAddress.english,
-      label:
-        reduxLanguage === "English"
-          ? emailAddress.english
-          : emailAddress.spanish,
-      additionalClassNames: "",
-      placeholder:
-        reduxLanguage === "English"
-          ? emailAddress.english
-          : emailAddress.spanish,
-      theme: "light",
-      columns: inputFieldColumns,
-      type: "email",
-      inputType: "email",
-      inputMode: "email",
-      pattern: emailPattern,
-      autoComplete: emailAutocomplete,
-      maxLength: 30,
-      parentFormState: formInputData,
-      setStateHook: setFormInputData,
-      setErrorHook: setFormErrorData,
-      required: true
-    }, */
-    {
-      name: opposition.english,
-      label:
-        reduxLanguage === "English" ? opposition.english : opposition.spanish,
-      additionalClassNames: "",
-      placeholder:
-        reduxLanguage === "English" ? opposition.english : opposition.spanish,
-      theme: "light",
-      columns: inputFieldColumns,
-      type: "text",
-      inputType: "text",
-      inputMode: "text",
-      pattern: textAndNumbersPattern,
-      maxLength: 60,
-      parentFormState: formInputData,
-      setStateHook: setFormInputData,
-      setErrorHook: setFormErrorData,
-      required: true,
-    },
-    {
       name: describeIncident.english,
       label:
         reduxLanguage === "English"
@@ -290,30 +236,12 @@ const ContactUs = () => {
           ? describeIncident.english
           : describeIncident.spanish,
       theme: "light",
-      columns: inputFieldColumns,
+      columns: "12",
       type: "textArea",
       inputType: "text",
       inputMode: "text",
       pattern: textAndNumbersPattern,
       maxLength: 3000,
-      parentFormState: formInputData,
-      setStateHook: setFormInputData,
-      setErrorHook: setFormErrorData,
-      required: true,
-    },
-    {
-      name: "Credit Card",
-      label: "Credit Card",
-      additionalClassNames: "",
-      placeholder:
-        reduxLanguage === "English"
-          ? describeIncident.english
-          : describeIncident.spanish,
-      theme: "light",
-      columns: inputFieldColumns,
-      type: "creditCard",
-      inputType: "text",
-      inputMode: "text",
       parentFormState: formInputData,
       setStateHook: setFormInputData,
       setErrorHook: setFormErrorData,
@@ -340,18 +268,26 @@ const ContactUs = () => {
       />
 
       <div className="contact-info-wrapper padding-left-and-right">
-        <img
-          src={googleMapsLocation}
-          className="google-maps-image"
-          alt="Google Maps Location of Law Firm"
-        />
+        <div className="google-maps-image-link-wrapper">
+          <a
+            className="google-maps-image-link"
+            href="https://maps.app.goo.gl/y4c2grr8xZhsGh4L9"
+            target="_blank"
+          >
+            <img
+              src={googleMapsLocation}
+              className="google-maps-image"
+              alt="Google Maps Location of Law Firm"
+            ></img>
+          </a>
+        </div>
 
         <div className="text-wrapper">
           <h3>Phone</h3>
           <h4>(704) 377-9222</h4>
 
           <h3>Email</h3>
-          <h4>corellana@olivelawfirm.com</h4>
+          <h4>receptionist@osa-law.com</h4>
 
           <h3>Address</h3>
           <h4>200 Queens Rd Suite #200</h4>

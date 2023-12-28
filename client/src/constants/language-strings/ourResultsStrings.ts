@@ -216,7 +216,7 @@ export const ourResultsStrings: OurResultsStrings = {
     },
     disclaimerBody: {
       english:
-        "This is list is an example of some of the settlements we have won for our clients in the past. It does not necessarily indicate the amount you will receive, as this is subject to a wide array of variables. This section simply serves to provide you a general idea of what you might receive.",
+        "This list is an example of some of the settlements we have won for our clients in the past. It does not necessarily indicate the amount you will receive, as this is subject to a wide array of variables. This section simply serves to provide you a general idea of what you might receive.",
       spanish:
         "Esta lista es un ejemplo de algunos de los acuerdos que hemos ganado para nuestros clientes en el pasado. No indica necesariamente la cantidad que recibirá, ya que está sujeta a una amplia gama de variables. Esta sección simplemente sirve para brindarle una idea general de lo que podría recibir.",
     },

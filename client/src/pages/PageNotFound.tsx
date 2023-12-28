@@ -18,7 +18,7 @@ import "../css/page-specific/page-not-found.scss";
 import northCarolinaCourthouse from "../assets/images/backgrounds/North_Carolina_Courthouse.png";
 
 /* 
-    TODO: Ensure to check reference to "The Olive Law Firm.com" in this
+    TODO: Ensure to check reference to "Olive Sanchez & Associates.com" in this
 */
 
 const PageNotFound = () => {

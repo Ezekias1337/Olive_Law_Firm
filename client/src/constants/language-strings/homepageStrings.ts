@@ -152,13 +152,13 @@ export const homePageStrings: HomePageStrings = {
   juanSanchezQuote: {
     part1: {
       english:
-        "Your dedicated personal injury and workers’ compensation attorneys",
+        "Your Dedicated Personal Injury and Workers’ Compensation Attorneys",
       spanish:
-        "Sus dedicados abogados de lesiones personales y compensación laboral",
+        "Sus Dedicados Abogados de Lesiones Personales y Compensación Laboral",
     },
 
     part2: {
-      english: "You pay nothing unless we recover",
+      english: "No attorney fee unless we recover for you.",
       spanish: "No paga nada a menos que nos recuperemos",
     },
   },

@@ -73,7 +73,7 @@ export const Footer = ({ language }: { language: string }) => {
           />
           <FooterLink
             linkText={language === "English" ? email.english : email.spanish}
-            url="mailto: corellana@olivelawfirm.com"
+            url="mailto: receptionist@osa-law.com"
             openInNewTab={false}
           />
           <FooterLink

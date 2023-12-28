@@ -139,6 +139,11 @@ h6 {
   z-index: 3;
 }
 
+.semi-dark-image-overlay {
+  background-color: $lighter-transparent-black !important;
+  background-blend-mode: multiply;
+}
+
 .dark-image-overlay {
   background-color: $transparent-black !important;
   background-blend-mode: multiply;

@@ -261,21 +261,6 @@ const ClientReviews = () => {
       <NavBar theme="dark" adminVariant={false} language={reduxLanguage} />
       <PageHeader language={reduxLanguage} title={pageTitle} includeBanner />
 
-      <div className="client-reviews-wrapper display-flex padding-left-and-right">
-        {arrayOfTestimonialInfo.map((testimonial) => (
-          <ClientTestimonial
-            title={testimonial.title}
-            src={testimonial.src}
-            key={testimonial.src}
-          />
-        ))}
-      </div>
-
-      <PageHeader
-        language={reduxLanguage}
-        title={googleReviews}
-        includeBanner
-      />
       <div className="google-reviews-wrapper display-flex padding-left-and-right">
         {arrayOfReviewInfo.map((review) => (
           <CustomerReview
@@ -285,6 +270,16 @@ const ClientReviews = () => {
             rating={review.rating}
             reviewBody={review.reviewBody}
             key={review.authorName}
+          />
+        ))}
+      </div>
+
+      <div className="client-reviews-wrapper display-flex padding-left-and-right">
+        {arrayOfTestimonialInfo.map((testimonial) => (
+          <ClientTestimonial
+            title={testimonial.title}
+            src={testimonial.src}
+            key={testimonial.src}
           />
         ))}
       </div>

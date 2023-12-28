@@ -63,11 +63,11 @@ export const Card: FC<CardProps> = ({
   } else if (cardVariant === "imageOnly") {
     return (
       <div
-        className="card image-only-card dark-image-overlay"
+        className="card image-only-card semi-dark-image-overlay"
         style={{ backgroundImage: "url(" + imageSource + ")" }}
       >
-        <h2 className="full-flex">{headerText}</h2>
         <p>{bodyText}</p>
+        <h2 className="full-flex">{headerText}</h2>
         <div className="card-button-container"></div>
       </div>
     );

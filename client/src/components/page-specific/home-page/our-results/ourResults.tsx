@@ -1,25 +1,31 @@
 // Constants
 import { homePageStrings } from "../../../../constants/language-strings/homepageStrings";
+import { ourResultsStrings } from "../../../../constants/language-strings/ourResultsStrings";
 // Components
 import { OurResult } from "../../../our-results/ourResult";
 import { Button } from "../../../button/Button";
 // CSS
 import "./our-results.scss";
 
-const ourResultStrings = [
-  {
-    amountAwarded: "45,000",
-    english: {
-      practiceArea: "Workers' Compensation",
-      description:
-        "Workers' Compensation (Spinal Cord Injury): Recovered on behalf of a construction worker from Texas who was paralyzed following a fall from a roof on a construction site in Mecklenburg County, North Carolina. Despite being unable to care for himself, the work comp carrier refused to compensate plaintiff's wife for the daycare she had to provide. After a trial before the industrial commission, the company settled.",
-    },
-    spanish: {
-      practiceArea: "Compensación del Trabajador",
-      description:
-        "Compensación al Trabajador (Lesión de la Médula Espinal): Se recuperó en nombre de un trabajador de la construcción de Texas que quedó paralizado después de una caída de un techo en un sitio de construcción en el condado de Mecklenburg, Carolina del Norte. A pesar de ser incapaz de cuidar de sí mismo, la compañía de compensación de trabajo se negó a compensar a la esposa del demandante por la guardería que tenía que proporcionar. Después de un juicio ante la comisión industrial, la empresa se estableció.",
-    },
-  },
+const {
+  pageTitle,
+  settlement1,
+  settlement2,
+  settlement3,
+  settlement4,
+  settlement5,
+  settlement6,
+  settlement7,
+  disclaimer,
+} = ourResultsStrings;
+
+const arrayOfSettlementInfo = [
+  settlement1,
+  settlement2,
+  settlement3,
+  settlement4,
+  settlement5,
+  settlement6,
 ];
 
 export const OurResults = ({ language }: { language: string }) => {
@@ -31,35 +37,14 @@ export const OurResults = ({ language }: { language: string }) => {
       <h2 className="page-title">
         {language === "English" ? title.english : title.spanish}
       </h2>
-      <div className="our-results-container container space-around-flex">
-        <div className="row">
+      <div className="our-results-container display-flex padding-left-and-right">
+        {arrayOfSettlementInfo.map((settlement, index) => (
           <OurResult
             language={language}
-            ourResultObject={ourResultStrings[0]}
+            ourResultObject={settlement}
+            key={index}
           />
-          <OurResult
-            language={language}
-            ourResultObject={ourResultStrings[0]}
-          />
-          <OurResult
-            language={language}
-            ourResultObject={ourResultStrings[0]}
-          />
-        </div>
-        <div className="row">
-          <OurResult
-            language={language}
-            ourResultObject={ourResultStrings[0]}
-          />
-          <OurResult
-            language={language}
-            ourResultObject={ourResultStrings[0]}
-          />
-          <OurResult
-            language={language}
-            ourResultObject={ourResultStrings[0]}
-          />
-        </div>
+        ))}
       </div>
 
       <div className="view-more-results-container">

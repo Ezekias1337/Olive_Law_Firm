@@ -151,8 +151,18 @@ export const renderInputFields = (
           </div>
         );
         break;
-      /* case "date":
-              break; */
+      case "date":
+        inputFieldToBePushed = (
+          <div
+            key={inputField.name}
+            className={`col col-${inputField.columns}`}
+          >
+            <DateInput {...generalInputProps} />
+            <FormError formErrors={formErrors} inputField={inputField} />
+          </div>
+        );
+        break;
+
       case "dropdown":
         if (isDropdownField(inputField)) {
           inputFieldToBePushed = (

@@ -4,7 +4,11 @@
   background-color: $tertiary-color;
 
   .our-results-container {
-    gap: 50px;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-top: 40px;
   }
 
   h2 {

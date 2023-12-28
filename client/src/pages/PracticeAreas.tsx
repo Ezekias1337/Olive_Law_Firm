@@ -26,11 +26,6 @@ import dogBitesImg from "../assets/images/practice-areas/dog-bites.png";
 import productLiabilityImg from "../assets/images/practice-areas/product-liability.png";
 import policeMisconductImg from "../assets/images/practice-areas/police-misconduct.png";
 
-/* 
-    TODO: Ensure to check reference to "The Olive Law Firm.com" in this
-    TODO: Add information to practice area on hover
-*/
-
 type PracticeArea = {
   title: string;
   image: string;

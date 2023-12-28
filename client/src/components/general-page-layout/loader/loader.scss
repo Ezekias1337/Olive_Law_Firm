@@ -57,56 +57,56 @@
 
 .loader-primary {
   &#loaderElement div {
-    border: 5px solid $neutral;
-    border-color: $neutral transparent transparent transparent;
+    border: 5px solid $primary-color;
+    border-color: $primary-color transparent transparent transparent;
   }
 }
 
 .loader-secondary {
   &#loaderElement div {
-    border: 5px solid $neutral;
-    border-color: $neutral transparent transparent transparent;
+    border: 5px solid $secondary-color;
+    border-color: $secondary-color transparent transparent transparent;
   }
 }
 
 .loader-tertiary {
   &#loaderElement div {
-    border: 5px solid $neutral;
-    border-color: $neutral transparent transparent transparent;
+    border: 5px solid $tertiary-color;
+    border-color: $tertiary-color transparent transparent transparent;
   }
 }
 
 .loader-quarternary {
   &#loaderElement div {
-    border: 5px solid $neutral;
-    border-color: $neutral transparent transparent transparent;
+    border: 5px solid $quarternary-color;
+    border-color: $quarternary-color transparent transparent transparent;
   }
 }
 
 .loader-quinternary {
   &#loaderElement div {
-    border: 5px solid $primary-color;
-    border-color: $primary-color transparent transparent transparent;
+    border: 5px solid $quinternary-color;
+    border-color: $quinternary-color transparent transparent transparent;
   }
 }
 
 .loader-neutral {
   &#loaderElement div {
-    border: 5px solid $primary-color;
-    border-color: $primary-color transparent transparent transparent;
+    border: 5px solid $neutral;
+    border-color: $neutral transparent transparent transparent;
   }
 }
 
 .loader-success {
   &#loaderElement div {
-    border: 5px solid $anti-neutral;
-    border-color: $anti-neutral transparent transparent transparent;
+    border: 5px solid $success;
+    border-color: $success transparent transparent transparent;
   }
 }
 
 .loader-error {
   &#loaderElement div {
-    border: 5px solid $anti-neutral;
-    border-color: $anti-neutral transparent transparent transparent;
+    border: 5px solid $error;
+    border-color: $error transparent transparent transparent;
   }
 }

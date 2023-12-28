@@ -9,43 +9,23 @@
     padding-bottom: 40px;
     color: $neutral;
   }
-}
 
-#practice-area-button-wrapper {
-  margin-top: 40px;
+  .image-only-card {
+    background-position: center;
+    background-size: 100%;
+    transition: background-size 1s;
+    border: 1px solid $neutral;
+
+    &:hover {
+      background-size: 120%;
+    }
+  }
 }
 
 #practice-area-card-wrapper {
   gap: 15px;
 }
 
-.practice-card {
-  background-color: $neutral;
-  color: $primary-color;
-  display: grid;
-  padding: 15px;
-  min-width: 200px;
-  width: 22.5%;
-  min-height: 200px;
-  svg {
-    color: $tertiary-color;
-  }
-
-  span {
-    display: inline-block;
-    margin-top: 40px;
-    font-weight: bold;
-  }
-
-  &:hover {
-    box-shadow: 0px 4px 3px 0px $quinternary-color;
-
-    span {
-      color: $tertiary-color;
-    }
-
-    svg {
-      color: $quinternary-color;
-    }
-  }
+#practice-area-button-wrapper {
+  margin-top: 40px;
 }

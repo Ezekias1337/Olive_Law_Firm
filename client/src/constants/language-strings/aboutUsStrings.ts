@@ -70,14 +70,14 @@ export const aboutUsStrings: AboutUsStrings = {
   intro: {
     paragraph1: {
       english:
-        "The Olive Law Firm has a long-standing reputation for providing exceptional legal representation and personalized attention to each of our clients. Established in Charlotte, North Carolina, we have been serving the community for decades, and our roots run deep in the city's legal history.",
+        "Olive Sanchez & Associates has a long-standing reputation for providing exceptional legal representation and personalized attention to each of our clients. Established in Charlotte, North Carolina, we have been serving the community for decades, and our roots run deep in the city's legal history.",
       spanish:
-        "The Olive Law Firm tiene una larga reputación por brindar representación legal excepcional y atención personalizada a cada uno de nuestros clientes. Establecidos en Charlotte, Carolina del Norte, hemos estado sirviendo a la comunidad durante décadas y nuestras raíces están profundamente arraigadas en la historia legal de la ciudad.",
+        "Olive Sanchez & Associates tiene una larga reputación por brindar representación legal excepcional y atención personalizada a cada uno de nuestros clientes. Establecidos en Charlotte, Carolina del Norte, hemos estado sirviendo a la comunidad durante décadas y nuestras raíces están profundamente arraigadas en la historia legal de la ciudad.",
     },
 
     paragraph2: {
       english:
-        "Our founder, James C. Olive Sr., was a highly respected attorney who dedicated his life to serving the people of Charlotte. He opened the doors to the Olive Law Firm in 1957, and his legacy continues to this day. Today, his son, James C. Olive Jr., leads the firm with the same commitment to excellence and dedication to his clients.",
+        "Our founder, James C. Olive Sr., was a highly respected attorney who dedicated his life to serving the people of Charlotte. He opened the doors to Olive Sanchez & Associates in 1957, and his legacy continues to this day. Today, his son, James C. Olive Jr., leads the firm with the same commitment to excellence and dedication to his clients.",
       spanish:
         "Nuestro fundador, James C. Olive Sr., fue un abogado muy respetado que dedicó su vida a servir a la gente de Charlotte. Abrió las puertas de Olive Law Firm en 1957 y su legado continúa hasta el día de hoy. Hoy, su hijo, James C. Olive Jr., dirige la firma con el mismo compromiso con la excelencia y la dedicación a sus clientes.",
     },
@@ -112,9 +112,9 @@ export const aboutUsStrings: AboutUsStrings = {
 
     paragraph2: {
       english:
-        "You can rely on the personal injury attorneys at The Olive Law Firm to walk you through the legal system and make sure your best interests are represented.",
+        "You can rely on the personal injury attorneys at Olive Sanchez & Associates to walk you through the legal system and make sure your best interests are represented.",
       spanish:
-        "Puede confiar en los abogados de lesiones personales de The Olive Law Firm para guiarlo a través del sistema legal y asegurarse de que sus mejores intereses estén representados.",
+        "Puede confiar en los abogados de lesiones personales de Olive Sanchez & Associates para guiarlo a través del sistema legal y asegurarse de que sus mejores intereses estén representados.",
     },
 
     paragraph3: {
@@ -133,9 +133,9 @@ export const aboutUsStrings: AboutUsStrings = {
 
     paragraph5: {
       english:
-        "If you’ve been hurt contact a professional personal injury attorney at The Olive Law Firm today.",
+        "If you’ve been hurt contact a professional personal injury attorney at Olive Sanchez & Associates today.",
       spanish:
-        "Si ha resultado herido, comuníquese hoy con un abogado profesional de lesiones personales de The Olive Law Firm.",
+        "Si ha resultado herido, comuníquese hoy con un abogado profesional de lesiones personales de Olive Sanchez & Associates.",
     },
   },
 };
