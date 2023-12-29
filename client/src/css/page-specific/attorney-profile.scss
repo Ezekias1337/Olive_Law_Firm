@@ -1,24 +1,85 @@
 @import "../../css/variables";
 
-.our-results-container {
-  .our-results-wrapper {
-    justify-content: center;
+.attorney-profile-container {
+  .attorney-profile-quote-wrapper {
+    background-image: url(../../assets/images/backgrounds/Inside_Court_Room_1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 80px;
+    position: relative;
+
+    .text-wrapper {
+      max-width: 60%;
+      color: $neutral;
+
+      h2 {
+        font-weight: bold;
+      }
+
+      h4 {
+        margin-top: 40px;
+      }
+    }
+
+    .attorney-profile-image {
+      max-width: 666px;
+      position: absolute;
+      right: 0;
+      top: 25%;
+    }
+  }
+
+  .attorney-profile-biography-wrapper {
+    background-color: $primary-color;
+    padding: 80px;
+    color: $neutral;
+
+    h3 {
+      font-weight: bold;
+    }
+
+    .biography-text-wrapper {
+      max-width: 50%;
+      padding-top: 40px;
+
+      h4 {
+        padding-bottom: 20px;
+      }
+    }
+  }
+
+  .attorney-profile-info-wrapper {
+    background-color: $neutral;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 10px;
     padding-top: 40px;
-    background-color: $primary-color;
-  }
-
-  .results-disclaimer-wrapper {
-    background-color: $gray;
-    color: $primary-color;
-    padding-top: 40px;
     padding-bottom: 40px;
+    padding-left: 80px;
+    padding-right: 80px;
 
-    h3 {
-      padding-bottom: 40px;
-      font-weight: bold;
+    .showcase-card {
+      background-color: $light-gray;
+      border-radius: 4px;
+      width: 49%;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      background-color: $light-gray;
+      border: 1px solid $primary-color;
+
+      h4 {
+        color: $primary-color;
+        font-weight: bold;
+      }
+
+      ul {
+        padding-top: 20px;
+      }
+
+      li {
+        color: $secondary-color;
+      }
     }
   }
 }

@@ -13,17 +13,17 @@ const arrayOfAttorneyInfo = [
   {
     name: "Juan Sanchez",
     image: juanSanchezImage,
-    link: "attorney-profile:juan-sanchez",
+    link: "attorney-profile/:juan-sanchez",
   },
   {
     name: "Whitney Brooks",
     image: whitneyBrooksImage,
-    link: "attorney-profile:whitney-brooks",
+    link: "attorney-profile/:whitney-brooks",
   },
   {
     name: "Valerie Kilgore",
     image: valerieKilgoreImage,
-    link: "attorney-profile:valerie-kilgore",
+    link: "attorney-profile/:valerie-kilgore",
   },
 ];
 

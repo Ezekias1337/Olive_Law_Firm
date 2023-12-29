@@ -37,7 +37,7 @@ export const OurResults = ({ language }: { language: string }) => {
       <h2 className="page-title">
         {language === "English" ? title.english : title.spanish}
       </h2>
-      <div className="our-results-container display-flex padding-left-and-right">
+      <div className="our-results-container display-flex">
         {arrayOfSettlementInfo.map((settlement, index) => (
           <OurResult
             language={language}
