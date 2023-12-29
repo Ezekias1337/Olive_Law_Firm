@@ -45,7 +45,7 @@ interface ContactUsStrings {
       spanish: string;
     };
 
-    describeIncident: {
+    incidentDescription: {
       english: string;
       spanish: string;
     };
@@ -119,9 +119,9 @@ export const contactUsStrings: ContactUsStrings = {
       spanish: "La Oposición",
     },
 
-    describeIncident: {
-      english: "Describe Incident",
-      spanish: "Describir el Incidente",
+    incidentDescription: {
+      english: "Incident Description",
+      spanish: "Descripción del Incidente",
     },
   },
 

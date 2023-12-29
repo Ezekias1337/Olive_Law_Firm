@@ -26,7 +26,6 @@ import {
 import { NavBar } from "../components/general-page-layout/navbar/Navbar";
 import { Footer } from "../components/general-page-layout/footer/Footer";
 import { PageHeader } from "../components/general-page-layout/page-header/PageHeader";
-import { GeneralLink } from "../components/general-page-layout/link/GeneralLink";
 import { Form } from "../components/form/Form";
 // CSS
 import "../css/page-specific/contact-us.scss";
@@ -37,7 +36,6 @@ const ContactUs = () => {
   const reduxLanguage = useSelector(
     (state: ReduxStoreState) => state.language.contents.languageChoice
   );
-  const deviceInformation = useDeviceInfo();
   const windowWidth = useWindowWidth();
 
   const [formInputData, setFormInputData] = useState<FormState>({});
@@ -61,7 +59,7 @@ const ContactUs = () => {
     practiceArea,
     emailAddress,
     opposition,
-    describeIncident,
+    incidentDescription,
   } = formFields;
 
   useEffect(() => {
@@ -225,16 +223,16 @@ const ContactUs = () => {
       required: true,
     },
     {
-      name: describeIncident.english,
+      name: incidentDescription.english,
       label:
         reduxLanguage === "English"
-          ? describeIncident.english
-          : describeIncident.spanish,
+          ? incidentDescription.english
+          : incidentDescription.spanish,
       additionalClassNames: "",
       placeholder:
         reduxLanguage === "English"
-          ? describeIncident.english
-          : describeIncident.spanish,
+          ? incidentDescription.english
+          : incidentDescription.spanish,
       theme: "light",
       columns: "12",
       type: "textArea",
