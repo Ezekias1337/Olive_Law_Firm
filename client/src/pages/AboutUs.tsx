@@ -28,10 +28,6 @@ import AmericanBoardOfTrialAdvocates from "../assets/images/certifications/Ameri
 import AmericanAssociationForJustice from "../assets/images/certifications/American_Association_For_Justice.webp";
 import NorthCarolinaAdvocatesForJustice from "../assets/images/certifications/North_Carolina_Advocates_For_Justice.png";
 
-/* 
-    TODO: Ensure to check reference to "The Olive Law Firm.com" in this
-*/
-
 const AboutUs = () => {
   const reduxLanguage = useSelector(
     (state: ReduxStoreState) => state.language.contents.languageChoice

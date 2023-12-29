@@ -10,7 +10,7 @@ import PracticeAreas from "./pages/PracticeAreas";
 import ClientReviews from "./pages/ClientReviews";
 import OurResults from "./pages/OurResults";
 import FAQ from "./pages/FAQ";
-
+import CommunityInteraction from "./pages/CommunityInteraction"
 // Admin Pages
 import Login from "./pages/Login";
 
@@ -36,7 +36,7 @@ const App = () => {
         <Route path="/practice-areas" element={<PracticeAreas />}></Route>
         <Route path="/client-reviews" element={<ClientReviews />}></Route>
         <Route path="/faqs" element={<FAQ />}></Route>
-        <Route path="/community-interaction" element={<Home />}></Route>
+        <Route path="/community-interaction" element={<CommunityInteraction />}></Route>
         <Route path="/our-results" element={<OurResults />}></Route>
         <Route path="/privacy-policy" element={<PrivacyPolicy />}></Route>
         <Route path="/terms-of-service" element={<TermsOfUse />}></Route>

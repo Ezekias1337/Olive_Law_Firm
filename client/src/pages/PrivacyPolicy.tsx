@@ -13,10 +13,6 @@ import { Footer } from "../components/general-page-layout/footer/Footer";
 // CSS
 import "../css/page-specific/privacy-policy.scss";
 
-/* 
-    TODO: Ensure to check reference to "The Olive Law Firm.com" in this
-*/
-
 const PrivacyPolicy = () => {
   const reduxLanguage = useSelector(
     (state: ReduxStoreState) => state.language.contents.languageChoice

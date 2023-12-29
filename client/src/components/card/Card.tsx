@@ -75,7 +75,7 @@ export const Card: FC<CardProps> = ({
     return (
       <div className="card image-and-body-card">
         <img src={imageSource} />
-        <h4>{headerText}</h4>
+        <h3>{headerText}</h3>
         <p>{bodyText}</p>
       </div>
     );
