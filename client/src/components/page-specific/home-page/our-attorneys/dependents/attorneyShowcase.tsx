@@ -4,7 +4,7 @@ import { FC } from "react";
 import { homePageStrings } from "../../../../../constants/language-strings/homepageStrings";
 // Components
 import { Card } from "../../../../card/Card";
-import { Button } from "../../../../button/Button";
+import { Link } from "react-router-dom";
 
 interface AttorneyShowcaseProps {
   language: string;
@@ -19,15 +19,15 @@ export const AttorneyShowcase: FC<AttorneyShowcaseProps> = ({
   image,
   link,
 }) => {
-  const { ourAttorneys } = homePageStrings;
-  const { moreInfo } = ourAttorneys;
 
   return (
-    <Card
-      cardVariant="imageOnly"
-      headerText={name}
-      imageSource={image}
-      buttonCount={0}
-    />
+    <Link to={link}>
+      <Card
+        cardVariant="imageOnly"
+        headerText={name}
+        imageSource={image}
+        buttonCount={0}
+      />
+    </Link>
   );
 };

@@ -79,11 +79,6 @@ interface HomePageStrings {
       english: string;
       spanish: string;
     };
-
-    moreInfo: {
-      english: string;
-      spanish: string;
-    };
   };
 
   whatOurCustomersSayAboutUs: {
@@ -235,11 +230,6 @@ export const homePageStrings: HomePageStrings = {
     title: {
       english: "Our Attorneys",
       spanish: "Nuestros Abogados",
-    },
-
-    moreInfo: {
-      english: "More Information",
-      spanish: "Más Información",
     },
   },
 
