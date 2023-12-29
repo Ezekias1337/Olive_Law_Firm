@@ -4,10 +4,6 @@ import Case from "../models/case";
 
 const router = express.Router();
 
-router.get("/", (req: Request, res: Response) => {
-  res.send("Hello Cases!");
-});
-
 router.post("/submit", async (req: Request, res: Response) => {
   const newCase = new Case({
     id: req.body.id,

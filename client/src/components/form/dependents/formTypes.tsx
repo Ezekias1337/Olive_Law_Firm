@@ -41,6 +41,22 @@ export interface CreditCardField extends CreditCardFieldProps {
   type: FieldType;
 }
 
+export interface CustomSubmitArgs<
+  T1 = any,
+  T2 = any,
+  T3 = any,
+  T4 = any,
+  T5 = any,
+  T6 = any
+> {
+  argument1: T1;
+  argument2: T2;
+  argument3?: T3;
+  argument4?: T4;
+  argument5?: T5;
+  argument6?: T6;
+}
+
 export interface FormProps {
   language: string;
   formTheme: "dark" | "light";
@@ -72,4 +88,7 @@ export interface FormProps {
     | "error";
   buttonSize?: "small" | "medium" | "large";
   formBackgroundIsImage?: boolean;
+  customSubmitFunction?: (args: CustomSubmitArgs) => void;
+  customSubmitArgs?: CustomSubmitArgs;
+  redirectUrl?: string
 }

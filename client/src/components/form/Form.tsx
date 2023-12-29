@@ -1,10 +1,11 @@
 // Library Imports
-import { FC } from "react";
+import { FC, useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 // Functions, Helpers, and Utils
 import { handleSubmit, renderInputFields } from "./dependents/formFunctions";
 import { camelCasifyString } from "../../../../shared/utils/strings/camelCasifyString";
 // Interfaces and Types
-import { FormProps } from "./dependents/formTypes";
+import { FormProps, CustomSubmitArgs } from "./dependents/formTypes";
 // Components
 import { Button } from "../button/Button";
 // CSS
@@ -27,17 +28,44 @@ export const Form: FC<FormProps> = ({
   button2Variant = undefined,
   formBackgroundIsImage,
   buttonSize = "small",
+  customSubmitFunction,
+  customSubmitArgs,
+  redirectUrl,
 }) => {
-  // ! Initialize form data for each input field
+  const navigate = useNavigate();
+  const [submissionSuccessful, setSubmissionSuccessful] = useState(false);
+
   const initialFormData: Record<string, string> = {};
   inputFields.forEach((field) => {
     initialFormData[camelCasifyString(field.name)] = "";
   });
 
+  useEffect(() => {
+    if (submissionSuccessful && redirectUrl) {
+      navigate(redirectUrl)
+    }
+  }, [submissionSuccessful]);
+
   return (
     <form
       onSubmit={(e) =>
-        handleSubmit(e, inputFields, formState, setErrorHook, apiEndpoint)
+        customSubmitFunction
+          ? customSubmitArgs
+            ? customSubmitFunction(customSubmitArgs)
+            : console.error("customSubmitArgs is undefined")
+          : handleSubmit(
+              e,
+              inputFields,
+              formState,
+              setErrorHook,
+              apiEndpoint,
+              "POST",
+              {
+                "Content-Type": "application/json",
+              },
+              redirectUrl,
+              setSubmissionSuccessful
+            )
       }
       id={formId}
       className="padding-left-and-right container form"

@@ -1,7 +1,9 @@
 // Library Imports
-import { FC, FormEvent, ReactNode } from "react";
+import { FormEvent, ReactNode, SetStateAction, Dispatch } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 // Functions, Helpers, and Utils
 import { camelCasifyString } from "../../../../../shared/utils/strings/camelCasifyString";
+import fetchData from "../../../functions/network/fetchData";
 // Interfaces and Types
 /* import {
   InputFieldProps,
@@ -86,14 +88,19 @@ const generateSharedInputProps = (
   return sharedInputProps;
 };
 
-export const handleSubmit = (
+export const handleSubmit = async (
   e: FormEvent,
   inputFields: InputField[],
   formState: FormState,
   setErrorHook: SetStateHookForm,
-  apiEndpoint: string
+  apiEndpoint: string,
+  method: "GET" | "POST" | "PUT" | "PATCH" | "DELETE",
+  headers: HeadersInit,
+  redirectUrl?: string,
+  setSubmissionSuccessful?: Dispatch<SetStateAction<boolean>>
 ) => {
   e.preventDefault();
+  console.log("prevented Default");
 
   // ! Validate the form data here based on inputFields
   const errors: Record<string, string> = {};
@@ -114,8 +121,19 @@ export const handleSubmit = (
   setErrorHook(errors);
 
   if (Object.keys(errors).length === 0) {
-    // ! Handle form submission (e.g., send data to the server)
-    console.log("Form data submitted:", formState);
+    const response = await fetchData(apiEndpoint, {
+      method: method,
+      headers: headers,
+      body: JSON.stringify(formState),
+    });
+
+    // Assuming the login is successful based on the response status
+    if (response.ok && redirectUrl && setSubmissionSuccessful) {
+      // Redirect to the specified URL or a default URL after a successful login
+      setSubmissionSuccessful(true);
+    }
+
+    return response.json();
   }
 };
 

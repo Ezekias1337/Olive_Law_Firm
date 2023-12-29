@@ -2,11 +2,14 @@
 import { useSelector } from "react-redux/es/exports";
 import { useState } from "react";
 // Functions, Helpers, Utils and Hooks
-import useDeviceInfo from "../hooks/useDeviceInfo";
+import login from "../functions/authentication/login";
 // Interfaces and Types
 import { ReduxStoreState } from "../constants/interfaces/ReduxStoreState";
 import { FormState } from "../constants/interfaces/InputFieldProps";
-import { Field } from "../components/form/dependents/formTypes";
+import {
+  Field,
+  CustomSubmitArgs,
+} from "../components/form/dependents/formTypes";
 // Constants
 import { loginStrings } from "../constants/language-strings/loginStrings";
 import {
@@ -33,18 +36,27 @@ const Login = () => {
     (state: ReduxStoreState) => state.language.contents.languageChoice
   );
 
-  const { pageTitle, email, password, buttonText, forgotPassword } =
+  const { pageTitle, emailAddress, password, buttonText, forgotPassword } =
     loginStrings;
 
-  const [formInputData, setFormInputData] = useState<FormState>({});
+  const [formInputData, setFormInputData] = useState<FormState>({
+    emailAddress: "",
+    password: "",
+  });
   const [formErrorData, setFormErrorData] = useState<FormState>({});
 
   const arrayOfInputFields: Field[] = [
     {
-      name: email.english,
-      label: reduxLanguage === "English" ? email.english : email.spanish,
+      name: emailAddress.english,
+      label:
+        reduxLanguage === "English"
+          ? emailAddress.english
+          : emailAddress.spanish,
       additionalClassNames: "",
-      placeholder: reduxLanguage === "English" ? email.english : email.spanish,
+      placeholder:
+        reduxLanguage === "English"
+          ? emailAddress.english
+          : emailAddress.spanish,
       theme: "dark",
       columns: "12",
       type: "email",
@@ -99,7 +111,7 @@ const Login = () => {
           language={reduxLanguage}
           formTheme="dark"
           inputFields={arrayOfInputFields}
-          apiEndpoint="placeholder"
+          apiEndpoint="/api/users/login"
           formId="admin-login"
           setStateHook={setFormInputData}
           setErrorHook={setFormErrorData}
@@ -113,6 +125,7 @@ const Login = () => {
           button1Variant="neutral"
           formBackgroundIsImage={true}
           buttonSize="large"
+          redirectUrl="/practice-areas"
         />
 
         <div className="forgot-password-wrapper container">

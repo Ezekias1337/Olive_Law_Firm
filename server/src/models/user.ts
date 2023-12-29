@@ -21,7 +21,7 @@ const userSchema = new Schema(
   { timestamps: true, toJSON: { virtuals: true } }
 );
 
-userSchema.virtual("SucculentImagePath").get(function () {
+userSchema.virtual("profilePicturePath").get(function () {
   if (this.profilePicture != null && this.profilePictureType != null) {
     return `data:${
       this.profilePictureType

@@ -8,6 +8,9 @@ const configObject = {
   plugins: [react()],
   base: "/",
   /* base: "/Olive_Law_Firm/", */
+  server: {
+    port: 5001,
+  },
 };
 
 export default defineConfig(configObject);
