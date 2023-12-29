@@ -5,6 +5,23 @@ import bcrypt from "bcrypt";
 // Models
 import UserModel from "../models/user";
 
+export const getAuthenticatedUser: RequestHandler = async (req, res, next) => {
+  const authenticatedUserId = req.session.userId;
+
+  try {
+    if (!authenticatedUserId) {
+      throw createHttpError(401, "User not authenticated.");
+    }
+
+    const user = await UserModel.findById(authenticatedUserId)
+      .select("+emailAddress")
+      .exec();
+    res.status(200).json(user);
+  } catch (error) {
+    next(error);
+  }
+};
+
 interface userCreationBody {
   name?: string;
   emailAddress?: string;
@@ -57,10 +74,54 @@ export const createUser: RequestHandler<
   }
 };
 
-/* 
-! In the tutorial the session is initiated on creation, but since the user creation will
-! be handled by admin, we don't want that, here's the code for it and make sure to put it in
-! the /login route
+interface LoginBody {
+  emailAddress?: string;
+  password?: string;
+}
 
-? req.session.userId = newUser._id;
-*/
+export const login: RequestHandler<
+  unknown,
+  unknown,
+  LoginBody,
+  unknown
+> = async (req, res, next) => {
+  const email = req.body.emailAddress;
+  const password = req.body.password;
+
+  try {
+    if (!email || !password) {
+      throw createHttpError(
+        400,
+        "You didn't fill out all of the required fields, try again."
+      );
+    }
+
+    const user = await UserModel.findOne({ emailAddress: email })
+      .select("+password +emailAddress")
+      .exec();
+
+    if (!user) {
+      throw createHttpError(401, "Invalid credentials");
+    }
+
+    const passwordMatch = await bcrypt.compare(password, user.password);
+    if (!passwordMatch) {
+      throw createHttpError(401, "Invalid credentials");
+    }
+
+    req.session.userId = user._id;
+    res.status(201).json(user);
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const logout: RequestHandler = (req, res, next) => {
+  req.session.destroy((error) => {
+    if (error) {
+      next(error);
+    } else {
+      res.sendStatus(200);
+    }
+  });
+};
