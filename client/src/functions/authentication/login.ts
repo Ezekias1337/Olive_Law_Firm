@@ -7,6 +7,7 @@ const login = async (credentials: UserCreationCredentials): Promise<User> => {
   const response = await fetchData("/api/users/login", {
     method: "POST",
     headers: {
+      "Accept": "*/*",
       "Content-Type": "application/json",
     },
     body: JSON.stringify(credentials),

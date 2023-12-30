@@ -100,7 +100,6 @@ export const handleSubmit = async (
   setSubmissionSuccessful?: Dispatch<SetStateAction<boolean>>
 ) => {
   e.preventDefault();
-  console.log("prevented Default");
 
   // ! Validate the form data here based on inputFields
   const errors: Record<string, string> = {};
@@ -124,13 +123,14 @@ export const handleSubmit = async (
     const response = await fetchData(apiEndpoint, {
       method: method,
       headers: headers,
+      credentials: "include",
       body: JSON.stringify(formState),
     });
 
     // Assuming the login is successful based on the response status
     if (response.ok && redirectUrl && setSubmissionSuccessful) {
       // Redirect to the specified URL or a default URL after a successful login
-      setSubmissionSuccessful(true);
+      //setSubmissionSuccessful(true);
     }
 
     return response.json();

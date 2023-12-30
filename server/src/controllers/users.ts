@@ -6,14 +6,25 @@ import bcrypt from "bcrypt";
 import UserModel from "../models/user";
 
 export const getAuthenticatedUser: RequestHandler = async (req, res, next) => {
-  const authenticatedUserId = req.session.userId;
-
+  const authenticatedUserIdFromSession = req.session.userId;
+ /*  console.log("req.session in auth user check: ", req.session);
+  console.log("authenticatedUserIdFromSession: ", authenticatedUserIdFromSession) */
   try {
-    if (!authenticatedUserId) {
+    if (!authenticatedUserIdFromSession) {
       throw createHttpError(401, "User not authenticated.");
     }
 
-    const user = await UserModel.findById(authenticatedUserId)
+    /* // Retrieve the value of the cookie
+    const authenticatedUserIdFromCookie = req.cookies.authenticatedUserId;
+
+    // Ensure that the value from the cookie matches the value from the session
+    if (authenticatedUserIdFromCookie !== authenticatedUserIdFromSession) {
+      throw createHttpError(401, "User authentication mismatch.");
+    } */
+
+    console.log("FETCHING USER DATA FROM DB....")
+    
+    const user = await UserModel.findById(authenticatedUserIdFromSession)
       .select("+emailAddress")
       .exec();
     res.status(200).json(user);
@@ -110,6 +121,15 @@ export const login: RequestHandler<
     }
 
     req.session.userId = user._id;
+
+    // Set a cookie with the user's ID
+    (res.cookie as any)("authenticatedUserId", user._id, {
+      httpOnly: true, // This ensures that the cookie cannot be accessed by client-side scripts
+      secure: true, // This requires HTTPS to send the cookie
+      sameSite: "None", // This allows cross-origin requests
+      path: "/", // This sets the path for which the cookie is valid
+    });
+
     res.status(201).json(user);
   } catch (error) {
     next(error);

@@ -15,7 +15,13 @@ const app = express();
 const cases = require("./routes/cases");
 const PORT = env.PORT;
 
-app.use(cors());
+const corsOptions = {
+  origin: "http://127.0.0.1:5001",
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
+
 app.use(express.json());
 app.use(
   session({

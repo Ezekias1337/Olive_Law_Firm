@@ -4,7 +4,13 @@ import { User } from "../../constants/interfaces/user";
 import fetchData from "../network/fetchData";
 
 const getLoggedInUser = async (): Promise<User> => {
-  const response = await fetchData("/api/users", { method: "GET" });
+  const response = await fetchData("/api/users/get-user", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    credentials: "include",
+  });
   return response.json();
 };
 

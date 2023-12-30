@@ -14,7 +14,7 @@ import CommunityInteraction from "./pages/CommunityInteraction"
 import AttorneyProfile from "./pages/AttorneyProfile"
 // Admin Pages
 import Login from "./pages/Login";
-
+import AdminHome from "./pages/AdminHome"
 //404 Page
 import PageNotFound from "./pages/PageNotFound";
 // Link scroll fix
@@ -43,6 +43,7 @@ const App = () => {
         <Route path="/terms-of-service" element={<TermsOfUse />}></Route>
         {/* Admin Only */}
         <Route path="/login" element={<Login />}></Route>
+        <Route path="/admin-home" element={<AdminHome />}></Route>
         <Route path="/credential-management" element={<Home />}></Route>
         <Route path="/new-cases" element={<Home />}></Route>
         <Route path="/analytics-dashboard" element={<Home />}></Route>

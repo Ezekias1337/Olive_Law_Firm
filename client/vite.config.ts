@@ -2,6 +2,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
+
 // https://vitejs.dev/config/
 
 const configObject = {
@@ -9,8 +10,8 @@ const configObject = {
   base: "/",
   /* base: "/Olive_Law_Firm/", */
   server: {
-    port: 5001,
-  },
+    port: 5001
+  }
 };
 
 export default defineConfig(configObject);

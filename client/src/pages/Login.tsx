@@ -125,7 +125,7 @@ const Login = () => {
           button1Variant="neutral"
           formBackgroundIsImage={true}
           buttonSize="large"
-          redirectUrl="/practice-areas"
+          redirectUrl="/admin-home"
         />
 
         <div className="forgot-password-wrapper container">
