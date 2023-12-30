@@ -1,9 +1,9 @@
 // Interfaces and Types
-import { User } from "../../constants/interfaces/user";
+import { User, UserReturnedFromDB } from "../../constants/interfaces/user";
 // Functions, Helpers, Utils, and Hooks
 import fetchData from "../network/fetchData";
 
-const getLoggedInUser = async (): Promise<User> => {
+const getLoggedInUser = async (): Promise<UserReturnedFromDB> => {
   const response = await fetchData("/api/users/get-user", {
     method: "GET",
     headers: {

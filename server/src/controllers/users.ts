@@ -7,23 +7,11 @@ import UserModel from "../models/user";
 
 export const getAuthenticatedUser: RequestHandler = async (req, res, next) => {
   const authenticatedUserIdFromSession = req.session.userId;
- /*  console.log("req.session in auth user check: ", req.session);
-  console.log("authenticatedUserIdFromSession: ", authenticatedUserIdFromSession) */
   try {
     if (!authenticatedUserIdFromSession) {
       throw createHttpError(401, "User not authenticated.");
     }
 
-    /* // Retrieve the value of the cookie
-    const authenticatedUserIdFromCookie = req.cookies.authenticatedUserId;
-
-    // Ensure that the value from the cookie matches the value from the session
-    if (authenticatedUserIdFromCookie !== authenticatedUserIdFromSession) {
-      throw createHttpError(401, "User authentication mismatch.");
-    } */
-
-    console.log("FETCHING USER DATA FROM DB....")
-    
     const user = await UserModel.findById(authenticatedUserIdFromSession)
       .select("+emailAddress")
       .exec();

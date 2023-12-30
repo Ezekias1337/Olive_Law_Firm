@@ -1,10 +1,8 @@
 const fetchData = async (input: RequestInfo, init?: RequestInit) => {
   const baseURL = 'http://127.0.0.1:5000';
   const url = `${baseURL}${input}`;
-  console.log(init)
   
   const response = await fetch(url, init);
-  console.log(response)
 
   if (response.ok) {
     return response;
