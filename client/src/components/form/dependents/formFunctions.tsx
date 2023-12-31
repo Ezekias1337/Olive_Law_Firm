@@ -130,7 +130,7 @@ export const handleSubmit = async (
     // Assuming the login is successful based on the response status
     if (response.ok && redirectUrl && setSubmissionSuccessful) {
       // Redirect to the specified URL or a default URL after a successful login
-      //setSubmissionSuccessful(true);
+      setSubmissionSuccessful(true);
     }
 
     return response.json();

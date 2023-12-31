@@ -1,5 +1,5 @@
 // Interfaces and Types
-import { User, UserReturnedFromDB } from "../../constants/interfaces/user";
+import { UserReturnedFromDB } from "../../constants/interfaces/user";
 // Functions, Helpers, Utils, and Hooks
 import fetchData from "../network/fetchData";
 

@@ -1,5 +1,6 @@
 // Library Imports
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux/es/exports";
 // Functions, Helpers and Utils
 import getLoggedInUser from "../functions/authentication/getLoggedInUser";
@@ -22,6 +23,7 @@ const AdminHome = () => {
   const reduxLanguage = useSelector(
     (state: ReduxStoreState) => state.language.contents.languageChoice
   );
+  const navigate = useNavigate();
   const [userData, setUserData] = useState<UserReturnedFromDB>();
   const [priviledgeLevel, setPriviledgeLevel] = useState<string>();
 
@@ -76,6 +78,7 @@ const AdminHome = () => {
               variant="primary"
               onClickHandler={async () => {
                 await logout();
+                navigate("/");
               }}
             />
           </>
