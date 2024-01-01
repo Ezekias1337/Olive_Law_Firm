@@ -70,7 +70,6 @@ const Login = () => {
       setErrorHook: setFormErrorData,
       required: true,
     },
-
     {
       name: password.english,
       label: reduxLanguage === "English" ? password.english : password.spanish,

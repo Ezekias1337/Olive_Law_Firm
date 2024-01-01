@@ -34,6 +34,8 @@ export const Form: FC<FormProps> = ({
 }) => {
   const navigate = useNavigate();
   const [submissionSuccessful, setSubmissionSuccessful] = useState(false);
+  const [postingToServerInProgress, setPostingToServerInProgress] =
+    useState(false);
 
   const initialFormData: Record<string, string> = {};
   inputFields.forEach((field) => {
@@ -42,31 +44,34 @@ export const Form: FC<FormProps> = ({
 
   useEffect(() => {
     if (submissionSuccessful && redirectUrl) {
-      navigate(redirectUrl)
+      navigate(redirectUrl);
     }
   }, [submissionSuccessful]);
 
   return (
     <form
-      onSubmit={(e) =>
-        customSubmitFunction
-          ? customSubmitArgs
-            ? customSubmitFunction(customSubmitArgs)
-            : console.error("customSubmitArgs is undefined")
-          : handleSubmit(
-              e,
-              inputFields,
-              formState,
-              setErrorHook,
-              apiEndpoint,
-              "POST",
-              {
-                "Content-Type": "application/json",
-              },
-              redirectUrl,
-              setSubmissionSuccessful
-            )
-      }
+      onSubmit={(e) => {
+        if (customSubmitFunction) {
+          customSubmitArgs
+            ? customSubmitFunction(e, customSubmitArgs)
+            : console.error("customSubmitArgs is undefined");
+        } else {
+          handleSubmit(
+            e,
+            inputFields,
+            formState,
+            setErrorHook,
+            apiEndpoint,
+            "POST",
+            {
+              "Content-Type": "application/json",
+            },
+            redirectUrl,
+            setSubmissionSuccessful,
+            setPostingToServerInProgress
+          );
+        }
+      }}
       id={formId}
       className="padding-left-and-right container form"
     >
@@ -90,6 +95,7 @@ export const Form: FC<FormProps> = ({
           text={button1Text}
           buttonId={`${formId}-button-1`}
           buttonSize={buttonSize}
+          loading={postingToServerInProgress}
         />
         {button2Text !== undefined &&
         button2Type !== undefined &&

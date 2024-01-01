@@ -3,8 +3,9 @@ import { FC, useEffect, useState, ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // Interfaces and Types
-import { ButtonProps } from "../../constants/interfaces/ButtonProps";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 // Components
+import { Button } from "../button/Button";
 // CSS
 import "./card.scss";
 
@@ -23,6 +24,7 @@ type CardProps = {
     | "success"
     | "error";
   button1OnClick?: Function;
+  button1Icon?: IconProp;
   button2Text?: string;
   button2Type?: "button" | "reset";
   button2Variant?:
@@ -34,6 +36,7 @@ type CardProps = {
     | "success"
     | "error";
   button2OnClick?: Function;
+  button2Icon?: IconProp;
   buttonSize?: "small" | "medium" | "large";
   imageSource: string;
 };
@@ -46,9 +49,11 @@ export const Card: FC<CardProps> = ({
   button1Text,
   button1Variant,
   button1OnClick,
+  button1Icon,
   button2Text,
   button2Variant,
   button2OnClick,
+  button2Icon,
   buttonSize,
   imageSource,
 }) => {
@@ -76,7 +81,33 @@ export const Card: FC<CardProps> = ({
       <div className="card image-and-body-card">
         <img src={imageSource} />
         <h3>{headerText}</h3>
-        <p>{bodyText}</p>
+        {bodyText ? <p>{bodyText}</p> : <></>}
+        <div className="card-button-wrapper display-flex">
+          {buttonCount >= 1 && button1Text && button1OnClick ? (
+            <Button
+              text={button1Text}
+              variant="neutral"
+              icon={button1Icon ? button1Icon : undefined}
+              leftIcon={button1Icon ? true : false}
+              buttonSize="medium"
+              onClickHandler={button1OnClick}
+            />
+          ) : (
+            <></>
+          )}
+          {buttonCount === 2 && button2Text && button2OnClick ? (
+            <Button
+              text={button2Text}
+              variant="error"
+              icon={button2Icon ? button2Icon : undefined}
+              leftIcon={button2Icon ? true : false}
+              buttonSize="medium"
+              onClickHandler={button2OnClick}
+            />
+          ) : (
+            <></>
+          )}
+        </div>
       </div>
     );
   } else {

@@ -25,13 +25,45 @@ export const Button: FC<ButtonProps> = ({
   buttonSize = "small",
 }) => {
   const renderButtonContent = () => {
+    let loaderVariant: string;
+
+    switch (variant) {
+      case "primary":
+        loaderVariant = "neutral";
+        break;
+      case "secondary":
+        loaderVariant = "neutral";
+        break;
+      case "tertiary":
+        loaderVariant = "neutral";
+        break;
+      case "quarternary":
+        loaderVariant = "neutral";
+        break;
+      case "quinternary":
+        loaderVariant = "neutral";
+        break;
+      case "neutral":
+        loaderVariant = "primary";
+        break;
+      case "success":
+        loaderVariant = "neutral";
+        break;
+      case "error":
+        loaderVariant = "neutral";
+        break;
+      default:
+        loaderVariant = "neutral";
+        break;
+    }
+
     return (
       <>
         {leftIcon && icon && (
           <FontAwesomeIcon icon={icon} className="left-icon" />
         )}
         {loading === true ? (
-          <Loader variant={variant} />
+          <Loader variant={loaderVariant} />
         ) : (
           <b className="button-text">{text}</b>
         )}

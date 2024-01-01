@@ -15,4 +15,4 @@ router.post("/submit", async (req: Request, res: Response) => {
   res.json(createdCase);
 });
 
-module.exports = router;
+export default router;

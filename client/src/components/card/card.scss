@@ -38,14 +38,21 @@
     h3 {
       font-weight: bold;
     }
-    
-    
+
     h3,
     p {
       color: $primary-color;
       //margin-top: auto;
       padding-top: 10px;
       text-align: left;
+    }
+
+    .card-button-wrapper {
+      gap: 10px;
+      padding-top: 10px;
+      button {
+        width: 100%;
+      }
     }
   }
 }

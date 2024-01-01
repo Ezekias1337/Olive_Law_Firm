@@ -21,6 +21,59 @@ export const getAuthenticatedUser: RequestHandler = async (req, res, next) => {
   }
 };
 
+export const getUser: RequestHandler = async (req, res, next) => {
+  try {
+    const userFromDB = await UserModel.findById(req.body.userId)
+      .select("+emailAddress")
+      .exec();
+    res.status(200).json(userFromDB);
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const getAllUsers: RequestHandler = async (req, res, next) => {
+  try {
+    const arrayOfUsers = await UserModel.find().exec();
+    res.status(200).json(arrayOfUsers);
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const updateUser: RequestHandler = async (req, res, next) => {
+  try {
+    const update = {
+      $set: {
+        name: req.body.name,
+        emailAddress: req.body.emailAddress,
+        role: req.body.role,
+      },
+    };
+
+    const userFromDB = await UserModel.findOneAndUpdate(
+      { emailAddress: req.body.emailAddress },
+      update
+    ).exec();
+
+    res.status(200).json(userFromDB);
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const deleteUser: RequestHandler = async (req, res, next) => {
+  try {
+    const userFromDB = await UserModel.findByIdAndDelete(
+      req.body.userId
+    ).exec();
+
+    res.status(200).json(userFromDB);
+  } catch (error) {
+    next(error);
+  }
+};
+
 interface userCreationBody {
   name?: string;
   emailAddress?: string;
@@ -59,7 +112,6 @@ export const createUser: RequestHandler<
     }
 
     const passwordHashed = await bcrypt.hash(passwordRaw, 10);
-
     const newUser = await UserModel.create({
       name: name,
       emailAddress: email,

@@ -1,27 +1,26 @@
+// Library Imports
 import { config } from "dotenv";
 config();
-import express, { Request, Response } from "express";
+import express from "express";
 import session from "express-session";
 import env from "./util/validateEnv";
 import MongoStore from "connect-mongo";
-
-//Routes
-import userRoutes from "./routes/users";
-
 import mongoose from "mongoose";
 import cors from "cors";
 
-const app = express();
-const cases = require("./routes/cases");
-const PORT = env.PORT;
+//Routes
+import userRoutes from "./routes/users";
+import cases from "./routes/cases";
 
+// Server Configuration
+const app = express();
+const PORT = env.PORT;
 const corsOptions = {
   origin: "http://127.0.0.1:5001",
   credentials: true,
 };
 
 app.use(cors(corsOptions));
-
 app.use(express.json());
 app.use(
   session({
@@ -38,14 +37,11 @@ app.use(
   })
 );
 
+// Use Imported routes
 app.use("/cases", cases);
-
 app.use("/api/users", userRoutes);
 
-app.get("/", (req: Request, res: Response) => {
-  res.send("Hello World");
-});
-
+//Connect to DB
 const database = mongoose.connect(process.env.MONGO_URL!).then(() => {
   console.log(`Listening on port: ${PORT}`);
   app.listen(PORT);

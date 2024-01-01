@@ -1,4 +1,5 @@
 // Interfaces and Types
+import { FormEvent } from "react";
 import {
   InputFieldProps,
   DropdownFieldProps,
@@ -6,6 +7,7 @@ import {
 } from "../../../constants/interfaces/InputFieldProps";
 import { SetStateHookForm } from "../../../constants/interfaces/InputFieldProps";
 import { FormState } from "../../../constants/interfaces/InputFieldProps";
+import { FormUpdateEvent } from "../../../functions/forms/handleFormChange";
 
 /* 
   ? This is a type guard to help the typescript compiler since
@@ -88,7 +90,7 @@ export interface FormProps {
     | "error";
   buttonSize?: "small" | "medium" | "large";
   formBackgroundIsImage?: boolean;
-  customSubmitFunction?: (args: CustomSubmitArgs) => void;
+  customSubmitFunction?: (e: FormEvent<HTMLFormElement>, args: CustomSubmitArgs) => void;
   customSubmitArgs?: CustomSubmitArgs;
-  redirectUrl?: string
+  redirectUrl?: string;
 }
