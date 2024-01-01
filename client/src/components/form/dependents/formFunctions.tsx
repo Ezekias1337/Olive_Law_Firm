@@ -126,7 +126,7 @@ export const handleSubmit = async (
       } else {
         errors[
           camelCasifyString(field.name)
-        ] = `${field.placeholder} is required`;
+        ] = `${field.name} is required`;
       }
     } /* else if (
         field.validation &&

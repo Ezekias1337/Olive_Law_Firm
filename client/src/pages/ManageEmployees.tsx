@@ -79,7 +79,7 @@ const ManageEmployees = () => {
         } else {
           errors[
             camelCasifyString(field.name)
-          ] = `${field.placeholder} is required`;
+          ] = `${field.name} is required`;
         }
       }
     });
@@ -136,7 +136,7 @@ const ManageEmployees = () => {
         } else {
           errors[
             camelCasifyString(field.name)
-          ] = `${field.placeholder} is required`;
+          ] = `${field.name} is required`;
         }
       }
     });
@@ -300,8 +300,8 @@ const ManageEmployees = () => {
       required: true,
     },
     {
-      name: "password",
-      label: "password",
+      name: "Password",
+      label: "Password",
       additionalClassNames: "",
       placeholder: "•••••••",
       theme: "light",

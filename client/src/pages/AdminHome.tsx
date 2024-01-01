@@ -2,19 +2,35 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux/es/exports";
+import { Modal, ModalHeader, ModalBody } from "reactstrap";
 // Functions, Helpers and Utils
 import getLoggedInUser from "../functions/authentication/getLoggedInUser";
 import logout from "../functions/authentication/logout";
+import getAllUsers from "../functions/network/getAllUsers";
+import getUser from "../functions/network/getUser";
+import deleteUser from "../functions/network/deleteUser";
+import fetchData from "../functions/network/fetchData";
+import { camelCasifyString } from "../../../shared/utils/strings/camelCasifyString";
+// Constants
+import {
+  textOnlyPattern,
+  emailPattern,
+  textAndNumbersAndSpecialCharsNoSpacesPattern,
+} from "../../../shared/constants/regexPatterns";
+
 // Interfaces and Types
 import { ReduxStoreState } from "../constants/interfaces/ReduxStoreState";
 import { UserReturnedFromDB } from "../constants/interfaces/user";
-// Constants
-
+import { FormState } from "../constants/interfaces/InputFieldProps";
+import { Field, InputField } from "../components/form/dependents/formTypes";
+import { FormEvent } from "react";
+import { SetStateHookForm } from "../constants/interfaces/InputFieldProps";
 // Components
 import { NavBar } from "../components/general-page-layout/navbar/Navbar";
 import { PageHeader } from "../components/general-page-layout/page-header/PageHeader";
 import { Loader } from "../components/general-page-layout/loader/Loader";
 import { Button } from "../components/button/Button";
+import { Form } from "../components/form/Form";
 import { Footer } from "../components/general-page-layout/footer/Footer";
 import {
   faFile,
@@ -46,6 +62,13 @@ const AdminHome = () => {
   const navigate = useNavigate();
   const [userData, setUserData] = useState<UserReturnedFromDB>();
   const [priviledgeLevel, setPriviledgeLevel] = useState<string>();
+  const [editAccountModalOpen, setEditAccountModalOpen] = useState(false);
+  const [formInputData, setFormInputData] = useState<FormState>({});
+  const [formErrorData, setFormErrorData] = useState<FormState>({});
+
+  const toggleEditAccountModal = () =>
+    setEditAccountModalOpen(!editAccountModalOpen);
+
   const [menuOptionsToDisplay, setMenuOptionsToDisplay] = useState([
     {
       text: "View New Cases",
@@ -68,10 +91,143 @@ const AdminHome = () => {
       variant: "secondary",
       icon: faUser,
       leftIcon: true,
-      url: "/edit-account",
       buttonSize: "large",
+      onClick: toggleEditAccountModal,
     },
   ]);
+
+  const editAccountInfoInputFields: Field[] = [
+    {
+      name: "Name",
+      label: "Name",
+      additionalClassNames: "",
+      placeholder: "Name",
+      defaultValue: userData !== undefined ? userData.name : "",
+      theme: "light",
+      columns: "12",
+      type: "text",
+      inputType: "text",
+      inputMode: "text",
+      pattern: textOnlyPattern,
+      maxLength: 50,
+      parentFormState: formInputData,
+      setStateHook: setFormInputData,
+      setErrorHook: setFormErrorData,
+      required: true,
+    },
+    {
+      name: "Role",
+      label: "Role",
+      additionalClassNames: "",
+      defaultValue: userData !== undefined ? userData.role[0] : "",
+      theme: "light",
+      columns: "12",
+      type: "dropdown",
+      inputType: "text",
+      inputMode: "text",
+      maxLength: 30,
+      parentFormState: formInputData,
+      setStateHook: setFormInputData,
+      setErrorHook: setFormErrorData,
+      dropdownOptions: ["Admin", "Admin Assistant", "Employee"],
+      required: true,
+    },
+    {
+      name: "Email Address",
+      label: "Email Address",
+      additionalClassNames: "",
+      placeholder: "receptionist@osa-law.com",
+      defaultValue: userData !== undefined ? userData.emailAddress : "",
+      theme: "light",
+      columns: "12",
+      type: "email",
+      inputType: "email",
+      inputMode: "email",
+      pattern: emailPattern,
+      maxLength: 50,
+      parentFormState: formInputData,
+      setStateHook: setFormInputData,
+      setErrorHook: setFormErrorData,
+      required: true,
+    },
+    {
+      name: "Password",
+      label: "Password",
+      additionalClassNames: "",
+      placeholder: "•••••••",
+      theme: "light",
+      columns: "12",
+      type: "password",
+      inputMode: "text",
+      pattern: textAndNumbersAndSpecialCharsNoSpacesPattern,
+      maxLength: 30,
+      parentFormState: formInputData,
+      setStateHook: setFormInputData,
+      setErrorHook: setFormErrorData,
+      required: true,
+    },
+  ];
+
+  const customSubmitArgsEditEmployee = {
+    argument1: editAccountInfoInputFields,
+    argument2: formInputData,
+    argument3: setFormErrorData,
+    argument4: "/api/users/update-user",
+    argument5: "POST",
+  };
+
+  const submitEmployeeInfoEdit = async (
+    e: FormEvent,
+    inputFields: InputField[],
+    formState: FormState,
+    setErrorHook: SetStateHookForm,
+    apiEndpoint: string,
+    method: "GET" | "POST" | "PUT" | "PATCH" | "DELETE"
+  ): Promise<any> => {
+    e.preventDefault();
+    const errors: Record<string, string> = {};
+    const formStateWithDefaultValues = { ...formState };
+
+    inputFields.forEach((field) => {
+      if (!formState[camelCasifyString(field.name)]) {
+        if (field.defaultValue) {
+          formStateWithDefaultValues[camelCasifyString(field.name)] =
+            field.defaultValue;
+        } else {
+          errors[camelCasifyString(field.name)] = `${field.name} is required`;
+        }
+      }
+    });
+
+    setErrorHook(errors);
+
+    if (Object.keys(errors).length === 0) {
+      const response = await fetchData(apiEndpoint, {
+        method: method,
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+        body: JSON.stringify(formStateWithDefaultValues),
+      });
+
+      /* 
+          Update the card client side so user doesnt have to refresh to see the change
+      */
+
+      try {
+        const newData = await getLoggedInUser();
+        setUserData(newData);
+      } catch (error) {
+        console.error("Error fetching employee data:", error);
+      }
+
+      toggleEditAccountModal();
+      setFormInputData({});
+      setFormErrorData({});
+      return response.json();
+    }
+  };
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -141,7 +297,7 @@ const AdminHome = () => {
             </div>
 
             <div className="">
-              {menuOptionsToDisplay.map((button) => {
+              {menuOptionsToDisplay.map((button, index) => {
                 return (
                   <Button
                     text={button.text}
@@ -150,7 +306,10 @@ const AdminHome = () => {
                     leftIcon={button.leftIcon}
                     buttonSize="large"
                     url={button.url}
-                    key={button.text}
+                    onClickHandler={
+                      button.onClick !== undefined ? button.onClick : undefined
+                    }
+                    key={index}
                   ></Button>
                 );
               })}
@@ -167,6 +326,42 @@ const AdminHome = () => {
           </>
         )}
       </div>
+
+      <Modal
+        isOpen={editAccountModalOpen}
+        toggle={toggleEditAccountModal}
+        size="lg"
+      >
+        <ModalHeader toggle={toggleEditAccountModal}>
+          Edit Employee Information
+        </ModalHeader>
+        <ModalBody>
+          <Form
+            language={reduxLanguage}
+            formTheme="light"
+            inputFields={editAccountInfoInputFields}
+            apiEndpoint="/api/users/update-user"
+            formId="edit-employee-form"
+            setStateHook={setFormInputData}
+            setErrorHook={setFormErrorData}
+            formState={formInputData}
+            formErrors={formErrorData}
+            button1Text={reduxLanguage === "English" ? "Submit" : "Entregar"}
+            button1Variant="primary"
+            customSubmitFunction={(e) =>
+              submitEmployeeInfoEdit(
+                e,
+                editAccountInfoInputFields,
+                formInputData,
+                setFormErrorData,
+                "/api/users/update-user",
+                "POST"
+              )
+            }
+            customSubmitArgs={customSubmitArgsEditEmployee}
+          />
+        </ModalBody>
+      </Modal>
 
       <Footer language={reduxLanguage} />
     </div>
