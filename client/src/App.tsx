@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 // User Pages
 import Home from "./pages/Home";
 import ContactUs from "./pages/ContactUs";
+import CaseSubmitted from "./pages/CaseSubmitted";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfUse from "./pages/TermsOfUse";
 import AboutUs from "./pages/AboutUs";
@@ -16,6 +17,7 @@ import AttorneyProfile from "./pages/AttorneyProfile";
 import Login from "./pages/Login";
 import AdminHome from "./pages/AdminHome";
 import ManageEmployees from "./pages/ManageEmployees";
+import ViewNewCases from "./pages/ViewNewCases";
 //404 Page
 import PageNotFound from "./pages/PageNotFound";
 // Link scroll fix
@@ -33,6 +35,7 @@ const App = () => {
         {/* Client Facing */}
         <Route path="/" element={<Home />}></Route>
         <Route path="/contact-us" element={<ContactUs />}></Route>
+        <Route path="/case-submitted" element={<CaseSubmitted />}></Route>
         <Route path="/about-us" element={<AboutUs />}></Route>
         <Route
           path="/attorney-profile/:lawyer"
@@ -52,7 +55,7 @@ const App = () => {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/admin-home" element={<AdminHome />}></Route>
         <Route path="/manage-employees" element={<ManageEmployees />}></Route>
-        <Route path="/new-cases" element={<Home />}></Route>
+        <Route path="/view-new-cases" element={<ViewNewCases />}></Route>
         <Route path="/analytics-dashboard" element={<Home />}></Route>
         <Route path="/case-dashboard" element={<Home />}></Route>
         {/* 404 */}

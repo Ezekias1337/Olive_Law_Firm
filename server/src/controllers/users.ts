@@ -5,6 +5,18 @@ import bcrypt from "bcrypt";
 // Models
 import UserModel from "../models/user";
 
+interface userCreationBody {
+  name?: string;
+  emailAddress?: string;
+  password?: string;
+  role?: string;
+}
+
+interface LoginBody {
+  emailAddress?: string;
+  password?: string;
+}
+
 export const getAuthenticatedUser: RequestHandler = async (req, res, next) => {
   const authenticatedUserIdFromSession = req.session.userId;
   try {
@@ -74,13 +86,6 @@ export const deleteUser: RequestHandler = async (req, res, next) => {
   }
 };
 
-interface userCreationBody {
-  name?: string;
-  emailAddress?: string;
-  password?: string;
-  role?: string;
-}
-
 export const createUser: RequestHandler<
   unknown,
   unknown,
@@ -124,11 +129,6 @@ export const createUser: RequestHandler<
     next(error);
   }
 };
-
-interface LoginBody {
-  emailAddress?: string;
-  password?: string;
-}
 
 export const login: RequestHandler<
   unknown,

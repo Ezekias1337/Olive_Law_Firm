@@ -1,0 +1,17 @@
+@import "../../../css/variables";
+
+.view-case-card {
+  border: 1px solid $primary-color;
+  background-color: $light-gray;
+  padding: 40px;
+  color: $primary-color;
+
+  h3 {
+    padding-bottom: 20px;
+  }
+  
+  hr {
+    background-color: $primary-color;
+    height: 4px;
+  }
+}

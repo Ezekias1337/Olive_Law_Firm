@@ -1,0 +1,29 @@
+@import "../../css/variables";
+
+.view-new-cases-container {
+  h1.page-title {
+    margin-bottom: 40px !important;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .view-new-case-wrapper {
+    .pending-case-wrapper {
+      .pending-case-card-wrapper {
+      }
+
+      .pending-case-button-wrapper {
+        padding-top: 40px;
+        padding-bottom: 80px;
+        gap: 20px;
+      }
+
+      .case-approved-message {
+        color: $neutral;
+        background-color: $primary-color;
+        margin-top: 20px;
+        padding: 20px;
+      }
+    }
+  }
+}

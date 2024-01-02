@@ -1,18 +1,18 @@
-import express, { Request, Response } from "express";
-//import mongoose from "mongoose";
-import Case from "../models/case";
+import express from "express";
+import * as CaseController from "../controllers/cases";
 
 const router = express.Router();
 
-router.post("/submit", async (req: Request, res: Response) => {
-  const newCase = new Case({
-    id: req.body.id,
-    name: req.body.name,
-    photoId: req.body.photoId,
-    photosTaken: req.body.photosTaken,
-  });
-  const createdCase = await newCase.save();
-  res.json(createdCase);
-});
+// GET requests
+router.get("/get-case", CaseController.getCase);
+router.get("/get-all-cases", CaseController.getAllCases);
+router.get("/get-pending-cases", CaseController.getPendingCases);
+// POST requests
+router.post("/create-case", CaseController.createCase);
+// PATCH requests
+router.patch("/approve-case", CaseController.approveCase);
+router.patch("/reject-case", CaseController.rejectCase);
+// DELETE requests
+router.delete("/delete-case", CaseController.deleteCase);
 
 export default router;

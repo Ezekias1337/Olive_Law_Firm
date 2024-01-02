@@ -5,7 +5,10 @@ import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 // Interfaces and Types
 import { InputFieldProps } from "../../constants/interfaces/InputFieldProps";
-import { phoneNumberPattern } from "../../../../shared/constants/regexPatterns";
+import {
+  phoneNumberPattern,
+  numberOnlyPattern,
+} from "../../../../shared/constants/regexPatterns";
 import { phoneNumberAutocomplete } from "../../constants/formAutocompleteStrings";
 import { FormUpdateEvent } from "../../functions/forms/handleFormChange";
 // Components
@@ -58,7 +61,7 @@ export const PhoneNumberInput: FC<InputFieldProps> = ({
         required={required}
         inputType="tel"
         inputMode="tel"
-        pattern={phoneNumberPattern}
+        pattern={numberOnlyPattern}
         autoComplete={phoneNumberAutocomplete}
         maxLength={15}
         setStateHook={setStateHook}

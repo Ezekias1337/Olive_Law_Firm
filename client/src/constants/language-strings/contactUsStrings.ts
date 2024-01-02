@@ -80,12 +80,12 @@ export const contactUsStrings: ContactUsStrings = {
 
   formFields: {
     fullName: {
-      english: "Full Name",
-      spanish: "Nombre Completa",
+      english: "Name",
+      spanish: "Nombre",
     },
 
     dateOfIncident: {
-      english: "Date of Incident",
+      english: "Date Of Incident",
       spanish: "Fecha del Incidente",
     },
 

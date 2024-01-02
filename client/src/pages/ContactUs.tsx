@@ -1,13 +1,19 @@
 // Library Imports
 import { useSelector } from "react-redux/es/exports";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 // Functions, Helpers, Utils and Hooks
-import useDeviceInfo from "../hooks/useDeviceInfo";
+import fetchData from "../functions/network/fetchData";
 import useWindowWidth from "../hooks/useWindowWidth";
+import { camelCasifyString } from "../../../shared/utils/strings/camelCasifyString";
 // Interfaces and Types
+import { FormEvent } from "react";
 import { ReduxStoreState } from "../constants/interfaces/ReduxStoreState";
-import { FormState } from "../constants/interfaces/InputFieldProps";
-import { Field } from "../components/form/dependents/formTypes";
+import {
+  FormState,
+  SetStateHookForm,
+} from "../constants/interfaces/InputFieldProps";
+import { Field, InputField } from "../components/form/dependents/formTypes";
 // Constants
 import { contactUsStrings } from "../constants/language-strings/contactUsStrings";
 import {
@@ -32,6 +38,23 @@ import "../css/page-specific/contact-us.scss";
 // Assets and Images
 import googleMapsLocation from "../assets/images/google-maps-location.png";
 
+/* 
+    TODO: Dropdown menus and credit card field labels aren't translating
+    TODO: form error should be in spanish when page is spanish
+    TODO: Look into making required one of the form attributes
+    TODO: Make sure correct css is applied to errored out fields
+    TODO: Make setStateHook and setErrorHook only be passed to form so it doesn't 
+    TODO: Make dropdown options also translate
+    TODO: Remove theme from input field props, keep only in form
+    TODO: Look into datalist element for dropdown field
+    TODO: Add multiple attribute prop to dropdown component to allow multiple selections
+    TODO: Make function to supply repeated props to fields
+    need to be duplicated
+    TODO: Remove columns attribute from input field components since it's handled by the form component
+    TODO: Make an example component with props for each input field, so I can easily use
+      each input field without having to check which props are required for each type
+  */
+
 const ContactUs = () => {
   const reduxLanguage = useSelector(
     (state: ReduxStoreState) => state.language.contents.languageChoice
@@ -40,7 +63,10 @@ const ContactUs = () => {
 
   const [formInputData, setFormInputData] = useState<FormState>({});
   const [formErrorData, setFormErrorData] = useState<FormState>({});
+  const [submissionSuccessful, setSubmissionSuccessful] =
+    useState<Boolean>(false);
   const [inputFieldColumns, setInputFieldColumns] = useState("6");
+  const navigate = useNavigate();
 
   const {
     pageTitle,
@@ -70,24 +96,11 @@ const ContactUs = () => {
     }
   }, [windowWidth]);
 
-  /* 
-    TODO: Dropdown menus and credit card field labels aren't translating
-    TODO: form error should be in spanish when page is spanish
-    TODO: Look into making required one of the form attributes
-    TODO: Make sure correct css is applied to errored out fields
-    TODO: Make setStateHook and setErrorHook only be passed to form so it doesn't 
-    TODO: Make dropdown options also translate
-    TODO: Remove theme from input field props, keep only in form
-    TODO: Look into datalist element for dropdown field
-    TODO: Add multiple attribute prop to dropdown component to allow multiple selections
-    TODO: Make function to supply repeated props to fields
-    need to be duplicated
-    TODO: Make select arrow flip when menu is open
-    TODO: MAKE SURE ALL INPUT FIELD COMPONENTS USE REGEX FROM SHARED FOLDER
-    TODO: Remove columns attribute from input field components since it's handled by the form component
-    TODO: Make an example component with props for each input field, so I can easily use
-      each input field without having to check which props are required for each type
-  */
+  useEffect(() => {
+    if (submissionSuccessful) {
+      navigate("/case-submitted");
+    }
+  }, [submissionSuccessful]);
 
   const arrayOfInputFields: Field[] = [
     {
@@ -103,7 +116,7 @@ const ContactUs = () => {
       inputMode: "text",
       pattern: textOnlyPattern,
       autoComplete: fullNameAutocomplete,
-      maxLength: 30,
+      maxLength: 60,
       parentFormState: formInputData,
       setStateHook: setFormInputData,
       setErrorHook: setFormErrorData,
@@ -160,6 +173,7 @@ const ContactUs = () => {
           ? preferredLanguage.english
           : preferredLanguage.spanish,
       additionalClassNames: "",
+      defaultValue: "English",
       placeholder:
         reduxLanguage === "English"
           ? preferredLanguage.english
@@ -206,6 +220,7 @@ const ContactUs = () => {
           ? treatmentStatus.english
           : treatmentStatus.spanish,
       additionalClassNames: "",
+      defaultValue: "Not Started",
       placeholder:
         reduxLanguage === "English"
           ? treatmentStatus.english
@@ -247,15 +262,67 @@ const ContactUs = () => {
     },
   ];
 
+  const customSubmitArgsSubmitCase = {
+    argument1: arrayOfInputFields,
+    argument2: formInputData,
+    argument3: setFormErrorData,
+    argument4: "/api/cases/create-case",
+    argument5: "POST",
+  };
+
+  const createNewCase = async (
+    e: FormEvent,
+    inputFields: InputField[],
+    formState: FormState,
+    setErrorHook: SetStateHookForm,
+    apiEndpoint: string,
+    method: "GET" | "POST" | "PUT" | "PATCH" | "DELETE"
+  ): Promise<any> => {
+    e.preventDefault();
+
+    const errors: Record<string, string> = {};
+    const formStateWithDefaultValues = { ...formState };
+
+    inputFields.forEach((field) => {
+      if (!formState[camelCasifyString(field.name)]) {
+        if (field.defaultValue) {
+          formStateWithDefaultValues[camelCasifyString(field.name)] =
+            field.defaultValue;
+        } else {
+          errors[camelCasifyString(field.name)] = `${field.name} is required`;
+        }
+      }
+    });
+    formStateWithDefaultValues.caseStatus = "Pending";
+
+    setErrorHook(errors);
+
+    if (Object.keys(errors).length === 0) {
+      const response = await fetchData(apiEndpoint, {
+        method: method,
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+        body: JSON.stringify(formStateWithDefaultValues),
+      });
+
+      setFormInputData({});
+      setFormErrorData({});
+      setSubmissionSuccessful(true);
+      return response.json();
+    }
+  };
+
   return (
     <div className="container-fluid contact-us-container home-page p-0">
       <NavBar theme="dark" adminVariant={false} language={reduxLanguage} />
-      <PageHeader language={reduxLanguage} title={pageTitle} includeBanner/>
+      <PageHeader language={reduxLanguage} title={pageTitle} includeBanner />
       <Form
         language={reduxLanguage}
         formTheme="light"
         inputFields={arrayOfInputFields}
-        apiEndpoint="/placeholder-endpoint"
+        apiEndpoint="/api/cases/create-case"
         formId="contact-us-form"
         setStateHook={setFormInputData}
         setErrorHook={setFormErrorData}
@@ -263,6 +330,17 @@ const ContactUs = () => {
         formErrors={formErrorData}
         button1Text={reduxLanguage === "English" ? "Submit" : "Entregar"}
         button1Variant="primary"
+        customSubmitFunction={(e) =>
+          createNewCase(
+            e,
+            arrayOfInputFields,
+            formInputData,
+            setFormErrorData,
+            "/api/cases/create-case",
+            "POST"
+          )
+        }
+        customSubmitArgs={customSubmitArgsSubmitCase}
       />
 
       <div className="contact-info-wrapper padding-left-and-right">
