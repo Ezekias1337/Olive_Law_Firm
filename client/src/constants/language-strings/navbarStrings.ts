@@ -7,7 +7,7 @@ interface NavbarStrings {
     english: string;
     spanish: string;
   };
-  attorneys: {
+  aboutUs: {
     english: string;
     spanish: string;
   };
@@ -42,9 +42,9 @@ export const navbarStrings: NavbarStrings = {
     english: "Practice Areas",
     spanish: "Áreas de Práctica",
   },
-  attorneys: {
-    english: "Attorneys",
-    spanish: "Abogados",
+  aboutUs: {
+    english: "About Us",
+    spanish: "Sobre Nosotros",
   },
   clientReviews: {
     english: "Client Reviews",

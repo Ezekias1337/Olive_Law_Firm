@@ -1,7 +1,10 @@
+const BACKEND_PORT = import.meta.env.VITE_BACKEND_PORT;
+const ORIGIN_URL_BASE = import.meta.env.VITE_ORIGIN_URL_BASE;
+
 const fetchData = async (input: RequestInfo, init?: RequestInit) => {
-  const baseURL = 'http://127.0.0.1:5000';
+  const baseURL = `${ORIGIN_URL_BASE}:${BACKEND_PORT}`;
   const url = `${baseURL}${input}`;
-  
+
   const response = await fetch(url, init);
 
   if (response.ok) {

@@ -1,18 +1,16 @@
 @import "../../../css/variables";
 
 .footer {
-  background-color: $quarternary-color;
+  background-color: $primary-color;
   width: 100vw;
 }
 
 .footer-logo-col {
   width: 105px;
-  
 }
 
 .footer-logo {
   width: 100%;
-  
 }
 
 .social-col {
@@ -26,7 +24,6 @@
   border-radius: 50%;
   background-color: transparent;
   border: 1px $light-gray solid;
-
 }
 
 .footer-social-wrapper svg {
@@ -45,12 +42,12 @@
 }
 
 .footer-navigation {
-  background-color: $primary-color;
+  background-color: $light-gray;
 }
 
 .footer-navigation a,
 .footer-copywrite-disclaimer-wrapper a {
-  color: $light-gray;
+  color: $primary-color;
   text-decoration: none;
   font-size: 18px;
 }
@@ -66,7 +63,7 @@
 }
 
 .footer-navigation-header {
-  color: $neutral;
+  color: $primary-color;
   font-size: 31.98px;
   padding-bottom: 20px;
 }

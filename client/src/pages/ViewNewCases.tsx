@@ -17,7 +17,8 @@ import {
 } from "../../../shared/constants/interfaces/SocketInterfaces";
 import { CaseReturnedFromDB } from "../constants/interfaces/case";
 // Constants
-
+const BACKEND_PORT = import.meta.env.VITE_BACKEND_PORT;
+const ORIGIN_URL_BASE = import.meta.env.VITE_ORIGIN_URL_BASE;
 // Components
 import { NavBar } from "../components/general-page-layout/navbar/Navbar";
 import { PageHeader } from "../components/general-page-layout/page-header/PageHeader";
@@ -41,6 +42,8 @@ const ViewNewCases = () => {
     (state: ReduxStoreState) => state.cases.contents
   );
   const [pendingCasesInQueue, setPendingCasesInQueue] = useState<Boolean>();
+  const [websocketConnectionInitialized, setWebsocketConnectionInitialized] =
+    useState(false);
   const [displayedCase, setDisplayedCase] = useState<CaseReturnedFromDB>();
   const [mockCaseApproval, setMockCaseApproval] = useState(false);
 
@@ -61,7 +64,10 @@ const ViewNewCases = () => {
   useEffect(() => {
     const fetchPendingCases = async () => {
       try {
-        if (pendingCases.length === 0) {
+        if (
+          websocketConnectionInitialized === false &&
+          pendingCases.length === 0
+        ) {
           const newData = await getPendingCases();
           if (newData?.length === 0) {
             setPendingCasesInQueue(false);
@@ -91,8 +97,11 @@ const ViewNewCases = () => {
     On server deployment this needs to be https and use ENV for url
   */
   useEffect(() => {
-    if (pendingCasesInQueue === false) {
-      const socketServerURL = "http://127.0.0.1:5000"; // Set your server URL here
+    if (
+      websocketConnectionInitialized === false &&
+      pendingCasesInQueue === false
+    ) {
+      const socketServerURL = `${ORIGIN_URL_BASE}:${BACKEND_PORT}`; // Set your server URL here
 
       // Establish socket connection
       const socket: Socket<ServerToClientEvents, ClientToServerEvents> =
@@ -100,6 +109,7 @@ const ViewNewCases = () => {
 
       // Event listener for connection event
       socket.on("connect", () => {
+        setWebsocketConnectionInitialized(true);
         console.log("Connected to the server");
       });
 
@@ -112,7 +122,7 @@ const ViewNewCases = () => {
         socket.disconnect();
       };
     }
-  }, [pendingCasesInQueue]);
+  }, [pendingCasesInQueue, websocketConnectionInitialized]);
 
   return (
     <div className="container-fluid view-new-cases-container p-0">

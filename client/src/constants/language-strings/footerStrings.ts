@@ -38,7 +38,7 @@ interface FooterStrings {
       english: string;
       spanish: string;
     };
-    communityInvolvement: {
+    freeConsultation: {
       english: string;
       spanish: string;
     };
@@ -46,7 +46,7 @@ interface FooterStrings {
       english: string;
       spanish: string;
     };
-    admin: {
+    communityInteraction: {
       english: string;
       spanish: string;
     };
@@ -56,14 +56,21 @@ interface FooterStrings {
     english: string;
     spanish: string;
   };
+  
   termsOfService: {
     english: string;
     spanish: string;
   };
+  
   privacyPolicy: {
     english: string;
     spanish: string;
   };
+  
+  admin: {
+    english: string;
+    spanish: string;
+  }
 }
 
 export const footerStrings: FooterStrings = {
@@ -106,15 +113,15 @@ export const footerStrings: FooterStrings = {
       english: "Other",
       spanish: "Otro",
     },
-    communityInvolvement: {
-      english: "Submit a Claim",
-      spanish: "Participación de la comunidad",
+    freeConsultation: {
+      english: "Free Consultation",
+      spanish: "Consulta gratis",
     },
     faqs: {
       english: "FAQ",
       spanish: "FAQ",
     },
-    admin: {
+    communityInteraction: {
       english: "Community Interaction",
       spanish: "Interacción con la Comunidad",
     },
@@ -122,9 +129,9 @@ export const footerStrings: FooterStrings = {
 
   copywrite: {
     english:
-      "© 2023 by Olive Sanchez & Associates PLLC | Created by Code Decoded",
+      "© 2024 by Olive Sanchez & Associates PLLC | Created by Code Decoded",
     spanish:
-      "© 2023 por Olive Sanchez & Associates PLLC | Creado por Code Decoded",
+      "© 2024 por Olive Sanchez & Associates PLLC | Creado por Code Decoded",
   },
 
   termsOfService: {
@@ -135,5 +142,10 @@ export const footerStrings: FooterStrings = {
   privacyPolicy: {
     english: "Privacy Policy",
     spanish: "Política de Privacidad",
+  },
+  
+  admin: {
+    english: "Administration",
+    spanish: "Administración",
   },
 };

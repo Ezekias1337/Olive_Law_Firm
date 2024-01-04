@@ -23,6 +23,7 @@ export const TellYourStory = ({ language }: { language: string }) => {
           }
           variant="neutral"
           url="/contact-us"
+          buttonSize="large"
         />
       </div>
     </section>

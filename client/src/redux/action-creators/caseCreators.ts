@@ -9,8 +9,8 @@ export interface GetPendingCasesAction {
   payload: string;
 }
 // Action Types
-export const UPDATE_PENDING_CASES = `${typeBase}UPDATE_LANGUAGE`;
-export const UPDATE_CASES_RESET = `${typeBase}UPDATE_LANGUAGE_RESET`;
+export const UPDATE_PENDING_CASES = `${typeBase}UPDATE_PENDING_CASES`;
+export const UPDATE_CASES_RESET = `${typeBase}UPDATE_CASES_RESET`;
 
 export const updatePendingCases = (pendingCases: CaseReturnedFromDB[]) => {
   return (dispatch: Dispatch<Action>) => {

@@ -56,6 +56,7 @@ export const OurResults = ({ language }: { language: string }) => {
           }
           variant="primary"
           url="/our-results"
+          buttonSize="large"
         />
       </div>
     </section>

@@ -121,6 +121,7 @@ export const WhatCustomersSay = ({ language }: { language: string }) => {
           }
           variant="primary"
           url="/client-testimonials"
+          buttonSize="large"
         />
       </div>
     </section>

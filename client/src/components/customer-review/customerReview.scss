@@ -2,7 +2,7 @@
 
 .customer-review {
   border: 1.5px solid var(--neutral-white, #fff);
-  background: var(--Tertiary-Color, #4e698e);
+  background: $light-gray;
   max-width: 523px;
   flex-shrink: 0;
   position: relative;
@@ -19,7 +19,7 @@
 
     span {
       font-size: $general;
-      color: $neutral;
+      color: $primary-color;
       margin-left: 10px;
     }
   }
@@ -27,7 +27,7 @@
   .rating-number-and-star-container {
     display: flex;
     margin-left: 6px;
-    color: $neutral;
+    color: $primary-color;
 
     text {
       margin-bottom: 12px;
@@ -37,6 +37,6 @@
   .review-body-container {
     padding-left: 70px;
     padding-right: 70px;
-    color: $neutral;
+    color: $primary-color;
   }
 }

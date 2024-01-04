@@ -36,7 +36,7 @@ export const NavBar = ({
   const {
     home,
     practiceAreas,
-    attorneys,
+    aboutUs,
     clientReviews,
     ourResults,
     contactUs,
@@ -89,9 +89,9 @@ export const NavBar = ({
             />
             <AnimatedNavLink
               linkText={
-                language === "English" ? attorneys.english : attorneys.spanish
+                language === "English" ? aboutUs.english : aboutUs.spanish
               }
-              url="/attorneys"
+              url="/about-us"
               preserveState={[["language", language]]}
             />
             <AnimatedNavLink

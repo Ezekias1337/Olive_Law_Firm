@@ -23,17 +23,20 @@ import {
 //Routes
 import userRoutes from "./routes/users";
 import cases from "./routes/cases";
-import { Socket } from "socket.io";
-
-/* 
-  ! WHEN DEPLOYING NEED TO USE .ENV INSTEAD OF HARDCODED ORIGIN
-*/
 
 // Server Configuration
 const app = express();
-const PORT = env.PORT;
+
+const MONGO_URL = env.MONGO_URL;
+const BACKEND_PORT = env.BACKEND_PORT;
+const FRONTEND_PORT = env.FRONTEND_PORT;
+const ORIGIN_URL_BASE = env.ORIGIN_URL_BASE;
+const SESSION_SECRET = env.SESSION_SECRET;
+
+const ORIGIN_URL = `${ORIGIN_URL_BASE}:${FRONTEND_PORT}`;
+
 const corsOptions = {
-  origin: "http://127.0.0.1:5001",
+  origin: ORIGIN_URL,
   credentials: true,
 };
 
@@ -41,7 +44,7 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(
   session({
-    secret: env.SESSION_SECRET,
+    secret: SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
     cookie: {
@@ -62,8 +65,8 @@ app.use("/api/users", userRoutes);
 const database = mongoose.connect(process.env.MONGO_URL!).then(() => {
   const server = http.createServer(app); // Pass the express app to createServer
 
-  server.listen(PORT, () => {
-    console.log(`Listening on port: ${PORT}`);
+  server.listen(BACKEND_PORT, () => {
+    console.log(`Listening on port: ${BACKEND_PORT}`);
   });
 
   const io = new Server<
@@ -73,8 +76,10 @@ const database = mongoose.connect(process.env.MONGO_URL!).then(() => {
     SocketData
   >(server, {
     cors: {
-      origin: "http://127.0.0.1:5001",
+      origin: ORIGIN_URL,
     },
+    pingInterval: 30000,
+    pingTimeout: 15000,
   });
   app.set("io", io);
 

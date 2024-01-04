@@ -76,7 +76,7 @@ const AdminHome = () => {
       icon: faFile,
       leftIcon: true,
       url: "/view-new-cases",
-      buttonSize: "large",
+      buttonSize: "medium",
     },
     {
       text: "View Past Cases",
@@ -304,7 +304,7 @@ const AdminHome = () => {
                     variant={button.variant}
                     icon={button.icon}
                     leftIcon={button.leftIcon}
-                    buttonSize="large"
+                    buttonSize="medium"
                     url={button.url}
                     onClickHandler={
                       button.onClick !== undefined ? button.onClick : undefined

@@ -12,7 +12,7 @@ import { FooterLink } from "./dependents/FooterLink";
 // CSS
 import "./footer.scss";
 // Assets and Images
-import logo from "../../../assets/images/logo/Logo_No_Text.png";
+import logo from "../../../assets/images/logo/Full_Logo.png";
 
 export const Footer = ({ language }: { language: string }) => {
   const {
@@ -22,6 +22,7 @@ export const Footer = ({ language }: { language: string }) => {
     copywrite,
     termsOfService,
     privacyPolicy,
+    admin,
   } = footerStrings;
 
   const { header: contactHeader, getDirections, email } = contactColumn;
@@ -33,19 +34,17 @@ export const Footer = ({ language }: { language: string }) => {
   } = infoColumn;
   const {
     header: otherHeader,
-    communityInvolvement,
+    freeConsultation,
     faqs,
-    admin,
+    communityInteraction,
   } = otherColumn;
 
   return (
     <footer className="container-fluid footer">
       <div className="row mx-5 pt-5">
-        <div className="col col-2 px-0 footer-logo-col">
-          <img src={logo} className="footer-logo" />
-        </div>
+        
         <div className="col col-8 col-lg-6 social-col">
-          <FooterSocialIcon
+          {/* <FooterSocialIcon
             icon={faInstagram}
             url="https://www.instagram.com/theolivelawfirm_1957/"
           />
@@ -56,7 +55,7 @@ export const Footer = ({ language }: { language: string }) => {
           <FooterSocialIcon
             icon={faTwitter}
             url="https://twitter.com/OliveLawFirm"
-          />
+          /> */}
         </div>
       </div>
       <div className="row footer-navigation mx-5 mt-5 pb-5">
@@ -123,10 +122,10 @@ export const Footer = ({ language }: { language: string }) => {
           <FooterLink
             linkText={
               language === "English"
-                ? communityInvolvement.english
-                : communityInvolvement.spanish
+                ? freeConsultation.english
+                : freeConsultation.spanish
             }
-            url="/community-involvement"
+            url="/contact-us"
             openInNewTab={false}
           />
           <FooterLink
@@ -135,17 +134,28 @@ export const Footer = ({ language }: { language: string }) => {
             openInNewTab={false}
           />
           <FooterLink
-            linkText={language === "English" ? admin.english : admin.spanish}
-            url="/admin"
+            linkText={
+              language === "English"
+                ? communityInteraction.english
+                : communityInteraction.spanish
+            }
+            url="/community-interaction"
             openInNewTab={false}
           />
         </div>
       </div>
       <div className="footer-copywrite-disclaimer-wrapper row pb-5 pt-3 mx-5">
-        <div className="col col-12 col-lg-8 ps-0">
+        <div className="col col-12 col-lg-6 ps-0">
           <small className="copywrite-disclaimer">
             {language === "English" ? copywrite.english : copywrite.spanish}
           </small>
+        </div>
+        <div className="col col-6 col-lg-2">
+          <FooterLink
+            linkText={language === "English" ? admin.english : admin.spanish}
+            url="/login"
+            openInNewTab={false}
+          />
         </div>
         <div className="col col-6 col-lg-2">
           <FooterLink

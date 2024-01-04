@@ -32,7 +32,7 @@ export const PrimaryCallToAction = ({ language }: { language: string }) => {
               : scheduleConsulation.spanish
           }
           url="/contact-us"
-          buttonSize="medium"
+          buttonSize="large"
         />
         <Button
           variant="primary"
@@ -42,7 +42,7 @@ export const PrimaryCallToAction = ({ language }: { language: string }) => {
               : seeGoogleReviews.spanish
           }
           url="/client-reviews"
-          buttonSize="medium"
+          buttonSize="large"
         />
         <Button
           variant="primary"
@@ -52,7 +52,7 @@ export const PrimaryCallToAction = ({ language }: { language: string }) => {
               : seeOurResults.spanish
           }
           url="/our-results"
-          buttonSize="medium"
+          buttonSize="large"
         />
       </div>
     </div>
