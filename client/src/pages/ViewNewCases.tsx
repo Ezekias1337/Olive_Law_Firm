@@ -47,20 +47,6 @@ const ViewNewCases = () => {
   const [displayedCase, setDisplayedCase] = useState<CaseReturnedFromDB>();
   const [mockCaseApproval, setMockCaseApproval] = useState(false);
 
-  /* 
-    Page should be logged into at beginning of day. First it should fetch list
-    of pending cases from DB
-      
-    ! LATER REFACTOR TO PUT PENDINGCASES IN REDUX  
-    ! For now using findOne command in DB, this will be changed later
-    
-      if no pending cases display message that awaiting cases, and use
-      websocket to wait for new cases
-      
-      If pending cases display the card with customer's info, and after running
-      out use websocket to wait for new cases
-  */
-
   useEffect(() => {
     const fetchPendingCases = async () => {
       try {
@@ -71,6 +57,9 @@ const ViewNewCases = () => {
           const newData = await getPendingCases();
           if (newData?.length === 0) {
             setPendingCasesInQueue(false);
+          }
+          if (newData?.length !== 0) {
+            updatePendingCases(newData);
           }
           updatePendingCases(newData);
         }
@@ -92,37 +81,31 @@ const ViewNewCases = () => {
     }
   }, [pendingCases]);
 
-  /* 
-    ! Connect to Websockets only if all cases handled from initial fetch are done
-    On server deployment this needs to be https and use ENV for url
-  */
   useEffect(() => {
-    if (
-      websocketConnectionInitialized === false &&
-      pendingCasesInQueue === false
-    ) {
-      const socketServerURL = `${ORIGIN_URL_BASE}:${BACKEND_PORT}`; // Set your server URL here
+    const socketServerURL = `${ORIGIN_URL_BASE}:${BACKEND_PORT}`; // Set your server URL here
 
-      // Establish socket connection
-      const socket: Socket<ServerToClientEvents, ClientToServerEvents> =
-        io(socketServerURL);
+    // Establish socket connection
+    const socket: Socket<ServerToClientEvents, ClientToServerEvents> =
+      io(socketServerURL);
 
-      // Event listener for connection event
-      socket.on("connect", () => {
-        setWebsocketConnectionInitialized(true);
-        console.log("Connected to the server");
-      });
+    socket.on("connect", () => {
+      setWebsocketConnectionInitialized(true);
+      console.log("Connected to the server");
+    });
 
-      socket.on("connect_error", (error) => {
-        console.error("Connection error:", error);
-      });
+    socket.on("connect_error", (error) => {
+      console.error("Connection error:", error);
+    });
 
-      // Cleanup the socket connection when the component unmounts
-      return () => {
-        socket.disconnect();
-      };
-    }
-  }, [pendingCasesInQueue, websocketConnectionInitialized]);
+    socket.on("caseReceived", (data: CaseReturnedFromDB) => {
+      setDisplayedCase(data);
+    });
+
+    // Cleanup the socket connection when the component unmounts
+    return () => {
+      socket.disconnect();
+    };
+  }, []);
 
   return (
     <div className="container-fluid view-new-cases-container p-0">
@@ -137,7 +120,7 @@ const ViewNewCases = () => {
       />
 
       <div className="view-new-case-wrapper padding-left-and-right">
-        {pendingCases.length === 0 ? (
+        {pendingCases.length === 0 && !displayedCase ? (
           <h2>
             There are currently no pending cases. You will hear an alert noise
             when one is received.

@@ -117,7 +117,7 @@ export const createCase: RequestHandler<
 
     res.status(201).json(newCase);
 
-    io.emit("caseRecieved", { newCase });
+    io.emit("caseReceived", newCase);
   } catch (error) {
     next(error);
   }

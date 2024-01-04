@@ -1,3 +1,5 @@
+import { CaseReturnedFromDB } from "../../../client/src/constants/interfaces/case";
+
 export interface Buffer {
   write: (
     str: string,
@@ -11,6 +13,7 @@ export interface Buffer {
 export interface ServerToClientEvents {
   noArg: () => void;
   basicEmit: (a: number, b: string, c: Buffer) => void;
+  caseReceived: (data: CaseReturnedFromDB) => void;
   withAck: (d: string, callback: (e: number) => void) => void;
 }
 
