@@ -85,18 +85,18 @@ export const attorneyInfoStrings: AttorneyInfoStrings = {
     image: JuanImage,
     quote: {
       english:
-        "“Insurance companies serve an important function to be sure, but when handling injury claims, can and do often act immorally and with callous even cruel intention or indifference. Righting those wrongs is why I do what I do.”",
+        "“Where you see wrong or inequality or injustice, speak out, because this is your country. This is your democracy. Make it. Protect it. Pass it on.” - Thurgood Marshall",
       spanish:
-        "“Sin duda, las compañías de seguros cumplen una función importante, pero cuando manejan reclamaciones por lesiones, pueden actuar, y a menudo lo hacen, de manera inmoral y con intenciones o indiferencia insensibles e incluso crueles. Corregir esos errores es la razón por la que hago lo que hago”.",
+        "“Donde vean mal, desigualdad o injusticia, hablen, porque este es su país. Ésta es su democracia. Hazlo. Protegerlo. Pásalo.” - Thurgood Marshall",
     },
     biography: {
       english: [
         "Attorney Juan Sanchez has been practicing law since 1995 and is licensed in both Florida and North Carolina. Juan is also a retired sergeant from the United States Army Reserve Corps of Engineers.",
-        "As the head of the workers' compensation department with the Olive Law Firm, Mr. Sanchez has successfully handled thousands of cases. Attorney Juan Sanchez is happy to meet and speak with every one of his clients on a regular basis. All initial consultations are free. Mr. Sanchez is fluent in Spanish.",
+        "As the head of the workers' compensation department with Olive Sanchez & Associates, Mr. Sanchez has successfully handled thousands of cases. Attorney Juan Sanchez is happy to meet and speak with every one of his clients on a regular basis. All initial consultations are free. Mr. Sanchez is fluent in Spanish.",
       ],
       spanish: [
         "El abogado Juan Sánchez ha ejercido la abogacía desde 1995 y tiene licencia tanto en Florida como en Carolina del Norte. Juan también es sargento retirado del Cuerpo de Ingenieros de la Reserva del Ejército de los Estados Unidos.",
-        "Como jefe del departamento de compensación laboral de Olive Law Firm, el Sr. Sánchez ha manejado con éxito miles de casos. El abogado Juan Sánchez está feliz de conocer y hablar con cada uno de sus clientes de forma regular. Todas las consultas iniciales son gratuitas. El Sr. Sánchez habla español con fluidez.",
+        "Como jefe del departamento de compensación laboral de Olive Sanchez & Associates, el Sr. Sánchez ha manejado con éxito miles de casos. El abogado Juan Sánchez está feliz de conocer y hablar con cada uno de sus clientes de forma regular. Todas las consultas iniciales son gratuitas. El Sr. Sánchez habla español con fluidez.",
       ],
     },
     education: {
@@ -215,7 +215,7 @@ export const attorneyInfoStrings: AttorneyInfoStrings = {
       english: [
         "Attorney Valerie Kilgore was acclaimed both academically and in athletics while attending undergraduate school at St. Lawrence University in Canton, New York, receiving Presidential Scholarships and recognition as an outstanding student leader.",
         "Following graduation from St. Lawrence University, Ms. Kilgore attended Cumberland School of Law of Samford University in Birmingham, Alabama. Ms. Kilgore was on the Dean’s List, was a member of the Environmental Law Society, Treasurer of the Women in Law Society, and an annual attendee of the NAPIL (National Association of Public Interest Law) Conference.",
-        "Ms. Kilgore practices primarily workers’ compensation law.  In her spare time, she enjoys traveling and hiking with her husband and spending time with their cats and dogs.",
+        "Ms. Kilgore practices primarily workers' compensation law.  In her spare time, she enjoys traveling and hiking with her husband and spending time with their cats and dogs.",
       ],
       spanish: [
         "La abogada Valerie Kilgore fue aclamada tanto académicamente como en el atletismo mientras asistía a la escuela de pregrado en la Universidad St. Lawrence en Canton, Nueva York, donde recibió becas presidenciales y reconocimiento como una destacada líder estudiantil.",

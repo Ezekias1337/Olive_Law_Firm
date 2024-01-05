@@ -64,6 +64,6 @@ export const navbarStrings: NavbarStrings = {
   },
   afterHours: {
     english: "AFTER HOURS",
-    spanish: "FUERA HORAS",
+    spanish: "WHATSAPP",
   },
 };

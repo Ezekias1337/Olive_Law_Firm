@@ -18,14 +18,10 @@ export const NavBar = ({
   theme,
   adminVariant,
   language,
-  backgroundImage = "",
-  backgroundImageSize = "100%",
 }: {
   theme: string;
   adminVariant: boolean;
   language: string;
-  backgroundImage?: string;
-  backgroundImageSize?: string;
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
@@ -33,14 +29,8 @@ export const NavBar = ({
   const windowWidth = useWindowWidth();
   const [navLogo, setNavLogo] = useState(logoWithText);
 
-  const {
-    home,
-    practiceAreas,
-    aboutUs,
-    clientReviews,
-    ourResults,
-    contactUs,
-  } = navbarStrings;
+  const { home, practiceAreas, aboutUs, clientReviews, ourResults, contactUs } =
+    navbarStrings;
 
   useEffect(() => {
     if (windowWidth >= 950) {
@@ -57,15 +47,6 @@ export const NavBar = ({
   return (
     <nav>
       <NavCallToAction theme={theme} language={language} />
-      {backgroundImage !== "" ? (
-        <img
-          src={backgroundImage}
-          className="navbar-background-image z-index-0"
-          style={{ height: backgroundImageSize }}
-        />
-      ) : (
-        <></>
-      )}
       <Navbar expand="md" className={`navbar ${theme}-variant`}>
         <NavbarBrand href="/" className="ms-3">
           <img className="ms-4" src={navLogo} />

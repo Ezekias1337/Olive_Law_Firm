@@ -69,6 +69,32 @@ body {
   position: absolute;
 }
 
+.justify-content-center {
+  justify-content: center;
+  justify-content: left;
+  justify-content: right;
+}
+
+.justify-content-left {
+  justify-content: left;
+}
+
+.justify-content-right {
+  justify-content: right;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.align-items-top {
+  align-items: start;
+}
+
+.align-items-bottom {
+  align-items: end;
+}
+
 .margin-left-and-right {
   margin-left: 11.5%;
   margin-right: 11.5%;

@@ -1,7 +1,6 @@
 // Library Imports
 import { useSelector } from "react-redux/es/exports";
 // Functions, Helpers, Utils and Hooks
-import useDeviceInfo from "../hooks/useDeviceInfo";
 // Interfaces and Types
 import { ReduxStoreState } from "../constants/interfaces/ReduxStoreState";
 // Constants

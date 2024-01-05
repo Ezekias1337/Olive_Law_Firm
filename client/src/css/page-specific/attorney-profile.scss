@@ -1,15 +1,16 @@
 @import "../../css/variables";
 
 .attorney-profile-container {
+  overflow-x: hidden;
+
   .attorney-profile-quote-wrapper {
     background-image: url(../../assets/images/backgrounds/Inside_Court_Room_1.png);
     background-size: cover;
     background-repeat: no-repeat;
     padding: 80px;
-    position: relative;
 
     .text-wrapper {
-      max-width: 60%;
+      width: 50%;
       color: $neutral;
 
       h2 {
@@ -21,11 +22,11 @@
       }
     }
 
-    .attorney-profile-image {
-      max-width: 666px;
-      position: absolute;
-      right: 0;
-      top: 25%;
+    .attorney-image-wrapper {
+      width: 50%;
+      .attorney-profile-image {
+        width: 100%;
+      }
     }
   }
 

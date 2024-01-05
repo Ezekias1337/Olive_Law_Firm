@@ -11,10 +11,16 @@
   }
 
   .image-only-card {
+    height: auto;
+    min-height: 200px;
     background-position: center;
     background-size: 100%;
     transition: background-size 1s;
     border: 1px solid $neutral;
+
+    h2 {
+      font-size: $header-3 !important;
+    }
 
     &:hover {
       background-size: 120%;
@@ -23,6 +29,8 @@
 }
 
 #practice-area-card-wrapper {
+  flex-direction: row;
+  flex-wrap: wrap;
   gap: 15px;
 }
 

@@ -7,9 +7,12 @@ import { Button } from "../../../button/Button";
 // CSS
 import "./practice-areas.scss";
 // Assets and Images
+import personalInjuryImg from "../../../../assets/images/practice-areas/personal-injury.png";
 import workersCompImg from "../../../../assets/images/practice-areas/workers-comp.png";
 import autoAccidentsImg from "../../../../assets/images/practice-areas/auto-accidents.png";
-import spinalAndBrainInjuriesImg from "../../../../assets/images/practice-areas/spinal-and-brain-injuries.png";
+import truckAccidentsImg from "../../../../assets/images/practice-areas/truck-accidents.png";
+import slipAndFallImg from "../../../../assets/images/practice-areas/slip-and-fall.png";
+import dogBitesImg from "../../../../assets/images/practice-areas/dog-bites.png";
 
 type PracticeArea = {
   title: string;
@@ -21,9 +24,23 @@ export const PracticeAreas = ({ language }: { language: string }) => {
   const { practiceAreas, buttonText } = practiceAreasStrings;
 
   const { title } = practiceAreaTitleExport;
-  const { workersComp, autoAccidents, spinalAndBrainInjuries } = practiceAreas;
+  const {
+    personalInjury,
+    workersComp,
+    autoAccidents,
+    truckAccidents,
+    slipAndFall,
+    dogBites,
+  } = practiceAreas;
 
   const arrayOfPracticeAreas: PracticeArea[] = [
+    {
+      title: `${
+        language === "English" ? personalInjury.english : personalInjury.spanish
+      }`,
+      image: personalInjuryImg,
+    },
+
     {
       title: `${
         language === "English" ? workersComp.english : workersComp.spanish
@@ -38,20 +55,28 @@ export const PracticeAreas = ({ language }: { language: string }) => {
     },
     {
       title: `${
-        language === "English"
-          ? spinalAndBrainInjuries.english
-          : spinalAndBrainInjuries.spanish
+        language === "English" ? truckAccidents.english : truckAccidents.spanish
       }`,
-      image: spinalAndBrainInjuriesImg,
+      image: truckAccidentsImg,
+    },
+    {
+      title: `${
+        language === "English" ? slipAndFall.english : slipAndFall.spanish
+      }`,
+      image: slipAndFallImg,
+    },
+    {
+      title: `${language === "English" ? dogBites.english : dogBites.spanish}`,
+      image: dogBitesImg,
     },
   ];
 
   return (
-    <section className="practice-areas padding-left-and-right z-index-1">
+    <section className="practice-areas z-index-1">
       <h2 className="page-title">
         {language === "English" ? title.english : title.spanish}
       </h2>
-      <div id="practice-area-card-wrapper" className="space-around-flex">
+      <div id="practice-area-card-wrapper" className="full-flex">
         {arrayOfPracticeAreas.map((practiceArea) => (
           <Card
             key={practiceArea.title}

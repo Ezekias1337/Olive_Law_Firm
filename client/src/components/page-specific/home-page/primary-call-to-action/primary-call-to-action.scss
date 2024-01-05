@@ -1,16 +1,27 @@
 @import "../../../../css/variables";
 
 .primary-call-to-action {
-  margin-top: 7.5%;
-  margin-bottom: 80px;
+  padding-top: 160px;
+  padding-bottom: 160px;
+  padding-left: 80px;
+  padding-right: 80px;
+  background-image: url("../../../../assets/images/backgrounds/North_Carolina_Courthouse.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: top;
 
   .juan-sanchez-quote {
     font-size: $header-1;
     color: $neutral;
     text-align: center;
   }
-}
 
-.primary-call-to-action-button-wrapper {
-  margin-top: 40px;
+  .primary-call-to-action-button-wrapper {
+    margin-top: 40px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    width: auto;
+  }
 }

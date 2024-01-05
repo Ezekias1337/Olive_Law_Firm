@@ -32,7 +32,7 @@ export const OurAttorneys = ({ language }: { language: string }) => {
   const { title } = ourAttorneys;
 
   return (
-    <section className="our-attorneys padding-left-and-right z-index-1">
+    <section className="our-attorneys z-index-1">
       <div className="our-attorneys-title-container full-flex">
         <h2 className="page-title">
           {language === "English" ? title.english : title.spanish}

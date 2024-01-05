@@ -54,19 +54,6 @@ const CommunityInteraction = () => {
     primitiveBaptistGolf,
   ];
 
-  const arrayOfVideoInfo = [
-    {
-      title:
-        "Lee Olive Talks About The Olive Law Firm's Support for Carolina Family Connections",
-      src: "https://www.youtube.com/embed/5rD9kRY4gR4?si=SkY1W_arCojbjD4z",
-    },
-    {
-      title:
-        "Ritchie Melchor of Carolina Family Connections thanks The Olive Law Firm",
-      src: "https://www.youtube.com/embed/p-xpaUaoFK0?si=l_gWGTfcuOHWq38a",
-    },
-  ];
-
   return (
     <div className="container-fluid community-interaction-container p-0">
       <NavBar theme="dark" adminVariant={false} language={reduxLanguage} />
@@ -90,18 +77,6 @@ const CommunityInteraction = () => {
               buttonCount={0}
               imageSource={interactionItem.image}
               key={interactionItem.title.english}
-            />
-          );
-        })}
-      </div>
-
-      <div className="community-interaction-videos-wrapper display-flex padding-left-and-right">
-        {arrayOfVideoInfo.map((video) => {
-          return (
-            <ClientTestimonial
-              title={video.title}
-              src={video.src}
-              key={video.src}
             />
           );
         })}

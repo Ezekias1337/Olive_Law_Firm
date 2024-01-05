@@ -21,7 +21,8 @@ export const TellYourStory = ({ language }: { language: string }) => {
               ? scheduleConsulation.english
               : scheduleConsulation.spanish
           }
-          variant="neutral"
+          additionalClassNames="animated-button"
+          variant="primary"
           url="/contact-us"
           buttonSize="large"
         />

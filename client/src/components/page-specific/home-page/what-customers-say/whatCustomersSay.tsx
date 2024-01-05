@@ -76,7 +76,7 @@ export const WhatCustomersSay = ({ language }: { language: string }) => {
       rating: 5,
       reviewBody: {
         english:
-          "I cannot say enough about how happy we are with The Olive Law Firm. Their entire staff was supportive, professional, and courteous. Mr. Sanchez prepared us for every step of the process in advance. There were no surprises. Please don’t hesitate to utilize their services if the opportunity arises for you. Workman’s comp cases can be difficult to deal with. Having experienced, expert representation helps. Thank you to The Olive Law Firm and we really appreciate you, Juan Sanchez.",
+          "I cannot say enough about how happy we are with The Olive Law Firm. Their entire staff was supportive, professional, and courteous. Mr. Sanchez prepared us for every step of the process in advance. There were no surprises. Please don’t hesitate to utilize their services if the opportunity arises for you. Workers' comp cases can be difficult to deal with. Having experienced, expert representation helps. Thank you to The Olive Law Firm and we really appreciate you, Juan Sanchez.",
         spanish:
           "No puedo decir lo suficiente sobre lo felices que estamos con The Olive Law Firm. Todo su personal fue solidario, profesional y cortés. El Sr. Sánchez nos preparó de antemano para cada paso del proceso. No hubo sorpresas. No dude en utilizar sus servicios si se le presenta la oportunidad. Los casos de compensación laboral pueden ser difíciles de tratar. Tener una representación experta y con experiencia ayuda. Gracias a The Olive Law Firm y realmente te apreciamos, Juan Sánchez.",
       },

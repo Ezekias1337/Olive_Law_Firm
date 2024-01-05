@@ -80,7 +80,7 @@ export const practiceAreasStrings: PracticeAreasStrings = {
     },
 
     workersComp: {
-      english: "Workers' Comp",
+      english: "Workers' Compensation",
       spanish: "Compensación de Trabajadores",
     },
 

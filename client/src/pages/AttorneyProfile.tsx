@@ -72,7 +72,7 @@ const AttorneyProfile = () => {
     <div className="container-fluid attorney-profile-container p-0">
       <NavBar theme="dark" adminVariant={false} language={reduxLanguage} />
 
-      <div className="attorney-profile-quote-wrapper dark-image-overlay">
+      <div className="attorney-profile-quote-wrapper dark-image-overlay display-flex align-items-center">
         <div className="text-wrapper">
           <h2>{lawyerInfo.name}</h2>
           <h4>
@@ -81,7 +81,9 @@ const AttorneyProfile = () => {
               : lawyerInfo.quote.spanish}
           </h4>
         </div>
-        <img className="attorney-profile-image" src={lawyerInfo.image} />
+        <div className="attorney-image-wrapper">
+          <img className="attorney-profile-image" src={lawyerInfo.image} />
+        </div>
       </div>
 
       <div className="attorney-profile-biography-wrapper">

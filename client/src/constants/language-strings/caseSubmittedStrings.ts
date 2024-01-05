@@ -23,9 +23,9 @@ export const caseSubmittedStrings: CaseSubmittedStrings = {
 
   caseSubmissionMsg: {
     english:
-      "We have ​received the information you provided. Our team will review the facts of your case and if you have a valid case we will contact you to start the process!",
+      "Our team will review your case and you should receive a response shortly.",
     spanish:
-      "Hemos recibido la información que nos proporcionaste. ¡Nuestro equipo revisará los hechos de su caso y si tiene un caso válido nos comunicaremos con usted para iniciar el proceso!",
+      "Nuestro equipo revisará su caso y debería recibir una respuesta en breve.",
   },
 
   buttonText: {

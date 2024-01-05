@@ -1,7 +1,6 @@
 // Library Imports
 import { useSelector } from "react-redux/es/exports";
 // Functions, Helpers, Utils and Hooks
-import useDeviceInfo from "../hooks/useDeviceInfo";
 // Interfaces and Types
 import { ReduxStoreState } from "../constants/interfaces/ReduxStoreState";
 // Constants
@@ -142,7 +141,7 @@ const PracticeAreas = () => {
       <NavBar theme="dark" adminVariant={false} language={reduxLanguage} />
       <PageHeader language={reduxLanguage} title={pageTitle} includeBanner />
 
-      <div className="practice-areas-cards-wrapper display-flex padding-left-and-right">
+      <div className="practice-areas-cards-wrapper display-flex justify-content-center">
         {arrayOfPracticeAreas.map((practiceArea) => (
           <Card
             key={practiceArea.title}

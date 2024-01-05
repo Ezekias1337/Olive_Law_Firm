@@ -1,7 +1,6 @@
 // Library Imports
 import { useSelector } from "react-redux/es/exports";
 // Functions, Helpers, Utils and Hooks
-import useDeviceInfo from "../hooks/useDeviceInfo";
 // Interfaces and Types
 import { ReduxStoreState } from "../constants/interfaces/ReduxStoreState";
 // Constants
@@ -36,6 +35,7 @@ const AboutUs = () => {
   const { pageTitle, intro, ourCerifications, ourPhilosophy } = aboutUsStrings;
 
   const {
+    title: introTitle,
     paragraph1: introParagraph1,
     paragraph2: introParagraph2,
     paragraph3: introParagraph3,
@@ -52,9 +52,15 @@ const AboutUs = () => {
   return (
     <div className="container-fluid about-us-container p-0">
       <NavBar theme="dark" adminVariant={false} language={reduxLanguage} />
-      <PageHeader language={reduxLanguage} title={pageTitle} includeBanner/>
+      <PageHeader language={reduxLanguage} title={pageTitle} includeBanner />
 
       <div className="about-us-intro dark-image-overlay padding-left-and-right">
+        <h2 className="full-flex">
+          {reduxLanguage === "English"
+            ? introTitle.english
+            : introTitle.spanish}
+        </h2>
+
         <p className="about-us-paragraph">
           {reduxLanguage === "English"
             ? introParagraph1.english

@@ -2,21 +2,28 @@
 
 .practice-areas-container {
   .page-title {
-    padding-bottom: 80px;
-    margin-bottom: 40px !important;
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
 
   .practice-areas-cards-wrapper {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 10px;
-    margin-bottom: 80px;
+    margin-top: 40px;
+    margin-bottom: 40px;
   }
 
   .card.image-only-card {
+    height: auto;
+    min-height: 255px;
     background-position: center;
     background-size: 100%;
     transition: background-size 1s;
+
+    h2 {
+      font-size: $header-3 !important;
+    }
 
     &:hover {
       background-size: 120%;

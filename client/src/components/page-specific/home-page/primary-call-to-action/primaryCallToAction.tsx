@@ -16,14 +16,14 @@ export const PrimaryCallToAction = ({ language }: { language: string }) => {
   const { part1, part2 } = juanSanchezQuote;
 
   return (
-    <div className="primary-call-to-action margin-left-and-right z-index-1 position-relative">
+    <div className="primary-call-to-action z-index-1 position-relative">
       <h1 className="juan-sanchez-quote bold-text">
         {language === "English" ? part1.english : part1.spanish}
         <br></br>
         <br></br>
         {language === "English" ? part2.english : part2.spanish}
       </h1>
-      <div className="primary-call-to-action-button-wrapper space-around-flex">
+      <div className="primary-call-to-action-button-wrapper display-flex">
         <Button
           variant="primary"
           text={
@@ -31,8 +31,9 @@ export const PrimaryCallToAction = ({ language }: { language: string }) => {
               ? scheduleConsulation.english
               : scheduleConsulation.spanish
           }
+          additionalClassNames="animated-button"
           url="/contact-us"
-          buttonSize="large"
+          buttonSize="medium"
         />
         <Button
           variant="primary"
@@ -42,7 +43,7 @@ export const PrimaryCallToAction = ({ language }: { language: string }) => {
               : seeGoogleReviews.spanish
           }
           url="/client-reviews"
-          buttonSize="large"
+          buttonSize="medium"
         />
         <Button
           variant="primary"
@@ -52,7 +53,7 @@ export const PrimaryCallToAction = ({ language }: { language: string }) => {
               : seeOurResults.spanish
           }
           url="/our-results"
-          buttonSize="large"
+          buttonSize="medium"
         />
       </div>
     </div>

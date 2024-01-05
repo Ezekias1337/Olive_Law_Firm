@@ -45,21 +45,40 @@
   background-color: $light-gray;
 }
 
-.footer-navigation a,
-.footer-copywrite-disclaimer-wrapper a {
+.footer-navigation a {
   color: $primary-color;
   text-decoration: none;
   font-size: 18px;
+
+  .footer-navigation-underline {
+    background-color: $secondary-color;
+  }
+}
+
+.footer-copywrite-disclaimer-wrapper a {
+  color: $neutral;
+  text-decoration: none;
+  font-size: 18px;
+
+  .footer-navigation-underline {
+    background-color: $neutral;
+  }
 }
 
 .footer-navigation a:hover,
 .footer-copywrite-disclaimer-wrapper a:hover {
-  color: $neutral;
-
   .footer-navigation-underline {
     width: 100%;
     transition: 0.3s;
   }
+}
+
+.footer-navigation a:hover {
+  color: $secondary-color;
+}
+
+.footer-copywrite-disclaimer-wrapper a:hover {
+  color: $light-gray;
 }
 
 .footer-navigation-header {
@@ -69,10 +88,13 @@
 }
 
 .footer-navigation-underline {
-  background-color: $neutral;
   height: 2.5px;
   width: 0%;
   transition: 0.3s;
+}
+
+.copywrite-container {
+  align-items: center;
 }
 
 .copywrite-disclaimer {
