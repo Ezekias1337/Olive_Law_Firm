@@ -16,10 +16,6 @@ import "../css/page-specific/community-interaction.scss";
 import SalvationArmy from "../assets/images/community-interaction/The_Salvation_Army.svg.png";
 import CharlotteRescueMission from "../assets/images/community-interaction/Charlotte_Rescue_Mission.png";
 import ThompsonFamilyFocus from "../assets/images/community-interaction/Thompson_Child_And_Family_Focus.jpg";
-import HumaneSocietyOfCharlotte from "../assets/images/community-interaction/Humane_Society_Of_Charlotte.png";
-import CarolinaFamilyConnections from "../assets/images/community-interaction/Carolina_Family_Connections.jpeg";
-import BaseballTeam from "../assets/images/community-interaction/Baseball_Team.webp";
-import PrimitiveBaptistGolf from "../assets/images/community-interaction/Primitive_Baptist_Golf.png";
 
 const CommunityInteraction = () => {
   const reduxLanguage = useSelector(
@@ -28,30 +24,25 @@ const CommunityInteraction = () => {
 
   const {
     pageTitle,
+    givingBackToCommunity,
     salvationArmy,
     charlotteRescueMission,
     thompsonFamilyFocus,
-    humaneSocietyCharlotte,
-    carolinaFamily,
-    youthAthletics,
-    primitiveBaptistGolf,
   } = communityInteractionStrings;
+
+  const {
+    part1: givingBackToCommunityPart1,
+    part2: givingBackToCommunityPart2,
+  } = givingBackToCommunity;
 
   salvationArmy.image = SalvationArmy;
   charlotteRescueMission.image = CharlotteRescueMission;
   thompsonFamilyFocus.image = ThompsonFamilyFocus;
-  humaneSocietyCharlotte.image = HumaneSocietyOfCharlotte;
-  carolinaFamily.image = CarolinaFamilyConnections;
-  youthAthletics.image = BaseballTeam;
-  primitiveBaptistGolf.image = PrimitiveBaptistGolf;
 
   const arrayOfInteractionInfo = [
     salvationArmy,
     charlotteRescueMission,
     thompsonFamilyFocus,
-    carolinaFamily,
-    youthAthletics,
-    primitiveBaptistGolf,
   ];
 
   return (
@@ -59,7 +50,21 @@ const CommunityInteraction = () => {
       <NavBar theme="dark" adminVariant={false} language={reduxLanguage} />
       <PageHeader language={reduxLanguage} title={pageTitle} includeBanner />
 
-      <div className="community-interaction-info-wrapper display-flex padding-left-and-right">
+      <div className="giving-back-to-community padding-left-and-right">
+        <h2>
+          {reduxLanguage === "English"
+            ? givingBackToCommunityPart1.english
+            : givingBackToCommunityPart1.spanish}
+        </h2>
+
+        <h2>
+          {reduxLanguage === "English"
+            ? givingBackToCommunityPart2.english
+            : givingBackToCommunityPart2.spanish}
+        </h2>
+      </div>
+
+      <div className="community-interaction-info-wrapper display-flex justify-content-center dark-image-overlay">
         {arrayOfInteractionInfo.map((interactionItem) => {
           return (
             <Card
@@ -80,6 +85,7 @@ const CommunityInteraction = () => {
             />
           );
         })}
+        d
       </div>
 
       <Footer language={reduxLanguage} />

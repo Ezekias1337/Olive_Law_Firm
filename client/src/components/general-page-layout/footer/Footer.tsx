@@ -139,7 +139,7 @@ export const Footer = ({ language }: { language: string }) => {
                 ? communityInteraction.english
                 : communityInteraction.spanish
             }
-            url="/community-interaction"
+            url="/community-involvement"
             openInNewTab={false}
           />
         </div>

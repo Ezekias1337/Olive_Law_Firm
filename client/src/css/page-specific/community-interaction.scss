@@ -3,6 +3,17 @@
 .community-interaction-container {
   .page-title {
     padding-bottom: 40px;
+    padding-top: 40px;
+  }
+
+  .giving-back-to-community {
+    color: $primary-color;
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    h2:first-of-type {
+      padding-bottom: 20px;
+    }
   }
 
   .community-interaction-info-wrapper {
@@ -16,5 +27,9 @@
 
     padding-top: 40px;
     padding-bottom: 40px;
+
+    .image-and-body-card {
+      height: auto;
+    }
   }
 }

@@ -122,8 +122,8 @@ export const footerStrings: FooterStrings = {
       spanish: "FAQ",
     },
     communityInteraction: {
-      english: "Community Interaction",
-      spanish: "Interacción con la Comunidad",
+      english: "Community Involvement",
+      spanish: "Participación de la Comunidad",
     },
   },
 

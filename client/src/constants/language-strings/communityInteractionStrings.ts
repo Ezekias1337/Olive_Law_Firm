@@ -4,6 +4,17 @@ interface CommunityInteractionStrings {
     spanish: string;
   };
 
+  givingBackToCommunity: {
+    part1: {
+      english: string;
+      spanish: string;
+    };
+    part2: {
+      english: string;
+      spanish: string;
+    };
+  };
+
   salvationArmy: {
     title: {
       english: string;
@@ -39,60 +50,25 @@ interface CommunityInteractionStrings {
     };
     image: string;
   };
-
-  humaneSocietyCharlotte: {
-    title: {
-      english: string;
-      spanish: string;
-    };
-    body: {
-      english: string;
-      spanish: string;
-    };
-    image: string;
-  };
-
-  primitiveBaptistGolf: {
-    title: {
-      english: string;
-      spanish: string;
-    };
-    body: {
-      english: string;
-      spanish: string;
-    };
-    image: string;
-  };
-
-  carolinaFamily: {
-    title: {
-      english: string;
-      spanish: string;
-    };
-    body: {
-      english: string;
-      spanish: string;
-    };
-    image: string;
-  };
-
-  youthAthletics: {
-    title: {
-      english: string;
-      spanish: string;
-    };
-    body: {
-      english: string;
-      spanish: string;
-    };
-    image: string;
-  };
 }
 
 export const communityInteractionStrings: CommunityInteractionStrings = {
   pageTitle: {
-    english: "Community Interaction",
-    spanish: "Interacción Comunitaria",
+    english: "Community Involvement",
+    spanish: "Participación de la Comunidad",
+  },
+
+  givingBackToCommunity: {
+    part1: {
+      english:
+        "At Olive Sanchez & Associates, we pride ourselves in giving back to our community.",
+      spanish:
+        "En Olive Sanchez & Associates, nos enorgullecemos de contribuir a nuestra comunidad.",
+    },
+    part2: {
+      english: "We proudly support the following:",
+      spanish: "Estamos orgullosos de apoyar lo siguiente:",
+    },
   },
 
   salvationArmy: {
@@ -133,62 +109,6 @@ export const communityInteractionStrings: CommunityInteractionStrings = {
         "Members of Olive Sanchez & Associates have volunteered at Thompson Child and Family Focus, which provides comprehensive education, treatment and care for children in need.",
       spanish:
         "Los miembros de Olive Sanchez & Associates han sido voluntarios en Thompson Child and Family Focus, que brinda educación, tratamiento y atención integrales a niños necesitados.",
-    },
-    image: "",
-  },
-
-  humaneSocietyCharlotte: {
-    title: {
-      english: "Humane Society Charlotte",
-      spanish: "Sociedad Humanitaria Charlotte",
-    },
-    body: {
-      english:
-        "Olive Sanchez & Associates also supports the Humane Society of Charlotte throughout the year in a variety of fundraising opportunities.",
-      spanish:
-        "Olive Sanchez & Associates también apoya a Humane Society of Charlotte durante todo el año en una variedad de oportunidades de recaudación de fondos.",
-    },
-    image: "",
-  },
-
-  primitiveBaptistGolf: {
-    title: {
-      english: "Primitive Baptist Golf",
-      spanish: "Golf Bautista Primitivo",
-    },
-    body: {
-      english:
-        "Olive Sanchez & Associates is also a yearly sponsor for the Primitive Baptist Golf Tournament.",
-      spanish:
-        "Olive Sanchez & Associates también es patrocinador anual del Torneo de Golf Primitive Baptist.",
-    },
-    image: "",
-  },
-
-  carolinaFamily: {
-    title: {
-      english: "Carolina Family",
-      spanish: "Familia Carolina",
-    },
-    body: {
-      english:
-        "Olive Sanchez & Associates supports the nonprofit Carolina Family Connections and their foster families by donating book bags for all their school-age children.",
-      spanish:
-        "Olive Sanchez & Associates apoya a la organización sin fines de lucro Carolina Family Connections y sus familias de acogida donando mochilas para todos sus niños en edad escolar.",
-    },
-    image: "",
-  },
-
-  youthAthletics: {
-    title: {
-      english: "Youth Athletics",
-      spanish: "Atletismo Juvenil",
-    },
-    body: {
-      english:
-        "Olive Sanchez & Associates looks for ways to support community youth in athletics, and have sponsored University East Little League and Jumping Dreams Double Dutch.",
-      spanish:
-        "Olive Sanchez & Associates busca formas de apoyar a los jóvenes de la comunidad en el atletismo y ha patrocinado a University East Little League y Jumping Dreams Double Dutch.",
     },
     image: "",
   },
