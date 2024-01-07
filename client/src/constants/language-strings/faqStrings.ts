@@ -94,8 +94,8 @@ interface FaqStrings {
 
 export const faqStrings: FaqStrings = {
   pageTitle: {
-    english: "FAQs",
-    spanish: "FAQs",
+    english: "Frequently Asked Questions",
+    spanish: "Preguntas Frecuentes",
   },
 
   disclaimer1: {
