@@ -26,8 +26,6 @@ import { PageHeader } from "../components/general-page-layout/page-header/PageHe
 import { Form } from "../components/form/Form";
 import { GeneralLink } from "../components/general-page-layout/link/GeneralLink";
 import { Footer } from "../components/general-page-layout/footer/Footer";
-// Assets and Images
-import northCarolinaCourthouse from "../assets/images/backgrounds/North_Carolina_Courthouse.png";
 // CSS
 import "../css/page-specific/login.scss";
 
@@ -92,53 +90,49 @@ const Login = () => {
 
   return (
     <div className="container-fluid login-container p-0">
-      <NavBar
-        theme="light"
-        adminVariant={false}
-        language={reduxLanguage}
-        backgroundImage={northCarolinaCourthouse}
-        backgroundImageSize="899px"
-      />
+      <NavBar theme="dark" adminVariant={false} language={reduxLanguage} />
       <PageHeader
         language={reduxLanguage}
         title={pageTitle}
         additionalClassNames="position-relative"
+        includeBanner
       />
 
-      <div className="login-form-wrapper padding-left-and-right">
-        <Form
-          language={reduxLanguage}
-          formTheme="dark"
-          inputFields={arrayOfInputFields}
-          apiEndpoint="/api/users/login"
-          formId="admin-login"
-          setStateHook={setFormInputData}
-          setErrorHook={setFormErrorData}
-          formState={formInputData}
-          formErrors={formErrorData}
-          button1Text={
-            reduxLanguage === "English"
-              ? buttonText.english
-              : buttonText.spanish
-          }
-          button1Variant="neutral"
-          formBackgroundIsImage={true}
-          buttonSize="large"
-          redirectUrl="/admin-home"
-        />
-
-        <div className="forgot-password-wrapper container">
-          <GeneralLink
-            text={
+      <div className="login-form-wrapper display-flex justify-content-center">
+        <div className="input-field-wrapper">
+          <Form
+            language={reduxLanguage}
+            formTheme="dark"
+            inputFields={arrayOfInputFields}
+            apiEndpoint="/api/users/login"
+            formId="admin-login"
+            setStateHook={setFormInputData}
+            setErrorHook={setFormErrorData}
+            formState={formInputData}
+            formErrors={formErrorData}
+            button1Text={
               reduxLanguage === "English"
-                ? forgotPassword.english
-                : forgotPassword.spanish
+                ? buttonText.english
+                : buttonText.spanish
             }
-            url="/forgot-password"
-            theme="light"
-            openInNewTab={false}
-            additionalClassNames="position-relative"
+            button1Variant="neutral"
+            formBackgroundIsImage={true}
+            buttonSize="large"
+            redirectUrl="/admin-home"
           />
+          <div className="forgot-password-wrapper container">
+            <GeneralLink
+              text={
+                reduxLanguage === "English"
+                  ? forgotPassword.english
+                  : forgotPassword.spanish
+              }
+              url="/forgot-password"
+              theme="light"
+              openInNewTab={false}
+              additionalClassNames="position-relative"
+            />
+          </div>
         </div>
       </div>
 

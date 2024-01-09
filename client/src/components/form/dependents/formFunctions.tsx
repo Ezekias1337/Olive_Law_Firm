@@ -124,9 +124,7 @@ export const handleSubmit = async (
         formStateWithDefaultValues[camelCasifyString(field.name)] =
           field.defaultValue;
       } else {
-        errors[
-          camelCasifyString(field.name)
-        ] = `${field.name} is required`;
+        errors[camelCasifyString(field.name)] = `${field.name} is required`;
       }
     } /* else if (
         field.validation &&
@@ -140,20 +138,25 @@ export const handleSubmit = async (
 
   if (Object.keys(errors).length === 0 && setPostingToServerInProgress) {
     setPostingToServerInProgress(true);
-    const response = await fetchData(apiEndpoint, {
-      method: method,
-      headers: headers,
-      credentials: "include",
-      body: JSON.stringify(formStateWithDefaultValues),
-    });
+    try {
+      const response = await fetchData(apiEndpoint, {
+        method: method,
+        headers: headers,
+        credentials: "include",
+        body: JSON.stringify(formStateWithDefaultValues),
+      });
 
-    // Assuming the login is successful based on the response status
-    if (response.ok && redirectUrl && setSubmissionSuccessful) {
-      // Redirect to the specified URL or a default URL after a successful login
-      setSubmissionSuccessful(true);
+      // Assuming the login is successful based on the response status
+      if (response.ok && setSubmissionSuccessful) {
+        // Redirect to the specified URL or a default URL after a successful login
+        setSubmissionSuccessful(true);
+        return response.json();
+      }
+    } catch (error) {
+      setPostingToServerInProgress(false);
+      errors["password"] = "Failed to login, check your email and password.";
+      setErrorHook(errors);
     }
-
-    return response.json();
   }
 };
 

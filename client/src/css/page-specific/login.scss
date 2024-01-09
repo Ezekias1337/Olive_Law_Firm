@@ -2,13 +2,16 @@
 
 .login-container {
   .page-title {
-    color: $neutral;
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
 
   .login-form-wrapper {
     margin: 0 auto;
-    margin-top: 40px;
-    width: 100%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    flex-wrap: wrap;
+    background-image: url("../../assets/images/backgrounds/North_Carolina_Courthouse.png");
   }
 
   #admin-login-button-1 {
@@ -28,31 +31,31 @@
 }
 
 @media (min-width: 576px) {
-  .login-form-wrapper {
+  .input-field-wrapper {
     max-width: 80%;
   }
 }
 
 @media (min-width: 768px) {
-  .login-form-wrapper {
+  .input-field-wrapper {
     max-width: 75%;
   }
 }
 
 @media (min-width: 992px) {
-  .login-form-wrapper {
+  .input-field-wrapper {
     max-width: 70%;
   }
 }
 
 @media (min-width: 1200px) {
 }
-.login-form-wrapper {
+.input-field-wrapper {
   max-width: 65%;
 }
 
 @media (min-width: 1400px) {
-  .login-form-wrapper {
+  .input-field-wrapper {
     max-width: 60%;
   }
 }
