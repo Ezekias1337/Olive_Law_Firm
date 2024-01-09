@@ -18,6 +18,7 @@ import Login from "./pages/Login";
 import AdminHome from "./pages/AdminHome";
 import ManageEmployees from "./pages/ManageEmployees";
 import ViewNewCases from "./pages/ViewNewCases";
+import ViewAllCases from "./pages/ViewAllCases"
 //404 Page
 import PageNotFound from "./pages/PageNotFound";
 // Link scroll fix
@@ -57,7 +58,7 @@ const App = () => {
         <Route path="/manage-employees" element={<ManageEmployees />}></Route>
         <Route path="/view-new-cases" element={<ViewNewCases />}></Route>
         <Route path="/analytics-dashboard" element={<Home />}></Route>
-        <Route path="/case-dashboard" element={<Home />}></Route>
+        <Route path="/view-all-cases" element={<ViewAllCases />}></Route>
         {/* 404 */}
         <Route path="*" element={<PageNotFound />}></Route>
       </Routes>

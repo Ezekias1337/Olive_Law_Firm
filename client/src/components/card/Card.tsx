@@ -83,9 +83,9 @@ export const Card: FC<CardProps> = ({
         <h3>{headerText}</h3>
         {bodyText ? <p>{bodyText}</p> : <></>}
         <div className="card-button-wrapper display-flex">
-          {buttonCount >= 1 && button1Text && button1OnClick ? (
+          {buttonCount >= 1 && button1OnClick ? (
             <Button
-              text={button1Text}
+              text={button1Text !== undefined ? button1Text : undefined}
               variant="neutral"
               icon={button1Icon ? button1Icon : undefined}
               leftIcon={button1Icon ? true : false}
@@ -95,9 +95,9 @@ export const Card: FC<CardProps> = ({
           ) : (
             <></>
           )}
-          {buttonCount === 2 && button2Text && button2OnClick ? (
+          {buttonCount === 2 && button2OnClick ? (
             <Button
-              text={button2Text}
+              text={button2Text !== undefined ? button2Text : undefined}
               variant="error"
               icon={button2Icon ? button2Icon : undefined}
               leftIcon={button2Icon ? true : false}

@@ -25,6 +25,8 @@ import { PageHeader } from "../components/general-page-layout/page-header/PageHe
 import { ViewCaseCard } from "../components/page-specific/view-case/ViewCaseCard";
 import { Button } from "../components/button/Button";
 import { Footer } from "../components/general-page-layout/footer/Footer";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faWarning } from "@fortawesome/free-solid-svg-icons";
 // CSS
 import "../css/page-specific/cases.scss";
 
@@ -46,6 +48,7 @@ const ViewNewCases = () => {
     useState(false);
   const [displayedCase, setDisplayedCase] = useState<CaseReturnedFromDB>();
   const [mockCaseApproval, setMockCaseApproval] = useState(false);
+  const [fetchErrorMessage, setFetchErrorMessage] = useState<string>();
 
   useEffect(() => {
     const fetchPendingCases = async () => {
@@ -64,7 +67,10 @@ const ViewNewCases = () => {
           updatePendingCases(newData);
         }
       } catch (error) {
-        console.error("Error fetching employee data:", error);
+        console.error("Error fetching cases data:", error);
+        setFetchErrorMessage(
+          "Error fetching cases data, ensure you are logged in and try refreshing the page."
+        );
       }
     };
 
@@ -82,9 +88,7 @@ const ViewNewCases = () => {
   }, [pendingCases]);
 
   useEffect(() => {
-    const socketServerURL = `${ORIGIN_URL_BASE}:${BACKEND_PORT}`; // Set your server URL here
-
-    // Establish socket connection
+    const socketServerURL = `${ORIGIN_URL_BASE}:${BACKEND_PORT}`;
     const socket: Socket<ServerToClientEvents, ClientToServerEvents> =
       io(socketServerURL);
 
@@ -101,7 +105,6 @@ const ViewNewCases = () => {
       setDisplayedCase(data);
     });
 
-    // Cleanup the socket connection when the component unmounts
     return () => {
       socket.disconnect();
     };
@@ -121,10 +124,18 @@ const ViewNewCases = () => {
 
       <div className="view-new-case-wrapper padding-left-and-right">
         {pendingCases.length === 0 && !displayedCase ? (
-          <h2>
-            There are currently no pending cases. You will hear an alert noise
-            when one is received.
-          </h2>
+          fetchErrorMessage !== undefined ? (
+            <div className="failed-to-fetch-warning">
+              <h2>
+                <FontAwesomeIcon icon={faWarning} /> {fetchErrorMessage}
+              </h2>
+            </div>
+          ) : (
+            <h2>
+              There are currently no pending cases. You will hear an alert noise
+              when one is received.
+            </h2>
+          )
         ) : (
           <div className="pending-case-wrapper">
             <div className="pending-case-card-wrapper full-flex">

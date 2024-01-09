@@ -7,7 +7,24 @@
     padding-bottom: 40px;
   }
 
+  .admin-home-greeting-wrapper {
+    color: $primary-color;
+  }
+
   .admin-home-options-wrapper {
-    
+    margin-top: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+
+    .button.admin-menu-button {
+      width: 100%;
+    }
+  }
+
+  .failed-to-fetch-warning {
+    color: $error;
+    background-color: $light-gray;
+    padding: 20px;
+    margin-bottom: 40px;
   }
 }

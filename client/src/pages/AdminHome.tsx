@@ -17,7 +17,6 @@ import {
   emailPattern,
   textAndNumbersAndSpecialCharsNoSpacesPattern,
 } from "../../../shared/constants/regexPatterns";
-
 // Interfaces and Types
 import { ReduxStoreState } from "../constants/interfaces/ReduxStoreState";
 import { UserReturnedFromDB } from "../constants/interfaces/user";
@@ -32,11 +31,13 @@ import { Loader } from "../components/general-page-layout/loader/Loader";
 import { Button } from "../components/button/Button";
 import { Form } from "../components/form/Form";
 import { Footer } from "../components/general-page-layout/footer/Footer";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFile,
   faClockRotateLeft,
   faUser,
   faUsers,
+  faWarning,
 } from "@fortawesome/free-solid-svg-icons";
 // CSS
 import "../css/page-specific/admin-home.scss";
@@ -65,6 +66,7 @@ const AdminHome = () => {
   const [editAccountModalOpen, setEditAccountModalOpen] = useState(false);
   const [formInputData, setFormInputData] = useState<FormState>({});
   const [formErrorData, setFormErrorData] = useState<FormState>({});
+  const [fetchErrorMessage, setFetchErrorMessage] = useState<string>();
 
   const toggleEditAccountModal = () =>
     setEditAccountModalOpen(!editAccountModalOpen);
@@ -76,7 +78,6 @@ const AdminHome = () => {
       icon: faFile,
       leftIcon: true,
       url: "/view-new-cases",
-      buttonSize: "medium",
     },
     {
       text: "View Past Cases",
@@ -84,14 +85,12 @@ const AdminHome = () => {
       icon: faClockRotateLeft,
       leftIcon: true,
       url: "/view-past-cases",
-      buttonSize: "large",
     },
     {
       text: "Edit Account",
       variant: "secondary",
       icon: faUser,
       leftIcon: true,
-      buttonSize: "large",
       onClick: toggleEditAccountModal,
     },
   ]);
@@ -220,6 +219,9 @@ const AdminHome = () => {
         setUserData(newData);
       } catch (error) {
         console.error("Error fetching employee data:", error);
+        setFetchErrorMessage(
+          "Error fetching employee data, try refreshing the page."
+        );
       }
 
       toggleEditAccountModal();
@@ -238,6 +240,9 @@ const AdminHome = () => {
         }
       } catch (error) {
         console.error("Error fetching user data:", error);
+        setFetchErrorMessage(
+          "Error fetching user data, try refreshing the page."
+        );
       }
     };
 
@@ -268,7 +273,6 @@ const AdminHome = () => {
         icon: faUsers,
         leftIcon: true,
         url: "/manage-employees",
-        buttonSize: "large",
       });
       setMenuOptionsToDisplay(tempMenuArray);
     }
@@ -287,16 +291,22 @@ const AdminHome = () => {
       />
 
       <div className="admin-home-options-wrapper padding-left-and-right">
-        {!userData ? (
+        {fetchErrorMessage !== undefined ? (
+          <div className="failed-to-fetch-warning">
+            <h2>
+              <FontAwesomeIcon icon={faWarning} /> {fetchErrorMessage}
+            </h2>
+          </div>
+        ) : !userData ? (
           <Loader variant="primary" />
         ) : (
           <>
-            <div className="">
-              <h2>Welcome, {userData.name}</h2>
-              <h5>You have priviledge level of {priviledgeLevel}</h5>
+            <div className="admin-home-greeting-wrapper">
+              <h2>Welcome, {userData?.name}</h2>
+              <h5>You have the priviledge level of {priviledgeLevel}</h5>
             </div>
 
-            <div className="">
+            <div className="admin-home-options-wrapper display-flex justify-content-center">
               {menuOptionsToDisplay.map((button, index) => {
                 return (
                   <Button
@@ -304,8 +314,9 @@ const AdminHome = () => {
                     variant={button.variant}
                     icon={button.icon}
                     leftIcon={button.leftIcon}
-                    buttonSize="medium"
+                    buttonSize="large"
                     url={button.url}
+                    additionalClassNames="admin-menu-button"
                     onClickHandler={
                       button.onClick !== undefined ? button.onClick : undefined
                     }

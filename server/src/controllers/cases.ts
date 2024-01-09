@@ -18,7 +18,14 @@ interface caseCreationBody {
 
 export const getCase: RequestHandler = async (req, res, next) => {
   try {
-    const caseFromDB = await CaseModel.findById(req.body.caseId).exec();
+    const caseFromDB = await CaseModel.findById(req.params.caseId).exec();
+
+    if (!caseFromDB) {
+      return res
+        .status(404)
+        .json({ error: "Case with the given ID doesn't exist" });
+    }
+
     res.status(200).json(caseFromDB);
   } catch (error) {
     next(error);
@@ -28,6 +35,14 @@ export const getCase: RequestHandler = async (req, res, next) => {
 export const getAllCases: RequestHandler = async (req, res, next) => {
   try {
     const arrayOfCases = await CaseModel.find().exec();
+
+    if (!arrayOfCases) {
+      return res.status(404).json({
+        error:
+          "Unable to fetch cases from the Database, verify server is running properly.",
+      });
+    }
+
     res.status(200).json(arrayOfCases);
   } catch (error) {
     next(error);

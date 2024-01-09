@@ -65,7 +65,7 @@ export const Button: FC<ButtonProps> = ({
         {loading === true ? (
           <Loader variant={loaderVariant} />
         ) : (
-          <b className="button-text">{text}</b>
+          <b className="button-text">{text !== undefined ? text : undefined}</b>
         )}
         {rightIcon && icon && (
           <FontAwesomeIcon icon={icon} className="right-icon" />

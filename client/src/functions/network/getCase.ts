@@ -4,13 +4,12 @@ import { CaseReturnedFromDB } from "../../constants/interfaces/case";
 import fetchData from "./fetchData";
 
 const getCase = async (caseId: string): Promise<CaseReturnedFromDB> => {
-  const response = await fetchData("/api/cases/get-case", {
-    method: "POST",
+  const response = await fetchData(`/api/cases/get-case/${caseId}`, {
+    method: "GET",
     headers: {
       "Content-Type": "application/json",
     },
     credentials: "include",
-    body: JSON.stringify({ caseId: caseId }),
   });
   return response.json();
 };

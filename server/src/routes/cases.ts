@@ -4,7 +4,7 @@ import * as CaseController from "../controllers/cases";
 const router = express.Router();
 
 // GET requests
-router.get("/get-case", CaseController.getCase);
+router.get("/get-case/:caseId", CaseController.getCase);
 router.get("/get-all-cases", CaseController.getAllCases);
 router.get("/get-pending-cases", CaseController.getPendingCases);
 // POST requests

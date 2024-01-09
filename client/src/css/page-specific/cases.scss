@@ -1,5 +1,12 @@
 @import "../../css/variables";
 
+.failed-to-fetch-warning {
+  color: $error;
+  background-color: $light-gray;
+  padding: 20px;
+  margin-bottom: 40px;
+}
+
 .view-new-cases-container {
   h1.page-title {
     margin-bottom: 40px !important;
@@ -24,6 +31,39 @@
         margin-top: 20px;
         padding: 20px;
       }
+    }
+  }
+}
+
+.view-all-cases-container {
+  h1.page-title {
+    margin-bottom: 40px !important;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .view-all-cases-filters-wrapper  {
+    padding-bottom: 20px;
+  }
+  
+  .view-all-cases-wrapper {
+    gap: 10px;
+    padding-bottom: 40px;
+    flex-wrap: wrap;
+
+    .button {
+      display: flex;
+      justify-content: center;
+    }
+
+    .button > svg.left-icon:first-child {
+      padding-right: 0px;
+    }
+  }
+  
+  .case-filtering-section {
+    a.page-link {
+      height: 100%;
     }
   }
 }
