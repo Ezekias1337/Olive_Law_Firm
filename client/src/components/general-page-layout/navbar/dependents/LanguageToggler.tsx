@@ -15,33 +15,8 @@ import { ReduxStoreState } from "../../../../constants/interfaces/ReduxStoreStat
 import "../../../../css/partials/_input-themes.scss";
 import "../../../../css/partials/_switch-input.scss";
 
+
 export const LanguageToggler = () => {
-  const setEnglish = () => {
-    setLanguageParams((prev) => {
-      prev.set("language", "English");
-      return prev;
-    });
-    updateLanguage("English");
-    setIsChecked(false);
-  };
-
-  const setSpanish = () => {
-    setLanguageParams((prev) => {
-      prev.set("language", "Spanish");
-      return prev;
-    });
-    updateLanguage("Spanish");
-    setIsChecked(true);
-  };
-
-  const handleInputChange = (e: SwitchUpdateEvent) => {
-    if (isChecked === true) {
-      setEnglish();
-    } else {
-      setSpanish();
-    }
-  };
-
   const dispatch = useDispatch();
   const updateLanguage = bindActionCreators(updateLanguageAction, dispatch);
   const reduxLanguage = useSelector(
@@ -51,20 +26,25 @@ export const LanguageToggler = () => {
   const [languageParams, setLanguageParams] = useSearchParams({
     language: "English",
   });
-  const paramsLanguage = languageParams.get("language");
 
+  const paramsLanguage = languageParams.get("language");
   const [isChecked, setIsChecked] = useState(false);
 
-  /* 
-    Handles changing the language preference and url params when
-    navigating around the site, using redux as the source of truth
-  */
+  const setLanguage = (language: string) => {
+    updateLanguage(language);
+    setLanguageParams({ language });
+    setIsChecked(language === "Spanish");
+  };
+  
+
+  const handleInputChange = () => {
+    const newLanguage = isChecked ? "English" : "Spanish";
+    setLanguage(newLanguage);
+  };
 
   useEffect(() => {
-    if (reduxLanguage === "English") {
-      setEnglish();
-    } else {
-      setSpanish();
+    if (reduxLanguage !== paramsLanguage) {
+      setLanguage(reduxLanguage);
     }
   }, [reduxLanguage, paramsLanguage]);
 

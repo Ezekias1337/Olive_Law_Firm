@@ -1,4 +1,5 @@
 // Library Imports
+import { useState, useEffect } from "react";
 import { useSelector } from "react-redux/es/exports";
 // Functions, Helpers, Utils and Hooks
 // Interfaces and Types
@@ -28,16 +29,12 @@ import google_review_10 from "../assets/images/customer-reviews/google_review_10
 import google_review_11 from "../assets/images/customer-reviews/google_review_11.png";
 import google_review_12 from "../assets/images/customer-reviews/google_review_12.png";
 
-/* 
-    TODO: Add disclaimer about rebranding
-*/
-
 type TestimonialInfo = {
   title: string;
   src: string;
 };
 
-const arrayOfTestimonialInfo: TestimonialInfo[] = [
+const arrayOfEnglishTestimonialInfo: TestimonialInfo[] = [
   {
     title: "Katrina Peterson shares her experience about The Olive Law Firm",
     src: "https://www.youtube.com/embed/wxv-_ej4Zdo?si=uPqj4tygjpb5dY8j",
@@ -62,8 +59,8 @@ const arrayOfTestimonialInfo: TestimonialInfo[] = [
     src: "https://www.youtube.com/embed/ule1WwIXNv0?si=MMZ5T085DEO74JJZ",
   },
   {
-    title: "Workers' Compensation Client Testimonial - Bryan Rodriguez 2019",
-    src: "https://www.youtube.com/embed/atwvfvYPR3E?si=-P9acoUUlkumbkV8",
+    title: "Client Testimonial - James Adams HD (2017)",
+    src: "https://www.youtube.com/embed/BIxm1hV7FCc?si=vLwhmTvPqGCsIPM6",
   },
   {
     title: "Workers' Compensation Client Testimonial - Anthony Sartin",
@@ -101,10 +98,76 @@ const arrayOfTestimonialInfo: TestimonialInfo[] = [
   },
 ];
 
+const arrayOfSpanishTestimonialInfo: TestimonialInfo[] = [
+  {
+    title: "Bryan Rodriguez",
+    src: "https://www.youtube.com/embed/atwvfvYPR3E?si=-P9acoUUlkumbkV8",
+  },
+  {
+    title:
+      "Jose Gonzalez",
+    src: "https://www.youtube.com/embed/C8skcu6MuF8?si=zs3b6r9SZGsEVxqt",
+  },
+  {
+    title:
+      "Andres Calderon",
+    src: "https://www.youtube.com/embed/DDxleKFX64U?si=smH6Kb83Z-1fC4iG",
+  },
+  {
+    title: "Benedicto Almonte",
+    src: "https://www.youtube.com/embed/CGOW61Bd1oI?si=z-XzFDdbmnY75_dd",
+  },
+  {
+    title: "Yovani Santos Hernandez",
+    src: "https://www.youtube.com/embed/GwEEyqDbqHw?si=qmm6jT8jzeXHPjw_",
+  },
+  {
+    title: "Luis Rivera",
+    src: "https://www.youtube.com/embed/owZWJHVHF6o?si=fGNTvHS3UAJoNUn8",
+  },
+  {
+    title: "Roberto Lopez",
+    src: "https://www.youtube.com/embed/3AIEZsekEQ0?si=ntNzGczB62qPGfNs",
+  },
+  {
+    title: "Victorio Martinez",
+    src: "https://www.youtube.com/embed/iGqPusR44SE?si=SNPPe8SxfW3yeAH9",
+  },
+  {
+    title:
+      "Pedro Gamez (HD 2019)",
+    src: "https://www.youtube.com/embed/wU3kDbthuGk?si=I3G3hZ8oi4E2f8a3",
+  },
+  {
+    title: "Carlos Aleman (HD 2019)",
+    src: "https://www.youtube.com/embed/ywDN8biaKxg?si=ZPGXkPnXj0punV89",
+  },
+  {
+    title: "Bryan Rodriguez 2019",
+    src: "https://www.youtube.com/embed/atwvfvYPR3E?si=-P9acoUUlkumbkV8",
+  },
+  {
+    title:
+      "Uriel Marcial Cruz (Español)",
+    src: "https://www.youtube.com/embed/F07IQs3NfTQ?si=Uo0FQhbkPWDQluSP",
+  },
+  {
+    title: "Juan Flores (Spanish)",
+    src: "https://www.youtube.com/embed/Dpl-UCtG1GQ?si=KGympMO3AOOOcb9-",
+  },
+  {
+    title:
+      "Jose Franklin Castellanos Hernandez",
+    src: "https://www.youtube.com/embed/XjwcXMx3Myk?si=gNkWBc2rf8J1ZJd2",
+  },
+];
+
 const ClientReviews = () => {
   const reduxLanguage = useSelector(
     (state: ReduxStoreState) => state.language.contents.languageChoice
   );
+  const [selectedReviewArray, setSelectedReviewArray] =
+    useState<TestimonialInfo[]>();
 
   const { pageTitle } = clientReviewsStrings;
 
@@ -255,6 +318,14 @@ const ClientReviews = () => {
     },
   ];
 
+  useEffect(() => {
+    if (reduxLanguage === "English") {
+      setSelectedReviewArray(arrayOfEnglishTestimonialInfo);
+    } else if (reduxLanguage === "Spanish") {
+      setSelectedReviewArray(arrayOfSpanishTestimonialInfo);
+    }
+  }, [setSelectedReviewArray, reduxLanguage]);
+
   return (
     <div className="container-fluid client-reviews-container p-0">
       <NavBar theme="dark" adminVariant={false} language={reduxLanguage} />
@@ -274,7 +345,7 @@ const ClientReviews = () => {
       </div>
 
       <div className="client-reviews-wrapper display-flex padding-left-and-right">
-        {arrayOfTestimonialInfo.map((testimonial) => (
+        {selectedReviewArray?.map((testimonial) => (
           <ClientTestimonial
             title={testimonial.title}
             src={testimonial.src}
