@@ -36,6 +36,15 @@
 
       a {
         text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        gap: 5px;
+        color: $neutral;
+
+        h3 {
+          margin-top: 0px !important;
+        }
       }
     }
     .google-maps-image-link-wrapper {

@@ -1,13 +1,18 @@
 @import "../../css/variables";
 
 .our-results-container {
+  .page-title {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
   .our-results-wrapper {
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 10px;
     padding-top: 40px;
-    background-color: $primary-color;
+    background-color: $neutral;
   }
 
   .results-disclaimer-wrapper {

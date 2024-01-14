@@ -33,7 +33,7 @@ export const OurResults = ({ language }: { language: string }) => {
   const { title, viewMoreResults } = ourResults;
 
   return (
-    <section className="our-results padding-left-and-right z-index-1">
+    <section className="our-results z-index-1">
       <h2 className="page-title">
         {language === "English" ? title.english : title.spanish}
       </h2>

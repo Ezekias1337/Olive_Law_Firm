@@ -23,9 +23,11 @@ export const Form: FC<FormProps> = ({
   formErrors,
   button1Text,
   button1Variant,
+  button1Loading = undefined,
   button2Text = undefined,
   button2Type = undefined,
   button2Variant = undefined,
+  button2Loading,
   formBackgroundIsImage,
   buttonSize = "small",
   customSubmitFunction,
@@ -95,7 +97,11 @@ export const Form: FC<FormProps> = ({
           text={button1Text}
           buttonId={`${formId}-button-1`}
           buttonSize={buttonSize}
-          loading={postingToServerInProgress}
+          loading={
+            button1Loading !== undefined
+              ? button1Loading
+              : postingToServerInProgress
+          }
         />
         {button2Text !== undefined &&
         button2Type !== undefined &&

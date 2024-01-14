@@ -49,7 +49,7 @@ const OurResults = () => {
       <NavBar theme="dark" adminVariant={false} language={reduxLanguage} />
       <PageHeader language={reduxLanguage} title={pageTitle} includeBanner />
 
-      <div className="our-results-wrapper display-flex padding-left-and-right">
+      <div className="our-results-wrapper display-flex">
         {arrayOfSettlementInfo.map((settlement, index) => (
           <OurResult
             language={reduxLanguage}

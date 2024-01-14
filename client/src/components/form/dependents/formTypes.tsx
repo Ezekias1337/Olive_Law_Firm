@@ -78,6 +78,7 @@ export interface FormProps {
     | "neutral"
     | "success"
     | "error";
+  button1Loading?: boolean;
   button2Text?: string;
   button2Type?: "button" | "reset";
   button2Variant?:
@@ -88,9 +89,13 @@ export interface FormProps {
     | "neutral"
     | "success"
     | "error";
+  button2Loading?: boolean;
   buttonSize?: "small" | "medium" | "large";
   formBackgroundIsImage?: boolean;
-  customSubmitFunction?: (e: FormEvent<HTMLFormElement>, args: CustomSubmitArgs) => void;
+  customSubmitFunction?: (
+    e: FormEvent<HTMLFormElement>,
+    args: CustomSubmitArgs
+  ) => void;
   customSubmitArgs?: CustomSubmitArgs;
   redirectUrl?: string;
 }
