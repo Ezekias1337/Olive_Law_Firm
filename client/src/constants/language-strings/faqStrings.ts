@@ -149,9 +149,9 @@ export const faqStrings: FaqStrings = {
     },
     faq3Body: {
       english:
-        "Hiring a personal injury attorney is crucial because they provide deep legal expertise, assess the strength of your case, negotiate fair settlements, develop tailored legal strategies, offer court representation, guide you through legal procedures, maximize compensation, handle communications with insurance companies, bring experience from similar cases, and provide peace of mind, allowing you to focus on recovery.",
+        "Hiring a personal injury attorney is crucial because they provide extensive legal expertise, assess the strength of your case, negotiate fair settlements, develop tailored legal strategies, offer court representation, guide you through legal procedures, maximize compensation, handle communications with insurance companies, bring experience from similar cases, and provide peace of mind, allowing you to focus on recovery.",
       spanish:
-        "Contratar a un abogado de lesiones personales es crucial porque brinda experiencia legal profunda, evalúa la solidez de su caso, negocia acuerdos justos, desarrolla estrategias legales personalizadas, ofrece representación judicial, lo guía a través de procedimientos legales, maximiza la compensación, maneja las comunicaciones con las compañías de seguros, trae experiencia de casos similares y brindarle tranquilidad, permitiéndole concentrarse en la recuperación.",
+        "Contratar a un abogado de lesiones personales es crucial porque brinda una amplia experiencia legal, evalúa la solidez de su caso, negocia acuerdos justos, desarrolla estrategias legales personalizadas, ofrece representación judicial, lo guía a través de procedimientos legales, maximiza la compensación, maneja las comunicaciones con las compañías de seguros, trae experiencia de casos similares y brindarle tranquilidad, permitiéndole concentrarse en la recuperación.",
     },
   },
 
@@ -177,9 +177,9 @@ export const faqStrings: FaqStrings = {
     },
     faq5Body: {
       english:
-        "Yes, it's recommended to contact your insurance company even if you're not at fault. This ensures compliance with policy requirements, allows for potential coverage of medical expenses, and provides legal protection. Report the accident with accurate details but avoid admitting fault.",
+        "Yes, it's recommended to contact your insurance company even if you're not at fault. This ensures compliance with policy requirements, allows for potential coverage of medical expenses, and provides legal protection. Before contacting your insurance company, you should consult with an attorney who can guide you through the process and can communicate with the insurance companies for you.",
       spanish:
-        "Sí, se recomienda ponerse en contacto con su compañía de seguros incluso si usted no tiene la culpa. Esto garantiza el cumplimiento de los requisitos de la póliza, permite una posible cobertura de gastos médicos y brinda protección legal. Informe el accidente con detalles precisos pero evite admitir la culpa.",
+        "Sí, se recomienda ponerse en contacto con su compañía de seguros incluso si usted no tiene la culpa. Esto garantiza el cumplimiento de los requisitos de la póliza, permite una posible cobertura de gastos médicos y brinda protección legal. Antes de comunicarse con su compañía de seguros, debe consultar con un abogado que pueda guiarlo a través del proceso y comunicarse con las compañías de seguros por usted.",
     },
   },
 
@@ -192,9 +192,9 @@ export const faqStrings: FaqStrings = {
     },
     faq6Body: {
       english:
-        "Determining compensation for pain and suffering varies. Factors include the severity and duration of injuries, impact on daily life, medical evidence, permanency of injuries, comparative fault, and negotiation skills. There's no fixed formula, and consulting a personal injury attorney is recommended for case-specific guidance.",
+        "Determining compensation for pain and suffering varies. Factors include the severity and duration of injuries, impact on daily life, medical evidence, permanency of injuries, and negotiation skills. There's no fixed formula, and consulting a personal injury attorney is recommended for case-specific guidance.",
       spanish:
-        "La determinación de la compensación por el dolor y el sufrimiento varía. Los factores incluyen la gravedad y duración de las lesiones, el impacto en la vida diaria, la evidencia médica, la permanencia de las lesiones, la culpa comparativa y las habilidades de negociación. No existe una fórmula fija y se recomienda consultar a un abogado de lesiones personales para obtener orientación específica para cada caso.",
+        "La determinación de la compensación por el dolor y el sufrimiento varía. Los factores incluyen la gravedad y duración de las lesiones, el impacto en la vida diaria, la evidencia médica, la permanencia de las lesiones y las habilidades de negociación. No existe una fórmula fija y se recomienda consultar a un abogado de lesiones personales para obtener orientación específica para cada caso.",
     },
   },
 

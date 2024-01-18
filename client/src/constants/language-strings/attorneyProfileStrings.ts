@@ -91,12 +91,12 @@ export const attorneyInfoStrings: AttorneyInfoStrings = {
     },
     biography: {
       english: [
-        "Attorney Juan Sanchez has been practicing law since 1995 and is licensed in both Florida and North Carolina. Juan is also a retired sergeant from the United States Army Reserve Corps of Engineers.",
-        "As the head of the workers' compensation department with Olive Sanchez & Associates, Mr. Sanchez has successfully handled thousands of cases. Attorney Juan Sanchez is happy to meet and speak with every one of his clients on a regular basis. All initial consultations are free. Mr. Sanchez is fluent in Spanish.",
+        "Attorney Juan Sanchez has been practicing law since 1995 and is licensed in both Florida and North Carolina.  After law school, Mr. Sanchez served as an Assistant State Attorney for Florida in Fort Myers for 2 years before moving back to Miami.   In Miami, Mr. Sanchez served as in-house counsel for a national insurance company as an insurance defense attorney.   He held that same position when he transferred to a private firm in Fort Lauderdale.   While there, attending a mediation in 2002, Mr. Sanchez came to realize that he was on the wrong side of the table.  Shortly thereafter he opened his own law firm to serve the injured, and he has never looked back since.",
+        "Mr. Sanchez has successfully handled thousands of workers’ compensation claims and is a Board-Certified Specialist in that field.  He also has extensive experience in personal injury matters. Mr. Sanchez has successfully handled thousands of workers’ compensation claims and is a Board-Certified Specialist in that field.  He also has extensive experience in personal injury matters.",
       ],
       spanish: [
-        "El abogado Juan Sánchez ha ejercido la abogacía desde 1995 y tiene licencia tanto en Florida como en Carolina del Norte. Juan también es sargento retirado del Cuerpo de Ingenieros de la Reserva del Ejército de los Estados Unidos.",
-        "Como jefe del departamento de compensación laboral de Olive Sanchez & Associates, el Sr. Sánchez ha manejado con éxito miles de casos. El abogado Juan Sánchez está feliz de conocer y hablar con cada uno de sus clientes de forma regular. Todas las consultas iniciales son gratuitas. El Sr. Sánchez habla español con fluidez.",
+        "El abogado Juan Sánchez ha ejercido la abogacía desde 1995 y tiene licencia tanto en Florida como en Carolina del Norte. Después de estudiar derecho, el Sr. Sánchez trabajó como fiscal estatal adjunto de Florida en Fort Myers durante 2 años antes de regresar a Miami. En Miami, el Sr. Sánchez trabajó como abogado interno de una compañía nacional de seguros como abogado defensor de seguros. Ocupó ese mismo puesto cuando se transfirió a una empresa privada en Fort Lauderdale. Mientras estaba allí, asistiendo a una mediación en 2002, Sánchez se dio cuenta de que estaba en el lado equivocado de la mesa. Poco después abrió su propio bufete de abogados para atender a los heridos y desde entonces no ha vuelto a mirar atrás.",
+        "El Sr. Sánchez ha manejado con éxito miles de reclamos de compensación laboral y es un especialista certificado en ese campo. También tiene una amplia experiencia en asuntos de lesiones personales. El Sr. Sánchez ha manejado con éxito miles de reclamos de compensación laboral y es un especialista certificado en ese campo. También tiene una amplia experiencia en asuntos de lesiones personales.",
       ],
     },
     education: {
@@ -207,9 +207,9 @@ export const attorneyInfoStrings: AttorneyInfoStrings = {
     image: ValerieImage,
     quote: {
       english:
-        "“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.”",
+        "“The liberties of none are safe unless the liberties of all are protected.” - William O. Douglas",
       spanish:
-        "“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.”",
+        "“Las libertades de nadie están seguras a menos que se protejan las libertades de todos”. -William O.Douglas",
     },
     biography: {
       english: [

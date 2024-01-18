@@ -7,7 +7,9 @@
     background-image: url(../../assets/images/backgrounds/Inside_Court_Room_1.png);
     background-size: cover;
     background-repeat: no-repeat;
-    padding: 80px;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-top: 40px;
 
     .text-wrapper {
       width: 50%;
@@ -37,10 +39,10 @@
 
     h3 {
       font-weight: bold;
+      text-align: center;
     }
 
     .biography-text-wrapper {
-      max-width: 50%;
       padding-top: 40px;
 
       h4 {
