@@ -78,9 +78,9 @@ export const communityInteractionStrings: CommunityInteractionStrings = {
     },
     body: {
       english:
-        "In past years, Olive Sanchez & Associates has participated in the Salvation Army’s Angel Giving Tree Project to help give needy children the Christmas they deserve.",
+        "Olive Sanchez & Associates participates in the Salvation Army’s Angel Giving Tree Project to help give needy children the Christmas they deserve.",
       spanish:
-        "En los últimos años, Olive Sanchez & Associates ha participado en el Proyecto Angel Giving Tree del Ejército de Salvación para ayudar a darles a los niños necesitados la Navidad que se merecen.",
+        "Olive Sanchez & Associates participa en el Proyecto Angel Giving Tree del Ejército de Salvación para ayudar a darles a los niños necesitados la Navidad que se merecen.",
     },
     image: "",
   },
@@ -106,9 +106,9 @@ export const communityInteractionStrings: CommunityInteractionStrings = {
     },
     body: {
       english:
-        "Members of Olive Sanchez & Associates have volunteered at Thompson Child and Family Focus, which provides comprehensive education, treatment and care for children in need.",
+        "Members of Olive Sanchez & Associates supports Thompson Child and Family Focus, which provides comprehensive education, treatment and care for children in need.",
       spanish:
-        "Los miembros de Olive Sanchez & Associates han sido voluntarios en Thompson Child and Family Focus, que brinda educación, tratamiento y atención integrales a niños necesitados.",
+        "Los miembros de Olive Sanchez & Associates apoya el Thompson Child and Family Focus, que brinda educación, tratamiento y atención integrales a niños necesitados.",
     },
     image: "",
   },

@@ -72,7 +72,7 @@ export const Card: FC<CardProps> = ({
         style={{ backgroundImage: "url(" + imageSource + ")" }}
       >
         <p>{bodyText}</p>
-        <h2 className="full-flex">{headerText}</h2>
+        <h4 className="full-flex">{headerText}</h4>
         <div className="card-button-container"></div>
       </div>
     );

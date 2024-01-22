@@ -23,7 +23,7 @@ export const ClientTestimonial: FC<ClientTestimonialProps> = ({
       {isLoading && <Loader variant="neutral" />}
 
       <iframe
-        width="590"
+        width="493"
         height="300"
         src={src}
         title={title}

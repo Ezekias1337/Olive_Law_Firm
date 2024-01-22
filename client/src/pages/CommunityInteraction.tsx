@@ -51,17 +51,17 @@ const CommunityInteraction = () => {
       <PageHeader language={reduxLanguage} title={pageTitle} includeBanner />
 
       <div className="giving-back-to-community padding-left-and-right">
-        <h2>
+        <h3>
           {reduxLanguage === "English"
             ? givingBackToCommunityPart1.english
             : givingBackToCommunityPart1.spanish}
-        </h2>
-
-        <h2>
+        </h3>
+        <br />
+        <h3>
           {reduxLanguage === "English"
             ? givingBackToCommunityPart2.english
             : givingBackToCommunityPart2.spanish}
-        </h2>
+        </h3>
       </div>
 
       <div className="community-interaction-info-wrapper display-flex justify-content-center dark-image-overlay">

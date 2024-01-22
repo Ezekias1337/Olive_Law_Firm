@@ -123,8 +123,8 @@ export const homePageStrings: HomePageStrings = {
     },
 
     part2: {
-      english: "No Attorney Fee Unless We Recover For You",
-      spanish: "No Paga Nada a Menos Que Nos Recuperemos",
+      english: "No Attorney Fee Unless We Recover For You*",
+      spanish: "No Paga Nada a Menos Que Nos Recuperemos*",
     },
   },
 

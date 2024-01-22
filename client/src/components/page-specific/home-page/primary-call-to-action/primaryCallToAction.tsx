@@ -17,12 +17,12 @@ export const PrimaryCallToAction = ({ language }: { language: string }) => {
 
   return (
     <div className="primary-call-to-action z-index-1 position-relative">
-      <h1 className="juan-sanchez-quote bold-text">
+      <h2 className="juan-sanchez-quote bold-text">
         {language === "English" ? part1.english : part1.spanish}
         <br></br>
         <br></br>
         {language === "English" ? part2.english : part2.spanish}
-      </h1>
+      </h2>
       <div className="primary-call-to-action-button-wrapper display-flex">
         <Button
           variant="primary"

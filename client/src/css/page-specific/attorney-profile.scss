@@ -9,7 +9,6 @@
     background-repeat: no-repeat;
     padding-left: 80px;
     padding-right: 80px;
-    padding-top: 40px;
 
     .text-wrapper {
       width: 50%;
@@ -33,9 +32,12 @@
   }
 
   .attorney-profile-biography-wrapper {
-    background-color: $primary-color;
-    padding: 80px;
-    color: $neutral;
+    background-color: $neutral;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    color: $primary-color;
 
     h3 {
       font-weight: bold;
@@ -56,10 +58,6 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: 10px;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    padding-left: 80px;
-    padding-right: 80px;
 
     .showcase-card {
       background-color: $light-gray;
@@ -82,6 +80,36 @@
 
       li {
         color: $secondary-color;
+      }
+    }
+  }
+
+  @media (max-width: 799px) {
+    .biography-text-wrapper {
+      max-width: 100%;
+    }
+
+    .attorney-profile-info-wrapper {
+      max-width: 100%;
+    }
+  }
+
+  @media (min-width: 800px) {
+    .biography-text-wrapper {
+      max-width: 50%;
+    }
+
+    .attorney-profile-biography-info-container {
+      display: flex;
+      gap: 20px;
+      padding-top: 40px;
+
+      .attorney-profile-info-wrapper {
+        max-width: 50%;
+
+        .showcase-card {
+          width: 100%;
+        }
       }
     }
   }

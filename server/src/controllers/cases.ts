@@ -2,8 +2,11 @@
 import { RequestHandler } from "express";
 import createHttpError from "http-errors";
 import { Server } from "socket.io";
+import { Resend } from "resend";
 // Models
 import CaseModel from "../models/case";
+// ENV
+import env from "../util/validateEnv";
 
 interface caseCreationBody {
   name?: string;
@@ -131,9 +134,17 @@ export const createCase: RequestHandler<
     });
 
     res.status(201).json(newCase);
-
     io.emit("caseReceived", newCase);
+    const resend = new Resend(env.EMAIL_KEY);
+
+    await resend.emails.send({
+      from: "codedecodedbiz@gmail.com",
+      to: [emailAddress],
+      subject: "New Case Submitted",
+      html: "<p>Congrats on sending your <strong>first email</strong>!</p>",
+    });
   } catch (error) {
+    console.log(error)
     next(error);
   }
 };

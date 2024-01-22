@@ -107,9 +107,9 @@ export const faqStrings: FaqStrings = {
 
   disclaimer2: {
     english:
-      "Find answers to the questions we get asked most often. If you do not see your question here, please feel free to contact the attorneys at Olive Sanchez & Associates. We serve the Charlotte metropolitan area, western & central Carolinas, as well as Upstate South Carolina.",
+      "Find answers to the questions we get asked most often. If you do not see your question here, please feel free to contact the attorneys at Olive Sanchez & Associates.",
     spanish:
-      "Encuentre respuestas a las preguntas que nos hacen con más frecuencia. Si no ve su pregunta aquí, no dude en comunicarse con los abogados de Olive Sanchez & Associates. Prestamos servicios en el área metropolitana de Charlotte, las Carolinas occidentales y centrales, así como también en el norte del estado de Carolina del Sur.",
+      "Encuentre respuestas a las preguntas que nos hacen con más frecuencia. Si no ve su pregunta aquí, no dude en comunicarse con los abogados de Olive Sanchez & Associates.",
   },
 
   faq1: {

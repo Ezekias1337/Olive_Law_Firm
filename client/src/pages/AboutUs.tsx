@@ -14,14 +14,9 @@ import "../css/page-specific/about-us.scss";
 // Assets and Images
 import MillionDollarAdvocates from "../assets/images/certifications/Million_Dollar_Advocates_Forum.webp";
 import MultiMillionDollarAdvocates from "../assets/images/certifications/Multi_Million_Dollar_Advocates_Forum.webp";
-import TheFloridaBar from "../assets/images/certifications/The_Florida_Bar.webp";
 import AV from "../assets/images/certifications/AV.webp";
-
 import WorkersCompensationLaw from "../assets/images/certifications/Workers_Compensation_Law.webp";
 import AmericanInstituteOfFamilyLaw from "../assets/images/certifications/American_Institute_Of_Family_Law_Attorneys.webp";
-import MecklenbergCountyBar from "../assets/images/certifications/Mecklenberg_County_Bar.webp";
-import NorthCarolinaBarAssociation from "../assets/images/certifications/North_Carolina_Bar_Association.webp";
-
 import SuperLawyers from "../assets/images/certifications/Super_Lawyers.webp";
 import AmericanBoardOfTrialAdvocates from "../assets/images/certifications/American_Board_of_Trial_Advocates.webp";
 import AmericanAssociationForJustice from "../assets/images/certifications/American_Association_For_Justice.webp";
@@ -80,71 +75,56 @@ const AboutUs = () => {
         </p>
       </div>
 
-      <div className="about-us-certifications padding-left-and-right row">
+      <div className="about-us-certifications">
         <h2 className="full-flex">
           {reduxLanguage === "English"
             ? ourCerificationsTitle.english
             : ourCerificationsTitle.spanish}
         </h2>
 
-        <img
-          src={MillionDollarAdvocates}
-          className="certification-badge col-3"
-          alt="Million Dollar Advocates Badge"
-        />
-        <img
-          src={MultiMillionDollarAdvocates}
-          className="certification-badge col-3"
-          alt="Multimillion Dollar Advocates Badge"
-        />
-        <img
-          src={TheFloridaBar}
-          className="certification-badge col-3"
-          alt="The Florida Bar Badge"
-        />
-        <img src={AV} className="certification-badge col-3" alt="AV Badge" />
-
-        <img
-          src={WorkersCompensationLaw}
-          className="certification-badge col-3"
-          alt="Workers Compensation Badge"
-        />
-        <img
-          src={AmericanInstituteOfFamilyLaw}
-          className="certification-badge col-3"
-          alt="American Institute of Family Law Badge"
-        />
-        <img
-          src={MecklenbergCountyBar}
-          className="certification-badge col-3"
-          alt="Mecklenberg County Badge"
-        />
-        <img
-          src={NorthCarolinaBarAssociation}
-          className="certification-badge col-3"
-          alt="North Carolina Bar Association Badge"
-        />
-
-        <img
-          src={SuperLawyers}
-          className="certification-badge col-3"
-          alt="Super Lawyers Badge"
-        />
-        <img
-          src={AmericanBoardOfTrialAdvocates}
-          className="certification-badge col-3"
-          alt="American Board of Trial Advocates Badge"
-        />
-        <img
-          src={AmericanAssociationForJustice}
-          className="certification-badge col-3"
-          alt="American Association for Justice Badge"
-        />
-        <img
-          src={NorthCarolinaAdvocatesForJustice}
-          className="certification-badge col-3"
-          alt="North Carolina Advocates for Justice Badge"
-        />
+        <div className="about-us-certifications-wrapper full-flex">
+          <img
+            src={MillionDollarAdvocates}
+            className="certification-badge col-3"
+            alt="Million Dollar Advocates Badge"
+          />
+          <img
+            src={MultiMillionDollarAdvocates}
+            className="certification-badge col-3"
+            alt="Multimillion Dollar Advocates Badge"
+          />
+          <img src={AV} className="certification-badge col-3" alt="AV Badge" />
+          <img
+            src={WorkersCompensationLaw}
+            className="certification-badge col-3"
+            alt="Workers Compensation Badge"
+          />
+          <img
+            src={AmericanInstituteOfFamilyLaw}
+            className="certification-badge col-3"
+            alt="American Institute of Family Law Badge"
+          />
+          <img
+            src={SuperLawyers}
+            className="certification-badge col-3"
+            alt="Super Lawyers Badge"
+          />
+          <img
+            src={AmericanBoardOfTrialAdvocates}
+            className="certification-badge col-3"
+            alt="American Board of Trial Advocates Badge"
+          />
+          <img
+            src={AmericanAssociationForJustice}
+            className="certification-badge col-3"
+            alt="American Association for Justice Badge"
+          />
+          <img
+            src={NorthCarolinaAdvocatesForJustice}
+            className="certification-badge col-3"
+            alt="North Carolina Advocates for Justice Badge"
+          />
+        </div>
       </div>
 
       <div className="about-us-our-philosophy dark-image-overlay padding-left-and-right">

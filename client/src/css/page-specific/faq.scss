@@ -10,7 +10,8 @@
     background-image: url(../../assets/images/backgrounds/Judge_Gavel.png);
     background-size: cover;
     background-position-y: center;
-    padding: 80px;
+    padding-top: 40px;
+    padding-bottom: 40px;
     color: $neutral;
 
     h3:last-of-type {
@@ -20,26 +21,35 @@
 
   .faq-accordion-wrapper {
     padding-top: 40px;
-    padding-bottom: 80px;
-    background-color: $primary-color;
+    padding-bottom: 40px;
+    background-color: $light-gray;
 
     button.accordion-button {
-      background-color: $sexternary-color;
-      color: $anti-neutral;
+      background-color: $secondary-color;
+      color: $neutral;
+
+      &:focus {
+        box-shadow: 0px 4px 3px 0px $neutral;
+      }
     }
 
     div.accordion-body {
-      background-color: $primary-color;
+      background-color: $secondary-color;
       color: $neutral;
     }
 
     button.accordion-button.collapsed {
-      background-color: $quarternary-color;
+      background-color: $primary-color;
       color: $neutral;
 
       &::after {
         filter: invert(1);
       }
+    }
+
+    .accordion-button:not(.collapsed)::after {
+      filter: invert(1);
+      background-image: var(--bs-accordion-btn-icon);
     }
   }
 }

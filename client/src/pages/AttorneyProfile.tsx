@@ -90,20 +90,22 @@ const AttorneyProfile = () => {
         <h3>
           {reduxLanguage === "English" ? biography.english : biography.spanish}
         </h3>
-        <AttorneyBiography
-          language={reduxLanguage}
-          biography={lawyerInfo.biography}
-        />
-      </div>
 
-      <AttorneyInfoShowcase
-        language={reduxLanguage}
-        education={lawyerInfo.education}
-        languages={lawyerInfo.languages}
-        barAssociation={lawyerInfo.barAssociation}
-        honorsAndAwards={lawyerInfo.honorsAndAwards}
-        cardTitles={cardTitlesObj}
-      />
+        <div className="attorney-profile-biography-info-container">
+          <AttorneyBiography
+            language={reduxLanguage}
+            biography={lawyerInfo.biography}
+          />
+          <AttorneyInfoShowcase
+            language={reduxLanguage}
+            education={lawyerInfo.education}
+            languages={lawyerInfo.languages}
+            barAssociation={lawyerInfo.barAssociation}
+            honorsAndAwards={lawyerInfo.honorsAndAwards}
+            cardTitles={cardTitlesObj}
+          />
+        </div>
+      </div>
 
       <Footer language={reduxLanguage} />
     </div>

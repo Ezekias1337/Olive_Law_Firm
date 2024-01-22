@@ -7,4 +7,5 @@ export default cleanEnv(process.env, {
   FRONTEND_PORT: port(),
   ORIGIN_URL_BASE: str(),
   SESSION_SECRET: str(),
+  EMAIL_KEY: str(),
 });

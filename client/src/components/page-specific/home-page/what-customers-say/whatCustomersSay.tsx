@@ -96,7 +96,7 @@ export const WhatCustomersSay = ({ language }: { language: string }) => {
   ];
 
   return (
-    <section className="what-customers-say padding-left-and-right z-index-1">
+    <section className="what-customers-say z-index-1">
       <h2 className="page-title">
         {language === "English" ? title.english : title.spanish}
       </h2>

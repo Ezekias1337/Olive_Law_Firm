@@ -20,8 +20,8 @@
   .about-us-certifications,
   .about-us-our-philosophy {
     position: relative;
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
 
   .about-us-intro,
@@ -36,7 +36,7 @@
 
   .about-us-intro {
     background-image: url("../../assets/images/backgrounds/Courthouse.png");
-    
+
     h2 {
       color: $neutral;
       font-weight: bold;
@@ -54,16 +54,18 @@
 
   .about-us-certifications {
     background-color: $gray;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 40px 200px;
-    height: 1000px;
-    width: 100%;
-    padding-bottom: 80px;
+
+    padding-top: 40px;
+    padding-bottom: 40px;
 
     h2 {
       color: $primary-color;
+    }
+
+    .about-us-certifications-wrapper {
+      flex-wrap: wrap;
+      flex-direction: row;
+      gap: 20px 100px;
     }
   }
 
