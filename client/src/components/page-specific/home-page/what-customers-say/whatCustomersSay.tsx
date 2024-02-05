@@ -9,7 +9,7 @@ import { Button } from "../../../button/Button";
 import "./what-customers-say.scss";
 // Assets and Images
 import google_review_1 from "../../../../assets/images/customer-reviews/google_review_1.png";
-import google_review_2 from "../../../../assets/images/customer-reviews/google_review_2.png";
+import google_review_7 from "../../../../assets/images/customer-reviews/google_review_7.png";
 import google_review_3 from "../../../../assets/images/customer-reviews/google_review_3.png";
 import google_review_4 from "../../../../assets/images/customer-reviews/google_review_4.png";
 import google_review_5 from "../../../../assets/images/customer-reviews/google_review_5.png";
@@ -23,74 +23,74 @@ export const WhatCustomersSay = ({ language }: { language: string }) => {
     {
       language: language,
       authorImage: google_review_1,
-      authorName: "Tammy Derby",
+      authorName: "Kendyll G",
       rating: 5,
       reviewBody: {
         english:
-          "Having a car accident is a frightening experience. I chose Olive Law Firm and worked closely with Jessica who walked me through the whole process, answering all my questions and was always available if I had any concerns. With her support and outstanding customer service I was able to get through the process. I’m very grateful and pleased with the results and could not have asked or received a better outcome!! Thank you Olive Law Firm and Thank you Jessica !! Sincerely, Tammy Derby",
+          "I wish I could give this firm 100 stars. I like that they are very straight forward with you, keeping you informed every step of the way and talk to you like a real person, keeping legalese to a minimum so everything is easy to understand. Jessica Sinacori is a hardworking, friendly, very reliable addition to the team and she was a great help during my case. I'm grateful for this firm because without them I probably wouldn't have gotten anything (accident was not my fault and offending driver had no insurance). Thank you times a million!",
         spanish:
-          "Tener un accidente automovilístico es una experiencia aterradora. Elegí Olive Law Firm y trabajé estrechamente con Jessica, quien me guió durante todo el proceso, respondiendo todas mis preguntas y siempre estuvo disponible si tenía alguna inquietud. Con su apoyo y excelente servicio al cliente pude superar el proceso. ¡Estoy muy agradecida y satisfecha con los resultados y no podría haber pedido ni recibido un mejor resultado! ¡¡Gracias Olive Law Firm y gracias Jessica!! Atentamente, Tammy Derby",
+          "Ojalá pudiera darle a esta empresa 100 estrellas. Me gusta que sean muy directos contigo, te mantengan informado en cada paso del camino y te hablen como una persona real, manteniendo la jerga legal al mínimo para que todo sea fácil de entender. Jessica Sinacori es una incorporación al equipo trabajadora, amigable y muy confiable y fue de gran ayuda durante mi caso. Estoy agradecido por esta empresa porque sin ellos probablemente no habría obtenido nada (el accidente no fue culpa mía y el conductor infractor no tenía seguro). ¡Un millón de gracias!",
+      },
+    },
+    {
+      language: language,
+      authorImage: google_review_7,
+      authorName: "Spencer Dickason",
+      rating: 5,
+      reviewBody: {
+        english:
+          "I have to say that this is elite law firm. They help me through every aspect of my case. The professionalism and keeping me informed throughout the process without having to really ask questions was incredible. Mariely Bermudez the paralegal is phenomenal. She will have all your questions answered as soon as you ask. Her attitude, energy and knowledge was exceptional. If you had questions after hours she would give you a response right back. Words can’t define what she met to me going through my case. The way she helps you get things resolved is priceless. I see why Attorney Olive has her on his team.",
+        spanish:
+          "Debo decir que este es un bufete de abogados de élite. Me ayudan en todos los aspectos de mi caso. El profesionalismo y mantenerme informado durante todo el proceso sin tener que hacer preguntas fue increíble. Mariely Bermúdez la asistente legal es fenomenal. Ella tendrá respuestas a todas sus preguntas tan pronto como las haga. Su actitud, energía y conocimiento fueron excepcionales. Si tuviera preguntas fuera del horario de atención, ella le respondería de inmediato. Las palabras no pueden definir lo que ella conoció durante mi caso. La forma en que te ayuda a resolver las cosas no tiene precio. Entiendo por qué el abogado Olive lo tiene en su equipo.",
+      },
+    },
+
+    {
+      language: language,
+      authorImage: google_review_3,
+      authorName: "Frank Bonilla",
+      rating: 5,
+      reviewBody: {
+        english:
+          "I'm very grateful for the help you provided me and I am satisfied with the outcome of the case. I will highly recommend your firm to anybody that needs your services. You have an outstanding work group that helps people in both languages. I am very grateful for that and for the work that you have done. You guys are great!",
+        spanish:
+          "Estoy muy agradecido por la ayuda que me brindaron y estoy satisfecho con el resultado del caso. Recomendaré ampliamente su empresa a cualquiera que necesite sus servicios. Tienes un excelente grupo de trabajo que ayuda a las personas en ambos idiomas. Estoy muy agradecido por eso y por el trabajo que has realizado. ¡Ustedes son geniales!",
       },
     },
     {
       language: language,
       authorImage: google_review_4,
-      authorName: "Claire Williams",
+      authorName: "Charleen Mccray",
       rating: 5,
       reviewBody: {
         english:
-          "Everyone we spoke with or dealt with was over the top amazing! Jessica was super helpful and was easy to communicate with via email, phone, or text! Which makes life a lot easier! They took all the headache off of my husband & I during this already frustrating time of being in an accident. The office handled everything very professionally & within an appropriate timely manner. Jessica even drove after work to meet me and hand deliver my check! After all was said and done, we would highly recommend this wonderfully staffed business to anyone! Thank you again Olive Law Firm!",
+          "I really appreciate what the law firm did for me. They are very honest and great to work with. They are humble and I appreciate everything the office staff and the attorney did for me. Anytime anything may  come up again, I know who to call. I didn’t have to worry about anything.",
         spanish:
-          "¡Todas las personas con las que hablamos o tratamos fueron increíblemente increíbles! ¡Jessica fue muy servicial y fue fácil comunicarse con ella por correo electrónico, teléfono o mensaje de texto! ¡Lo que hace la vida mucho más fácil! Nos quitaron todo el dolor de cabeza a mi esposo y a mí durante este momento ya frustrante de sufrir un accidente. La oficina manejó todo de manera muy profesional y oportuna. ¡Jessica incluso condujo después del trabajo para recibirme y entregarme el cheque personalmente! Después de todo lo dicho y hecho, ¡recomendamos encarecidamente este negocio con un personal maravilloso a cualquiera! ¡Gracias nuevamente Olive Law Firm!",
+          "Realmente aprecio lo que el bufete de abogados hizo por mí. Son muy honestos y es genial trabajar con ellos. Son humildes y aprecio todo lo que el personal de la oficina y el abogado hicieron por mí. Cada vez que vuelva a surgir algo, sé a quién llamar. No tuve que preocuparme por nada.",
       },
     },
-    {
-      language: language,
-      authorImage: google_review_2,
-      authorName: "Jenni O",
-      rating: 5,
-      reviewBody: {
-        english:
-          "They took great care with my auto accident case. They communicated consistently with updates and were thorough. I worked with Ms. Sinacori and she was professional and courteous. I would highly recommend them.",
-        spanish:
-          "Tuvieron mucho cuidado con mi caso de accidente automovilístico. Se comunicaron constantemente con las actualizaciones y fueron minuciosos. Trabajé con la Sra. Sinacori y ella fue profesional y cortés. Los recomendaría ampliamente.",
-      },
-    },
-    {
-      language: language,
-      authorImage: google_review_3,
-      authorName: "Jackie Williams",
-      rating: 5,
-      reviewBody: {
-        english:
-          "Great Service ….Jackie is a great paralegal Attorney Juan Sanchez very informative and on time with everything. I will use them again",
-        spanish:
-          "Gran servicio... Jackie es un gran asistente legal. El abogado Juan Sánchez es muy informativo y puntual con todo. Los usaré de nuevo",
-      },
-    },
-    
     {
       language: language,
       authorImage: google_review_5,
-      authorName: "Lee Benjamin",
+      authorName: "Nestor E. Brunel",
       rating: 5,
       reviewBody: {
         english:
-          "I cannot say enough about how happy we are with The Olive Law Firm. Their entire staff was supportive, professional, and courteous. Mr. Sanchez prepared us for every step of the process in advance. There were no surprises. Please don’t hesitate to utilize their services if the opportunity arises for you. Workers' comp cases can be difficult to deal with. Having experienced, expert representation helps. Thank you to The Olive Law Firm and we really appreciate you, Juan Sanchez.",
+          "Everything that was promised was provided. I am very satisfied with the experience I received. Every member of the staff was very helpful.",
         spanish:
-          "No puedo decir lo suficiente sobre lo felices que estamos con The Olive Law Firm. Todo su personal fue solidario, profesional y cortés. El Sr. Sánchez nos preparó de antemano para cada paso del proceso. No hubo sorpresas. No dude en utilizar sus servicios si se le presenta la oportunidad. Los casos de compensación laboral pueden ser difíciles de tratar. Tener una representación experta y con experiencia ayuda. Gracias a The Olive Law Firm y realmente te apreciamos, Juan Sánchez.",
+          "Todo lo prometido se cumplió. Estoy muy satisfecho con la experiencia que recibí. Cada miembro del personal fue muy servicial.",
       },
     },
     {
       language: language,
       authorImage: google_review_6,
-      authorName: "Yolanda Echabarria",
+      authorName: "Jenifer Palacios",
       rating: 5,
       reviewBody: {
         english:
-          "I used the law firm for a car accident I had last year and Jessica Sinacori and Juan Sanchez went above and beyond to make sure I was taking care of I highly recommend The Olive Law Firm specially these two thank you for taking good care of me ! 🤗 …",
+          "They are great. I’ve been in a couple car accidents and they always help me. Ms. Jessica worked with me on my last case and got me more then I expected. Definitely recommend :)",
         spanish:
-          "Utilicé el bufete de abogados para un accidente automovilístico que tuve el año pasado y Jessica Sinacori y Juan Sánchez hicieron todo lo posible para asegurarse de que me estuviera cuidando. Recomiendo ampliamente The Olive Law Firm, especialmente a estos dos, ¡gracias por cuidarme bien! 🤗…",
+          "Son geniales. He tenido un par de accidentes automovilísticos y siempre me ayudan. La Sra. Jessica trabajó conmigo en mi último caso y consiguió más de lo que esperaba. Definitivamente lo recomiendo :)",
       },
     },
   ];

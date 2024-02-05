@@ -3,6 +3,8 @@ import { useSelector } from "react-redux/es/exports";
 // Functions, Helpers, Utils and Hooks
 // Interfaces and Types
 import { ReduxStoreState } from "../constants/interfaces/ReduxStoreState";
+// Constants
+import { homePageStrings } from "../constants/language-strings/homepageStrings";
 // Components
 import { NavBar } from "../components/general-page-layout/navbar/Navbar";
 import { Footer } from "../components/general-page-layout/footer/Footer";
@@ -14,7 +16,7 @@ import { OurAttorneys } from "../components/page-specific/home-page/our-attorney
 import { WhatCustomersSay } from "../components/page-specific/home-page/what-customers-say/whatCustomersSay";
 import { OurResults } from "../components/page-specific/home-page/our-results/ourResults";
 import { TellYourStory } from "../components/page-specific/home-page/tell-your-story/tellYourStory";
-
+import { Disclaimer } from "../components/disclaimer/Disclaimer";
 /* 
   TODO: Add Cookies disclaimer
   TODO: Check all references to company name and website url
@@ -41,14 +43,11 @@ const Home = () => {
   const reduxLanguage = useSelector(
     (state: ReduxStoreState) => state.language.contents.languageChoice
   );
+  const { disclaimer } = homePageStrings;
 
   return (
     <div className="container-fluid home-page p-0">
-      <NavBar
-        theme="dark"
-        adminVariant={false}
-        language={reduxLanguage}
-      />
+      <NavBar theme="dark" adminVariant={false} language={reduxLanguage} />
       <PrimaryCallToAction language={reduxLanguage} />
       <NoPapeles language={reduxLanguage} />
       <OurPhilosophy language={reduxLanguage} />
@@ -57,6 +56,11 @@ const Home = () => {
       <WhatCustomersSay language={reduxLanguage} />
       <OurResults language={reduxLanguage} />
       <TellYourStory language={reduxLanguage} />
+      <Disclaimer
+        bodyText={
+          reduxLanguage === "English" ? disclaimer.english : disclaimer.spanish
+        }
+      />
       <Footer language={reduxLanguage} />
     </div>
   );

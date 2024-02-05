@@ -111,6 +111,11 @@ interface HomePageStrings {
       spanish: string;
     };
   };
+
+  disclaimer: {
+    english: string;
+    spanish: string;
+  };
 }
 
 export const homePageStrings: HomePageStrings = {
@@ -123,8 +128,8 @@ export const homePageStrings: HomePageStrings = {
     },
 
     part2: {
-      english: "No Attorney Fee Unless We Recover For You*",
-      spanish: "No Paga Nada a Menos Que Nos Recuperemos*",
+      english: "No Attorney Fee Unless We Recover For You",
+      spanish: "No Paga Nada a Menos Que Nos Recuperemos",
     },
   },
 
@@ -217,8 +222,8 @@ export const homePageStrings: HomePageStrings = {
 
   ourResults: {
     title: {
-      english: "Our Results",
-      spanish: "Nuestros Resultados",
+      english: "Our Results*",
+      spanish: "Nuestros Resultados*",
     },
 
     viewMoreResults: {
@@ -234,5 +239,12 @@ export const homePageStrings: HomePageStrings = {
       spanish:
         "Si ha resultado herido, comuníquese con un abogado profesional de lesiones personales en Olive Sanchez & Associates hoy.",
     },
+  },
+
+  disclaimer: {
+    english:
+      "*These results do not guarantee a similar outcome, and they should not be construed to constitute a promise or guarantee of a particular result in any particular case. Every case is different, and the outcome of any case depends upon a variety of factors unique to that case.",
+    spanish:
+      "*Estos resultados no garantizan un resultado similar y no deben interpretarse como una promesa o garantía de un resultado particular en ningún caso particular. Cada caso es diferente y el resultado de cada caso depende de una variedad de factores únicos de ese caso.",
   },
 };

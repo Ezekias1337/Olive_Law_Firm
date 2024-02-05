@@ -56,6 +56,11 @@ interface AttorneyInfoStrings {
   juanSanchez: AttorneyInfo;
   whitneyBrooks: AttorneyInfo;
   valerieKilgore: AttorneyInfo;
+
+  disclaimer: {
+    english: string;
+    spanish: string;
+  };
 }
 
 export const attorneyInfoStrings: AttorneyInfoStrings = {
@@ -76,8 +81,8 @@ export const attorneyInfoStrings: AttorneyInfoStrings = {
     spanish: "Membresía del Colegio de Abogados",
   },
   honorsAndAwards: {
-    english: "Honors & Awards",
-    spanish: "Honores y Reconocimientos",
+    english: "Honors & Awards*",
+    spanish: "Honores y Reconocimientos*",
   },
 
   juanSanchez: {
@@ -150,8 +155,8 @@ export const attorneyInfoStrings: AttorneyInfoStrings = {
     },
     biography: {
       english: [
-        "Attorney Whitney Brooks went to the University of South Carolina where she graduated magna cum laude.  After graduating, she decided to pursue her legal studies and enrolled at the Charlotte School of Law, where she was the senior editor of the Charlotte Law Review and a pro bono student ambassador.  Ms. Brooks graduated cum laude from Charlotte School of Law in 2011 and was admitted to practice in North Carolina the same year. Practicing law for more than a decade, she is an active member of many legal associations, including the North Carolina State Bar, the Mecklenburg County Bar, and the North Carolina Advocates for Justice.",
-        "Admired for her high professionalism and legal skills by her peers and clients, Ms. Brooks has been bestowed with many honors. She has been selected by NC Super Lawyers Magazine as a Rising Star in the field of personal injury for four consecutive years.  In 2023, she became a member of the “Lawyers of Distinction” which recognizes excellence in personal injury law and is limited to no more than 10% of attorneys in the state.   In 2018, she was recognized by Attorney and Practice Magazine as a “Top 10 Personal Injury Attorney” and from 2016 to 2018 she was selected by the American Institute of Personal Injury Attorneys for their “10 Best Attorneys” in the field of personal injury for client satisfaction in North Carolina. ",
+        "Attorney Whitney Brooks went to the University of South Carolina where she graduated magna cum laude.  After graduating, she decided to pursue her legal studies and enrolled at the Charlotte School of Law, where she was the senior editor of the Charlotte Law Review and a pro bono student ambassador.  Ms. Brooks graduated cum laude from Charlotte School of Law in 2011 and was admitted to practice in North Carolina the same year. Practicing law for more than a decade, she is an active member of many legal associations, including the North Carolina State Bar, the Mecklenburg County Bar, and the North Carolina Advocates for Justice.*",
+        "Admired for her high professionalism and legal skills by her peers and clients, Ms. Brooks has been bestowed with many honors. She has been selected by NC Super Lawyers Magazine as a Rising Star in the field of personal injury for four consecutive years.  In 2023, she became a member of the “Lawyers of Distinction” which recognizes excellence in personal injury law and is limited to no more than 10% of attorneys in the state.   In 2018, she was recognized by Attorney and Practice Magazine as a “Top 10 Personal Injury Attorney” and from 2016 to 2018 she was selected by the American Institute of Personal Injury Attorneys for their “10 Best Attorneys” in the field of personal injury for client satisfaction in North Carolina.*",
       ],
       spanish: [
         "La abogada Whitney Brooks fue a la Universidad de Carolina del Sur, donde se graduó magna cum laude. Después de graduarse, decidió continuar sus estudios jurídicos y se matriculó en la Facultad de Derecho de Charlotte, donde fue editora principal de Charlotte Law Review y embajadora estudiantil pro bono. La Sra. Brooks se graduó cum laude de la Facultad de Derecho de Charlotte en 2011 y fue admitida para ejercer en Carolina del Norte el mismo año. Ha ejercido la abogacía durante más de una década y es miembro activo de muchas asociaciones jurídicas, incluido el Colegio de Abogados del Estado de Carolina del Norte, el Colegio de Abogados del Condado de Mecklenburg y los Defensores de la Justicia de Carolina del Norte.",
@@ -254,11 +259,18 @@ export const attorneyInfoStrings: AttorneyInfoStrings = {
       ],
     },
     honorsAndAwards: {
-      english: ["Dean's list", "Treasurer of the Women in Law Society"],
+      english: ["Dean's List", "Treasurer of the Women in Law Society"],
       spanish: [
         "La lista de Dean",
         "Tesorera de la Sociedad de Mujeres Jurídicas",
       ],
     },
+  },
+
+  disclaimer: {
+    english:
+      "*For standards of inclusion for The American Institute of Personal Injury Attorneys “10 Best Attorneys,” visit https://www.aiopia.org/2017-10-best-state/. For standards of inclusion for “Super Lawyers” and “Rising Stars,” visit superlawyers.com. For standards of inclusion for “Lawyers of Distinction,” visit https://www.lawyersofdistinction.com/. For standards of inclusion for Attorney and Practice Magazine “Top 10 Personal Injury Attorney,” visit https://www.attorneyandpractice.com/aps-top-attorneys/.  For standards of inclusion for National Academy of Person Injury Attorneys “Top 10 Under 40,” visit https://www.naopia.com/. For standards of inclusion for the Million Dollar Advocates Forum and Multi Million Dollar Advocates Forum, visit milliondollaradvocates.com.",
+    spanish:
+      '*Para conocer los estándares de inclusión de los “10 mejores abogados” del Instituto Americano de Abogados de Lesiones Personales, visite https://www.aiopia.org/2017-10-best-state/. Para conocer los estándares de inclusión de "Super Lawyers" y "Rising Stars", visite superlawyers.com. Para conocer los estándares de inclusión de "Abogados distinguidos", visite https://www.lawyersofdistinction.com/. Para conocer los estándares de inclusión de la revista Attorney and Practice “Los 10 mejores abogados de lesiones personales”, visite https://www.attorneyandpractice.com/aps-top-attorneys/. Para conocer los estándares de inclusión de la Academia Nacional de Abogados de Lesiones Personales "Top 10 menores de 40", visite https://www.naopia.com/. Para conocer los estándares de inclusión para el Million Dollar Advocates Forum y el Multi Million Dollar Advocates Forum, visite Milliondollaradvocates.com.',
   },
 };

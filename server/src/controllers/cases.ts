@@ -138,7 +138,7 @@ export const createCase: RequestHandler<
     const resend = new Resend(env.EMAIL_KEY);
 
     await resend.emails.send({
-      from: "codedecodedbiz@gmail.com",
+      from: "no-reply.osa-law.com",
       to: [emailAddress],
       subject: "New Case Submitted",
       html: "<p>Congrats on sending your <strong>first email</strong>!</p>",

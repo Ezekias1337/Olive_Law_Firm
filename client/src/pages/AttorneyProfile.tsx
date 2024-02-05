@@ -13,6 +13,7 @@ import {
 import { NavBar } from "../components/general-page-layout/navbar/Navbar";
 import { AttorneyBiography } from "../components/page-specific/attorney-profile/AttorneyBiography";
 import { AttorneyInfoShowcase } from "../components/page-specific/attorney-profile/AttorneyInfoShowcase";
+import { Disclaimer } from "../components/disclaimer/Disclaimer";
 import { Footer } from "../components/general-page-layout/footer/Footer";
 // CSS
 import "../css/page-specific/attorney-profile.scss";
@@ -39,6 +40,7 @@ const AttorneyProfile = () => {
     juanSanchez,
     whitneyBrooks,
     valerieKilgore,
+    disclaimer,
   } = attorneyInfoStrings;
 
   const cardTitlesObj = {
@@ -106,6 +108,17 @@ const AttorneyProfile = () => {
           />
         </div>
       </div>
+      {selectedLawyer === ":whitney-brooks" ? (
+        <Disclaimer
+          bodyText={
+            reduxLanguage === "English"
+              ? disclaimer.english
+              : disclaimer.spanish
+          }
+        />
+      ) : (
+        <></>
+      )}
 
       <Footer language={reduxLanguage} />
     </div>

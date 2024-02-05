@@ -8,15 +8,12 @@ import { Button } from "../../../button/Button";
 import "./our-results.scss";
 
 const {
-  pageTitle,
   settlement1,
   settlement2,
   settlement3,
   settlement4,
   settlement5,
   settlement6,
-  settlement7,
-  disclaimer,
 } = ourResultsStrings;
 
 const arrayOfSettlementInfo = [

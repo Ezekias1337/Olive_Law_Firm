@@ -3,13 +3,13 @@ import { useSelector } from "react-redux/es/exports";
 // Functions, Helpers, Utils and Hooks
 // Interfaces and Types
 import { ReduxStoreState } from "../constants/interfaces/ReduxStoreState";
-import { OurResultProps } from "../components/our-results/ourResult";
 // Constants
 import { ourResultsStrings } from "../constants/language-strings/ourResultsStrings";
 // Components
 import { NavBar } from "../components/general-page-layout/navbar/Navbar";
 import { PageHeader } from "../components/general-page-layout/page-header/PageHeader";
 import { OurResult } from "../components/our-results/ourResult";
+import { Disclaimer } from "../components/disclaimer/Disclaimer";
 import { Footer } from "../components/general-page-layout/footer/Footer";
 // CSS
 import "../css/page-specific/our-results.scss";
@@ -29,6 +29,8 @@ const OurResults = () => {
     settlement5,
     settlement6,
     settlement7,
+    settlement8,
+    settlement9,
     disclaimer,
   } = ourResultsStrings;
 
@@ -40,9 +42,9 @@ const OurResults = () => {
     settlement5,
     settlement6,
     settlement7,
+    settlement8,
+    settlement9,
   ];
-
-  const { disclaimerTitle, disclaimerBody } = disclaimer;
 
   return (
     <div className="container-fluid our-results-container p-0">
@@ -58,20 +60,11 @@ const OurResults = () => {
           />
         ))}
       </div>
-
-      <div className="results-disclaimer-wrapper padding-left-and-right">
-        <h3>
-          {reduxLanguage === "English"
-            ? disclaimerTitle.english
-            : disclaimerTitle.spanish}
-        </h3>
-        <p>
-          {reduxLanguage === "English"
-            ? disclaimerBody.english
-            : disclaimerBody.spanish}
-        </p>
-      </div>
-
+      <Disclaimer
+        bodyText={
+          reduxLanguage === "English" ? disclaimer.english : disclaimer.spanish
+        }
+      />
       <Footer language={reduxLanguage} />
     </div>
   );

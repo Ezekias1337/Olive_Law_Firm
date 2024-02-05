@@ -64,6 +64,11 @@ interface AboutUsStrings {
       spanish: string;
     };
   };
+
+  disclaimer: {
+    english: string;
+    spanish: string;
+  };
 }
 
 export const aboutUsStrings: AboutUsStrings = {
@@ -102,8 +107,8 @@ export const aboutUsStrings: AboutUsStrings = {
 
   ourCerifications: {
     title: {
-      english: "Our Certifications",
-      spanish: "Nuestros Certificaciones",
+      english: "Memberships and Accolades*",
+      spanish: "Membresías y Reconocimientos*",
     },
   },
 
@@ -147,5 +152,12 @@ export const aboutUsStrings: AboutUsStrings = {
       spanish:
         "Si ha resultado lesionado, comuníquese hoy con un abogado profesional de lesiones personales o compensación laboral de Olive Sanchez & Associates.",
     },
+  },
+
+  disclaimer: {
+    english:
+      "*For standards of inclusion for The American Institute of Personal Injury Attorneys “10 Best Attorneys,” visit https://www.aiopia.org/2017-10-best-state/. For standards of inclusion for “Super Lawyers” and “Rising Stars,” visit superlawyers.com. For standards of inclusion for “Lawyers of Distinction,” visit https://www.lawyersofdistinction.com/. For standards of inclusion for Attorney and Practice Magazine “Top 10 Personal Injury Attorney,” visit https://www.attorneyandpractice.com/aps-top-attorneys/.  For standards of inclusion for National Academy of Person Injury Attorneys “Top 10 Under 40,” visit https://www.naopia.com/. For standards of inclusion for the Million Dollar Advocates Forum and Multi Million Dollar Advocates Forum, visit milliondollaradvocates.com.",
+    spanish:
+      '*Para conocer los estándares de inclusión de los “10 mejores abogados” del Instituto Americano de Abogados de Lesiones Personales, visite https://www.aiopia.org/2017-10-best-state/. Para conocer los estándares de inclusión de "Super Lawyers" y "Rising Stars", visite superlawyers.com. Para conocer los estándares de inclusión de "Abogados distinguidos", visite https://www.lawyersofdistinction.com/. Para conocer los estándares de inclusión de la revista Attorney and Practice “Los 10 mejores abogados de lesiones personales”, visite https://www.attorneyandpractice.com/aps-top-attorneys/. Para conocer los estándares de inclusión de la Academia Nacional de Abogados de Lesiones Personales "Top 10 menores de 40", visite https://www.naopia.com/. Para conocer los estándares de inclusión para el Million Dollar Advocates Forum y el Multi Million Dollar Advocates Forum, visite Milliondollaradvocates.com.',
   },
 };

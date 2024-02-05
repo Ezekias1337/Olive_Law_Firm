@@ -88,22 +88,40 @@ interface OurResultsStrings {
     };
   };
 
+  settlement8: {
+    amountAwarded: string;
+    english: {
+      practiceArea: string;
+      description: string;
+    };
+    spanish: {
+      practiceArea: string;
+      description: string;
+    };
+  };
+
+  settlement9: {
+    amountAwarded: string;
+    english: {
+      practiceArea: string;
+      description: string;
+    };
+    spanish: {
+      practiceArea: string;
+      description: string;
+    };
+  };
+
   disclaimer: {
-    disclaimerTitle: {
-      english: string;
-      spanish: string;
-    };
-    disclaimerBody: {
-      english: string;
-      spanish: string;
-    };
+    english: string;
+    spanish: string;
   };
 }
 
 export const ourResultsStrings: OurResultsStrings = {
   pageTitle: {
-    english: "Our Results",
-    spanish: "Nuestros Resultados",
+    english: "Our Results*",
+    spanish: "Nuestros Resultados*",
   },
 
   settlement1: {
@@ -195,6 +213,36 @@ export const ourResultsStrings: OurResultsStrings = {
   },
 
   settlement7: {
+    amountAwarded: "500,000.00",
+    english: {
+      practiceArea: "Denied Workers’ Compensation Claim – Spinal Cord Injury",
+      description:
+        "Settled pre-hearing after we secured video statements of prior management to refute defendants’ claim that the injured worker was an independent contractor.",
+    },
+    spanish: {
+      practiceArea:
+        "Reclamo de compensación laboral denegado: lesión de la médula espinal",
+      description:
+        "Se llegó a un acuerdo previo a la audiencia después de que obtuvimos declaraciones en video de la administración anterior para refutar la afirmación de los demandados de que el trabajador lesionado era un contratista independiente.",
+    },
+  },
+
+  settlement8: {
+    amountAwarded: "500,000.00",
+    english: {
+      practiceArea: "Denied Workers’ Compensation Claim – Heat Stroke Injury",
+      description:
+        "Settled post-hearing after we located and presented the testimony of coworkers to describe the worksite heat trap, lack of available drinking water and breaks from the heat.",
+    },
+    spanish: {
+      practiceArea:
+        "Reclamo de compensación laboral denegado: lesión por insolación",
+      description:
+        "Se llegó a un acuerdo después de la audiencia después de que localizamos y presentamos el testimonio de compañeros de trabajo para describir la trampa de calor en el lugar de trabajo, la falta de agua potable disponible y los descansos por el calor.",
+    },
+  },
+
+  settlement9: {
     amountAwarded: "325,000.00",
     english: {
       practiceArea: "Premises Liability – Dog Bite/Incident",
@@ -210,15 +258,9 @@ export const ourResultsStrings: OurResultsStrings = {
   },
 
   disclaimer: {
-    disclaimerTitle: {
-      english: "Disclaimer",
-      spanish: "Descargo de Responsabilidad",
-    },
-    disclaimerBody: {
-      english:
-        "This list is an example of some of the settlements we have won for our clients in the past. It does not necessarily indicate the amount you will receive, as this is subject to a wide array of variables. This section simply serves to provide you a general idea of what you might receive.",
-      spanish:
-        "Esta lista es un ejemplo de algunos de los acuerdos que hemos ganado para nuestros clientes en el pasado. No indica necesariamente la cantidad que recibirá, ya que está sujeta a una amplia gama de variables. Esta sección simplemente sirve para brindarle una idea general de lo que podría recibir.",
-    },
+    english:
+      "*These results do not guarantee a similar outcome, and they should not be construed to constitute a promise or guarantee of a particular result in any particular case. Every case is different, and the outcome of any case depends upon a variety of factors unique to that case.",
+    spanish:
+      "*Estos resultados no garantizan un resultado similar y no deben interpretarse como una promesa o garantía de un resultado particular en ningún caso particular. Cada caso es diferente y el resultado de cada caso depende de una variedad de factores únicos de ese caso.",
   },
 };

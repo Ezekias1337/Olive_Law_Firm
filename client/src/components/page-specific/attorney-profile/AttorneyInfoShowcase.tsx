@@ -81,16 +81,16 @@ export const AttorneyInfoShowcase: React.FC<InfoShowcaseProps> = ({
       bulletPoints: selectedEducation,
     },
     {
-      title: selectedSpokenLanguageTitle,
-      bulletPoints: selectedSpokenLanguages,
+      title: selectedHonorsAndAwardsTitle,
+      bulletPoints: selectedHonorsAndAwards,
     },
     {
       title: selectedBarAssociationTitle,
       bulletPoints: selectedBarAssociation,
     },
     {
-      title: selectedHonorsAndAwardsTitle,
-      bulletPoints: selectedHonorsAndAwards,
+      title: selectedSpokenLanguageTitle,
+      bulletPoints: selectedSpokenLanguages,
     },
   ];
 
