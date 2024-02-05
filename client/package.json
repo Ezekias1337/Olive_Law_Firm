@@ -6,12 +6,12 @@
   "scripts": {
     "dev": "vite",
     "email": "email dev --dir src/emails",
-    "build": "tsc && vite build",
+    "build": "npm install && tsc && vite build",
     "build:gh-pages": "vite build --base=/Olive_Law_Firm/",
     "deploy": "npm run build:gh-pages && gh-pages -d dist",
     "preview": "vite preview"
   },
-  "base": "/Olive_Law_Firm/",
+  "base": "",
   "dependencies": {
     "@formkit/auto-animate": "^1.0.0-beta.6",
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
