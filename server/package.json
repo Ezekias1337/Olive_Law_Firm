@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node dist/index.js",
     "build": "npm install && tsc && npm run copy-shared",
-    "copy-shared": "cp -R ../shared dist/shared",
+    "copy-shared": "cp -R ../shared dist",
     "dev": "nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"ts-node src/index.ts\""
   },
   "keywords": [],
