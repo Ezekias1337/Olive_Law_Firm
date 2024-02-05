@@ -18,7 +18,7 @@ import {
   ClientToServerEvents,
   InterServerEvents,
   SocketData,
-} from "../../shared/constants/interfaces/SocketInterfaces";
+} from "@shared/constants/interfaces/SocketInterfaces";
 
 //Routes
 import userRoutes from "./routes/users";

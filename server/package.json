@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
-    "start": "node build/index.js",
+    "start": "node dist/index.js",
+    "build": "npm install && tsc && npm run copy-shared",
+    "copy-shared": "cp -R ../shared dist/shared",
     "dev": "nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"ts-node src/index.ts\""
   },
   "keywords": [],
