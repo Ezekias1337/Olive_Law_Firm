@@ -17,20 +17,5 @@ export const QuantityStepper: FC<InputFieldProps> = ({
   defaultValue = "",
   setStateHook,
 }) => {
-  return (
-    <TextInput
-      name={name}
-      additionalClassNames="email-input"
-      placeholder="user@gmail.com"
-      theme={theme}
-      columns={columns}
-      defaultValue={defaultValue}
-      inputType="email"
-      inputMode="email"
-      autoComplete="email"
-      pattern="/^[^\s@]+@[^\s@]+\.[^\s@]+$/"
-      icon={faAt}
-      setStateHook={setStateHook}
-    />
-  );
+  return <div></div>;
 };
