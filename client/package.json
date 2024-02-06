@@ -3,15 +3,17 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "base": "",
+  "workspaces": [
+    "client/src/*",
+    "client/src/email/*"
+  ],
   "scripts": {
     "dev": "vite",
-    "email": "email dev --dir src/emails",
     "build": "npm install && tsc && vite build",
-    "build:gh-pages": "vite build --base=/Olive_Law_Firm/",
     "deploy": "npm run build:gh-pages && gh-pages -d dist",
     "preview": "vite preview"
   },
-  "base": "",
   "dependencies": {
     "@formkit/auto-animate": "^1.0.0-beta.6",
     "@fortawesome/fontawesome-svg-core": "^6.4.0",

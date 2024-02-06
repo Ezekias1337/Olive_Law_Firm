@@ -141,10 +141,31 @@ export const createCase: RequestHandler<
       from: "no-reply.osa-law.com",
       to: [emailAddress],
       subject: "New Case Submitted",
-      html: "<p>Congrats on sending your <strong>first email</strong>!</p>",
+      html: `<div class="container">
+        <h1>We have received a new case. Here are the details:</h1>
+        
+        <h5>
+            Customer Name: ${name}
+        </h5>
+        <h5>
+            Phone Number: ${phoneNumber}
+        </h5>
+        <h5>
+            Preferred Language: ${preferredLanguage}
+        </h5>
+        <h5>
+            Date of Incident: ${dateOfIncident}
+        </h5>
+        <h5>
+            TreatmentStatus: ${treatmentStatus}
+        </h5>
+        <h5>
+            Incident Description: ${incidentDescription}
+        </h5>
+      </div>`,
     });
   } catch (error) {
-    console.log(error)
+    console.log(error);
     next(error);
   }
 };

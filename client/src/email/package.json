@@ -1,0 +1,13 @@
+{
+    "name": "react-emails",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+      "dev": "email dev"
+    },
+    "dependencies": {
+      "react-email": "latest",
+      "@react-email/components": "latest"
+    }
+  }
+  
