@@ -33,6 +33,7 @@ const FRONTEND_PORT = env.FRONTEND_PORT;
 const ORIGIN_URL_BASE = env.ORIGIN_URL_BASE;
 const SESSION_SECRET = env.SESSION_SECRET;
 
+// Will possibly need to use generateOriginUrl helper function here for production
 const ORIGIN_URL = `${ORIGIN_URL_BASE}:${FRONTEND_PORT}`;
 
 const corsOptions = {
@@ -62,7 +63,7 @@ app.use("/api/cases", cases);
 app.use("/api/users", userRoutes);
 
 //Connect to DB
-const database = mongoose.connect(process.env.MONGO_URL!).then(() => {
+const database = mongoose.connect(MONGO_URL).then(() => {
   const server = http.createServer(app); // Pass the express app to createServer
 
   server.listen(BACKEND_PORT, () => {
