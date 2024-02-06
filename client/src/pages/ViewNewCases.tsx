@@ -9,6 +9,7 @@ import { updatePendingCases as updatePendingCasesAction } from "../redux/action-
 import getPendingCases from "../functions/network/getPendingCases";
 import approveCase from "../functions/network/approveCase";
 import rejectCase from "../functions/network/rejectCase";
+import { generateOriginUrl } from "../helpers/generateOriginUrl";
 // Interfaces and Types
 import { ReduxStoreState } from "../constants/interfaces/ReduxStoreState";
 import {
@@ -19,6 +20,7 @@ import { CaseReturnedFromDB } from "../constants/interfaces/case";
 // Constants
 const BACKEND_PORT = import.meta.env.VITE_BACKEND_PORT;
 const ORIGIN_URL_BASE = import.meta.env.VITE_ORIGIN_URL_BASE;
+const IS_DEV = import.meta.env.VITE_IS_DEV;
 // Components
 import { NavBar } from "../components/general-page-layout/navbar/Navbar";
 import { PageHeader } from "../components/general-page-layout/page-header/PageHeader";
@@ -88,7 +90,7 @@ const ViewNewCases = () => {
   }, [pendingCases]);
 
   useEffect(() => {
-    const socketServerURL = `${ORIGIN_URL_BASE}:${BACKEND_PORT}`;
+    const socketServerURL = generateOriginUrl(ORIGIN_URL_BASE, BACKEND_PORT, IS_DEV);
     const socket: Socket<ServerToClientEvents, ClientToServerEvents> =
       io(socketServerURL);
 
