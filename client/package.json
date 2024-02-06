@@ -4,7 +4,6 @@
   "version": "0.0.0",
   "type": "module",
   "base": "",
-  "homepage": "https://osa-law.com",
   "workspaces": [
     "client/src/*",
     "client/src/email/*"
