@@ -145,7 +145,7 @@ export const homePageStrings: HomePageStrings = {
 
   seeOurResults: {
     english: "See Our Results",
-    spanish: "Vea Nuestros Resultados",
+    spanish: "Ver Nuestros Resultados",
   },
 
   ourPhilosophy: {

@@ -43,6 +43,12 @@
 
 .footer-navigation {
   background-color: $light-gray;
+
+  @media (max-width: 768px) {
+    .col:first-of-type {
+      display: none;
+    }
+  }
 }
 
 .footer-navigation a {
@@ -95,6 +101,22 @@
 
 .copywrite-container {
   align-items: center;
+  
+  @media (max-width: 768px) {
+    padding-top: 10px;
+  }
+}
+
+.footer-copywrite-disclaimer-wrapper {
+  @media (max-width: 768px) {
+    small {
+      text-align: center;
+    }
+    
+    .col {
+      padding-top: 10px;
+    }
+  }
 }
 
 .copywrite-disclaimer {

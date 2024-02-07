@@ -59,7 +59,7 @@ export const Footer = ({ language }: { language: string }) => {
         </div>
       </div>
       <div className="row footer-navigation mx-5 mt-5 pb-5">
-        <div className="col col-6 col-lg-4 mt-5">
+        <div className="col col-12 col-lg-4 mt-5">
           <h5 className="footer-navigation-header bold-text full-flex">
             {language === "English"
               ? contactHeader.english
@@ -85,7 +85,7 @@ export const Footer = ({ language }: { language: string }) => {
             openInNewTab={true}
           />
         </div>
-        <div className="col col-6 col-lg-4 mt-5">
+        <div className="col col-12 col-lg-4 mt-5">
           <h5 className="footer-navigation-header bold-text full-flex">
             {language === "English" ? infoHeader.english : infoHeader.spanish}
           </h5>
@@ -115,7 +115,7 @@ export const Footer = ({ language }: { language: string }) => {
             openInNewTab={false}
           />
         </div>
-        <div className="col col-6 col-lg-4 mt-5">
+        <div className="col col-12 col-lg-4 mt-5">
           <h5 className="footer-navigation-header bold-text full-flex">
             {language === "English" ? otherHeader.english : otherHeader.spanish}
           </h5>
@@ -150,14 +150,14 @@ export const Footer = ({ language }: { language: string }) => {
             {language === "English" ? copywrite.english : copywrite.spanish}
           </small>
         </div>
-        <div className="col col-6 col-lg-2">
+        <div className="col col-12 col-lg-2">
           <FooterLink
             linkText={language === "English" ? admin.english : admin.spanish}
             url="/login"
             openInNewTab={false}
           />
         </div>
-        <div className="col col-6 col-lg-2">
+        <div className="col col-12 col-lg-2">
           <FooterLink
             linkText={
               language === "English"
@@ -168,7 +168,7 @@ export const Footer = ({ language }: { language: string }) => {
             openInNewTab={false}
           />
         </div>
-        <div className="col col-6 col-lg-2">
+        <div className="col col-12 col-lg-2">
           <FooterLink
             linkText={
               language === "English"

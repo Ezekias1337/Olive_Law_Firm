@@ -2,7 +2,6 @@
 
 .card {
   &.image-only-card {
-    width: 25vw;
     height: 30vh;
     background-repeat: no-repeat;
     background-size: cover;
@@ -19,6 +18,14 @@
       font-weight: bold;
       text-align: center;
       margin-top: auto;
+    }
+
+    @media (max-width: 768px) {
+      width: 45vw;
+    }
+
+    @media (min-width: 768px) {
+      width: 25vw;
     }
   }
 
