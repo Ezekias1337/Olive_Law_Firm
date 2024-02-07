@@ -111,7 +111,7 @@ export const Footer = ({ language }: { language: string }) => {
                 ? googleReviews.english
                 : googleReviews.spanish
             }
-            url="/google-reviews"
+            url="/client-reviews"
             openInNewTab={false}
           />
         </div>
@@ -145,19 +145,19 @@ export const Footer = ({ language }: { language: string }) => {
         </div>
       </div>
       <div className="footer-copywrite-disclaimer-wrapper row pb-5 pt-3 mx-5">
-        <div className="copywrite-container display-flex col col-12 col-lg-6 ps-0">
+        <div className="copywrite-container display-flex col col-12 ps-0">
           <small className="copywrite-disclaimer">
             {language === "English" ? copywrite.english : copywrite.spanish}
           </small>
         </div>
-        <div className="col col-12 col-lg-2">
+        <div className="col col-12 col-lg-4">
           <FooterLink
             linkText={language === "English" ? admin.english : admin.spanish}
             url="/login"
             openInNewTab={false}
           />
         </div>
-        <div className="col col-12 col-lg-2">
+        <div className="col col-12 col-lg-4">
           <FooterLink
             linkText={
               language === "English"
@@ -168,7 +168,7 @@ export const Footer = ({ language }: { language: string }) => {
             openInNewTab={false}
           />
         </div>
-        <div className="col col-12 col-lg-2">
+        <div className="col col-12 col-lg-4">
           <FooterLink
             linkText={
               language === "English"
