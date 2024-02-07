@@ -1,9 +1,10 @@
 @import "../../../css/variables";
 
 .nav-call-to-action {
-  height: 100px;
   background-color: $primary-color;
   color: $light-gray;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .nav-link {
@@ -47,11 +48,55 @@
   .navbar-brand img {
     width: 100px;
   }
+
+  .navbar-call-us,
+  .after-hours-column {
+    display: none !important;
+  }
+
+  .language-toggler-col {
+    justify-content: center;
+    padding-top: 10px;
+  }
+
+  a.nav-link {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .phone-info-col{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .icon-and-number-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 768px) {
   .navbar-brand img {
     width: 100px;
+  }
+  
+  .language-toggler-col {
+    justify-content: center;
+    padding-top: 10px;
+  }
+  
+  .phone-info-col{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  
+  .icon-and-number-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -132,7 +177,13 @@ nav .nav-call-to-action {
     align-items: center;
     flex-direction: row-reverse;
   }
+
   .form-label {
     font-size: 18px;
+  }
+
+  svg {
+    margin-left: 10px;
+    margin-right: 10px;
   }
 }

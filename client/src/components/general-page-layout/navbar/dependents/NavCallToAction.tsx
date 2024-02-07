@@ -18,27 +18,28 @@ export const NavCallToAction = ({
   return (
     <div className="nav-call-to-action container-fluid">
       <div className="row">
-        <div className="col col-4"></div>
-        <div className="col col-4 full-flex">
-          <h2>{language === "English" ? callUs.english : callUs.spanish}</h2>
+        <div className="col col-12 col-xl-6 phone-info-col">
+          <h3 className="navbar-call-us">
+            {language === "English" ? callUs.english : callUs.spanish}
+          </h3>
+          <div className="icon-and-number-wrapper">
+            <FontAwesomeIcon icon={faPhone} size="xl" />
+            <h3>+1 (704) 377-9222</h3>
+          </div>
         </div>
-        <div className="col col-4 full-flex">
-          <h2>
+        <div className="col col-12 col-xl-6 after-hours-column phone-info-col">
+          <h3 className="navbar-call-us">
             {language === "English" ? afterHours.english : afterHours.spanish}
-          </h2>
+          </h3>
+          <div className="icon-and-number-wrapper">
+            <FontAwesomeIcon icon={faPhone} size="xl" />
+            <h3>+1 (704) 999-6967</h3>
+          </div>
         </div>
       </div>
       <div className="row">
-        <div className="col col-4 toggler-align">
+        <div className="col col-12 toggler-align display-flex language-toggler-col">
           <LanguageToggler />
-        </div>
-        <div className="col col-4 full-flex">
-          <FontAwesomeIcon icon={faPhone} size="xl" />
-          <h3 className="ms-2">+1 (704) 377-9222</h3>
-        </div>
-        <div className="col col-4 full-flex">
-          <FontAwesomeIcon icon={faPhone} size="xl" />
-          <h3 className="ms-2">+1 (704) 999-6967</h3>
         </div>
       </div>
     </div>
