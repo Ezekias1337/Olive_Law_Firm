@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "base": "",
+  "base": "/",
   "workspaces": [
     "client/src/*",
     "client/src/email/*"
@@ -11,6 +11,7 @@
   "scripts": {
     "dev": "vite",
     "build": "npm install && tsc && vite build",
+    "build:gh-pages": "vite build --base=/",
     "deploy": "npm run build:gh-pages && gh-pages -d dist",
     "preview": "vite preview"
   },
