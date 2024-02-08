@@ -11,8 +11,6 @@
   "scripts": {
     "dev": "vite",
     "build": "npm install && tsc && vite build",
-    "build:gh-pages": "vite build --base=/",
-    "deploy": "npm run build:gh-pages && gh-pages -d dist",
     "preview": "vite preview"
   },
   "dependencies": {
