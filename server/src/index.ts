@@ -64,6 +64,9 @@ app.use(
 );
 
 // Use Imported routes
+app.use("/", (req, res) => {
+  res.send("Server is running 👍")
+});
 app.use("/api/cases", cases);
 app.use("/api/users", userRoutes);
 
