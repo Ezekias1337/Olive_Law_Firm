@@ -70,7 +70,7 @@ const ContactUs = () => {
     useState<boolean>(false);
   const [submissionInProgress, setSubmissionInProgress] =
     useState<boolean>(false);
-  const [inputFieldColumns, setInputFieldColumns] = useState("6");
+  const [inputFieldColumns, setInputFieldColumns] = useState("12");
   const navigate = useNavigate();
 
   const {

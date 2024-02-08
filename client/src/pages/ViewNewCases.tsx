@@ -32,6 +32,17 @@ import { faWarning } from "@fortawesome/free-solid-svg-icons";
 // CSS
 import "../css/page-specific/cases.scss";
 
+/* 
+  ! This page originally was going to play the audio file when any new case is received by the websockets.
+  ! However, this is disabled without any user interaction of the page by major browsers.
+  ! As a result, if there is no case to display the user has to click a button to listen for new cases
+*/
+
+/* 
+  ? Need to update pendingCases array after approving or deleting a case
+  ? Need to display button when no pendingCases to allow notification sound to play
+*/
+
 const ViewNewCases = () => {
   const dispatch = useDispatch();
   const updatePendingCases = bindActionCreators(
@@ -49,6 +60,7 @@ const ViewNewCases = () => {
   const [websocketConnectionInitialized, setWebsocketConnectionInitialized] =
     useState(false);
   const [displayedCase, setDisplayedCase] = useState<CaseReturnedFromDB>();
+  const [userAwaitingCases, setUserAwaitingCases] = useState<Boolean>(false);
   const [mockCaseApproval, setMockCaseApproval] = useState(false);
   const [fetchErrorMessage, setFetchErrorMessage] = useState<string>();
 
@@ -80,14 +92,14 @@ const ViewNewCases = () => {
   }, [pendingCases]);
 
   useEffect(() => {
-    if (pendingCases.length !== 0 && !displayedCase) {
+    if (pendingCases.length !== 0 && userAwaitingCases === true) {
       setDisplayedCase(pendingCases[0]);
       const notifaction_sound = new Audio(
         "src/assets/audio/notifaction_sound.mp3"
       );
-      //notifaction_sound.play();
+      notifaction_sound.play();
     }
-  }, [pendingCases]);
+  }, [pendingCases, userAwaitingCases]);
 
   useEffect(() => {
     const socketServerURL = generateOriginUrl(ORIGIN_URL_BASE, BACKEND_PORT, IS_DEV);
