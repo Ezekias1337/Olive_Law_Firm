@@ -8,4 +8,5 @@ export default cleanEnv(process.env, {
   ORIGIN_URL_BASE: str(),
   SESSION_SECRET: str(),
   EMAIL_KEY: str(),
+  IS_DEV: str()
 });

@@ -12,6 +12,7 @@ import http from "http";
 
 // Function Imports
 import setupWebSocket from "./websocket";
+import { generateOriginUrl } from "../../shared/helpers/generateOriginUrl";
 // Types
 import {
   ServerToClientEvents,
@@ -32,9 +33,13 @@ const BACKEND_PORT = env.BACKEND_PORT;
 const FRONTEND_PORT = env.FRONTEND_PORT;
 const ORIGIN_URL_BASE = env.ORIGIN_URL_BASE;
 const SESSION_SECRET = env.SESSION_SECRET;
+const IS_DEV = env.IS_DEV;
 
-// Will possibly need to use generateOriginUrl helper function here for production
-const ORIGIN_URL = `${ORIGIN_URL_BASE}:${FRONTEND_PORT}`;
+const ORIGIN_URL = generateOriginUrl(
+  ORIGIN_URL_BASE,
+  FRONTEND_PORT.toString(),
+  IS_DEV
+);
 
 const corsOptions = {
   origin: ORIGIN_URL,

@@ -9,7 +9,7 @@ import { updatePendingCases as updatePendingCasesAction } from "../redux/action-
 import getPendingCases from "../functions/network/getPendingCases";
 import approveCase from "../functions/network/approveCase";
 import rejectCase from "../functions/network/rejectCase";
-import { generateOriginUrl } from "../helpers/generateOriginUrl";
+import { generateOriginUrl } from "../../../shared/helpers/generateOriginUrl";
 // Interfaces and Types
 import { ReduxStoreState } from "../constants/interfaces/ReduxStoreState";
 import {

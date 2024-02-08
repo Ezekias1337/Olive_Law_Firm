@@ -1,5 +1,5 @@
 // Functions, Helpers, and Utils
-import { generateOriginUrl } from "../../helpers/generateOriginUrl";
+import { generateOriginUrl } from "../../../../shared/helpers/generateOriginUrl";
 // Constants
 const BACKEND_PORT = import.meta.env.VITE_BACKEND_PORT;
 const ORIGIN_URL_BASE = import.meta.env.VITE_ORIGIN_URL_BASE;
