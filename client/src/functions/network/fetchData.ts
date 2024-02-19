@@ -8,14 +8,14 @@ const IS_DEV = import.meta.env.VITE_IS_DEV;
 const fetchData = async (input: RequestInfo, init?: RequestInit) => {
   const baseURL = generateOriginUrl(ORIGIN_URL_BASE, BACKEND_PORT, IS_DEV);
   const url = `${baseURL}${input}`;
-  console.log("url: ", url)
+  console.log("url: ", url);
 
   const response = await fetch(url, {
     ...init,
     credentials: "include",
   });
 
-  if (response.ok) {
+  if (response.ok || response.redirected) {
     return response;
   } else {
     const errorBody = await response.json();
