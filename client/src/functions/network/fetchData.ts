@@ -9,7 +9,10 @@ const fetchData = async (input: RequestInfo, init?: RequestInit) => {
   const baseURL = generateOriginUrl(ORIGIN_URL_BASE, BACKEND_PORT, IS_DEV);
   const url = `${baseURL}${input}`;
 
-  const response = await fetch(url, init);
+  const response = await fetch(url, {
+    ...init,
+    credentials: "include",
+  });
 
   if (response.ok) {
     return response;
