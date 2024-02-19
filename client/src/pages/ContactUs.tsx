@@ -56,6 +56,9 @@ import googleMapsLocation from "../assets/images/google-maps-location.png";
     TODO: Remove columns attribute from input field components since it's handled by the form component
     TODO: Make an example component with props for each input field, so I can easily use
       each input field without having to check which props are required for each type
+      
+      
+    ! URGENT: NEED TO ONLY RENDER CONTACT FIELDS AFTER CHECKING THE SCREENSIZE
   */
 
 const ContactUs = () => {
@@ -70,7 +73,7 @@ const ContactUs = () => {
     useState<boolean>(false);
   const [submissionInProgress, setSubmissionInProgress] =
     useState<boolean>(false);
-  const [inputFieldColumns, setInputFieldColumns] = useState("12");
+  const [inputFieldColumns, setInputFieldColumns] = useState("6");
   const navigate = useNavigate();
 
   const {

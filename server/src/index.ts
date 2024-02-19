@@ -41,6 +41,8 @@ const ORIGIN_URL = generateOriginUrl(
   IS_DEV
 );
 
+console.log("ORIGIN_URL: ", ORIGIN_URL)
+
 const corsOptions = {
   origin: ORIGIN_URL,
   credentials: true,
@@ -70,6 +72,9 @@ app.use("/api/", (req, res) => {
   res.send("Server is running 👍")
 });
 
+// Allow credentials in CORS configuration
+app.options("*", cors(corsOptions));
+
 //Connect to DB
 const database = mongoose.connect(MONGO_URL).then(() => {
   const server = http.createServer(app); // Pass the express app to createServer
@@ -86,6 +91,8 @@ const database = mongoose.connect(MONGO_URL).then(() => {
   >(server, {
     cors: {
       origin: ORIGIN_URL,
+      methods: ["GET", "POST", "PATCH", "DELETE"],
+      credentials: true,
     },
     pingInterval: 30000,
     pingTimeout: 15000,
