@@ -13,6 +13,7 @@ const fetchData = async (input: RequestInfo, init?: RequestInit) => {
   const response = await fetch(url, {
     ...init,
     credentials: "include",
+    redirect: 'follow',
   });
 
   if (response.ok || response.redirected) {
