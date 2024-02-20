@@ -48,7 +48,7 @@ const corsOptions = {
   credentials: true,
 };
 
-app.use(cors(corsOptions));
+//app.use(cors(corsOptions));
 app.use(express.json());
 app.use(
   session({
@@ -73,7 +73,7 @@ app.use("/api/", (req, res) => {
 });
 
 // Allow credentials in CORS configuration
-app.options("*", cors(corsOptions));
+//app.options("*", cors(corsOptions));
 
 //Connect to DB
 const database = mongoose.connect(MONGO_URL).then(() => {
@@ -89,11 +89,11 @@ const database = mongoose.connect(MONGO_URL).then(() => {
     InterServerEvents,
     SocketData
   >(server, {
-    cors: {
+    /* cors: {
       origin: ORIGIN_URL,
       methods: ["GET", "POST", "PATCH", "DELETE"],
       credentials: true,
-    },
+    }, */
     pingInterval: 30000,
     pingTimeout: 15000,
   });
