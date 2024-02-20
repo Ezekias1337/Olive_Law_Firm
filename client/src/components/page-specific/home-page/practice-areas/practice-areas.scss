@@ -14,10 +14,44 @@
     height: auto;
     min-height: 200px;
     background-position-y: 20%;
-    background-size: 100%;
+    
     transition: background-size 1s;
     border: 1px solid $neutral;
 
+    @media (max-width: 576px) {
+      background-size: 100%;
+    }
+
+    @media (min-width: 576px) {
+      background-size: cover;
+      background-position-y: 30%;
+    }
+
+    @media (min-width: 605px) {
+      background-size: cover;
+      background-position-y: 10%;
+    }
+
+    @media (min-width: 1100px) {
+      background-size: 100%;
+      background-position-y: 15%;
+    }
+
+    @media (min-width: 1300px) {
+      background-size: 100%;
+      background-position-y: 10%;
+    }
+
+    @media (min-width: 1500px) {
+      background-size: 100%;
+      background-position-y: 15%;
+    }
+
+    @media (min-width: 1800px) {
+      background-size: 100%;
+      background-position-y: 10%;
+    }
+    
     h2 {
       font-size: $header-3 !important;
     }
