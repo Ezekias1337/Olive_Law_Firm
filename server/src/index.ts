@@ -41,7 +41,6 @@ const ORIGIN_URL = generateOriginUrl(
   IS_DEV
 );
 
-
 const corsOptions = {
   origin: ORIGIN_URL,
   credentials: true,
