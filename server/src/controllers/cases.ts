@@ -138,31 +138,25 @@ export const createCase: RequestHandler<
     const resend = new Resend(env.EMAIL_KEY);
 
     await resend.emails.send({
-      from: "no-reply.osa-law.com",
-      to: [emailAddress],
+      from: "no-reply@osa-law.com",
+      to: ["receptionist@osa-law.com"],
       subject: "New Case Submitted",
-      html: `<div class="container">
-        <h1>We have received a new case. Here are the details:</h1>
-        
-        <h5>
-            Customer Name: ${name}
-        </h5>
-        <h5>
-            Phone Number: ${phoneNumber}
-        </h5>
-        <h5>
-            Preferred Language: ${preferredLanguage}
-        </h5>
-        <h5>
-            Date of Incident: ${dateOfIncident}
-        </h5>
-        <h5>
-            TreatmentStatus: ${treatmentStatus}
-        </h5>
-        <h5>
-            Incident Description: ${incidentDescription}
-        </h5>
-      </div>`,
+      html: `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+      <html dir="ltr" lang="en">
+      
+        <body style="font-family:&quot;Times New Roman&quot;,Times,serif;background-color:#e6e6e6;margin:0 auto;padding:40px;color:#264166"><img src="https://www.osa-law.com/assets/Full_Logo-0c350564.png" style="display:block;outline:none;border:none;text-decoration:none" width="300" />
+          <h1>
+            <p style="font-size:56.8px;line-height:60px;margin:16px 0;background-color:#264166;color:#e6e6e6;padding-top:40px;padding-bottom:40px;padding-left:40px;padding-right:40px">We have received a new potential customer:</p>
+          </h1>
+          <p style="font-size:32px;line-height:30px;margin:16px 0;color:#264166"><strong>Customer Name:</strong> ${name}</p>
+          <p style="font-size:32px;line-height:30px;margin:16px 0;color:#264166"><strong>Phone Number:</strong> ${phoneNumber}</p>
+          <p style="font-size:32px;line-height:30px;margin:16px 0;color:#264166"><strong>Preferred Language:</strong> ${preferredLanguage}</p>
+          <p style="font-size:32px;line-height:30px;margin:16px 0;color:#264166"><strong>Date of Incident:</strong> ${dateOfIncident}</p>
+          <p style="font-size:32px;line-height:30px;margin:16px 0;color:#264166"><strong>TreatmentStatus:</strong> ${treatmentStatus}</p>
+          <p style="font-size:32px;line-height:30px;margin:16px 0;color:#264166"><strong>Incident Description:</strong> ${incidentDescription}</p>
+        </body>
+      
+      </html>`,
     });
   } catch (error) {
     console.log(error);
