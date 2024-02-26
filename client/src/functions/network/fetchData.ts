@@ -13,7 +13,7 @@ const fetchData = async (input: RequestInfo, init?: RequestInit) => {
   const response = await fetch(url, {
     ...init,
     credentials: "include",
-    redirect: 'follow',
+    redirect: "follow",
   });
 
   if (response.ok || response.redirected) {
@@ -21,6 +21,7 @@ const fetchData = async (input: RequestInfo, init?: RequestInit) => {
   } else {
     const errorBody = await response.json();
     const errorMessage = errorBody.error;
+    console.log(errorMessage);
     throw Error(errorMessage);
   }
 };
