@@ -139,7 +139,6 @@ export const login: RequestHandler<
 > = async (req, res, next) => {
   const email = req.body.emailAddress;
   const password = req.body.password;
-  console.log(req.body);
 
   try {
     if (!email || !password) {
@@ -169,7 +168,6 @@ export const login: RequestHandler<
       httpOnly: true, // This ensures that the cookie cannot be accessed by client-side scripts
       secure: true, // This requires HTTPS to send the cookie
       sameSite: "None", // This allows cross-origin requests
-      path: "/", // This sets the path for which the cookie is valid
     });
 
     res.status(201).json(user);
