@@ -19,6 +19,7 @@ interface LoginBody {
 
 export const getAuthenticatedUser: RequestHandler = async (req, res, next) => {
   const authenticatedUserIdFromSession = req.session.userId;
+
   try {
     if (!authenticatedUserIdFromSession) {
       throw createHttpError(401, "User not authenticated.");
@@ -164,7 +165,7 @@ export const login: RequestHandler<
     req.session.userId = user._id;
 
     // Set a cookie with the user's ID
-    (res.cookie as any)("authenticatedUserId", user._id, {
+    (res.cookie as any)("userId", user._id, {
       httpOnly: true, // This ensures that the cookie cannot be accessed by client-side scripts
       secure: true, // This requires HTTPS to send the cookie
       sameSite: "None", // This allows cross-origin requests
