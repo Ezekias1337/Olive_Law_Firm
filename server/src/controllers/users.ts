@@ -138,6 +138,7 @@ export const login: RequestHandler<
 > = async (req, res, next) => {
   const email = req.body.emailAddress;
   const password = req.body.password;
+  console.log(req.body);
 
   try {
     if (!email || !password) {
@@ -172,6 +173,7 @@ export const login: RequestHandler<
 
     res.status(201).json(user);
   } catch (error) {
+    console.log(error);
     next(error);
   }
 };
