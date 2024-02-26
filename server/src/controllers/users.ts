@@ -18,6 +18,8 @@ interface LoginBody {
 }
 
 export const getAuthenticatedUser: RequestHandler = async (req, res, next) => {
+  console.log("Session Data for Debugging: ");
+  console.log(req.session);
   const authenticatedUserIdFromSession = req.session.userId;
 
   try {
