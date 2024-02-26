@@ -164,6 +164,7 @@ export const login: RequestHandler<
     }
 
     req.session.userId = user._id;
+    console.log("Session after login: ", req.session);
 
     // Set a cookie with the user's ID
     (res.cookie as any)("userId", user._id, {
@@ -171,6 +172,8 @@ export const login: RequestHandler<
       secure: true, // This requires HTTPS to send the cookie
       sameSite: "None", // This allows cross-origin requests
     });
+    console.log("Cookie set in response: ", res.getHeaders()["set-cookie"]);
+    
 
     res.status(201).json(user);
   } catch (error) {
