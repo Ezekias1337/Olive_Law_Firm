@@ -68,9 +68,6 @@ app.use(
 // Use Imported routes
 app.use("/api/cases", cases);
 app.use("/api/users", userRoutes);
-app.use("/api/", (req, res) => {
-  res.send("Server is running 👍")
-});
 
 // Allow credentials in CORS configuration
 app.options("*", cors(corsOptions));
