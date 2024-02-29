@@ -47,20 +47,6 @@ import "../css/page-specific/admin-home.scss";
 // Assets and Images
 import UserIcon from "../assets/images/user_icon.png";
 
-/* 
-  Need to display admin navbar
-  
-  On login user needs to see:
-  Logout
-  View new cases
-    if accepting case show page that displays same info and has
-    button to go back to new cases page
-  Edit Account
-  view past cases
-    if Admin
-      view employees and be able to edit them
-*/
-
 const ViewAllCases = () => {
   const reduxLanguage = useSelector(
     (state: ReduxStoreState) => state.language.contents.languageChoice

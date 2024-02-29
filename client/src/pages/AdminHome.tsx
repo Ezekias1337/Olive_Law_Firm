@@ -80,11 +80,11 @@ const AdminHome = () => {
       url: "/view-new-cases",
     },
     {
-      text: "View Past Cases",
+      text: "View All Cases",
       variant: "secondary",
       icon: faClockRotateLeft,
       leftIcon: true,
-      url: "/view-past-cases",
+      url: "/view-all-cases",
     },
     {
       text: "Edit Account",

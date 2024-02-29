@@ -185,7 +185,7 @@ export const renderInputFields = (
         inputFieldToBePushed = (
           <div
             key={inputField.name}
-            className={`col col-${inputField.columns}`}
+            className={`col col-12 col-md-6`}
           >
             <CreditCardInput {...generalInputProps} />
             <FormError formErrors={formErrors} inputField={inputField} />
@@ -196,7 +196,7 @@ export const renderInputFields = (
         inputFieldToBePushed = (
           <div
             key={inputField.name}
-            className={`col col-${inputField.columns}`}
+            className={`col col-12 col-md-6`}
           >
             <DateInput {...generalInputProps} />
             <FormError formErrors={formErrors} inputField={inputField} />
@@ -209,7 +209,7 @@ export const renderInputFields = (
           inputFieldToBePushed = (
             <div
               key={inputField.name}
-              className={`col col-${inputField.columns}`}
+              className={`col col-12 col-md-6`}
             >
               <DropdownInput
                 {...generalInputProps}
@@ -225,7 +225,7 @@ export const renderInputFields = (
         inputFieldToBePushed = (
           <div
             key={inputField.name}
-            className={`col col-${inputField.columns}`}
+            className={`col col-12 col-md-6`}
           >
             <EmailInput {...generalInputProps} />
             <FormError formErrors={formErrors} inputField={inputField} />
@@ -236,7 +236,7 @@ export const renderInputFields = (
         inputFieldToBePushed = (
           <div
             key={inputField.name}
-            className={`col col-${inputField.columns}`}
+            className={`col col-12 col-md-6`}
           >
             <PasswordInput {...generalInputProps} />
             <FormError formErrors={formErrors} inputField={inputField} />
@@ -247,7 +247,7 @@ export const renderInputFields = (
         inputFieldToBePushed = (
           <div
             key={inputField.name}
-            className={`col col-${inputField.columns}`}
+            className={`col col-12 col-md-6`}
           >
             <PhoneNumberInput {...generalInputProps} />
             <FormError formErrors={formErrors} inputField={inputField} />
@@ -263,7 +263,7 @@ export const renderInputFields = (
         inputFieldToBePushed = (
           <div
             key={inputField.name}
-            className={`col col-${inputField.columns}`}
+            className={`col col-12 col-md-6`}
           >
             <TextInput {...generalInputProps} />
             <FormError formErrors={formErrors} inputField={inputField} />
@@ -274,7 +274,7 @@ export const renderInputFields = (
         inputFieldToBePushed = (
           <div
             key={inputField.name}
-            className={`col col-${inputField.columns}`}
+            className={`col col-12`}
           >
             <TextAreaInput {...generalInputProps} />
             <FormError formErrors={formErrors} inputField={inputField} />

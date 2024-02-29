@@ -7,6 +7,12 @@
     margin-bottom: 40px !important;
   }
 
+  #contact-us-form {
+    input#date-of-incident {
+      width: 100%;
+    }
+  }
+
   .contact-info-wrapper {
     background-color: $primary-color;
     display: flex;
