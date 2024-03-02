@@ -15,7 +15,6 @@ import { ReduxStoreState } from "../../../../constants/interfaces/ReduxStoreStat
 import "../../../../css/partials/_input-themes.scss";
 import "../../../../css/partials/_switch-input.scss";
 
-
 export const LanguageToggler = () => {
   const dispatch = useDispatch();
   const updateLanguage = bindActionCreators(updateLanguageAction, dispatch);
@@ -23,9 +22,7 @@ export const LanguageToggler = () => {
     (state: ReduxStoreState) => state.language.contents.languageChoice
   );
 
-  const [languageParams, setLanguageParams] = useSearchParams({
-    language: "English",
-  });
+  const [languageParams, setLanguageParams] = useSearchParams({});
 
   const paramsLanguage = languageParams.get("language");
   const [isChecked, setIsChecked] = useState(false);
@@ -35,7 +32,6 @@ export const LanguageToggler = () => {
     setLanguageParams({ language });
     setIsChecked(language === "Spanish");
   };
-  
 
   const handleInputChange = () => {
     const newLanguage = isChecked ? "English" : "Spanish";
@@ -44,7 +40,11 @@ export const LanguageToggler = () => {
 
   useEffect(() => {
     if (reduxLanguage !== paramsLanguage) {
-      setLanguage(reduxLanguage);
+      if (paramsLanguage === "English") {
+        setLanguage("English");
+      } else {
+        setLanguage("Spanish");
+      }
     }
   }, [reduxLanguage, paramsLanguage]);
 
