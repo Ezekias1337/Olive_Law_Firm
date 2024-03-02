@@ -14,10 +14,24 @@
   }
 
   .contact-info-wrapper {
-    background-color: $primary-color;
+    background-color: $secondary-color;
     display: flex;
     padding-top: 40px;
     padding-bottom: 40px;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 100%;
+    max-width: 100%;
+
+    .google-maps-image-link-wrapper {
+      width: 100%;
+    }
+
+    @media (min-width: 992px) {
+      .google-maps-image-link-wrapper {
+        width: 50%;
+      }
+    }
 
     img {
       max-width: 100%;
@@ -52,9 +66,6 @@
           margin-top: 0px !important;
         }
       }
-    }
-    .google-maps-image-link-wrapper {
-      max-width: 60%;
     }
   }
 }

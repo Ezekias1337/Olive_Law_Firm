@@ -1,5 +1,7 @@
 // Library Imports
 import { FC, useState } from "react";
+// Functions, Helpers, Utils, and Hooks
+import useWindowWidth from "../../hooks/useWindowWidth";
 // Components
 import { Loader } from "../general-page-layout/loader/Loader";
 
@@ -13,6 +15,7 @@ export const ClientTestimonial: FC<ClientTestimonialProps> = ({
   src,
 }) => {
   const [isLoading, setIsLoading] = useState(true);
+  const windowWidth = useWindowWidth();
 
   const handleVideoLoad = () => {
     setIsLoading(false);
@@ -23,7 +26,7 @@ export const ClientTestimonial: FC<ClientTestimonialProps> = ({
       {isLoading && <Loader variant="neutral" />}
 
       <iframe
-        width="493"
+        width={windowWidth < 576 ? windowWidth - 60 : 400}
         height="300"
         src={src}
         title={title}

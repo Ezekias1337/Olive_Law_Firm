@@ -533,52 +533,54 @@ const ContactUs = () => {
         <Loader variant="primary" />
       )}
 
-      <div className="contact-info-wrapper padding-left-and-right">
-        <div className="google-maps-image-link-wrapper">
-          <a
-            className="google-maps-image-link"
-            href="https://maps.app.goo.gl/y4c2grr8xZhsGh4L9"
-            target="_blank"
-          >
-            <img
-              src={googleMapsLocation}
-              className="google-maps-image"
-              alt="Google Maps Location of Law Firm"
-            ></img>
-          </a>
-        </div>
+      <div className="contact-info-wrapper padding-left-and-right container">
+        <div className="row">
+          <div className="col col-12 col-md-6 google-maps-image-link-wrapper">
+            <a
+              className="google-maps-image-link"
+              href="https://maps.app.goo.gl/y4c2grr8xZhsGh4L9"
+              target="_blank"
+            >
+              <img
+                src={googleMapsLocation}
+                className="google-maps-image"
+                alt="Google Maps Location of Law Firm"
+              ></img>
+            </a>
+          </div>
 
-        <div className="text-wrapper">
-          <h3>
-            {reduxLanguage === "English"
-              ? businessPhone.english
-              : businessPhone.spanish}
-          </h3>
-          <h4>(704) 377-9222</h4>
-
-          <h3>
-            {reduxLanguage === "English"
-              ? businessEmail.english
-              : businessEmail.spanish}
-          </h3>
-          <h4>receptionist@osa-law.com</h4>
-
-          <h3>
-            {reduxLanguage === "English"
-              ? businessAddress.english
-              : businessAddress.spanish}
-          </h3>
-          <h4>200 Queens Rd Suite #200</h4>
-          <h4>Charlotte, NC 28204</h4>
-
-          <a href="https://maps.app.goo.gl/y4c2grr8xZhsGh4L9" target="_blank">
-            <FontAwesomeIcon icon={faMap} size="lg" />
+          <div className="col col-12 col-md-6 text-wrapper">
             <h3>
               {reduxLanguage === "English"
-                ? getDirections.english
-                : getDirections.spanish}
+                ? businessPhone.english
+                : businessPhone.spanish}
             </h3>
-          </a>
+            <h4>(704) 377-9222</h4>
+
+            <h3>
+              {reduxLanguage === "English"
+                ? businessEmail.english
+                : businessEmail.spanish}
+            </h3>
+            <h4>receptionist@osa-law.com</h4>
+
+            <h3>
+              {reduxLanguage === "English"
+                ? businessAddress.english
+                : businessAddress.spanish}
+            </h3>
+            <h4>200 Queens Rd Suite #200</h4>
+            <h4>Charlotte, NC 28204</h4>
+
+            <a href="https://maps.app.goo.gl/y4c2grr8xZhsGh4L9" target="_blank">
+              <FontAwesomeIcon icon={faMap} size="lg" />
+              <h3>
+                {reduxLanguage === "English"
+                  ? getDirections.english
+                  : getDirections.spanish}
+              </h3>
+            </a>
+          </div>
         </div>
       </div>
       <Footer language={reduxLanguage} />

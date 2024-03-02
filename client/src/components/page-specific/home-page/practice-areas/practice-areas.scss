@@ -17,6 +17,10 @@
     
     transition: background-size 1s;
     border: 1px solid $neutral;
+    
+    &:hover {
+      background-size: 120%;
+    }
 
     @media (max-width: 576px) {
       background-size: 100%;
@@ -54,10 +58,6 @@
     
     h2 {
       font-size: $header-3 !important;
-    }
-
-    &:hover {
-      background-size: 120%;
     }
   }
 }

@@ -13,5 +13,20 @@
     gap: 10px;
     padding-top: 40px;
     background-color: $neutral;
+
+    @media (max-width: 576px) {
+      gap: 10px;
+      padding-left: 20px;
+      padding-right: 20px;
+
+      .individual-result-container {
+        width: 100%;
+        margin-bottom: 0px;
+      }
+
+      .individual-result-container:last-of-type {
+        margin-bottom: 40px;
+      }
+    }
   }
 }
