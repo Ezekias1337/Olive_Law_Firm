@@ -92,16 +92,16 @@ export const aboutUsStrings: AboutUsStrings = {
 
     paragraph2: {
       english:
-        "Olive Sanchez & Associates continues the proud legacy of compassionate, competent and highly motivated representation of the injured pioneered by The Olive Law Firm. We remain a closely managed firm dedicated to our client’s needs. Bigger is not always better. When seeking legal assistance, be wary of the larger firm mills that depend on ads and volume, and which may not always have your best interests in mind. At Olive Sanchez and Associates you will meet our carefully selected staff, and you will be treated with the dignity you deserve as we help and guide you through a difficult time in your life.",
+        "Olive, Sanchez & Associates continues the proud legacy of compassionate, competent and highly motivated representation of the injured pioneered by The Olive Law Firm. We remain a closely managed firm dedicated to our clients' needs. Bigger is not always better. When seeking legal assistance, be wary of the larger firm mills that depend on ads and volume, and which may not always have your best interests in mind. At Olive, Sanchez & Associates you will meet our carefully selected staff, and you will be treated with the dignity you deserve as we help and guide you through a difficult time in your life.",
       spanish:
-        "Olive Sanchez & Associates continúa el orgulloso legado de representación compasiva, competente y altamente motivada de los lesionados, iniciado por The Olive Law Firm. Seguimos siendo una firma estrechamente administrada y dedicada a las necesidades de nuestros clientes. Más grande no siempre es mejor. Cuando busque asistencia legal, tenga cuidado con las empresas más grandes que dependen de los anuncios y el volumen, y que no siempre tienen en mente sus mejores intereses. En Olive Sanchez and Associates conocerá a nuestro personal cuidadosamente seleccionado y será tratado con la dignidad que se merece mientras lo ayudamos y guiamos en un momento difícil de su vida.",
+        "Olive, Sanchez & Associates continúa el orgulloso legado de representación compasiva, competente y altamente motivada de los lesionados, iniciado por The Olive Law Firm. Seguimos siendo una firma estrechamente administrada y dedicada a las necesidades de nuestros clientes. Más grande no siempre es mejor. Cuando busque asistencia legal, tenga cuidado con las empresas más grandes que dependen de los anuncios y el volumen, y que no siempre tienen en mente sus mejores intereses. En Olive, Sanchez & Associates conocerá a nuestro personal cuidadosamente seleccionado y será tratado con la dignidad que se merece mientras lo ayudamos y guiamos en un momento difícil de su vida.",
     },
 
     paragraph3: {
       english:
-        "With new energy, the latest tools in legal technology and the love of what we do, Olive Sanchez & Associates is ready to meet your personal injury needs. We hope you will put your trust in us.",
+        "With new energy, the latest tools in legal technology and the love of what we do, Olive, Sanchez & Associates is ready to meet your personal injury needs. We hope you will put your trust in us.",
       spanish:
-        "Con nueva energía, las últimas herramientas en tecnología legal y el amor por lo que hacemos, Olive Sanchez & Associates está listo para satisfacer sus necesidades de lesiones personales. Esperamos que confiará en nosotros.",
+        "Con nueva energía, las últimas herramientas en tecnología legal y el amor por lo que hacemos, Olive, Sanchez & Associates está listo para satisfacer sus necesidades de lesiones personales. Esperamos que confiará en nosotros.",
     },
   },
 
@@ -148,9 +148,9 @@ export const aboutUsStrings: AboutUsStrings = {
 
     paragraph5: {
       english:
-        "If you have been injured contact a professional personal injury or workers' compensations attorney at Olive Sanchez & Associates today.",
+        "If you have been injured contact a professional personal injury or workers' compensations attorney at Olive, Sanchez & Associates today.",
       spanish:
-        "Si ha resultado lesionado, comuníquese hoy con un abogado profesional de lesiones personales o compensación laboral de Olive Sanchez & Associates.",
+        "Si ha resultado lesionado, comuníquese hoy con un abogado profesional de lesiones personales o compensación laboral de Olive, Sanchez & Associates.",
     },
   },
 

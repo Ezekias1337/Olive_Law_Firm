@@ -51,7 +51,7 @@ const AboutUs = () => {
       <NavBar theme="dark" adminVariant={false} language={reduxLanguage} />
       <PageHeader language={reduxLanguage} title={pageTitle} includeBanner />
 
-      <div className="about-us-our-philosophy dark-image-overlay padding-left-and-right">
+      <div className="about-us-our-philosophy padding-left-and-right">
         <h2 className="full-flex">
           {reduxLanguage === "English"
             ? philosophyTitle.english
@@ -89,6 +89,31 @@ const AboutUs = () => {
         </p>
       </div>
 
+      <div className="about-us-intro dark-image-overlay padding-left-and-right">
+        <h2 className="full-flex">
+          {reduxLanguage === "English"
+            ? introTitle.english
+            : introTitle.spanish}
+        </h2>
+
+        <p className="about-us-paragraph">
+          {reduxLanguage === "English"
+            ? introParagraph1.english
+            : introParagraph1.spanish}
+        </p>
+
+        <p className="about-us-paragraph">
+          {reduxLanguage === "English"
+            ? introParagraph2.english
+            : introParagraph2.spanish}
+        </p>
+
+        <p className="about-us-paragraph">
+          {reduxLanguage === "English"
+            ? introParagraph3.english
+            : introParagraph3.spanish}
+        </p>
+      </div>
       <div className="about-us-certifications">
         <h2 className="full-flex">
           {reduxLanguage === "English"
@@ -144,33 +169,6 @@ const AboutUs = () => {
           />
         </div>
       </div>
-
-      <div className="about-us-intro dark-image-overlay padding-left-and-right">
-        <h2 className="full-flex">
-          {reduxLanguage === "English"
-            ? introTitle.english
-            : introTitle.spanish}
-        </h2>
-
-        <p className="about-us-paragraph">
-          {reduxLanguage === "English"
-            ? introParagraph1.english
-            : introParagraph1.spanish}
-        </p>
-
-        <p className="about-us-paragraph">
-          {reduxLanguage === "English"
-            ? introParagraph2.english
-            : introParagraph2.spanish}
-        </p>
-
-        <p className="about-us-paragraph">
-          {reduxLanguage === "English"
-            ? introParagraph3.english
-            : introParagraph3.spanish}
-        </p>
-      </div>
-
       <Disclaimer
         bodyText={
           reduxLanguage === "English" ? disclaimer.english : disclaimer.spanish

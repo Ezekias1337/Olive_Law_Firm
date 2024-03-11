@@ -71,11 +71,11 @@
   }
 
   .about-us-our-philosophy {
-    background-image: url("../../assets/images/backgrounds/Inside_Court_Room_1.png");
+    background-color: $neutral;
     height: fit-content;
 
-    h2 {
-      color: $neutral;
+    h2, p {
+      color: $primary-color;
     }
   }
 }
