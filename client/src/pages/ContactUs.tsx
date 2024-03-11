@@ -432,6 +432,7 @@ const ContactUs = () => {
             field.defaultValue;
         } else {
           errors[camelCasifyString(field.name)] = `${field.name} is required`;
+          setSubmissionInProgress(false);
         }
       }
     });
