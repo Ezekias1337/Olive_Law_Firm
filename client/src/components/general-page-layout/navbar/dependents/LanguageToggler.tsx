@@ -39,10 +39,12 @@ export const LanguageToggler = () => {
   };
 
   useEffect(() => {
-    if (reduxLanguage !== paramsLanguage) {
+    if (paramsLanguage === null) {
+      setLanguage("English");
+    } else {
       if (paramsLanguage === "English") {
         setLanguage("English");
-      } else {
+      } else if (paramsLanguage === "Spanish") {
         setLanguage("Spanish");
       }
     }
