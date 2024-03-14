@@ -6,8 +6,8 @@ export type AttorneyInfo = {
   name: string;
   image: string;
   quote: {
-    english: string;
-    spanish: string;
+    english: string[];
+    spanish: string[];
   };
   biography: {
     english: string[];
@@ -89,10 +89,14 @@ export const attorneyInfoStrings: AttorneyInfoStrings = {
     name: "Juan Sanchez",
     image: JuanImage,
     quote: {
-      english:
-        "“Where you see wrong or inequality or injustice, speak out, because this is your country. This is your democracy. Make it. Protect it. Pass it on.” - Thurgood Marshall",
-      spanish:
-        "“Donde vean mal, desigualdad o injusticia, hablen, porque este es su país. Ésta es su democracia. Hazlo. Protegerlo. Pásalo.” - Thurgood Marshall",
+      english: [
+        "“Where you see wrong or inequality or injustice, speak out, because this is your country. This is your democracy. Make it. Protect it. Pass it on.”",
+        "- Thurgood Marshall",
+      ],
+      spanish: [
+        "“Donde vean mal, desigualdad o injusticia, hablen, porque este es su país. Ésta es su democracia. Hazlo. Protegerlo. Pásalo.”",
+        "- Thurgood Marshall",
+      ],
     },
     biography: {
       english: [
@@ -148,10 +152,14 @@ export const attorneyInfoStrings: AttorneyInfoStrings = {
     name: "Whitney Brooks",
     image: WhitneyImage,
     quote: {
-      english:
-        "“Fight for the things you care about, but do it in a way that will lead others to join you.” - Ruth Bader Ginsberg",
-      spanish:
-        "“Lucha por las cosas que te importan, pero hazlo de una manera que lleve a otros a unirse a ti.” - Ruth Bader Ginsberg ",
+      english: [
+        "“Fight for the things you care about, but do it in a way that will lead others to join you.”",
+        "- Ruth Bader Ginsberg",
+      ],
+      spanish: [
+        "“Lucha por las cosas que te importan, pero hazlo de una manera que lleve a otros a unirse a ti.”",
+        "- Ruth Bader Ginsberg",
+      ],
     },
     biography: {
       english: [
@@ -211,10 +219,14 @@ export const attorneyInfoStrings: AttorneyInfoStrings = {
     name: "Valerie Kilgore",
     image: ValerieImage,
     quote: {
-      english:
-        "“The liberties of none are safe unless the liberties of all are protected.” - William O. Douglas",
-      spanish:
-        "“Las libertades de nadie están seguras a menos que se protejan las libertades de todos”. -William O.Douglas",
+      english: [
+        "“The liberties of none are safe unless the liberties of all are protected.”",
+        "- William O. Douglas",
+      ],
+      spanish: [
+        "“Las libertades de nadie están seguras a menos que se protejan las libertades de todos.”",
+        "- William O. Douglas",
+      ],
     },
     biography: {
       english: [

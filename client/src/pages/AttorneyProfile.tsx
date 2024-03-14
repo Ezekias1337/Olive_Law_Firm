@@ -79,8 +79,13 @@ const AttorneyProfile = () => {
           <h2>{lawyerInfo.name}</h2>
           <h4>
             {reduxLanguage === "English"
-              ? lawyerInfo.quote.english
-              : lawyerInfo.quote.spanish}
+              ? lawyerInfo.quote.english[0]
+              : lawyerInfo.quote.spanish[0]}
+          </h4>
+          <h4>
+            {reduxLanguage === "English"
+              ? lawyerInfo.quote.english[1]
+              : lawyerInfo.quote.spanish[1]}
           </h4>
         </div>
         <div className="attorney-image-wrapper">

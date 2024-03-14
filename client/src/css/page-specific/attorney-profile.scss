@@ -85,12 +85,33 @@
   }
 
   @media (max-width: 799px) {
+    .attorney-profile-quote-wrapper {
+      flex-direction: column;
+
+      .attorney-image-wrapper,
+      .text-wrapper {
+        width: 100%;
+      }
+      .attorney-profile-image {
+        margin-top: 20px;
+      }
+    }
+
+    .attorney-profile-quote-wrapper {
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+
     .biography-text-wrapper {
       max-width: 100%;
     }
 
     .attorney-profile-info-wrapper {
       max-width: 100%;
+
+      .showcase-card {
+        width: 100%;
+      }
     }
   }
 
