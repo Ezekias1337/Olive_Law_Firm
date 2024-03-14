@@ -42,7 +42,6 @@ export const Footer = ({ language }: { language: string }) => {
   return (
     <footer className="container-fluid footer">
       <div className="row mx-5 pt-5">
-        
         <div className="col col-8 col-lg-6 social-col">
           {/* <FooterSocialIcon
             icon={faInstagram}
@@ -69,11 +68,13 @@ export const Footer = ({ language }: { language: string }) => {
             linkText="(704) 377-9222"
             url="tel:+17043779222"
             openInNewTab={false}
+            preserveState={[["language", language]]}
           />
           <FooterLink
             linkText={language === "English" ? email.english : email.spanish}
             url="mailto: receptionist@osa-law.com"
             openInNewTab={false}
+            preserveState={[["language", language]]}
           />
           <FooterLink
             linkText={
@@ -83,6 +84,7 @@ export const Footer = ({ language }: { language: string }) => {
             }
             url="https://goo.gl/maps/GdLK2JYiZnwMtetr5"
             openInNewTab={true}
+            preserveState={[["language", language]]}
           />
         </div>
         <div className="col col-12 col-lg-4 mt-5">
@@ -95,6 +97,7 @@ export const Footer = ({ language }: { language: string }) => {
             }
             url="/about-us"
             openInNewTab={false}
+            preserveState={[["language", language]]}
           />
           <FooterLink
             linkText={
@@ -104,6 +107,7 @@ export const Footer = ({ language }: { language: string }) => {
             }
             url="/practice-areas"
             openInNewTab={false}
+            preserveState={[["language", language]]}
           />
           <FooterLink
             linkText={
@@ -113,6 +117,7 @@ export const Footer = ({ language }: { language: string }) => {
             }
             url="/client-reviews"
             openInNewTab={false}
+            preserveState={[["language", language]]}
           />
         </div>
         <div className="col col-12 col-lg-4 mt-5">
@@ -127,11 +132,13 @@ export const Footer = ({ language }: { language: string }) => {
             }
             url="/contact-us"
             openInNewTab={false}
+            preserveState={[["language", language]]}
           />
           <FooterLink
             linkText={language === "English" ? faqs.english : faqs.spanish}
             url="/faqs"
             openInNewTab={false}
+            preserveState={[["language", language]]}
           />
           <FooterLink
             linkText={
@@ -141,6 +148,7 @@ export const Footer = ({ language }: { language: string }) => {
             }
             url="/community-involvement"
             openInNewTab={false}
+            preserveState={[["language", language]]}
           />
         </div>
       </div>
@@ -155,6 +163,7 @@ export const Footer = ({ language }: { language: string }) => {
             linkText={language === "English" ? admin.english : admin.spanish}
             url="/login"
             openInNewTab={false}
+            preserveState={[["language", language]]}
           />
         </div>
         <div className="col col-12 col-lg-4">
@@ -166,6 +175,7 @@ export const Footer = ({ language }: { language: string }) => {
             }
             url="/terms-of-service"
             openInNewTab={false}
+            preserveState={[["language", language]]}
           />
         </div>
         <div className="col col-12 col-lg-4">
@@ -177,6 +187,7 @@ export const Footer = ({ language }: { language: string }) => {
             }
             url="/privacy-policy"
             openInNewTab={false}
+            preserveState={[["language", language]]}
           />
         </div>
       </div>
