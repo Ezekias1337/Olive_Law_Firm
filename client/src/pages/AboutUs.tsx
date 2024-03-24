@@ -22,6 +22,7 @@ import Badge6 from "../assets/images/certifications/6.png";
 import Badge7 from "../assets/images/certifications/7.png";
 import Badge8 from "../assets/images/certifications/8.png";
 import Badge9 from "../assets/images/certifications/9.png";
+import Badge10 from "../assets/images/certifications/10.png";
 
 const AboutUs = () => {
   const reduxLanguage = useSelector(
@@ -167,6 +168,11 @@ const AboutUs = () => {
             className="certification-badge col-3"
             alt="Board Certified Workers' Compensation Law Badge"
           />
+          <img
+            src={Badge10}
+            className="certification-badge col-3"
+            alt="Board Certified Workers' Compensation Law Badge"
+          />
         </div>
       </div>
       <Disclaimer
@@ -174,7 +180,6 @@ const AboutUs = () => {
           reduxLanguage === "English" ? disclaimer.english : disclaimer.spanish
         }
       />
-
       <Footer language={reduxLanguage} />
     </div>
   );
