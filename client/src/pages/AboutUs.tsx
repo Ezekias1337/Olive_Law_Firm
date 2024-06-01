@@ -23,6 +23,7 @@ import Badge7 from "../assets/images/certifications/7.png";
 import Badge8 from "../assets/images/certifications/8.png";
 import Badge9 from "../assets/images/certifications/9.png";
 import Badge10 from "../assets/images/certifications/10.png";
+import Badge11 from "../assets/images/certifications/11.png"
 
 const AboutUs = () => {
   const reduxLanguage = useSelector(
@@ -172,6 +173,11 @@ const AboutUs = () => {
             src={Badge10}
             className="certification-badge col-3"
             alt="Board Certified Workers' Compensation Law Badge"
+          />
+          <img
+            src={Badge11}
+            className="certification-badge col-3"
+            alt="Board Certified Workers' Martindale-Hubbel Badge"
           />
         </div>
       </div>
