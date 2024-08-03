@@ -60,7 +60,7 @@ export const navbarStrings: NavbarStrings = {
   },
   callUs: {
     english: "CALL US",
-    spanish: "LLAMANOS",
+    spanish: "LLÁMENOS",
   },
   afterHours: {
     english: "AFTER HOURS",

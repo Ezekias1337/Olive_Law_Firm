@@ -129,13 +129,13 @@ export const homePageStrings: HomePageStrings = {
 
     part2: {
       english: "No Attorney Fee Unless We Recover For You",
-      spanish: "No Paga Nada a Menos Que Nos Recuperemos",
+      spanish: "¡No Cobramos Sí No Ganamos!",
     },
   },
 
   scheduleConsulation: {
     english: "Schedule a FREE Consultation",
-    spanish: "Programar una Consulta GRATIS",
+    spanish: "Haga una consulta GRATUITA",
   },
 
   seeGoogleReviews: {
@@ -151,7 +151,7 @@ export const homePageStrings: HomePageStrings = {
   ourPhilosophy: {
     title: {
       english: "Our Philosophy",
-      spanish: "Nuestra Filosofia",
+      spanish: "Nuestra Filosofía",
     },
 
     body: {
@@ -198,7 +198,7 @@ export const homePageStrings: HomePageStrings = {
     english:
       "Fighting for the rights of injured victims is what we do. It's who we are.",
     spanish:
-      "Luchar por los derechos de las víctimas heridas es lo que hacemos. Es lo que somos.",
+      "Luchamos por los derechos de las víctimas lesionadas: ¡Es lo que hacemos, es lo que somos!",
   },
 
   ourAttorneys: {
