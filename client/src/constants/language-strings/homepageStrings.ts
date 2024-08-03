@@ -237,7 +237,7 @@ export const homePageStrings: HomePageStrings = {
       english:
         "If you’ve been hurt contact a professional personal injury attorney at Olive Sanchez & Associates today.",
       spanish:
-        "Si ha resultado herido, comuníquese con un abogado profesional de lesiones personales en Olive Sanchez & Associates hoy.",
+        "Si ha resultado lesionado, comuníquese hoy mismo con los abogados profesionales de lesiones personales de Olive Sanchez & Associates",
     },
   },
 

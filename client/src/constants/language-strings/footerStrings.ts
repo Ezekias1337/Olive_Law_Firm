@@ -115,15 +115,15 @@ export const footerStrings: FooterStrings = {
     },
     freeConsultation: {
       english: "Free Consultation",
-      spanish: "Consulta gratis",
+      spanish: "Consulta Gratuita",
     },
     faqs: {
       english: "FAQ",
-      spanish: "FAQ",
+      spanish: "Preguntas Frecuentes",
     },
     communityInteraction: {
       english: "Community Involvement",
-      spanish: "Participación de la Comunidad",
+      spanish: "Participación en La Comunidad",
     },
   },
 

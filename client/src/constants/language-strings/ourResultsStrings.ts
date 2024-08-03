@@ -135,7 +135,7 @@ export const ourResultsStrings: OurResultsStrings = {
       practiceArea:
         "Colisión de Vehículos Motorizados - Lesión Cerebral Traumática",
       description:
-        "Se recuperó un acuerdo por lesiones personales de $3,000,000.00 para un hombre que sufrió una lesión cerebral catastrófica como resultado de un accidente automovilístico.",
+        "Se llegó a un acuerdo por lesiones personales de $3,000,000.00 para un hombre que sufrió una lesión cerebral catastrófica como resultado de un accidente automovilístico.",
     },
   },
 
@@ -164,7 +164,7 @@ export const ourResultsStrings: OurResultsStrings = {
       practiceArea:
         "Colisión de Vehículos Motorizados - Lesiones Catastróficas",
       description:
-        "Se resolvió un reclamo por lesiones personales por $2,035,000.00 para un hombre que resultó gravemente herido como resultado de un accidente automovilístico.",
+        "Se llegó a un acuerdo por lesiones personales por $2,035,000.00 para un hombre que resultó gravemente herido como resultado de un accidente automovilístico.",
     },
   },
 
@@ -177,7 +177,7 @@ export const ourResultsStrings: OurResultsStrings = {
     },
     spanish: {
       practiceArea:
-        "Responsabilidad de las Instalaciones - Pérdida de la Pierna",
+        "Responsabilidad de Propiedad Inmobiliaria",
       description:
         "Recuperó los límites de la póliza de seguro de $1,000,000.00 para un niño que perdió su pierna luego de caerse de un tractor.",
     },
@@ -194,7 +194,7 @@ export const ourResultsStrings: OurResultsStrings = {
       practiceArea:
         "Fuerza Excesiva de la Policía - Lesión de la Médula Espinal",
       description:
-        "Se recuperó $1,000,000.00 para un hombre que sufrió una lesión en la médula espinal después de caerse de un puesto de ciervos después de haber sido electrocutado por un ayudante del Sheriff.",
+        "Se recuperó $1,000,000.00 para un hombre que sufrió una lesión en la médula espinal después de caerse de una torre de caza después de haber sido electrocutado por un Alguacil.",
     },
   },
 
@@ -206,7 +206,7 @@ export const ourResultsStrings: OurResultsStrings = {
         "Recovered $1,000,000.00 in a personal injury case for a teen who almost died as a result of an accidental drowning incident at a town swimming pool.",
     },
     spanish: {
-      practiceArea: "Responsabilidad de las Instalaciones - Ahogamiento",
+      practiceArea: "Responsabilidad de Propiedad Inmobiliaria - Ahogamiento",
       description:
         "Se recuperó $1,000,000.00 en un caso de lesiones personales para un adolescente que casi muere como resultado de un incidente de ahogamiento accidental en una piscina de la ciudad.",
     },
