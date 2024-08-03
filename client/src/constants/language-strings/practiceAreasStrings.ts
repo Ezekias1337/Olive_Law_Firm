@@ -81,12 +81,12 @@ export const practiceAreasStrings: PracticeAreasStrings = {
 
     workersComp: {
       english: "Workers' Compensation",
-      spanish: "Compensación de Trabajadores",
+      spanish: "Compensación Laboral",
     },
 
     autoAccidents: {
       english: "Auto Accidents",
-      spanish: "Accidentes de Auto",
+      spanish: "Choque de Vehículos Motorizados",
     },
 
     truckAccidents: {
@@ -101,7 +101,7 @@ export const practiceAreasStrings: PracticeAreasStrings = {
 
     wrongfulDeath: {
       english: "Wrongful Death",
-      spanish: "Muerte Injusta",
+      spanish: "Muerte por Negligencia",
     },
 
     spinalAndBrainInjuries: {
