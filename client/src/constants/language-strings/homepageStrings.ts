@@ -129,7 +129,7 @@ export const homePageStrings: HomePageStrings = {
 
     part2: {
       english: "No Attorney Fee Unless We Recover For You",
-      spanish: "¡No Cobramos Sí No Ganamos!",
+      spanish: "¡No Cobramos Si No Ganamos!",
     },
   },
 
