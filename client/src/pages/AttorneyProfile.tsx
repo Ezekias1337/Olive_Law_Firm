@@ -21,7 +21,7 @@ import "../css/page-specific/attorney-profile.scss";
 const possibleLawyerArray = [
   ":juan-sanchez",
   ":whitney-brooks",
-  ":valerie-kilgore",
+  /* ":valerie-kilgore", */
 ];
 
 const AttorneyProfile = () => {
@@ -39,7 +39,7 @@ const AttorneyProfile = () => {
     honorsAndAwards,
     juanSanchez,
     whitneyBrooks,
-    valerieKilgore,
+    /* valerieKilgore, */
     disclaimer,
   } = attorneyInfoStrings;
 
@@ -61,9 +61,9 @@ const AttorneyProfile = () => {
       setLawyerInfo(juanSanchez);
     } else if (selectedLawyerIndex === 1) {
       setLawyerInfo(whitneyBrooks);
-    } else {
+    } /* else {
       setLawyerInfo(valerieKilgore);
-    }
+    } */
   }, [selectedLawyer]);
 
   if (lawyerInfo === undefined) {

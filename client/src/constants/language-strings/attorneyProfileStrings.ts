@@ -1,6 +1,6 @@
 import JuanImage from "../../assets/images/staff/juan-sanchez.png";
 import WhitneyImage from "../../assets/images/staff/whitney-brooks.png";
-import ValerieImage from "../../assets/images/staff/valerie-kilgore.png";
+//import ValerieImage from "../../assets/images/staff/valerie-kilgore.png";
 
 export type AttorneyInfo = {
   name: string;
@@ -55,7 +55,7 @@ interface AttorneyInfoStrings {
 
   juanSanchez: AttorneyInfo;
   whitneyBrooks: AttorneyInfo;
-  valerieKilgore: AttorneyInfo;
+  //valerieKilgore: AttorneyInfo;
 
   disclaimer: {
     english: string;
@@ -215,7 +215,7 @@ export const attorneyInfoStrings: AttorneyInfoStrings = {
     },
   },
 
-  valerieKilgore: {
+  /* valerieKilgore: {
     name: "Valerie Kilgore",
     image: ValerieImage,
     quote: {
@@ -277,7 +277,7 @@ export const attorneyInfoStrings: AttorneyInfoStrings = {
         "Tesorera de la Sociedad de Mujeres Jurídicas",
       ],
     },
-  },
+  }, */
 
   disclaimer: {
     english:

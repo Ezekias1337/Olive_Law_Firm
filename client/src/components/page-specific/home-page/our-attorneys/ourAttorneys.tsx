@@ -7,7 +7,7 @@ import "./our-attorneys.scss";
 // Assets and Images
 import juanSanchezImage from "../../../../assets/images/staff/juan-sanchez.png";
 import whitneyBrooksImage from "../../../../assets/images/staff/whitney-brooks.png";
-import valerieKilgoreImage from "../../../../assets/images/staff/valerie-kilgore.png";
+//import valerieKilgoreImage from "../../../../assets/images/staff/valerie-kilgore.png";
 
 const arrayOfAttorneyInfo = [
   {
@@ -20,11 +20,11 @@ const arrayOfAttorneyInfo = [
     image: whitneyBrooksImage,
     link: "attorney-profile/:whitney-brooks",
   },
-  {
+  /* {
     name: "Valerie Kilgore",
     image: valerieKilgoreImage,
     link: "attorney-profile/:valerie-kilgore",
-  },
+  }, */
 ];
 
 export const OurAttorneys = ({ language }: { language: string }) => {
