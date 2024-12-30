@@ -23,7 +23,7 @@ export const TellYourStory = ({ language }: { language: string }) => {
           }
           additionalClassNames="animated-button"
           variant="primary"
-          url="/contact-us"
+          url={`/contact-us?language=${language}`}
           buttonSize="large"
         />
       </div>

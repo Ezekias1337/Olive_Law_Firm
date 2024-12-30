@@ -52,7 +52,7 @@ export const OurResults = ({ language }: { language: string }) => {
               : viewMoreResults.spanish
           }
           variant="primary"
-          url="/our-results"
+          url={`/our-results?language=${language}`}
           buttonSize="large"
         />
       </div>

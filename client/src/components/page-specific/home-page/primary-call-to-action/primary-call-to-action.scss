@@ -11,10 +11,18 @@
   background-position-y: top;
   background-position-x: center;
 
+  @media screen and (max-width: 576px) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
   .juan-sanchez-quote {
     font-size: $header-1;
     color: $neutral;
     text-align: center;
+    text-wrap: wrap;
   }
 
   .primary-call-to-action-button-wrapper {
@@ -24,5 +32,11 @@
     gap: 20px;
     justify-content: center;
     width: auto;
+
+    @media screen and (max-width: 576px) {
+      a.button {
+        width: 100%;
+      }
+    }
   }
 }

@@ -9,6 +9,7 @@ import { footerStrings } from "../../../constants/language-strings/footerStrings
 // Components
 import { FooterSocialIcon } from "./dependents/FooterSocialIcon";
 import { FooterLink } from "./dependents/FooterLink";
+import { ExternalFooterLink } from "./dependents/ExternalFooterLink";
 // CSS
 import "./footer.scss";
 // Assets and Images
@@ -64,27 +65,21 @@ export const Footer = ({ language }: { language: string }) => {
               ? contactHeader.english
               : contactHeader.spanish}
           </h5>
-          <FooterLink
+          <ExternalFooterLink
             linkText="(704) 377-9222"
             url="tel:+17043779222"
-            openInNewTab={false}
-            preserveState={[["language", language]]}
           />
-          <FooterLink
+          <ExternalFooterLink
             linkText={language === "English" ? email.english : email.spanish}
             url="mailto: receptionist@osa-law.com"
-            openInNewTab={false}
-            preserveState={[["language", language]]}
           />
-          <FooterLink
+          <ExternalFooterLink
             linkText={
               language === "English"
                 ? getDirections.english
                 : getDirections.spanish
             }
             url="https://goo.gl/maps/GdLK2JYiZnwMtetr5"
-            openInNewTab={true}
-            preserveState={[["language", language]]}
           />
         </div>
         <div className="col col-12 col-lg-4 mt-5">

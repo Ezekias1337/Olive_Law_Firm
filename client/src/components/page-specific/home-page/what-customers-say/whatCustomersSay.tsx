@@ -120,7 +120,7 @@ export const WhatCustomersSay = ({ language }: { language: string }) => {
               : viewMoreResults.spanish
           }
           variant="primary"
-          url="/client-reviews"
+          url={`/client-reviews?language=${language}`}
           buttonSize="large"
         />
       </div>
