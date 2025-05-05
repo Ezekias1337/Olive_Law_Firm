@@ -12,6 +12,7 @@ import { ReduxStoreState } from "../constants/interfaces/ReduxStoreState";
 // Constants
 import { faqStrings } from "../constants/language-strings/faqStrings";
 // Components
+import CookieBanner from "../components/cookie-banner/CookieBanner";
 import { NavBar } from "../components/general-page-layout/navbar/Navbar";
 import { PageHeader } from "../components/general-page-layout/page-header/PageHeader";
 import { Footer } from "../components/general-page-layout/footer/Footer";
@@ -44,10 +45,10 @@ const FAQ = () => {
   const { faq6Title, faq6Body } = faq6;
   const { faq7Title, faq7Body } = faq7;
 
-  const [openAccordion, setOpenAccordion] = useState<string>('');
+  const [openAccordion, setOpenAccordion] = useState<string>("");
 
   const handleAccordionToggle = (id: string) => {
-    setOpenAccordion((prev) => (prev === id ? '' : id));
+    setOpenAccordion((prev) => (prev === id ? "" : id));
   };
 
   return (
@@ -71,7 +72,10 @@ const FAQ = () => {
       <div className="faq-accordion-wrapper padding-left-and-right">
         <Accordion open={openAccordion}>
           <AccordionItem>
-            <AccordionHeader targetId="1" onClick={() => handleAccordionToggle("1")}>
+            <AccordionHeader
+              targetId="1"
+              onClick={() => handleAccordionToggle("1")}
+            >
               {reduxLanguage === "English"
                 ? faq1Title.english
                 : faq1Title.spanish}
@@ -83,7 +87,10 @@ const FAQ = () => {
             </AccordionBody>
           </AccordionItem>
           <AccordionItem>
-            <AccordionHeader targetId="2" onClick={() => handleAccordionToggle("2")}>
+            <AccordionHeader
+              targetId="2"
+              onClick={() => handleAccordionToggle("2")}
+            >
               {reduxLanguage === "English"
                 ? faq2Title.english
                 : faq2Title.spanish}
@@ -95,7 +102,10 @@ const FAQ = () => {
             </AccordionBody>
           </AccordionItem>
           <AccordionItem>
-            <AccordionHeader targetId="3" onClick={() => handleAccordionToggle("3")}>
+            <AccordionHeader
+              targetId="3"
+              onClick={() => handleAccordionToggle("3")}
+            >
               {reduxLanguage === "English"
                 ? faq3Title.english
                 : faq3Title.spanish}
@@ -108,7 +118,10 @@ const FAQ = () => {
           </AccordionItem>
 
           <AccordionItem>
-            <AccordionHeader targetId="4" onClick={() => handleAccordionToggle("4")}>
+            <AccordionHeader
+              targetId="4"
+              onClick={() => handleAccordionToggle("4")}
+            >
               {reduxLanguage === "English"
                 ? faq4Title.english
                 : faq4Title.spanish}
@@ -120,7 +133,10 @@ const FAQ = () => {
             </AccordionBody>
           </AccordionItem>
           <AccordionItem>
-            <AccordionHeader targetId="5" onClick={() => handleAccordionToggle("5")}>
+            <AccordionHeader
+              targetId="5"
+              onClick={() => handleAccordionToggle("5")}
+            >
               {reduxLanguage === "English"
                 ? faq5Title.english
                 : faq5Title.spanish}
@@ -132,7 +148,10 @@ const FAQ = () => {
             </AccordionBody>
           </AccordionItem>
           <AccordionItem>
-            <AccordionHeader targetId="6" onClick={() => handleAccordionToggle("6")}>
+            <AccordionHeader
+              targetId="6"
+              onClick={() => handleAccordionToggle("6")}
+            >
               {reduxLanguage === "English"
                 ? faq6Title.english
                 : faq6Title.spanish}
@@ -145,7 +164,10 @@ const FAQ = () => {
           </AccordionItem>
 
           <AccordionItem>
-            <AccordionHeader targetId="7" onClick={() => handleAccordionToggle("7")}>
+            <AccordionHeader
+              targetId="7"
+              onClick={() => handleAccordionToggle("7")}
+            >
               {reduxLanguage === "English"
                 ? faq7Title.english
                 : faq7Title.spanish}
@@ -159,6 +181,18 @@ const FAQ = () => {
         </Accordion>
       </div>
 
+      <CookieBanner
+        bodyText={
+          reduxLanguage === "English"
+            ? "To ensure that you have the best possible experience while visiting us, we use cookies and similar technologies."
+            : "Para garantizar que tenga la mejor experiencia posible mientras nos visita, utilizamos cookies y tecnologías similares."
+        }
+        button1={{
+          text: "Dismiss",
+          variant: "primary",
+          buttonSize: "small",
+        }}
+      />
       <Footer language={reduxLanguage} />
     </div>
   );

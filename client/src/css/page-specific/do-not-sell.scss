@@ -1,0 +1,27 @@
+@import "../../css/variables";
+
+.do-not-sell {
+  background-color: $neutral;
+
+  h1.page-title {
+    color: $neutral;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .do-not-sell-wrapper {
+    color: $anti-neutral;
+    padding-bottom: 80px;
+
+    p {
+      padding-top: 40px;
+    }
+    
+    label {
+      font-size: $body;
+      &.switch-label {
+        padding-left: 0px !important;
+      }
+    }
+  }
+}

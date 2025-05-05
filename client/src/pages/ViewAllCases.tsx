@@ -1,40 +1,21 @@
 // Library Imports
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux/es/exports";
 import { Modal, ModalHeader, ModalBody } from "reactstrap";
 // Functions, Helpers and Utils
-import getLoggedInUser from "../functions/authentication/getLoggedInUser";
-import logout from "../functions/authentication/logout";
-import getAllUsers from "../functions/network/getAllUsers";
-import getUser from "../functions/network/getUser";
-import deleteUser from "../functions/network/deleteUser";
-import fetchData from "../functions/network/fetchData";
 import getCase from "../functions/network/getCase";
 import getAllCases from "../functions/network/getAllCases";
 import deleteCase from "../functions/network/deleteCase";
-import { camelCasifyString } from "../../../shared/utils/strings/camelCasifyString";
 import { chunkArray } from "../../../shared/utils/arrays/chunkArray";
-// Constants
-import {
-  textOnlyPattern,
-  emailPattern,
-  textAndNumbersAndSpecialCharsNoSpacesPattern,
-} from "../../../shared/constants/regexPatterns";
 // Interfaces and Types
 import { ReduxStoreState } from "../constants/interfaces/ReduxStoreState";
 import { CaseReturnedFromDB } from "../constants/interfaces/case";
-import { UserReturnedFromDB } from "../constants/interfaces/user";
 import { FormState } from "../constants/interfaces/InputFieldProps";
-import { Field, InputField } from "../components/form/dependents/formTypes";
-import { FormEvent } from "react";
-import { SetStateHookForm } from "../constants/interfaces/InputFieldProps";
 // Components
+import CookieBanner from "../components/cookie-banner/CookieBanner";
 import { NavBar } from "../components/general-page-layout/navbar/Navbar";
 import { PageHeader } from "../components/general-page-layout/page-header/PageHeader";
 import { Loader } from "../components/general-page-layout/loader/Loader";
-import { Button } from "../components/button/Button";
-import { Form } from "../components/form/Form";
 import { SearchInput } from "../components/input-fields/SearchInput";
 import { Pagination } from "../components/general-page-layout/pagination/Pagination";
 import { Footer } from "../components/general-page-layout/footer/Footer";
@@ -206,6 +187,18 @@ const ViewAllCases = () => {
         </ModalBody>
       </Modal>
 
+      <CookieBanner
+        bodyText={
+          reduxLanguage === "English"
+            ? "To ensure that you have the best possible experience while visiting us, we use cookies and similar technologies."
+            : "Para garantizar que tenga la mejor experiencia posible mientras nos visita, utilizamos cookies y tecnologías similares."
+        }
+        button1={{
+          text: "Dismiss",
+          variant: "primary",
+          buttonSize: "small",
+        }}
+      />
       <Footer language={reduxLanguage} />
     </div>
   );

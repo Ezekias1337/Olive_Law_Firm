@@ -1,13 +1,13 @@
 // Library Imports
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux/es/exports";
-// Functions, Helpers, Utils and Hooks
 // Interfaces and Types
 import { ReduxStoreState } from "../constants/interfaces/ReduxStoreState";
 import { CustomerReviewProps } from "../components/customer-review/customerReview";
 // Constants
 import { clientReviewsStrings } from "../constants/language-strings/clientReviewsStrings";
 // Components
+import CookieBanner from "../components/cookie-banner/CookieBanner";
 import { NavBar } from "../components/general-page-layout/navbar/Navbar";
 import { PageHeader } from "../components/general-page-layout/page-header/PageHeader";
 import { ClientTestimonial } from "../components/client-reviews/clientTestimonial";
@@ -26,8 +26,7 @@ import google_review_7 from "../assets/images/customer-reviews/google_review_7.p
 import google_review_8 from "../assets/images/customer-reviews/google_review_8.png";
 import google_review_9 from "../assets/images/customer-reviews/google_review_9.png";
 import google_review_10 from "../assets/images/customer-reviews/google_review_10.png";
-import google_review_11 from "../assets/images/customer-reviews/google_review_11.png";
-import google_review_12 from "../assets/images/customer-reviews/google_review_12.png";
+
 
 type TestimonialInfo = {
   title: string;
@@ -325,7 +324,18 @@ const ClientReviews = () => {
           />
         ))}
       </div>
-
+      <CookieBanner
+        bodyText={
+          reduxLanguage === "English"
+            ? "To ensure that you have the best possible experience while visiting us, we use cookies and similar technologies."
+            : "Para garantizar que tenga la mejor experiencia posible mientras nos visita, utilizamos cookies y tecnologías similares."
+        }
+        button1={{
+          text: "Dismiss",
+          variant: "primary",
+          buttonSize: "small",
+        }}
+      />
       <Footer language={reduxLanguage} />
     </div>
   );

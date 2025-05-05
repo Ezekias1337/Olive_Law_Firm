@@ -10,6 +10,7 @@ import {
   AttorneyInfo,
 } from "../constants/language-strings/attorneyProfileStrings";
 // Components
+import CookieBanner from "../components/cookie-banner/CookieBanner";
 import { NavBar } from "../components/general-page-layout/navbar/Navbar";
 import { AttorneyBiography } from "../components/page-specific/attorney-profile/AttorneyBiography";
 import { AttorneyInfoShowcase } from "../components/page-specific/attorney-profile/AttorneyInfoShowcase";
@@ -126,6 +127,18 @@ const AttorneyProfile = () => {
       )}
 
       <Footer language={reduxLanguage} />
+      <CookieBanner
+        bodyText={
+          reduxLanguage === "English"
+            ? "To ensure that you have the best possible experience while visiting us, we use cookies and similar technologies."
+            : "Para garantizar que tenga la mejor experiencia posible mientras nos visita, utilizamos cookies y tecnologías similares."
+        }
+        button1={{
+          text: "Dismiss",
+          variant: "primary",
+          buttonSize: "small",
+        }}
+      />
     </div>
   );
 };

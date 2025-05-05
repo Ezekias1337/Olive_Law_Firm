@@ -1,15 +1,10 @@
 // Library Imports
 import { useSelector } from "react-redux/es/exports";
 import { useState } from "react";
-// Functions, Helpers, Utils and Hooks
-import login from "../functions/authentication/login";
 // Interfaces and Types
 import { ReduxStoreState } from "../constants/interfaces/ReduxStoreState";
 import { FormState } from "../constants/interfaces/InputFieldProps";
-import {
-  Field,
-  CustomSubmitArgs,
-} from "../components/form/dependents/formTypes";
+import { Field } from "../components/form/dependents/formTypes";
 // Constants
 import { loginStrings } from "../constants/language-strings/loginStrings";
 import {
@@ -21,6 +16,7 @@ import {
   currentPasswordAutocomplete,
 } from "../constants/formAutocompleteStrings";
 // Components
+import CookieBanner from "../components/cookie-banner/CookieBanner";
 import { NavBar } from "../components/general-page-layout/navbar/Navbar";
 import { PageHeader } from "../components/general-page-layout/page-header/PageHeader";
 import { Form } from "../components/form/Form";
@@ -135,7 +131,18 @@ const Login = () => {
           </div>
         </div>
       </div>
-
+      <CookieBanner
+        bodyText={
+          reduxLanguage === "English"
+            ? "To ensure that you have the best possible experience while visiting us, we use cookies and similar technologies."
+            : "Para garantizar que tenga la mejor experiencia posible mientras nos visita, utilizamos cookies y tecnologías similares."
+        }
+        button1={{
+          text: "Dismiss",
+          variant: "primary",
+          buttonSize: "small",
+        }}
+      />
       <Footer language={reduxLanguage} />
     </div>
   );

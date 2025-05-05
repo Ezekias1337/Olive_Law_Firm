@@ -6,6 +6,7 @@ import { ReduxStoreState } from "../constants/interfaces/ReduxStoreState";
 // Constants
 import { homePageStrings } from "../constants/language-strings/homepageStrings";
 // Components
+import CookieBanner from "../components/cookie-banner/CookieBanner";
 import { NavBar } from "../components/general-page-layout/navbar/Navbar";
 import { Footer } from "../components/general-page-layout/footer/Footer";
 import { PrimaryCallToAction } from "../components/page-specific/home-page/primary-call-to-action/primaryCallToAction";
@@ -17,27 +18,6 @@ import { WhatCustomersSay } from "../components/page-specific/home-page/what-cus
 import { OurResults } from "../components/page-specific/home-page/our-results/ourResults";
 import { TellYourStory } from "../components/page-specific/home-page/tell-your-story/tellYourStory";
 import { Disclaimer } from "../components/disclaimer/Disclaimer";
-/* 
-  TODO: Add Cookies disclaimer
-  TODO: Check all references to company name and website url
-  TODO: NEED A 404 PAGE
-  TODO: Remove un-used images and assets
-  TODO: Look into back arrow functionality when changing language to make it go back to the
-  last different page
-  TODO: Browser history not working correctly on button links
-  TODO: Fix Phone number component padding
-  TODO: Box shadow doesn't work on input fields that were autocompleted
-  TODO: Make checklist to check responsiveness of each page before release
-  TODO: Footer logo doesn't link to homepage
-  TODO: Find solution for footer spacing from rest of page content on pages
-  with navbar background, also need to account for English and Spanish differences
-  in the spacing
-  TODO: Fix centering of "What our clients say about us"
-  TODO: Add animation to practice area card hover and lawyer hover
-  TODO: Replace Lawyer images with card component
-  TODO: Add animation for button hover
-  TODO: Change "Google reviews" in footer to client reviews link
-*/
 
 const Home = () => {
   const reduxLanguage = useSelector(
@@ -60,6 +40,18 @@ const Home = () => {
         bodyText={
           reduxLanguage === "English" ? disclaimer.english : disclaimer.spanish
         }
+      />
+      <CookieBanner
+        bodyText={
+          reduxLanguage === "English"
+            ? "To ensure that you have the best possible experience while visiting us, we use cookies and similar technologies."
+            : "Para garantizar que tenga la mejor experiencia posible mientras nos visita, utilizamos cookies y tecnologías similares."
+        }
+        button1={{
+          text: "Dismiss",
+          variant: "primary",
+          buttonSize: "small",
+        }}
       />
       <Footer language={reduxLanguage} />
     </div>

@@ -7,6 +7,7 @@ import { ReduxStoreState } from "../constants/interfaces/ReduxStoreState";
 // Constants
 import { pageNotFoundStrings } from "../constants/language-strings/pageNotFoundStrings";
 // Components
+import CookieBanner from "../components/cookie-banner/CookieBanner";
 import { NavBar } from "../components/general-page-layout/navbar/Navbar";
 import { Button } from "../components/button/Button";
 import { Footer } from "../components/general-page-layout/footer/Footer";
@@ -51,7 +52,18 @@ const PageNotFound = () => {
           />
         </div>
       </div>
-
+      <CookieBanner
+        bodyText={
+          reduxLanguage === "English"
+            ? "To ensure that you have the best possible experience while visiting us, we use cookies and similar technologies."
+            : "Para garantizar que tenga la mejor experiencia posible mientras nos visita, utilizamos cookies y tecnologías similares."
+        }
+        button1={{
+          text: "Dismiss",
+          variant: "primary",
+          buttonSize: "small",
+        }}
+      />
       <Footer language={reduxLanguage} />
     </div>
   );

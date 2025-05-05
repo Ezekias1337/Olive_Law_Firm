@@ -29,6 +29,7 @@ import {
   textAndNumbersPattern,
 } from "../../../shared/constants/regexPatterns";
 // Components
+import CookieBanner from "../components/cookie-banner/CookieBanner";
 import { NavBar } from "../components/general-page-layout/navbar/Navbar";
 import { Footer } from "../components/general-page-layout/footer/Footer";
 import { PageHeader } from "../components/general-page-layout/page-header/PageHeader";
@@ -40,26 +41,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../css/page-specific/contact-us.scss";
 // Assets and Images
 import googleMapsLocation from "../assets/images/google-maps-location.png";
-
-/* 
-    TODO: Dropdown menus and credit card field labels aren't translating
-    TODO: form error should be in spanish when page is spanish
-    TODO: Look into making required one of the form attributes
-    TODO: Make sure correct css is applied to errored out fields
-    TODO: Make setStateHook and setErrorHook only be passed to form so it doesn't 
-    TODO: Make dropdown options also translate
-    TODO: Remove theme from input field props, keep only in form
-    TODO: Look into datalist element for dropdown field
-    TODO: Add multiple attribute prop to dropdown component to allow multiple selections
-    TODO: Make function to supply repeated props to fields
-    need to be duplicated
-    TODO: Remove columns attribute from input field components since it's handled by the form component
-    TODO: Make an example component with props for each input field, so I can easily use
-      each input field without having to check which props are required for each type
-      
-      
-    ! URGENT: NEED TO ONLY RENDER CONTACT FIELDS AFTER CHECKING THE SCREENSIZE
-  */
 
 const ContactUs = () => {
   const reduxLanguage = useSelector(
@@ -584,6 +565,19 @@ const ContactUs = () => {
           </div>
         </div>
       </div>
+
+      <CookieBanner
+        bodyText={
+          reduxLanguage === "English"
+            ? "To ensure that you have the best possible experience while visiting us, we use cookies and similar technologies."
+            : "Para garantizar que tenga la mejor experiencia posible mientras nos visita, utilizamos cookies y tecnologías similares."
+        }
+        button1={{
+          text: "Dismiss",
+          variant: "primary",
+          buttonSize: "small",
+        }}
+      />
       <Footer language={reduxLanguage} />
     </div>
   );

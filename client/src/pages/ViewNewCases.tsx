@@ -22,6 +22,7 @@ const BACKEND_PORT = import.meta.env.VITE_BACKEND_PORT;
 const ORIGIN_URL_BASE = import.meta.env.VITE_ORIGIN_URL_BASE;
 const IS_DEV = import.meta.env.VITE_IS_DEV;
 // Components
+import CookieBanner from "../components/cookie-banner/CookieBanner";
 import { NavBar } from "../components/general-page-layout/navbar/Navbar";
 import { PageHeader } from "../components/general-page-layout/page-header/PageHeader";
 import { ViewCaseCard } from "../components/page-specific/view-case/ViewCaseCard";
@@ -102,7 +103,11 @@ const ViewNewCases = () => {
   }, [pendingCases, userAwaitingCases]);
 
   useEffect(() => {
-    const socketServerURL = generateOriginUrl(ORIGIN_URL_BASE, BACKEND_PORT, IS_DEV);
+    const socketServerURL = generateOriginUrl(
+      ORIGIN_URL_BASE,
+      BACKEND_PORT,
+      IS_DEV
+    );
     const socket: Socket<ServerToClientEvents, ClientToServerEvents> =
       io(socketServerURL);
 
@@ -227,6 +232,18 @@ const ViewNewCases = () => {
         )}
       </div>
 
+      <CookieBanner
+        bodyText={
+          reduxLanguage === "English"
+            ? "To ensure that you have the best possible experience while visiting us, we use cookies and similar technologies."
+            : "Para garantizar que tenga la mejor experiencia posible mientras nos visita, utilizamos cookies y tecnologías similares."
+        }
+        button1={{
+          text: "Dismiss",
+          variant: "primary",
+          buttonSize: "small",
+        }}
+      />
       <Footer language={reduxLanguage} />
     </div>
   );

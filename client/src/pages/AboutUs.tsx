@@ -1,11 +1,11 @@
 // Library Imports
 import { useSelector } from "react-redux/es/exports";
-// Functions, Helpers, Utils and Hooks
 // Interfaces and Types
 import { ReduxStoreState } from "../constants/interfaces/ReduxStoreState";
 // Constants
 import { aboutUsStrings } from "../constants/language-strings/aboutUsStrings";
 // Components
+import CookieBanner from "../components/cookie-banner/CookieBanner";
 import { NavBar } from "../components/general-page-layout/navbar/Navbar";
 import { PageHeader } from "../components/general-page-layout/page-header/PageHeader";
 import { Disclaimer } from "../components/disclaimer/Disclaimer";
@@ -23,7 +23,7 @@ import Badge7 from "../assets/images/certifications/7.png";
 import Badge8 from "../assets/images/certifications/8.png";
 import Badge9 from "../assets/images/certifications/9.png";
 import Badge10 from "../assets/images/certifications/10.png";
-import Badge11 from "../assets/images/certifications/11.png"
+import Badge11 from "../assets/images/certifications/11.png";
 
 const AboutUs = () => {
   const reduxLanguage = useSelector(
@@ -185,6 +185,18 @@ const AboutUs = () => {
         bodyText={
           reduxLanguage === "English" ? disclaimer.english : disclaimer.spanish
         }
+      />
+      <CookieBanner
+        bodyText={
+          reduxLanguage === "English"
+            ? "To ensure that you have the best possible experience while visiting us, we use cookies and similar technologies."
+            : "Para garantizar que tenga la mejor experiencia posible mientras nos visita, utilizamos cookies y tecnologías similares."
+        }
+        button1={{
+          text: "Dismiss",
+          variant: "primary",
+          buttonSize: "small",
+        }}
       />
       <Footer language={reduxLanguage} />
     </div>

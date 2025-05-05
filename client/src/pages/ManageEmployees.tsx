@@ -13,9 +13,7 @@ import { UserReturnedFromDB } from "../constants/interfaces/user";
 import { Field, InputField } from "../components/form/dependents/formTypes";
 import { FormState } from "../constants/interfaces/InputFieldProps";
 import { FormEvent } from "react";
-import {
-  SetStateHookForm,
-} from "../constants/interfaces/InputFieldProps";
+import { SetStateHookForm } from "../constants/interfaces/InputFieldProps";
 // Constants
 import {
   textOnlyPattern,
@@ -23,6 +21,7 @@ import {
   textAndNumbersAndSpecialCharsNoSpacesPattern,
 } from "../../../shared/constants/regexPatterns";
 // Components
+import CookieBanner from "../components/cookie-banner/CookieBanner";
 import { NavBar } from "../components/general-page-layout/navbar/Navbar";
 import { PageHeader } from "../components/general-page-layout/page-header/PageHeader";
 import { Loader } from "../components/general-page-layout/loader/Loader";
@@ -70,16 +69,14 @@ const ManageEmployees = () => {
     e.preventDefault();
     const errors: Record<string, string> = {};
     const formStateWithDefaultValues = { ...formState };
-    
+
     inputFields.forEach((field) => {
       if (!formState[camelCasifyString(field.name)]) {
         if (field.defaultValue) {
           formStateWithDefaultValues[camelCasifyString(field.name)] =
             field.defaultValue;
         } else {
-          errors[
-            camelCasifyString(field.name)
-          ] = `${field.name} is required`;
+          errors[camelCasifyString(field.name)] = `${field.name} is required`;
         }
       }
     });
@@ -99,7 +96,7 @@ const ManageEmployees = () => {
       /* 
         Update the card client side so user doesnt have to refresh to see the change
       */
-     
+
       try {
         const newData = await getAllUsers();
         setEmployeeData(newData);
@@ -124,19 +121,16 @@ const ManageEmployees = () => {
   ): Promise<any> => {
     e.preventDefault();
 
-
     const errors: Record<string, string> = {};
     const formStateWithDefaultValues = { ...formState };
-    
+
     inputFields.forEach((field) => {
       if (!formState[camelCasifyString(field.name)]) {
         if (field.defaultValue) {
           formStateWithDefaultValues[camelCasifyString(field.name)] =
             field.defaultValue;
         } else {
-          errors[
-            camelCasifyString(field.name)
-          ] = `${field.name} is required`;
+          errors[camelCasifyString(field.name)] = `${field.name} is required`;
         }
       }
     });
@@ -464,7 +458,18 @@ const ManageEmployees = () => {
           </ModalBody>
         </Modal>
       </div>
-
+      <CookieBanner
+        bodyText={
+          reduxLanguage === "English"
+            ? "To ensure that you have the best possible experience while visiting us, we use cookies and similar technologies."
+            : "Para garantizar que tenga la mejor experiencia posible mientras nos visita, utilizamos cookies y tecnologías similares."
+        }
+        button1={{
+          text: "Dismiss",
+          variant: "primary",
+          buttonSize: "small",
+        }}
+      />
       <Footer language={reduxLanguage} />
     </div>
   );

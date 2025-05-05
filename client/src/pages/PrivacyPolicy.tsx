@@ -5,9 +5,11 @@ import { ReduxStoreState } from "../constants/interfaces/ReduxStoreState";
 // Constants
 import { privacyPolicyStrings } from "../constants/language-strings/privacyPolicyStrings";
 // Components
+import CookieBanner from "../components/cookie-banner/CookieBanner";
 import { NavBar } from "../components/general-page-layout/navbar/Navbar";
 import { PageHeader } from "../components/general-page-layout/page-header/PageHeader";
 import { Footer } from "../components/general-page-layout/footer/Footer";
+import { GeneralLink } from "../components/general-page-layout/link/GeneralLink";
 // CSS
 import "../css/page-specific/privacy-policy.scss";
 
@@ -23,6 +25,7 @@ const PrivacyPolicy = () => {
     linksToOtherSites,
     feedback,
     updates,
+    doNotSell,
   } = privacyPolicyStrings;
 
   const { title: collectedInfoTitle, collectedInformationBody } =
@@ -35,7 +38,7 @@ const PrivacyPolicy = () => {
   return (
     <div className="container-fluid privacy-policy-container p-0">
       <NavBar theme="dark" adminVariant={false} language={reduxLanguage} />
-      <PageHeader language={reduxLanguage} title={pageTitle} includeBanner/>
+      <PageHeader language={reduxLanguage} title={pageTitle} includeBanner />
 
       <div className="privacy-policy-text padding-left-and-right">
         <p>{reduxLanguage === "English" ? intro.english : intro.spanish}</p>
@@ -50,6 +53,15 @@ const PrivacyPolicy = () => {
             ? collectedInformationBody.english
             : collectedInformationBody.spanish}
         </p>
+        <GeneralLink
+          theme="dark"
+          text={reduxLanguage === "English"
+            ? doNotSell.english
+            : doNotSell.spanish}
+          url="/do-not-sell"
+          openInNewTab={false}
+        />
+        
 
         <h2>
           {reduxLanguage === "English"
@@ -84,7 +96,18 @@ const PrivacyPolicy = () => {
             : updatesBody.spanish}
         </p>
       </div>
-
+      <CookieBanner
+        bodyText={
+          reduxLanguage === "English"
+            ? "To ensure that you have the best possible experience while visiting us, we use cookies and similar technologies."
+            : "Para garantizar que tenga la mejor experiencia posible mientras nos visita, utilizamos cookies y tecnologías similares."
+        }
+        button1={{
+          text: "Dismiss",
+          variant: "primary",
+          buttonSize: "small",
+        }}
+      />
       <Footer language={reduxLanguage} />
     </div>
   );

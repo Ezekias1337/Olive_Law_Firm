@@ -6,9 +6,6 @@ import { Modal, ModalHeader, ModalBody } from "reactstrap";
 // Functions, Helpers and Utils
 import getLoggedInUser from "../functions/authentication/getLoggedInUser";
 import logout from "../functions/authentication/logout";
-import getAllUsers from "../functions/network/getAllUsers";
-import getUser from "../functions/network/getUser";
-import deleteUser from "../functions/network/deleteUser";
 import fetchData from "../functions/network/fetchData";
 import { camelCasifyString } from "../../../shared/utils/strings/camelCasifyString";
 // Constants
@@ -25,6 +22,7 @@ import { Field, InputField } from "../components/form/dependents/formTypes";
 import { FormEvent } from "react";
 import { SetStateHookForm } from "../constants/interfaces/InputFieldProps";
 // Components
+import CookieBanner from "../components/cookie-banner/CookieBanner";
 import { NavBar } from "../components/general-page-layout/navbar/Navbar";
 import { PageHeader } from "../components/general-page-layout/page-header/PageHeader";
 import { Loader } from "../components/general-page-layout/loader/Loader";
@@ -373,7 +371,18 @@ const AdminHome = () => {
           />
         </ModalBody>
       </Modal>
-
+      <CookieBanner
+        bodyText={
+          reduxLanguage === "English"
+            ? "To ensure that you have the best possible experience while visiting us, we use cookies and similar technologies."
+            : "Para garantizar que tenga la mejor experiencia posible mientras nos visita, utilizamos cookies y tecnologías similares."
+        }
+        button1={{
+          text: "Dismiss",
+          variant: "primary",
+          buttonSize: "small",
+        }}
+      />
       <Footer language={reduxLanguage} />
     </div>
   );
